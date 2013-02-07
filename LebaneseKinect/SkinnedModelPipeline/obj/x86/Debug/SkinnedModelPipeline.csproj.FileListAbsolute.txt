@@ -1,0 +1,14 @@
+C:\Users\Will\Documents\SkinningSample_4_0\SkinnedModelPipeline\bin\x86\Debug\SkinnedModelPipeline.dll
+C:\Users\Will\Documents\SkinningSample_4_0\SkinnedModelPipeline\bin\x86\Debug\SkinnedModelPipeline.pdb
+C:\Users\Will\Documents\SkinningSample_4_0\SkinnedModelPipeline\bin\x86\Debug\SkinnedModel.dll
+C:\Users\Will\Documents\SkinningSample_4_0\SkinnedModelPipeline\bin\x86\Debug\SkinnedModel.pdb
+C:\Users\Will\Documents\SkinningSample_4_0\SkinnedModelPipeline\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Will\Documents\SkinningSample_4_0\SkinnedModelPipeline\obj\x86\Debug\SkinnedModelPipeline.dll
+C:\Users\Will\Documents\SkinningSample_4_0\SkinnedModelPipeline\obj\x86\Debug\SkinnedModelPipeline.pdb
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModelPipeline.dll
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModelPipeline.pdb
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModel.dll
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModel.pdb
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModelPipeline\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModelPipeline\obj\x86\Debug\SkinnedModelPipeline.dll
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModelPipeline\obj\x86\Debug\SkinnedModelPipeline.pdb

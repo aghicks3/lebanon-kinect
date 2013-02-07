@@ -5,3 +5,10 @@ c:\users\will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinec
 c:\users\will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\obj\x86\Debug\LebaneseKinect.exe
 c:\users\will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\obj\x86\Debug\LebaneseKinect.pdb
 c:\users\will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\man.xnb
+C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb
+C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\SkinnedModel.dll
+C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\SkinnedModel.pdb
+C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\joint.xnb
+C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps1OFF.xnb
+C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps2OFF.xnb
+C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps3OFF.xnb

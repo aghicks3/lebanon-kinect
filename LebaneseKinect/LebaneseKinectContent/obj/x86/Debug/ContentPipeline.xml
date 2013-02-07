@@ -1,25 +1,78 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Framework="Microsoft.Xna.Framework" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
   <Asset Type="Pipeline:BuildItemCollection">
     <Item>
-      <Source>Models\man.fbx</Source>
+      <Source>Models\man.X</Source>
       <Name>Models\man</Name>
-      <Importer>FbxImporter</Importer>
-      <Processor>ModelProcessor</Processor>
+      <Importer>XImporter</Importer>
+      <Processor>SkinnedModelProcessor</Processor>
       <Options>None</Options>
-      <Output>c:\users\will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\man.xnb</Output>
-      <Time>2013-01-31T02:27:49.6257307-05:00</Time>
+      <Output>C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\man.xnb</Output>
+      <Time>2013-02-06T23:24:33.3476863-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\man_0.xml</Key>
-        <Value>2013-01-31T02:33:15.5193707-05:00</Value>
+        <Value>2013-02-06T23:24:39.6860488-05:00</Value>
       </Dependency>
+      <Request>C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Request>
     </Item>
     <Item>
-      <Source>Models\man.fbx</Source>
-      <Importer>FbxImporter</Importer>
+      <Source>Models\man.X</Source>
+      <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\man_0.xml</Output>
-      <Time>2013-01-31T02:27:49.6257307-05:00</Time>
+      <Time>2013-02-06T23:24:33.3476863-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Models\dabkeTexture.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Framework:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+        <Data Key="PremultiplyAlpha" Type="bool">true</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Output>
+      <Time>2013-02-03T17:54:55.2603214-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\joint.png</Source>
+      <Name>Textures\joint</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\joint.xnb</Output>
+      <Time>2013-02-06T18:42:55.0021562-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\dsteps1OFF.png</Source>
+      <Name>Textures\dsteps1OFF</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps1OFF.xnb</Output>
+      <Time>2013-02-06T23:31:05.1340952-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\dsteps2OFF.png</Source>
+      <Name>Textures\dsteps2OFF</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps2OFF.xnb</Output>
+      <Time>2013-02-06T23:39:55.9524563-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\dsteps3OFF.png</Source>
+      <Name>Textures\dsteps3OFF</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps3OFF.xnb</Output>
+      <Time>2013-02-06T23:38:39.2670701-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -27,12 +80,16 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>c:\users\will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinectContent\</RootDirectory>
-      <LoggerRootDirectory>c:\users\will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\</LoggerRootDirectory>
-      <IntermediateDirectory>c:\users\will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinectContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>c:\users\will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinectContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinectContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
+      <Assembly>
+        <Key>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModelPipeline.dll</Key>
+        <Value>2013-02-06T11:44:15.7334162-05:00</Value>
+      </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
         <Value>2010-08-23T15:41:18-04:00</Value>

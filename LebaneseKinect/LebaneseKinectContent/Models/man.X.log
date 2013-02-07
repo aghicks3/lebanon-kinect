@@ -1,0 +1,37 @@
+@0.000001: Output file name: C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinectContent\Models\man.X
+@0.008140: kW X-port: 3ds max compatible version 9.00
+@4.964321: Saving node: ManMesh
+@4.995908: 844 skinned vertices in ManMesh
+@4.999112: Material 0 shader returned effect file name 'null'
+@5.000147: Saving node: Bip01
+@5.000728: Saving node: Bip01_Pelvis
+@5.001227: Saving node: Bip01_Spine
+@5.001832: Saving node: Bip01_Spine1
+@5.002331: Saving node: Bip01_Spine2
+@5.002889: Saving node: Bip01_Spine3
+@5.003388: Saving node: Bip01_Neck
+@5.003977: Saving node: Bip01_Head
+@5.004616: Saving node: Bip01_L_Clavicle
+@5.005197: Saving node: Bip01_L_UpperArm
+@5.005787: Saving node: Bip01_L_Forearm
+@5.006338: Saving node: Bip01_L_Hand
+@5.007153: Saving node: Bip01_L_Finger0
+@5.007927: Saving node: Bip01_R_Clavicle
+@5.008710: Saving node: Bip01_R_UpperArm
+@5.009557: Saving node: Bip01_R_Forearm
+@5.010142: Saving node: Bip01_R_Hand
+@5.010891: Saving node: Bip01_R_Finger0
+@5.011607: Saving node: Bip01_L_Thigh
+@5.012180: Saving node: Bip01_L_Calf
+@5.012846: Saving node: Bip01_L_Foot
+@5.013420: Saving node: Bip01_L_Toe0
+@5.014092: Saving node: Bip01_L_Toe01
+@5.014768: Saving node: Bip01_L_Toe02
+@5.015376: Saving node: Bip01_R_Thigh
+@5.016150: Saving node: Bip01_R_Calf
+@5.016878: Saving node: Bip01_R_Foot
+@5.017383: Saving node: Bip01_R_Toe0
+@5.017971: Saving node: Bip01_R_Toe01
+@5.018520: Saving node: Bip01_R_Toe02
+@5.018918: Extracting animation Take_001.
+@5.726527: File C:\Users\Will\Documents\CSC495\dabkeTexture.png has same mod time as C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinectContent\Models\dabkeTexture.png; not copying.

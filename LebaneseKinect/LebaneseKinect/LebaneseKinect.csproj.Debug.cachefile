@@ -1,9 +1,6 @@
 Content\Models\man.xnb
-Content\Models\dabkeTexture_0.xnb
-Content\Textures\joint.xnb
 Content\Textures\dsteps1OFF.xnb
-Content\Textures\dsteps1ON.xnb
 Content\Textures\dsteps2OFF.xnb
-Content\Textures\dsteps2ON.xnb
 Content\Textures\dsteps3OFF.xnb
-Content\Textures\dsteps3ON.xnb
+Content\Textures\joint.xnb
+Content\Models\dabkeTexture_0.xnb

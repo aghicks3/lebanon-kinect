@@ -6,7 +6,7 @@ C:\Users\Will\Documents\SkinningSample_4_0\SkinnedModel\obj\x86\Debug\SkinnedMod
 C:\Users\Will\Documents\SkinningSample_4_0\SkinnedModel\obj\x86\Debug\SkinnedModel.pdb
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModel\bin\x86\Debug\SkinnedModel.dll
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModel\bin\x86\Debug\SkinnedModel.pdb
-C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModel\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModel\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModel\obj\x86\Debug\SkinnedModel.dll
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModel\obj\x86\Debug\SkinnedModel.pdb
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModel\obj\x86\Debug\SkinnedModelWindows.csprojResolveAssemblyReference.cache

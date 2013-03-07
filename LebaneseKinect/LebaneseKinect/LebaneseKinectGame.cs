@@ -1,4 +1,4 @@
-#define USE_KINECT // Comment out this line to test without a Kinect!!!
+//#define USE_KINECT // Comment out this line to test without a Kinect!!!
 
 using System;
 using System.Diagnostics; 
@@ -33,28 +33,34 @@ namespace LebaneseKinect
         KinectSensor kinect;
         Skeleton[] skeletonData;
         Skeleton skeleton;
-#endif
         Boolean debugging = true;
+        float previousHeadZ = 0;
+        int headZCounter = 0;
+#endif
+        // Basic XNA 3d variables
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
-        Model myModel;
         Vector3 modelPosition = Vector3.Zero;
         Vector3 cameraPosition = new Vector3(-2.25f, 0.0f, -1.25f);
-        AnimationPlayer animationPlayer;
-        AnimationPlayer animationPlayer2;
-        AnimationPlayer animationPlayer3;
         float cameraArc = 0;
         float cameraRotation = 0;
         float cameraDistance = 20;
 
+        // Dabke dancer model variables
+        Model myModel;
+        const int numberOfAnimationPlayers = 6;
+        const float spaceBetweenAnimationPlayers = 4.5f;
+        const float initialStartingPosition = -10.0f;
+        AnimationPlayer[] animationPlayers;
+        Matrix[] animationPlayersOffsets;
+        AnimationClip[] clips;
+
+        // FSM variables
+        SpriteBatch spriteBatch;
         Texture2D jointTexture;
         Texture2D StepHomeOFF, StepCrossOFF, StepKickOFF;
         Timer delay = new Timer();
         Vector2[] buttonPositions = { new Vector2(5, 5), new Vector2(75, 5), new Vector2(145, 5), new Vector2(215, 5), new Vector2(285, 5), new Vector2(355, 5) };
         bool bSpaceKeyPressed = false;
-
-        float previousHeadZ = 0;
-        int headZCounter = 0;
 
         // FSM for important keyframes in the dance
         enum DabkeSteps
@@ -68,6 +74,10 @@ namespace LebaneseKinect
             WaitForReset
         };
         DabkeSteps currentDabke = DabkeSteps.Home1;
+
+        protected Song song;
+        VideoPlayer videoPlayer;
+        Video video;
 
         public LebaneseKinectGame()
         {
@@ -126,18 +136,30 @@ namespace LebaneseKinect
                 throw new InvalidOperationException
                     ("This model does not contain a SkinningData tag.");
 
-            // Create an animation player, and start decoding an animation clip.
-            animationPlayer = new AnimationPlayer(skinningData);
-            animationPlayer2 = new AnimationPlayer(skinningData);
-            animationPlayer3 = new AnimationPlayer(skinningData);
-
             // "Take_001" is the basic dance animation.  More (better-named) clips will also be loaded here.
-            AnimationClip clip = skinningData.AnimationClips["Take_001"];
+            clips = new AnimationClip[3];
+            clips[0] = skinningData.AnimationClips["Take_001"];
+            clips[1] = skinningData.AnimationClips["Take_002"];
+            clips[2] = skinningData.AnimationClips["Take_003"];
+            //AnimationClip clip = skinningData.AnimationClips["Take_001"];
 
-            // Animate all three dancers.  TODO: Have slightly varying dances to look more genuine.
-            animationPlayer.StartClip(clip);
-            animationPlayer2.StartClip(clip);
-            animationPlayer3.StartClip(clip);
+            
+            animationPlayers = new AnimationPlayer[numberOfAnimationPlayers];
+            animationPlayersOffsets = new Matrix[numberOfAnimationPlayers];
+            for (int i = 0; i < numberOfAnimationPlayers; i++)
+            {
+                // Create an animation player, and start decoding an animation clip.
+                animationPlayers[i] = new AnimationPlayer(skinningData);
+
+                // Animate all three dancers.  TODO: Have slightly varying dances to look more genuine.
+                //animationPlayers[i].StartClip(clip);
+                animationPlayers[i].StartClip(clips[i%3]);
+
+                //animationPlayersOffsets[i] = new Matrix();
+                float offsetX = initialStartingPosition + (spaceBetweenAnimationPlayers * (float)i);
+                animationPlayersOffsets[i] = Matrix.CreateTranslation(new Vector3(offsetX, 0.0f, 0.0f));
+                
+            }
 
             // Create and load all the dance step icons
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -146,6 +168,13 @@ namespace LebaneseKinect
             StepHomeOFF = Content.Load<Texture2D>("Textures\\dsteps1OFF");
             StepCrossOFF = Content.Load<Texture2D>("Textures\\dsteps2OFF");
             StepKickOFF = Content.Load<Texture2D>("Textures\\dsteps3OFF");
+
+            song = Content.Load<Song>("Music\\dabke");
+            MediaPlayer.Play(song);
+
+            video = Content.Load<Video>("Video\\tempIntro");
+            videoPlayer = new VideoPlayer();
+            videoPlayer.Play(video);
         }
 
         /// <summary>
@@ -187,12 +216,10 @@ namespace LebaneseKinect
                 bSpaceKeyPressed = false;
 
             // Place and update 3d models...
-            //modelRotation += (float)gameTime.ElapsedGameTime.TotalMilliseconds * MathHelper.ToRadians(0.1f);
-            animationPlayer.Update(gameTime.ElapsedGameTime, true, Matrix.Identity);
-            Matrix offset2 = Matrix.CreateTranslation(new Vector3(6.5f, 0.0f, 0.0f));
-            Matrix offset3 = Matrix.CreateTranslation(new Vector3(-6.5f, 0, 0));
-            animationPlayer2.Update(gameTime.ElapsedGameTime, true, offset2);
-            animationPlayer3.Update(gameTime.ElapsedGameTime, true, offset3);
+            for (int i = 0; i < numberOfAnimationPlayers; i++)
+            {
+                animationPlayers[i].Update(gameTime.ElapsedGameTime, true, animationPlayersOffsets[i]);
+            }
 
             base.Update(gameTime);  // Base XNA update...
         }
@@ -203,101 +230,83 @@ namespace LebaneseKinect
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            Matrix[] bones;
             // Default XNA draw stuff...
             GraphicsDevice device = graphics.GraphicsDevice;
             device.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin();
 
-            // Grab 3d model skeleton matricies
-            Matrix[] bones = animationPlayer.GetSkinTransforms();
 
-            // Compute camera matrices.
-            Matrix view = Matrix.CreateTranslation(cameraPosition) *
-                          Matrix.CreateRotationY(MathHelper.ToRadians(cameraRotation)) *
-                          Matrix.CreateRotationX(MathHelper.ToRadians(cameraArc)) *
-                          Matrix.CreateLookAt(new Vector3(0, 0, -cameraDistance),
-                                              new Vector3(0, 0, 0), Vector3.Up);
-
-            Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4,
-                                                                    device.Viewport.AspectRatio,
-                                                                    1,
-                                                                    10000);
-
-            // Render the skinned mesh.
-            foreach (ModelMesh mesh in myModel.Meshes)
+            if (videoPlayer.State != MediaState.Stopped)
             {
-                foreach (SkinnedEffect effect in mesh.Effects)
+                spriteBatch.Begin();
+                Texture2D texture = videoPlayer.GetTexture();
+                if (texture != null)
                 {
-                    effect.SetBoneTransforms(bones);
+                    //spriteBatch.Draw(texture, new Rectangle(0, 0, 1280, 720),
+                    spriteBatch.Draw(texture, new Rectangle(0, 0, 720, 480),
+                        Color.White);
+                }
+                spriteBatch.End();
+            }
+            else
+            {
 
-                    effect.View = view;
-                    effect.Projection = projection;
+               
 
-                    effect.EnableDefaultLighting();
+                for (int i = 0; i < numberOfAnimationPlayers; i++)
+                {
+                    // Grab 3d model skeleton matricies
+                    bones = animationPlayers[i].GetSkinTransforms();
 
-                    effect.SpecularColor = new Vector3(0.25f);
-                    effect.SpecularPower = 16;
+                    // Compute camera matrices.
+                    Matrix view = Matrix.CreateTranslation(cameraPosition) *
+                                  Matrix.CreateRotationY(MathHelper.ToRadians(cameraRotation)) *
+                                  Matrix.CreateRotationX(MathHelper.ToRadians(cameraArc)) *
+                                  Matrix.CreateLookAt(new Vector3(0, 0, -cameraDistance),
+                                                      new Vector3(0, 0, 0), Vector3.Up);
+
+                    Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4,
+                                                                            device.Viewport.AspectRatio,
+                                                                            1,
+                                                                            10000);
+
+                    // Render the skinned mesh.
+                    foreach (ModelMesh mesh in myModel.Meshes)
+                    {
+                        foreach (SkinnedEffect effect in mesh.Effects)
+                        {
+                            effect.SetBoneTransforms(bones);
+
+                            effect.View = view;
+                            effect.Projection = projection;
+
+                            effect.EnableDefaultLighting();
+
+                            effect.SpecularColor = new Vector3(0.25f);
+                            effect.SpecularPower = 16;
+                        }
+
+                        mesh.Draw();
+                    }
                 }
 
-                mesh.Draw();
+                // Draw debug skeleton dots dots on the screen if player is being tracked by Kinect 
+                //DrawSkeleton(spriteBatch, new Vector2(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight), jointTexture);
+
+                // Draw all the dance step icons.  Yellow if step has been performed.  White, otherwise.
+                spriteBatch.Begin();
+                spriteBatch.Draw(StepCrossOFF, buttonPositions[0], null, (currentDabke > DabkeSteps.Home1) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+                spriteBatch.Draw(StepHomeOFF, buttonPositions[1], null, (currentDabke > DabkeSteps.Crossover1) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+                spriteBatch.Draw(StepCrossOFF, buttonPositions[2], null, (currentDabke > DabkeSteps.Home2) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+                spriteBatch.Draw(StepHomeOFF, buttonPositions[3], null, (currentDabke > DabkeSteps.Crossover2) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+                spriteBatch.Draw(StepKickOFF, buttonPositions[4], null, (currentDabke > DabkeSteps.Home3) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+                spriteBatch.Draw(StepHomeOFF, buttonPositions[5], null, (currentDabke > DabkeSteps.Kick) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+                spriteBatch.End();
             }
-
-            // Repeat for other two models... TODO: Refactor this shit!
-            bones = animationPlayer2.GetSkinTransforms();
-
-            // Render the skinned mesh.
-            foreach (ModelMesh mesh2 in myModel.Meshes)
-            {
-                foreach (SkinnedEffect effect in mesh2.Effects)
-                {
-                    effect.SetBoneTransforms(bones);
-
-                    effect.View = view;
-                    effect.Projection = projection;
-
-                    effect.EnableDefaultLighting();
-
-                    effect.SpecularColor = new Vector3(0.25f);
-                    effect.SpecularPower = 16;
-                }
-
-                mesh2.Draw();
-            }
-
-
-            bones = animationPlayer3.GetSkinTransforms();
-            // Render the skinned mesh.
-            foreach (ModelMesh mesh3 in myModel.Meshes)
-            {
-                foreach (SkinnedEffect effect in mesh3.Effects)
-                {
-                    effect.SetBoneTransforms(bones);
-
-                    effect.View = view;
-                    effect.Projection = projection;
-
-                    effect.EnableDefaultLighting();
-
-                    effect.SpecularColor = new Vector3(0.25f);
-                    effect.SpecularPower = 16;
-                }
-
-                mesh3.Draw();
-            }
-
-            // Draw debug skeleton dots dots on the screen if player is being tracked by Kinect 
-            //DrawSkeleton(spriteBatch, new Vector2(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight), jointTexture);
-
-            // Draw all the dance step icons.  Yellow if step has been performed.  White, otherwise.
-            spriteBatch.Draw(StepCrossOFF, buttonPositions[0], null, (currentDabke > DabkeSteps.Home1) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
-            spriteBatch.Draw(StepHomeOFF, buttonPositions[1], null, (currentDabke > DabkeSteps.Crossover1) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
-            spriteBatch.Draw(StepCrossOFF, buttonPositions[2], null, (currentDabke > DabkeSteps.Home2) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
-            spriteBatch.Draw(StepHomeOFF, buttonPositions[3], null, (currentDabke > DabkeSteps.Crossover2) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
-            spriteBatch.Draw(StepKickOFF, buttonPositions[4], null, (currentDabke > DabkeSteps.Home3) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
-            spriteBatch.Draw(StepHomeOFF, buttonPositions[5], null, (currentDabke > DabkeSteps.Kick) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
-            spriteBatch.End();
 
             base.Draw(gameTime); // Draw base XNA stuff...
+
+
         }
 
         private void DrawSkeleton(SpriteBatch spriteBatch, Vector2 resolution, Texture2D img)

@@ -12,3 +12,7 @@ C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinec
 C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps2OFF.xnb
 C:\Users\Will\documents\visual studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps3OFF.xnb
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\obj\x86\Debug\LebaneseKinect.csprojResolveAssemblyReference.cache
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.xnb
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.wma
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.xnb
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.wmv

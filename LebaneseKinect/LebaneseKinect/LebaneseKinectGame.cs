@@ -174,7 +174,7 @@ namespace LebaneseKinect
 
             video = Content.Load<Video>("Video\\tempIntro");
             videoPlayer = new VideoPlayer();
-            videoPlayer.Play(video);
+            //videoPlayer.Play(video);
         }
 
         /// <summary>

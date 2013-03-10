@@ -40,16 +40,16 @@ namespace LebaneseKinect
         // Basic XNA 3d variables
         GraphicsDeviceManager graphics;
         Vector3 modelPosition = Vector3.Zero;
-        Vector3 cameraPosition = new Vector3(-2.25f, 0.0f, -1.25f);
+        Vector3 cameraPosition = new Vector3(-2.25f, 0.5f, -1.35f);
         float cameraArc = 0;
         float cameraRotation = 0;
-        float cameraDistance = 20;
+        float cameraDistance = 18;
 
         // Dabke dancer model variables
         Model myModel;
         const int numberOfAnimationPlayers = 6;
-        const float spaceBetweenAnimationPlayers = 4.5f;
-        const float initialStartingPosition = -10.0f;
+        const float spaceBetweenAnimationPlayers = 4.4f;//4.5f;
+        const float initialStartingPosition = -11.0f;
         AnimationPlayer[] animationPlayers;
         Matrix[] animationPlayersOffsets;
         AnimationClip[] clips;
@@ -82,8 +82,8 @@ namespace LebaneseKinect
         public LebaneseKinectGame()
         {
             graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferHeight = 600;
-            graphics.PreferredBackBufferWidth = 600;
+            graphics.PreferredBackBufferWidth = 720;
+            graphics.PreferredBackBufferHeight = 480;
             Content.RootDirectory = "Content";
         }
 
@@ -143,6 +143,7 @@ namespace LebaneseKinect
             clips[2] = skinningData.AnimationClips["Take_003"];
             //AnimationClip clip = skinningData.AnimationClips["Take_001"];
 
+
             
             animationPlayers = new AnimationPlayer[numberOfAnimationPlayers];
             animationPlayersOffsets = new Matrix[numberOfAnimationPlayers];
@@ -170,11 +171,11 @@ namespace LebaneseKinect
             StepKickOFF = Content.Load<Texture2D>("Textures\\dsteps3OFF");
 
             song = Content.Load<Song>("Music\\dabke");
-            MediaPlayer.Play(song);
+            //MediaPlayer.Play(song);
 
             video = Content.Load<Video>("Video\\tempIntro");
             videoPlayer = new VideoPlayer();
-            //videoPlayer.Play(video);
+            videoPlayer.Play(video);
         }
 
         /// <summary>
@@ -206,19 +207,38 @@ namespace LebaneseKinect
             {
                 if (!bSpaceKeyPressed)
                 {
-                    bSpaceKeyPressed = true;
-                    currentDabke++;
-                    if (currentDabke > DabkeSteps.WaitForReset)
-                        currentDabke = 0;
+                    if (videoPlayer.State != MediaState.Stopped)
+                    {
+                        videoPlayer.Stop();
+                    }
+                    else
+                    {
+                        bSpaceKeyPressed = true;
+                        currentDabke++;
+                        if (currentDabke > DabkeSteps.WaitForReset)
+                            currentDabke = 0;
+                    }
                 }
             }
             else
                 bSpaceKeyPressed = false;
 
-            // Place and update 3d models...
-            for (int i = 0; i < numberOfAnimationPlayers; i++)
+            if (videoPlayer.State == MediaState.Stopped)
             {
-                animationPlayers[i].Update(gameTime.ElapsedGameTime, true, animationPlayersOffsets[i]);
+                if (MediaPlayer.State != MediaState.Playing)
+                {
+                    MediaPlayer.Play(song);
+                }
+
+                // Place and update 3d models...
+                for (int i = 0; i < numberOfAnimationPlayers; i++)
+                {
+                    TimeSpan temp = new TimeSpan(0, 0, 0, 0, (int)(gameTime.ElapsedGameTime.Milliseconds * 0.94)); //.8857
+                    //animationPlayers[i].Update(gameTime.ElapsedGameTime, true, animationPlayersOffsets[i]);
+                    animationPlayers[i].Update(temp, true, animationPlayersOffsets[i]);
+                    //animationPlayers[i].
+                    //originalBoneTransform = testModel.Bones["Bip01_L_UpperArm"].Transform;
+                }
             }
 
             base.Update(gameTime);  // Base XNA update...
@@ -250,13 +270,17 @@ namespace LebaneseKinect
             }
             else
             {
-
-               
+                Vector3 partnerRightHand = new Vector3(0,0,0);
 
                 for (int i = 0; i < numberOfAnimationPlayers; i++)
                 {
                     // Grab 3d model skeleton matricies
                     bones = animationPlayers[i].GetSkinTransforms();
+
+                    // Move the left hand of every dancer to the right hand of the previous
+                    if(i!=0)
+                        bones[11].Translation = partnerRightHand; //11 is left hand
+                    partnerRightHand = bones[16].Translation + new Vector3(6.0f, -0.8f, 0.0f); // Right hand loc + Magic offset
 
                     // Compute camera matrices.
                     Matrix view = Matrix.CreateTranslation(cameraPosition) *
@@ -305,8 +329,6 @@ namespace LebaneseKinect
             }
 
             base.Draw(gameTime); // Draw base XNA stuff...
-
-
         }
 
         private void DrawSkeleton(SpriteBatch spriteBatch, Vector2 resolution, Texture2D img)

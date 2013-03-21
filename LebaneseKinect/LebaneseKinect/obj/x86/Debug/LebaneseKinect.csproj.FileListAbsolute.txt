@@ -16,3 +16,6 @@ C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinec
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.wma
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.xnb
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.wmv
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\myFont.xnb
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\resultFont.xnb
+C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\KinectDepthVisualizer.xnb

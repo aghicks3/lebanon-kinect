@@ -11,7 +11,7 @@
       <Time>2013-03-05T19:01:00.415458-05:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\man_0.xml</Key>
-        <Value>2013-03-05T19:01:05.8137668-05:00</Value>
+        <Value>2013-03-11T15:40:44.0522175-04:00</Value>
       </Dependency>
       <Request>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Request>
     </Item>
@@ -52,6 +52,35 @@
       <Time>2013-02-06T18:42:55.0021562-05:00</Time>
     </Item>
     <Item>
+      <Source>Music\dabke.mp3</Source>
+      <Name>Music\dabke</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.xnb</Output>
+      <Extra>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.wma</Extra>
+      <Time>2013-03-09T13:34:30.1579459-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Video\tempIntro.wmv</Source>
+      <Name>Video\tempIntro</Name>
+      <Importer>WmvImporter</Importer>
+      <Processor>VideoProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.xnb</Output>
+      <Extra>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.wmv</Extra>
+      <Time>2013-03-05T21:42:08.0736504-05:00</Time>
+    </Item>
+    <Item>
+      <Source>myFont.spritefont</Source>
+      <Name>myFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\myFont.xnb</Output>
+      <Time>2013-03-11T15:39:46.1329047-04:00</Time>
+    </Item>
+    <Item>
       <Source>Models\man.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
@@ -75,24 +104,22 @@
       <Time>2013-02-03T17:54:55.2603214-05:00</Time>
     </Item>
     <Item>
-      <Source>Music\dabke.mp3</Source>
-      <Name>Music\dabke</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
+      <Source>resultFont.spritefont</Source>
+      <Name>resultFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.xnb</Output>
-      <Extra>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.wma</Extra>
-      <Time>2013-03-05T11:35:53.9629363-05:00</Time>
+      <Output>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\resultFont.xnb</Output>
+      <Time>2013-03-11T22:43:03.2465366-04:00</Time>
     </Item>
     <Item>
-      <Source>Video\tempIntro.wmv</Source>
-      <Name>Video\tempIntro</Name>
-      <Importer>WmvImporter</Importer>
-      <Processor>VideoProcessor</Processor>
+      <Source>KinectDepthVisualizer.fx</Source>
+      <Name>KinectDepthVisualizer</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.xnb</Output>
-      <Extra>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.wmv</Extra>
-      <Time>2013-03-05T21:42:08.0736504-05:00</Time>
+      <Output>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\KinectDepthVisualizer.xnb</Output>
+      <Time>2013-03-20T23:29:55.2252928-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -108,7 +135,7 @@
     <Assemblies>
       <Assembly>
         <Key>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModelPipeline.dll</Key>
-        <Value>2013-02-28T13:39:16.6063959-05:00</Value>
+        <Value>2013-03-11T15:40:39.3169467-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>

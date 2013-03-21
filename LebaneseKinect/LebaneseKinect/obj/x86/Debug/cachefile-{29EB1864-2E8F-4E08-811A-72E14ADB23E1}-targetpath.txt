@@ -3,8 +3,11 @@ Content\Textures\dsteps1OFF.xnb
 Content\Textures\dsteps2OFF.xnb
 Content\Textures\dsteps3OFF.xnb
 Content\Textures\joint.xnb
-Content\Models\dabkeTexture_0.xnb
 Content\Music\dabke.xnb
 Content\Music\dabke.wma
 Content\Video\tempIntro.xnb
 Content\Video\tempIntro.wmv
+Content\myFont.xnb
+Content\Models\dabkeTexture_0.xnb
+Content\resultFont.xnb
+Content\KinectDepthVisualizer.xnb

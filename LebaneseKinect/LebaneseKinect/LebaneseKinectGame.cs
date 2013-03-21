@@ -1,4 +1,4 @@
-//#define USE_KINECT // Comment out this line to test without a Kinect!!!
+#define USE_KINECT // Comment out this line to test without a Kinect!!!
 
 using System;
 using System.Diagnostics; 
@@ -34,9 +34,19 @@ namespace LebaneseKinect
         Skeleton[] skeletonData;
         Skeleton skeleton;
         Boolean debugging = true;
-        float previousHeadZ = 0;
-        int headZCounter = 0;
+
+        // Tracking direction changes in head and feet
+        float previousHeadY = 0;
+        float previousLeftFootZ = 0;
+        float previousRightFootZ = 0;
+        int headYCounter = 0;
+        int leftFootZCounter = 0;
+        int rightFootZCounter = 0;
+
 #endif
+        const int WINDOW_WIDTH = 720;
+        const int WINDOW_HEIGHT = 480;
+
         // Basic XNA 3d variables
         GraphicsDeviceManager graphics;
         Vector3 modelPosition = Vector3.Zero;
@@ -54,6 +64,13 @@ namespace LebaneseKinect
         Matrix[] animationPlayersOffsets;
         AnimationClip[] clips;
 
+        RenderTarget2D backBuffer;
+        Effect kinectDepthVisualizer;
+        Texture2D depthTexture;
+        short[] depthData;
+        bool needToRedrawBackBuffer;
+        Rectangle shadowRect = new Rectangle(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+
         // FSM variables
         SpriteBatch spriteBatch;
         Texture2D jointTexture;
@@ -61,6 +78,34 @@ namespace LebaneseKinect
         Timer delay = new Timer();
         Vector2[] buttonPositions = { new Vector2(5, 5), new Vector2(75, 5), new Vector2(145, 5), new Vector2(215, 5), new Vector2(285, 5), new Vector2(355, 5) };
         bool bSpaceKeyPressed = false;
+        bool bCrossoverKeyPressed = false;
+        bool bHomeKeyPressed = false;
+        bool bKickKeyPressed = false;
+        bool bDebugKeyPressed = false;
+        bool bShowDebugText = false;
+
+        TimeSpan songDuration = new TimeSpan(0, 3, 6); // Song lasts 3 min, 6 sec
+        TimeSpan stopRepeatingDance = new TimeSpan(0, 3, 2); // Stop repeating dance at 3 min, 2 sec
+        TimeSpan textFadeOut = new TimeSpan(0, 0, 0); // 2-second fadeout for result text
+        TimeSpan crossStepTime1 = new TimeSpan(0,0,0,0,600);
+        TimeSpan HomeTime1 = new TimeSpan(0, 0, 0, 1, 150);
+        TimeSpan crossStepTime2 = new TimeSpan(0, 0, 0, 1, 700);
+        TimeSpan HomeTime2 = new TimeSpan(0, 0, 0, 2, 250);
+        TimeSpan KickTime = new TimeSpan(0, 0, 0, 2, 700);
+        TimeSpan HomeTime3 = new TimeSpan(0, 0, 0, 3, 200);
+        //TimeSpan animationDuration;
+
+        SpriteFont font;
+        SpriteFont resultFont;
+        Color resultColor;
+        string resultString = " ";
+        string displayScore = " ";
+        int score = 0;
+        int cross1Score = 0;
+        int cross2Score = 0;
+        int kickScore = 0;
+        double previousDanceAnimationTimeMS = 0;
+
 
         // FSM for important keyframes in the dance
         enum DabkeSteps
@@ -82,8 +127,8 @@ namespace LebaneseKinect
         public LebaneseKinectGame()
         {
             graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferWidth = 720;
-            graphics.PreferredBackBufferHeight = 480;
+            graphics.PreferredBackBufferWidth = WINDOW_WIDTH;
+            graphics.PreferredBackBufferHeight = WINDOW_HEIGHT;
             Content.RootDirectory = "Content";
         }
 
@@ -110,7 +155,10 @@ namespace LebaneseKinect
                 kinect.Start();
                 Debug.WriteLineIf(debugging, kinect.Status);
                 kinect.SkeletonStream.Enable();
-                kinect.AllFramesReady += new EventHandler<AllFramesReadyEventArgs>(kinect_AllFramesReady);
+                //kinect.DepthStream.Enable(DepthImageFormat.Resolution640x480Fps30);
+                kinect.DepthStream.Enable(DepthImageFormat.Resolution80x60Fps30);
+                kinect.DepthFrameReady += new EventHandler<DepthImageFrameReadyEventArgs>(kinect_DepthFrameReady);
+                kinect.SkeletonFrameReady += new EventHandler<SkeletonFrameReadyEventArgs>(kinect_AllFramesReady);
             }
             catch (Exception e)
             {
@@ -143,7 +191,8 @@ namespace LebaneseKinect
             clips[2] = skinningData.AnimationClips["Take_003"];
             //AnimationClip clip = skinningData.AnimationClips["Take_001"];
 
-
+            font = Content.Load<SpriteFont>("myFont");
+            resultFont = Content.Load<SpriteFont>("resultFont");
             
             animationPlayers = new AnimationPlayer[numberOfAnimationPlayers];
             animationPlayersOffsets = new Matrix[numberOfAnimationPlayers];
@@ -155,12 +204,15 @@ namespace LebaneseKinect
                 // Animate all three dancers.  TODO: Have slightly varying dances to look more genuine.
                 //animationPlayers[i].StartClip(clip);
                 animationPlayers[i].StartClip(clips[i%3]);
+                //animationPlayers[i].CurrentClip.Keyframes[0].
 
                 //animationPlayersOffsets[i] = new Matrix();
                 float offsetX = initialStartingPosition + (spaceBetweenAnimationPlayers * (float)i);
                 animationPlayersOffsets[i] = Matrix.CreateTranslation(new Vector3(offsetX, 0.0f, 0.0f));
                 
             }
+
+            kinectDepthVisualizer = Content.Load<Effect>("KinectDepthVisualizer");
 
             // Create and load all the dance step icons
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -209,10 +261,12 @@ namespace LebaneseKinect
                 {
                     if (videoPlayer.State != MediaState.Stopped)
                     {
+                        // SPACEBAR stops the intro video, if it is playing...
                         videoPlayer.Stop();
                     }
                     else
                     {
+                        // Otherwise, SPACEBAR is our developer shortcut for telling the game we've completed a dance step
                         bSpaceKeyPressed = true;
                         currentDabke++;
                         if (currentDabke > DabkeSteps.WaitForReset)
@@ -227,21 +281,133 @@ namespace LebaneseKinect
             {
                 if (MediaPlayer.State != MediaState.Playing)
                 {
+                    MediaPlayer.IsRepeating = false;
                     MediaPlayer.Play(song);
                 }
 
                 // Place and update 3d models...
                 for (int i = 0; i < numberOfAnimationPlayers; i++)
                 {
+                    // Change the speed of the model's animation to match the music (using magic number)
                     TimeSpan temp = new TimeSpan(0, 0, 0, 0, (int)(gameTime.ElapsedGameTime.Milliseconds * 0.94)); //.8857
-                    //animationPlayers[i].Update(gameTime.ElapsedGameTime, true, animationPlayersOffsets[i]);
                     animationPlayers[i].Update(temp, true, animationPlayersOffsets[i]);
-                    //animationPlayers[i].
-                    //originalBoneTransform = testModel.Bones["Bip01_L_UpperArm"].Transform;
                 }
+
+                if (MediaPlayer.State == MediaState.Stopped)
+                {
+                    videoPlayer.Play(video);
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.Left) || Keyboard.GetState().IsKeyDown(Keys.Right))
+                {
+                    if (!bCrossoverKeyPressed)
+                    {
+                        bCrossoverKeyPressed = true;
+                        CrossoverTriggered();
+                    }
+                }
+                else
+                {
+                    bCrossoverKeyPressed = false;
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.Down))
+                {
+                    if (!bHomeKeyPressed)
+                    {
+                        bHomeKeyPressed = true;
+                        HomeTriggered();
+                    }
+                }
+                else
+                {
+                    bHomeKeyPressed = false;
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                {
+                    if (!bKickKeyPressed)
+                    {
+                        bKickKeyPressed = true;
+                        KickTriggered();
+                    }
+                }
+                else
+                {
+                    bKickKeyPressed = false;
+                }
+
+                // Check if animation looped
+                if (animationPlayers[0].CurrentTime.TotalMilliseconds < previousDanceAnimationTimeMS)
+                    danceAnimationEnd();
+                previousDanceAnimationTimeMS = animationPlayers[0].CurrentTime.TotalMilliseconds;
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
+            {
+                if (!bDebugKeyPressed)
+                {
+                    bDebugKeyPressed = true;
+                    bShowDebugText = !bShowDebugText;
+                }
+            }
+            else
+            {
+                bDebugKeyPressed = false;
             }
 
             base.Update(gameTime);  // Base XNA update...
+        }
+
+        private void danceAnimationEnd()
+        {
+            score = cross1Score + cross2Score + kickScore;
+            if (score > 1200)
+            {
+                resultColor = Color.Green;
+                resultString = "EXCELLENT!";
+                textFadeOut = new TimeSpan(0, 0, 2); // 2-second fadeout for result text
+            }
+            else if (score > 800)
+            {
+                resultColor = Color.Yellow;
+                resultString = "GOOD";
+                textFadeOut = new TimeSpan(0, 0, 2); // 2-second fadeout for result text
+            }
+            else if (score > 400)
+            {
+                resultColor = Color.Red;
+                resultString = "KEEP TRYING";
+                textFadeOut = new TimeSpan(0, 0, 2); // 2-second fadeout for result text
+            }
+
+            cross1Score = 0;
+            cross2Score = 0;
+            kickScore = 0;
+        }
+
+        private void CrossoverTriggered()
+        {
+            double diff1 = Math.Abs((animationPlayers[0].CurrentTime.Subtract(crossStepTime1)).TotalMilliseconds);
+            double diff2 = Math.Abs((animationPlayers[0].CurrentTime.Subtract(crossStepTime2)).TotalMilliseconds);
+
+            if(diff1 < diff2)
+                cross1Score = Math.Max((int)(500 - diff1), 0);
+            else
+                cross2Score = Math.Max((int)(500 - diff2), 0);
+        }
+
+        private void HomeTriggered()
+        {
+            //double diff1 = Math.Abs((animationPlayers[0].CurrentTime.Subtract(HomeTime1)).TotalMilliseconds);
+            //double diff2 = Math.Abs((animationPlayers[0].CurrentTime.Subtract(HomeTime2)).TotalMilliseconds);
+            //score = Math.Max(500 - (int)((diff1 < diff2) ? diff1 : diff2), 0);
+        }
+
+        private void KickTriggered()
+        {
+            double diff1 = Math.Abs((animationPlayers[0].CurrentTime.Subtract(KickTime)).TotalMilliseconds);
+            kickScore = Math.Max((int)(500 - diff1), 0);
         }
 
         /// <summary>
@@ -255,21 +421,30 @@ namespace LebaneseKinect
             GraphicsDevice device = graphics.GraphicsDevice;
             device.Clear(Color.CornflowerBlue);
 
-
+            // Intro video is playing...
             if (videoPlayer.State != MediaState.Stopped)
             {
                 spriteBatch.Begin();
                 Texture2D texture = videoPlayer.GetTexture();
                 if (texture != null)
                 {
-                    //spriteBatch.Draw(texture, new Rectangle(0, 0, 1280, 720),
-                    spriteBatch.Draw(texture, new Rectangle(0, 0, 720, 480),
-                        Color.White);
+                    // Draw intro video
+                    spriteBatch.Draw(texture, new Rectangle(0, 0, 720, 480), Color.White);
                 }
                 spriteBatch.End();
             }
-            else
+            else // Intro video is no longer playing...
             {
+                // Draw all the dance step icons.  Yellow if step has been performed.  White, otherwise.
+                //spriteBatch.Begin();
+                //spriteBatch.Draw(StepCrossOFF, buttonPositions[0], null, (currentDabke > DabkeSteps.Home1) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+                //spriteBatch.Draw(StepHomeOFF, buttonPositions[1], null, (currentDabke > DabkeSteps.Crossover1) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+                //spriteBatch.Draw(StepCrossOFF, buttonPositions[2], null, (currentDabke > DabkeSteps.Home2) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+                //spriteBatch.Draw(StepHomeOFF, buttonPositions[3], null, (currentDabke > DabkeSteps.Crossover2) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+                //spriteBatch.Draw(StepKickOFF, buttonPositions[4], null, (currentDabke > DabkeSteps.Home3) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+                //spriteBatch.Draw(StepHomeOFF, buttonPositions[5], null, (currentDabke > DabkeSteps.Kick) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+                //spriteBatch.End();
+
                 Vector3 partnerRightHand = new Vector3(0,0,0);
 
                 for (int i = 0; i < numberOfAnimationPlayers; i++)
@@ -314,18 +489,28 @@ namespace LebaneseKinect
                     }
                 }
 
+
+
                 // Draw debug skeleton dots dots on the screen if player is being tracked by Kinect 
                 //DrawSkeleton(spriteBatch, new Vector2(graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight), jointTexture);
 
-                // Draw all the dance step icons.  Yellow if step has been performed.  White, otherwise.
-                spriteBatch.Begin();
-                spriteBatch.Draw(StepCrossOFF, buttonPositions[0], null, (currentDabke > DabkeSteps.Home1) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
-                spriteBatch.Draw(StepHomeOFF, buttonPositions[1], null, (currentDabke > DabkeSteps.Crossover1) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
-                spriteBatch.Draw(StepCrossOFF, buttonPositions[2], null, (currentDabke > DabkeSteps.Home2) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
-                spriteBatch.Draw(StepHomeOFF, buttonPositions[3], null, (currentDabke > DabkeSteps.Crossover2) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
-                spriteBatch.Draw(StepKickOFF, buttonPositions[4], null, (currentDabke > DabkeSteps.Home3) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
-                spriteBatch.Draw(StepHomeOFF, buttonPositions[5], null, (currentDabke > DabkeSteps.Kick) ? Color.Yellow : Color.White, 0, Vector2.Zero, 0.5f, SpriteEffects.None, 0);
+                //spriteBatch.Begin();
+                DrawText();
+                //spriteBatch.End();
+
+                textFadeOut = textFadeOut.Subtract(gameTime.ElapsedGameTime);
+            }
+
+            if (depthTexture != null && needToRedrawBackBuffer)
+            {
+                //GraphicsDevice.SetRenderTarget(backBuffer);
+                //GraphicsDevice.Clear(ClearOptions.Target, Color.Black, 1.0f, 0);
+                depthTexture.SetData<short>(depthData);
+                spriteBatch.Begin(SpriteSortMode.Texture, BlendState.AlphaBlend, null, null, null, kinectDepthVisualizer);
+                //spriteBatch.Begin(SpriteSortMode.Immediate, null, null, null, null, kinectDepthVisualizer);
+                spriteBatch.Draw(depthTexture, shadowRect, Color.White);
                 spriteBatch.End();
+                //needToRedrawBackBuffer = false;
             }
 
             base.Draw(gameTime); // Draw base XNA stuff...
@@ -346,6 +531,32 @@ namespace LebaneseKinect
 #endif
         }
 
+        private void DrawDebugString(SpriteFont fontVal, Color colorVal, int x, int y, string stringVal)
+        {
+            Color textShadowColor = Color.Black;
+            textShadowColor.A = colorVal.A;
+            spriteBatch.DrawString(fontVal, stringVal, new Vector2(x + 2, y + 2), textShadowColor);
+            spriteBatch.DrawString(fontVal, stringVal, new Vector2(x, y), colorVal);
+        }
+
+        private void DrawText()
+        {
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied);
+
+            if (bShowDebugText)
+            {
+                displayScore = String.Format("{0,5}", score);
+                DrawDebugString(font, Color.White, 600, 10, displayScore);
+                DrawDebugString(font, Color.White, 20, 400, "Animation Time: " + animationPlayers[0].CurrentTime.Seconds.ToString() + "." + animationPlayers[0].CurrentTime.Milliseconds.ToString() + "s");
+            }
+
+            resultColor.A = (byte)Math.Max((255 * textFadeOut.TotalMilliseconds / 2000), 0);
+            Vector2 resultSize = resultFont.MeasureString(resultString);
+            DrawDebugString(resultFont, resultColor, (int)(WINDOW_WIDTH-resultSize.X)/2, 10, resultString);
+            spriteBatch.End();
+            //GraphicsDevice.BlendState = DefaultBlendState;
+        }
+
         // Reset the FSM to start
         void timer_Reset(object sender, EventArgs e)
         {
@@ -353,8 +564,49 @@ namespace LebaneseKinect
         }
 
 #if USE_KINECT
+        void kinect_DepthFrameReady(object sender, DepthImageFrameReadyEventArgs e)
+        {
+            //throw new NotImplementedException();
+            //DepthImageFrame frame = e.OpenDepthImageFrame();
+            using (DepthImageFrame frame = e.OpenDepthImageFrame())
+            {
+                if (frame == null)
+                    return;
+                if (frame != null)
+                {
+                    if (null == depthData || depthData.Length != frame.PixelDataLength)
+                    {
+                        depthData = new short[frame.PixelDataLength];
+
+                        depthTexture = new Texture2D(
+                            GraphicsDevice,
+                            frame.Width,
+                            frame.Height,
+                            false,
+                            SurfaceFormat.Bgra4444);
+
+                        //backBuffer = new RenderTarget2D(
+                        //    GraphicsDevice,
+                        //    frame.Width,
+                        //    frame.Height,
+                        //    false,
+                        //    SurfaceFormat.Color,
+                        //    DepthFormat.None,
+                        //    GraphicsDevice.PresentationParameters.MultiSampleCount,
+                        //    RenderTargetUsage.PreserveContents);
+
+                        spriteBatch = new SpriteBatch(GraphicsDevice);
+                    }
+
+
+                    frame.CopyPixelDataTo(depthData);
+                    needToRedrawBackBuffer = true;
+                }
+            }
+        }
+
         // This runs every time Kinect has an updated image
-        void kinect_AllFramesReady(object sender, AllFramesReadyEventArgs e)
+        void kinect_AllFramesReady(object sender, SkeletonFrameReadyEventArgs e)
         {
             //throw new NotImplementedException();
 
@@ -381,25 +633,92 @@ namespace LebaneseKinect
                     if (skel.TrackingState == SkeletonTrackingState.Tracked)
                     {
                         skeleton = skel;
+                        int headCounterTrigger = 0;
+                        int leftFootCounterTrigger = 0;
+                        int rightFootCounterTrigger = 0;
 
+                        #region HeadAndFootDirection
                         // Kinda cheating here... Keeping track of the head movement instead of relying on 
                         // the Kinect tracking crossed legs.  So, yes, you can cheat by bobbing up and down...
-                        if (previousHeadZ > skeleton.Joints[JointType.Head].Position.Y)
+                        if (previousHeadY > skeleton.Joints[JointType.Head].Position.Y)
                         {
                             // Head was moving down, but now is moving up.
-                            if (headZCounter > 0)
-                                headZCounter = -1;
+                            if (headYCounter > 0)
+                            {
+                                headCounterTrigger = headYCounter; // Store this number and see if it triggers a move
+                                headYCounter = -1;
+                            }
                             else
-                                headZCounter--;  // Head is still moving down.
+                                headYCounter--;  // Head is still moving down.
                         }
                         else
                         {
                             // Head was moving up, but now is moving down.
-                            if (headZCounter < 0)
-                                headZCounter = 1;
+                            if (headYCounter < 0)
+                            {
+                                headCounterTrigger = headYCounter; // Store this number and see if it triggers a move
+                                headYCounter = 1;
+                            }
                             else
-                                headZCounter++; // Head is still moving up.
+                                headYCounter++; // Head is still moving up.
                         }
+
+                        // Do the same thing for Left Foot
+                        if (previousLeftFootZ > skeleton.Joints[JointType.FootLeft].Position.Z)
+                        {
+                            // Left foot was moving away from Kinect, but is now mocing towards Kinect.
+                            if (leftFootZCounter > 0)
+                            {
+                                leftFootCounterTrigger = leftFootZCounter; // Store this number and see if it triggers a move
+                                leftFootZCounter = -1;
+                            }
+                            else
+                                leftFootZCounter--;  // Left foot still moving away from Kinect
+                        }
+                        else
+                        {
+                            // Left foot was moving towards Kinect, now is moving away from it.
+                            if (leftFootZCounter < 0)
+                            {
+                                leftFootCounterTrigger = leftFootZCounter; // Store this number and see if it triggers a move
+                                leftFootZCounter = 1;
+                            }
+                            else
+                                leftFootZCounter++; // Left foot is still away.
+                        }
+
+                        if (previousRightFootZ > skeleton.Joints[JointType.FootRight].Position.Z)
+                        {
+                            // Head was moving down, but now is moving up.
+                            if (rightFootZCounter > 0)
+                            {
+                                rightFootCounterTrigger = rightFootZCounter; // Store this number and see if it triggers a move
+                                rightFootZCounter = -1;
+                            }
+                            else
+                                rightFootZCounter--;  // Head is still moving down.
+                        }
+                        else
+                        {
+                            // Head was moving up, but now is moving down.
+                            if (rightFootZCounter < 0)
+                            {
+                                rightFootCounterTrigger = rightFootZCounter; // Store this number and see if it triggers a move
+                                rightFootZCounter = 1;
+                            }
+                            else
+                                rightFootZCounter++; // Head is still moving up.
+                        }
+                        #endregion
+
+                        if (headYCounter < -10)
+                            CrossoverTriggered();
+                        if (headYCounter > 10)
+                            HomeTriggered();
+                        if (rightFootCounterTrigger  < -5 || leftFootCounterTrigger < -5)
+                            KickTriggered();
+                        //if ((skeleton.Joints[JointType.FootLeft].Position.Z + .2f) < skeleton.Joints[JointType.KneeLeft].Position.Z)
+                        //    KickTriggered();
 
                         // Old, nasty code to advance horrible dance FSM.
                         switch (currentDabke)
@@ -407,28 +726,28 @@ namespace LebaneseKinect
                             case DabkeSteps.Home1:
                                 //if (Math.Abs(skeleton.Joints[JointType.FootRight].Position.X - skeleton.Joints[JointType.FootLeft].Position.X) < .025)
                                 //if (Math.Abs(skeleton.Joints[JointType.FootLeft].Position.Z - skeleton.Joints[JointType.KneeLeft].Position.Z) > .075)
-                                if (headZCounter < -10)
+                                if (headYCounter < -10)
                                     currentDabke++;
                                 break;
 
                             case DabkeSteps.Crossover1:
                                 //if ((skeleton.Joints[JointType.FootRight].Position.X - .05f) > skeleton.Joints[JointType.FootLeft].Position.X)
                                 //if (Math.Abs(skeleton.Joints[JointType.KneeRight].Position.Z - skeleton.Joints[JointType.Head].Position.Z) < .05)
-                                if (headZCounter > 10)
+                                if (headYCounter > 10)
                                     currentDabke++;
                                 break;
 
                             case DabkeSteps.Home2:
                                 //if ((skeleton.Joints[JointType.FootRight].Position.X + .05f) < skeleton.Joints[JointType.FootLeft].Position.X)
                                 //if (Math.Abs(skeleton.Joints[JointType.KneeRight].Position.Z - skeleton.Joints[JointType.Head].Position.Z) > 0.075)
-                                if (headZCounter < -5)
+                                if (headYCounter < -5)
                                     currentDabke++;
                                 break;
 
                             case DabkeSteps.Crossover2:
                                 //if ((skeleton.Joints[JointType.FootRight].Position.X - .05f) > skeleton.Joints[JointType.FootLeft].Position.X)
                                 //if (Math.Abs(skeleton.Joints[JointType.KneeRight].Position.Z - skeleton.Joints[JointType.Head].Position.Z) < .05)
-                                if (headZCounter > 5)
+                                if (headYCounter > 5)
                                     currentDabke++;
                                 break;
 
@@ -453,7 +772,9 @@ namespace LebaneseKinect
                                 break;
                         }
 
-                        previousHeadZ = skeleton.Joints[JointType.Head].Position.Y;
+                        previousHeadY = skeleton.Joints[JointType.Head].Position.Y;
+                        previousLeftFootZ = skeleton.Joints[JointType.FootLeft].Position.Z;
+                        previousRightFootZ = skeleton.Joints[JointType.FootRight].Position.Z;
                     }
                 }
             }

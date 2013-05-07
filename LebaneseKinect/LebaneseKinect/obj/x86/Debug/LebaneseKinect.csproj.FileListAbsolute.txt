@@ -19,6 +19,3 @@ C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinec
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\myFont.xnb
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\resultFont.xnb
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\KinectDepthVisualizer.xnb
-C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\backgrounddabke.xnb
-C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\woman.xnb
-C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\shadow.xnb

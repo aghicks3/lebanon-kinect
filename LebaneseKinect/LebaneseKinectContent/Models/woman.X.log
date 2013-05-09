@@ -1,0 +1,44 @@
+@0.000000: Output file name: C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinectContent\Models\woman.X
+@0.000075: kW X-port: 3ds max compatible version 9.00
+@10.108408: Saving node: ManMesh
+@10.226598: 880 skinned vertices in ManMesh
+@10.236111: Material 0 shader returned effect file name 'null'
+@10.237200: Saving node: Bip01
+@10.237323: Saving node: Bip01_Pelvis
+@10.237415: Saving node: Bip01_Spine
+@10.237502: Saving node: Bip01_Spine1
+@10.237586: Saving node: Bip01_Spine2
+@10.237672: Saving node: Bip01_Spine3
+@10.237756: Saving node: Bip01_Neck
+@10.237838: Saving node: Bip01_Head
+@10.237952: Saving node: Bip01_HeadNub
+@10.238042: Saving node: Bip01_L_Clavicle
+@10.238141: Saving node: Bip01_L_UpperArm
+@10.238226: Saving node: Bip01_L_Forearm
+@10.238314: Saving node: Bip01_L_Hand
+@10.238400: Saving node: Bip01_L_Finger0
+@10.238497: Saving node: Bip01_L_Finger0Nub
+@10.238586: Saving node: Bip01_R_Clavicle
+@10.238671: Saving node: Bip01_R_UpperArm
+@10.238755: Saving node: Bip01_R_Forearm
+@10.238843: Saving node: Bip01_R_Hand
+@10.238947: Saving node: Bip01_R_Finger0
+@10.239045: Saving node: Bip01_R_Finger0Nub
+@10.239134: Saving node: Bip01_L_Thigh
+@10.239219: Saving node: Bip01_L_Calf
+@10.239304: Saving node: Bip01_L_Foot
+@10.239388: Saving node: Bip01_L_Toe0
+@10.239476: Saving node: Bip01_L_Toe01
+@10.239560: Saving node: Bip01_L_Toe02
+@10.239658: Saving node: Bip01_L_Toe0Nub
+@10.239748: Saving node: Bip01_R_Thigh
+@10.239834: Saving node: Bip01_R_Calf
+@10.239937: Saving node: Bip01_R_Foot
+@10.240025: Saving node: Bip01_R_Toe0
+@10.240113: Saving node: Bip01_R_Toe01
+@10.240200: Saving node: Bip01_R_Toe02
+@10.240299: Saving node: Bip01_R_Toe0Nub
+@10.240395: Extracting animation Take_001.
+@13.630543: Extracting animation Take_003.
+@15.431833: Extracting animation Take_002.
+@17.131722: File C:\Users\Will\Documents\CSC495\dabkeTexture.png has same mod time as C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinectContent\Models\dabkeTexture.png; not copying.

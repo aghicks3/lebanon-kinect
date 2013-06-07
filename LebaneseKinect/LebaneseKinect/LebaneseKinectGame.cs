@@ -73,19 +73,29 @@ namespace LebaneseKinect
         Rectangle shadowRect = new Rectangle(0, 0, 64, 64);
 
         // FSM variables
-        SpriteBatch spriteBatch;
+        SpriteBatch spriteBatch; //Draws all 2d images and text
         Texture2D jointTexture, shadowTexture;
         Texture2D StepHomeOFF, StepCrossOFF, StepKickOFF;
         Timer delay = new Timer();
-        Vector2[] buttonPositions = { new Vector2(5, 5), new Vector2(75, 5), new Vector2(145, 5), new Vector2(215, 5), new Vector2(285, 5), new Vector2(355, 5) };
+        Vector2[] buttonPositions = { new Vector2(5, 5), new Vector2(75, 5), new Vector2(145, 5), new Vector2(215, 5), new Vector2(285, 5), new Vector2(355, 5) }; //currently unused
+        
+        /* Keyboard controls
+         *  Up arrow: kick
+         *  Down arrow: home
+         *  Left/Right Arrow: cross
+         */
+        
         bool bSpaceKeyPressed = false;
         bool bCrossoverKeyPressed = false;
         bool bHomeKeyPressed = false;
         bool bKickKeyPressed = false;
-        bool bDebugKeyPressed = false;
+        bool bDebugKeyPressed = false; //Display text, default is true
         bool bShowDebugText = true;
 
-        TimeSpan songDuration = new TimeSpan(0, 3, 6); // Song lasts 3 min, 6 sec
+        /* Calculates the difference between the time at which it detects a user's action, and when the dancing animation does the same action.
+         * TimeSpan(0, 0, 0, X, Y), X is seconds, Y is milliseconds.
+         */
+        TimeSpan songDuration = new TimeSpan(0, 3, 6); // Song lasts 3 min, 6 sec. NEEDS TO RESET THE PROGRAM AT THE END.
         TimeSpan stopRepeatingDance = new TimeSpan(0, 3, 2); // Stop repeating dance at 3 min, 2 sec
         TimeSpan textFadeOut = new TimeSpan(0, 0, 0); // 2-second fadeout for result text
         TimeSpan crossStepTime1 = new TimeSpan(0,0,0,0,600);
@@ -94,7 +104,6 @@ namespace LebaneseKinect
         TimeSpan HomeTime2 = new TimeSpan(0, 0, 0, 2, 250);
         TimeSpan KickTime = new TimeSpan(0, 0, 0, 2, 700);
         TimeSpan HomeTime3 = new TimeSpan(0, 0, 0, 3, 200);
-        //TimeSpan animationDuration;
 
         SpriteFont font;
         SpriteFont resultFont;
@@ -504,6 +513,8 @@ namespace LebaneseKinect
                 eventsTriggeredList.Remove(eventsTriggeredList[0]);
         }
 
+        /*Calculates difference between player action time and dancer's action time.
+         */
         private void KickTriggered()
         {
             double diff1 = Math.Abs((animationPlayers[0].CurrentTime.Subtract(KickTime)).TotalMilliseconds);

@@ -2,7 +2,7 @@
 <XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics" xmlns:Framework="Microsoft.Xna.Framework">
   <Asset Type="Graphics:NodeContent">
     <Identity>
-      <SourceFilename>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinectContent\Models\woman.X</SourceFilename>
+      <SourceFilename>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\Models\woman.X</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -15604,7 +15604,7 @@
   <Resources>
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\LebaneseKinectContent\Models\woman.X</SourceFilename>
+        <SourceFilename>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\Models\woman.X</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>

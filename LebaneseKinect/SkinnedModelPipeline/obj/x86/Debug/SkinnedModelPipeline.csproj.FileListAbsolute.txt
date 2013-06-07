@@ -12,3 +12,10 @@ C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinec
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModelPipeline\obj\x86\Debug\SkinnedModelPipeline.dll
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModelPipeline\obj\x86\Debug\SkinnedModelPipeline.pdb
 C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinect\SkinnedModelPipeline\obj\x86\Debug\SkinnedModelPipeline.csprojResolveAssemblyReference.cache
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModelPipeline.dll
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModelPipeline.pdb
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModel.dll
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModel.pdb
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModelPipeline\obj\x86\Debug\SkinnedModelPipeline.csprojResolveAssemblyReference.cache
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModelPipeline\obj\x86\Debug\SkinnedModelPipeline.dll
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModelPipeline\obj\x86\Debug\SkinnedModelPipeline.pdb

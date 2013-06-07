@@ -1,4 +1,4 @@
-#define USE_KINECT // Comment out this line to test without a Kinect!!!
+//#define USE_KINECT // Comment out this line to test without a Kinect!!!
 
 using System;
 using System.Diagnostics; 
@@ -140,7 +140,7 @@ namespace LebaneseKinect
             graphics.PreferredBackBufferHeight = WINDOW_HEIGHT;
             graphics.PreparingDeviceSettings += this.GraphicsDevicePreparingDeviceSettings;
             graphics.SynchronizeWithVerticalRetrace = true;
-            graphics.IsFullScreen = true;
+            //graphics.IsFullScreen = true;
             Content.RootDirectory = "Content";
             eventsTriggeredList = new List<string>();
             for (int i = 0; i < numberOfAnimationPlayers; i++)
@@ -572,20 +572,25 @@ namespace LebaneseKinect
                 //spriteBatch.End();
 
 
-
+#if USE_KINECT
                 // If we don't have a depth target, exit
                 if (this.depthTexture == null)
                 {
                     return;
                 }
+#else
+                this.needToRedrawBackBuffer = true;
+#endif
 
                 //if (depthTexture != null && needToRedrawBackBuffer)
                 if (this.needToRedrawBackBuffer)
                 {
                     GraphicsDevice.SetRenderTarget(backBuffer);
                     GraphicsDevice.Clear(ClearOptions.Target, Color.Black, 1.0f, 0);
+#if USE_KINECT
                     depthTexture.SetData<short>(depthData);
                     SharedSpriteBatch.Begin(SpriteSortMode.Texture, BlendState.AlphaBlend, null, null, null, kinectDepthVisualizer);
+#endif
                     spriteBatch.Begin();
                     spriteBatch.Draw(backgroundDabke, backgroundRect, Color.White);
 
@@ -594,19 +599,22 @@ namespace LebaneseKinect
                         spriteBatch.Draw(shadowTexture, shadowRects[i], Color.White);
                     }
                     spriteBatch.End();
-                    //spriteBatch.Begin(SpriteSortMode.Immediate, null, null, null, null, kinectDepthVisualizer);
-
+#if USE_KINECT
+                    spriteBatch.Begin(SpriteSortMode.Immediate, null, null, null, null, kinectDepthVisualizer);
+#endif
                     DrawModels();
-
+#if USE_KINECT
                     SharedSpriteBatch.Draw(depthTexture, Vector2.Zero, Color.White);
+#endif
                     DrawText();
                     textFadeOut = textFadeOut.Subtract(gameTime.ElapsedGameTime);
-
+#if USE_KINECT
                     SharedSpriteBatch.End();
+#endif
                     GraphicsDevice.SetRenderTarget(null);
                     needToRedrawBackBuffer = false;
                 }
-
+#if USE_KINECT
                 SharedSpriteBatch.Begin();
                 SharedSpriteBatch.Draw(
                     this.backBuffer,
@@ -614,6 +622,7 @@ namespace LebaneseKinect
                     null,
                     Color.White);
                 SharedSpriteBatch.End();
+#endif
             }
 
             base.Draw(gameTime); // Draw base XNA stuff...

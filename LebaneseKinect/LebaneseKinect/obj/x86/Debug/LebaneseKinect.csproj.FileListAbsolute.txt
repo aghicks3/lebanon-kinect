@@ -70,3 +70,5 @@ C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect
 C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\obj\x86\Debug\LebaneseKinect.exe
 C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\obj\x86\Debug\LebaneseKinect.pdb
+C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.xnb
+C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.wmv

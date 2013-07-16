@@ -1,4 +1,4 @@
-//#define USE_KINECT // Comment out this line to test without a Kinect!!!
+#define USE_KINECT // Comment out this line to test without a Kinect!!!
 
 using System;
 using System.Diagnostics; 
@@ -76,7 +76,7 @@ namespace LebaneseKinect
         SpriteBatch spriteBatch; //Draws all 2d images and text
         Texture2D jointTexture, shadowTexture;
         Texture2D StepHomeOFF, StepCrossOFF, StepKickOFF;
-        Timer delay = new Timer();
+        Stopwatch videoTime = new Stopwatch();
         Vector2[] buttonPositions = { new Vector2(5, 5), new Vector2(75, 5), new Vector2(145, 5), new Vector2(215, 5), new Vector2(285, 5), new Vector2(355, 5) }; //currently unused
         
         /* Keyboard controls
@@ -95,6 +95,7 @@ namespace LebaneseKinect
         /* Calculates the difference between the time at which it detects a user's action, and when the dancing animation does the same action.
          * TimeSpan(0, 0, 0, X, Y), X is seconds, Y is milliseconds.
          */
+        //Expected dance move times;
         TimeSpan songDuration = new TimeSpan(0, 3, 6); // Song lasts 3 min, 6 sec. NEEDS TO RESET THE PROGRAM AT THE END.
         TimeSpan stopRepeatingDance = new TimeSpan(0, 3, 2); // Stop repeating dance at 3 min, 2 sec
         TimeSpan textFadeOut = new TimeSpan(0, 0, 0); // 2-second fadeout for result text
@@ -104,6 +105,12 @@ namespace LebaneseKinect
         TimeSpan HomeTime2 = new TimeSpan(0, 0, 0, 2, 250);
         TimeSpan KickTime = new TimeSpan(0, 0, 0, 2, 700);
         TimeSpan HomeTime3 = new TimeSpan(0, 0, 0, 3, 200);
+
+        //First Male move
+        TimeSpan LeftKneeLift1 = new TimeSpan(0,0,0,5,170);
+        TimeSpan RightKneeLift1 = new TimeSpan(0,0,0,6,320);
+        TimeSpan LeftKneeLift2 = new TimeSpan(0, 0, 0, 7, 570);
+        TimeSpan RightKneeLift2 = new TimeSpan(0, 0, 0, 8, 450);
 
         SpriteFont font;
         SpriteFont resultFont;
@@ -117,6 +124,7 @@ namespace LebaneseKinect
         int cross1Score = 0;
         int cross2Score = 0;
         int kickScore = 0;
+        int tempScore = 0;
         double previousDanceAnimationTimeMS = 0;
 
         Texture2D backgroundDabke;
@@ -141,6 +149,8 @@ namespace LebaneseKinect
         protected Song song;
         VideoPlayer videoPlayer;
         Video video;
+        Video video1;
+        bool introPlaying = true;
 
         public LebaneseKinectGame()
         {
@@ -288,6 +298,7 @@ namespace LebaneseKinect
             //MediaPlayer.Play(song);
 
             video = Content.Load<Video>("Video\\tempIntro");
+            video1 = Content.Load<Video>("Video\\Lebanon"); 
             videoPlayer = new VideoPlayer();
             videoPlayer.Play(video);
         }
@@ -329,10 +340,14 @@ namespace LebaneseKinect
             {
                 if (!bSpaceKeyPressed)
                 {
-                    if (videoPlayer.State != MediaState.Stopped)
+                    if (introPlaying)
                     {
                         // SPACEBAR stops the intro video, if it is playing...
-                        videoPlayer.Stop();
+                        videoPlayer.Dispose();
+                        videoPlayer = new VideoPlayer();
+                        videoPlayer.Play(video1);
+                        introPlaying = false;
+                        videoTime.Start();    
                     }
                     else
                     {
@@ -347,13 +362,8 @@ namespace LebaneseKinect
             else
                 bSpaceKeyPressed = false;
 
-            if (videoPlayer.State == MediaState.Stopped)
+            if (!introPlaying)
             {
-                if (MediaPlayer.State != MediaState.Playing)
-                {
-                    MediaPlayer.IsRepeating = false;
-                    MediaPlayer.Play(song);
-                }
 
                 // Place and update 3d models...
                 for (int i = 0; i < numberOfAnimationPlayers; i++)
@@ -363,10 +373,6 @@ namespace LebaneseKinect
                     animationPlayers[i].Update(temp, true, animationPlayersOffsets[i]);
                 }
 
-                if (MediaPlayer.State == MediaState.Stopped)
-                {
-                    videoPlayer.Play(video);
-                }
 
                 if (Keyboard.GetState().IsKeyDown(Keys.Left) || Keyboard.GetState().IsKeyDown(Keys.Right))
                 {
@@ -441,7 +447,9 @@ namespace LebaneseKinect
 
         private void danceAnimationEnd()
         {
-            setScore = cross1Score + cross2Score + kickScore;
+            //setScore = cross1Score + cross2Score + kickScore;
+            setScore = tempScore;
+            tempScore = 0;
             if (setScore > 1500)
             {
                 resultColor = Color.Green;
@@ -476,12 +484,30 @@ namespace LebaneseKinect
             kickScore = 0;
         }
 
+        private void LeftKneeTriggered()
+        {
+            TimeSpan currentTime = videoTime.Elapsed;
+            double diff1 = Math.Abs((currentTime.Subtract(LeftKneeLift1).TotalMilliseconds);
+            double diff2 = Math.Abs((currentTime.Subtract(LeftKneeLift2).TotalMilliseconds);
+
+            if(diff1 < 600)
+            {
+                tempScore +=Math.Max((int)(600 - diff1), 0);
+            }
+
+            else if (diff2 < 600)
+            {
+                tempScore +=Math.Max((int)(600 - diff2), 0);
+            }
+            tempScore *= 1000000;
+        }
+
         private void CrossoverTriggered()
         {
-            double diff1 = Math.Abs((animationPlayers[0].CurrentTime.Subtract(crossStepTime1)).TotalMilliseconds);
-            double diff2 = Math.Abs((animationPlayers[0].CurrentTime.Subtract(crossStepTime2)).TotalMilliseconds);
+            TimeSpan currentTime = videoTime.Elapsed;
+            double diff1 = Math.Abs((currentTime.Subtract(crossStepTime1)).TotalMilliseconds);
+            double diff2 = Math.Abs((currentTime.Subtract(crossStepTime2)).TotalMilliseconds);
 
-            TimeSpan currentTime = animationPlayers[0].CurrentTime;
             double halfTime = animationPlayers[0].CurrentClip.Duration.TotalMilliseconds / 2.0;
             if (currentTime.TotalMilliseconds > halfTime)
             {
@@ -546,7 +572,7 @@ namespace LebaneseKinect
             //device.Clear(Color.CornflowerBlue);
 
             // Intro video is playing...
-            if (videoPlayer.State != MediaState.Stopped)
+            if (introPlaying)
             {
                 spriteBatch.Begin();
                 Texture2D texture = videoPlayer.GetTexture();
@@ -597,14 +623,23 @@ namespace LebaneseKinect
                 if (this.needToRedrawBackBuffer)
                 {
                     GraphicsDevice.SetRenderTarget(backBuffer);
-                    GraphicsDevice.Clear(ClearOptions.Target, Color.Black, 1.0f, 0);
+                    //GraphicsDevice.Clear(ClearOptions.Target, Color.Black, 1.0f, 0);
 #if USE_KINECT
                     depthTexture.SetData<short>(depthData);
                     SharedSpriteBatch.Begin(SpriteSortMode.Texture, BlendState.AlphaBlend, null, null, null, kinectDepthVisualizer);
 #endif
                     spriteBatch.Begin();
-                    spriteBatch.Draw(backgroundDabke, backgroundRect, Color.White);
+              
+                    Texture2D texture = videoPlayer.GetTexture();
+                    if (texture != null)
+                    {
+                        // Draw intro video
+                        //spriteBatch.Draw(texture, new Rectangle(0, 0, 720, 480), Color.White);
+                        spriteBatch.Draw(texture, new Rectangle(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT), Color.White);
+                    }
+                    spriteBatch.End();
 
+                    /*spriteBatch.Begin();
                     for(int i=0; i<numberOfAnimationPlayers; i++)
                     {
                         spriteBatch.Draw(shadowTexture, shadowRects[i], Color.White);
@@ -613,7 +648,7 @@ namespace LebaneseKinect
 #if USE_KINECT
                     spriteBatch.Begin(SpriteSortMode.Immediate, null, null, null, null, kinectDepthVisualizer);
 #endif
-                    DrawModels();
+                   DrawModels();*/
 #if USE_KINECT
                     SharedSpriteBatch.Draw(depthTexture, Vector2.Zero, Color.White);
 #endif
@@ -912,6 +947,9 @@ namespace LebaneseKinect
 
                         if (headYCounter < -10)
                             CrossoverTriggered();
+                        if( (skeleton.Joints[JointType.KneeLeft].Position.Y - skeleton.Joints[JointType.KneeRight].Position.Y) > 30
+                            && Math.Abs(skeleton.Joints[JointType.KneeLeft].Position.X - skeleton.Joints[JointType.KneeRight].Position.X) > 15)
+                            LeftKneeTriggered();
                         if (headYCounter > 10)
                             HomeTriggered();
                         if (rightFootCounterTrigger  < -5 || leftFootCounterTrigger < -5)
@@ -963,10 +1001,10 @@ namespace LebaneseKinect
                             case DabkeSteps.WaitForReset:
 
                                 currentDabke = DabkeSteps.Home1;
-                                //delay.Tick += new EventHandler(timer_Reset); // Everytime timer ticks, timer_Tick will be called
-                                //delay.Interval = (1000) * (1);             // Timer will tick evert 10 seconds
-                                //delay.Enabled = true;                       // Enable the timer
-                                //delay.Start();                              // Start the timer
+                                //videoTime.Tick += new EventHandler(timer_Reset); // Everytime timer ticks, timer_Tick will be called
+                                //videoTime.Interval = (1000) * (1);             // Timer will tick every 10 seconds
+                                //videoTime.Enabled = true;                       // Enable the timer
+                                //videoTime.Start();                              // Start the timer
 
                                 break;
                         }

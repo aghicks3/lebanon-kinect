@@ -72,3 +72,5 @@ C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect
 C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\obj\x86\Debug\LebaneseKinect.pdb
 C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.xnb
 C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.wmv
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.xnb
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.wmv

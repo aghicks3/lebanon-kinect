@@ -96,21 +96,27 @@ namespace LebaneseKinect
          * TimeSpan(0, 0, 0, X, Y), X is seconds, Y is milliseconds.
          */
         //Expected dance move times;
-        TimeSpan songDuration = new TimeSpan(0, 3, 6); // Song lasts 3 min, 6 sec. NEEDS TO RESET THE PROGRAM AT THE END.
-        TimeSpan stopRepeatingDance = new TimeSpan(0, 3, 2); // Stop repeating dance at 3 min, 2 sec
         TimeSpan textFadeOut = new TimeSpan(0, 0, 0); // 2-second fadeout for result text
-        TimeSpan crossStepTime1 = new TimeSpan(0,0,0,0,600);
-        TimeSpan HomeTime1 = new TimeSpan(0, 0, 0, 1, 150);
-        TimeSpan crossStepTime2 = new TimeSpan(0, 0, 0, 1, 700);
-        TimeSpan HomeTime2 = new TimeSpan(0, 0, 0, 2, 250);
-        TimeSpan KickTime = new TimeSpan(0, 0, 0, 2, 700);
-        TimeSpan HomeTime3 = new TimeSpan(0, 0, 0, 3, 200);
+        
 
+        int stepsDone = 0;
+        //
+        TimeSpan stepFinished = new TimeSpan(0,0,3,0,0);
         //First Male move
-        TimeSpan LeftKneeLift1 = new TimeSpan(0,0,0,5,170);
-        TimeSpan RightKneeLift1 = new TimeSpan(0,0,0,6,320);
-        TimeSpan LeftKneeLift2 = new TimeSpan(0, 0, 0, 7, 570);
-        TimeSpan RightKneeLift2 = new TimeSpan(0, 0, 0, 8, 450);
+        TimeSpan RightKneeLift1;
+        TimeSpan LeftKneeLift1;
+        TimeSpan RightKneeLift2;
+        TimeSpan LeftKneeLift2;
+        TimeSpan introScore;
+
+        public void setTime()
+        {
+            LeftKneeLift1 = new TimeSpan(0, 0, 0, 6, 562);
+            RightKneeLift1 = new TimeSpan(0, 0, 0, 7, 602);
+            LeftKneeLift2 = new TimeSpan(0, 0, 0, 8, 574);
+            RightKneeLift2 = new TimeSpan(0, 0, 0, 9, 731);
+            introScore = new TimeSpan(0,0,0,10,451);
+        }
 
         SpriteFont font;
         SpriteFont resultFont;
@@ -121,9 +127,6 @@ namespace LebaneseKinect
         int totalScore = 0;
         int setScore = 0;
         int displayScore = 0;
-        int cross1Score = 0;
-        int cross2Score = 0;
-        int kickScore = 0;
         int tempScore = 0;
         double previousDanceAnimationTimeMS = 0;
 
@@ -204,7 +207,6 @@ namespace LebaneseKinect
                 Debug.WriteLineIf(debugging, kinect.Status);
                 kinect.SkeletonStream.Enable();
                 kinect.DepthStream.Enable(DepthImageFormat.Resolution640x480Fps30);
-                //kinect.DepthStream.Enable(DepthImageFormat.Resolution80x60Fps30);
                 kinect.DepthFrameReady += new EventHandler<DepthImageFrameReadyEventArgs>(kinect_DepthFrameReady);
                 kinect.SkeletonFrameReady += new EventHandler<SkeletonFrameReadyEventArgs>(kinect_AllFramesReady);
             }
@@ -347,15 +349,15 @@ namespace LebaneseKinect
                         videoPlayer = new VideoPlayer();
                         videoPlayer.Play(video1);
                         introPlaying = false;
+                        setTime();
                         videoTime.Start();    
                     }
                     else
                     {
-                        // Otherwise, SPACEBAR is our developer shortcut for telling the game we've completed a dance step
+                        // Otherwise, SPACEBAR is our developer shortcut for getting the current time
+                        int currentTime = (int)videoTime.ElapsedMilliseconds;
+                        Debug.WriteLine( "\nCurrent time in milliseconds:" +currentTime+ "\n");
                         bSpaceKeyPressed = true;
-                        currentDabke++;
-                        if (currentDabke > DabkeSteps.WaitForReset)
-                            currentDabke = 0;
                     }
                 }
             }
@@ -365,21 +367,11 @@ namespace LebaneseKinect
             if (!introPlaying)
             {
 
-                // Place and update 3d models...
-                for (int i = 0; i < numberOfAnimationPlayers; i++)
-                {
-                    // Change the speed of the model's animation to match the music (using magic number)
-                    TimeSpan temp = new TimeSpan(0, 0, 0, 0, (int)(gameTime.ElapsedGameTime.Milliseconds * 0.9375)); //.8857 //0.94
-                    animationPlayers[i].Update(temp, true, animationPlayersOffsets[i]);
-                }
-
-
                 if (Keyboard.GetState().IsKeyDown(Keys.Left) || Keyboard.GetState().IsKeyDown(Keys.Right))
                 {
                     if (!bCrossoverKeyPressed)
                     {
                         bCrossoverKeyPressed = true;
-                        CrossoverTriggered();
                     }
                 }
                 else
@@ -392,7 +384,6 @@ namespace LebaneseKinect
                     if (!bHomeKeyPressed)
                     {
                         bHomeKeyPressed = true;
-                        HomeTriggered();
                     }
                 }
                 else
@@ -405,7 +396,6 @@ namespace LebaneseKinect
                     if (!bKickKeyPressed)
                     {
                         bKickKeyPressed = true;
-                        KickTriggered();
                     }
                 }
                 else
@@ -413,14 +403,34 @@ namespace LebaneseKinect
                     bKickKeyPressed = false;
                 }
 
-                // Check if animation looped
-                double halfTime = animationPlayers[0].CurrentClip.Duration.TotalMilliseconds / 2.0;
-                if (animationPlayers[0].CurrentTime.TotalMilliseconds < previousDanceAnimationTimeMS ||
-                    (previousDanceAnimationTimeMS < halfTime && animationPlayers[0].CurrentTime.TotalMilliseconds > halfTime))
+
+                /*Check each step to see if it is hit*/
+                if (LeftKneeLift1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
                 {
-                    danceAnimationEnd();
+                    LeftKneeLift1 = stepFinished;
+                    stepsDone++;
                 }
-                previousDanceAnimationTimeMS = animationPlayers[0].CurrentTime.TotalMilliseconds;
+                if (LeftKneeLift2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                {
+                    LeftKneeLift2 = stepFinished;
+                    stepsDone++;
+                }
+                if (RightKneeLift1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                {
+                    RightKneeLift1 = stepFinished;
+                    stepsDone++;
+                }
+                if (RightKneeLift2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                {
+                    RightKneeLift2 = stepFinished;
+                    stepsDone++;
+                }
+                if (introScore.Subtract(videoTime.Elapsed).Milliseconds < 0)
+                {
+                    introScore = stepFinished;
+                    scorePlayer();
+                }
+                /*Finish checking steps*/
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.D))
@@ -445,24 +455,24 @@ namespace LebaneseKinect
             base.Update(gameTime);  // Base XNA update...
         }
 
-        private void danceAnimationEnd()
+        //formerly danceAnimationEnd
+        private void scorePlayer()
         {
-            //setScore = cross1Score + cross2Score + kickScore;
             setScore = tempScore;
             tempScore = 0;
-            if (setScore > 1500)
+            if (setScore > (stepsDone*300))
             {
                 resultColor = Color.Green;
                 resultString = "EXCELLENT!";
                 textFadeOut = new TimeSpan(0, 0, 2); // 2-second fadeout for result text
             }
-            else if (setScore > 1000)
+            else if (setScore > (stepsDone*200))
             {
                 resultColor = Color.Yellow;
                 resultString = "GOOD";
                 textFadeOut = new TimeSpan(0, 0, 2); // 2-second fadeout for result text
             }
-            else if (setScore > 400)
+            else if (setScore > (stepsDone*100))
             {
                 resultColor = Color.Red;
                 resultString = "KEEP TRYING";
@@ -479,84 +489,88 @@ namespace LebaneseKinect
                 displayRecentScoreText = " ";
                 setScore = 0;
             }
-            cross1Score = 0;
-            cross2Score = 0;
-            kickScore = 0;
         }
 
         private void LeftKneeTriggered()
         {
             TimeSpan currentTime = videoTime.Elapsed;
-            double diff1 = Math.Abs((currentTime.Subtract(LeftKneeLift1).TotalMilliseconds);
-            double diff2 = Math.Abs((currentTime.Subtract(LeftKneeLift2).TotalMilliseconds);
+            double diff1 = Math.Abs((currentTime.Subtract(LeftKneeLift1).TotalMilliseconds));
+            double diff2 = Math.Abs((currentTime.Subtract(LeftKneeLift2).TotalMilliseconds));
 
             if(diff1 < 600)
             {
-                tempScore +=Math.Max((int)(600 - diff1), 0);
+                int earnedScore = Math.Max((int)(600 - diff1), 0);
+                if (earnedScore > 400)
+                {
+                    tempScore += 400;
+                }
+                else
+                {
+                    tempScore += Math.Max((int)(600 - diff1), 0);
+                }
+                LeftKneeLift1 = stepFinished;
+                stepsDone++;
             }
 
             else if (diff2 < 600)
             {
-                tempScore +=Math.Max((int)(600 - diff2), 0);
+                int earnedScore = Math.Max((int)(600 - diff2), 0);
+                if (earnedScore > 400)
+                {
+                    tempScore += 400;
+                }
+                else
+                {
+                    tempScore += Math.Max((int)(600 - diff2), 0);
+                }
+                LeftKneeLift2 = stepFinished;
+                stepsDone++;
             }
-            tempScore *= 1000000;
         }
-
-        private void CrossoverTriggered()
+        private void RightKneeTriggered()
         {
             TimeSpan currentTime = videoTime.Elapsed;
-            double diff1 = Math.Abs((currentTime.Subtract(crossStepTime1)).TotalMilliseconds);
-            double diff2 = Math.Abs((currentTime.Subtract(crossStepTime2)).TotalMilliseconds);
+            double diff1 = Math.Abs((currentTime.Subtract(RightKneeLift1).TotalMilliseconds));
+            double diff2 = Math.Abs((currentTime.Subtract(RightKneeLift2).TotalMilliseconds));
 
-            double halfTime = animationPlayers[0].CurrentClip.Duration.TotalMilliseconds / 2.0;
-            if (currentTime.TotalMilliseconds > halfTime)
+            if (diff1 < 600)
             {
-                diff1 = Math.Abs(diff1 - halfTime);
-                diff2 = Math.Abs(diff2 - halfTime);
+                int earnedScore = Math.Max((int)(600 - diff1), 0);
+                if (earnedScore > 400)
+                {
+                    tempScore += 400;
+                }
+                else
+                {
+                    tempScore += Math.Max((int)(600 - diff1), 0);
+                }
+                RightKneeLift1 = stepFinished;
+                stepsDone++;
             }
 
-            if(diff1 < diff2)
-                cross1Score = Math.Max((int)(600 - diff1), 0);
-            else
-                cross2Score = Math.Max((int)(600 - diff2), 0);
-
-            AddEventTriggeredText("CrossoverTriggered: " + cross1Score + " ... " + cross2Score);
+            else if (diff2 < 600)
+            {
+                int earnedScore = Math.Max((int)(600 - diff2), 0);
+                if (earnedScore > 400)
+                {
+                    tempScore += 400;
+                }
+                else
+                {
+                    tempScore += Math.Max((int)(600 - diff2), 0);
+                }
+                RightKneeLift2 = stepFinished;
+                stepsDone++;
+            }
         }
 
-        private void HomeTriggered()
-        {
-            //double diff1 = Math.Abs((animationPlayers[0].CurrentTime.Subtract(HomeTime1)).TotalMilliseconds);
-            //double diff2 = Math.Abs((animationPlayers[0].CurrentTime.Subtract(HomeTime2)).TotalMilliseconds);
-            //score = Math.Max(500 - (int)((diff1 < diff2) ? diff1 : diff2), 0);
-
-            AddEventTriggeredText("HomeTriggered");
-        }
+        
 
         private void AddEventTriggeredText(string val)
         {
             eventsTriggeredList.Add(val);
             if (eventsTriggeredList.Count > 10)
                 eventsTriggeredList.Remove(eventsTriggeredList[0]);
-        }
-
-        /*Calculates difference between player action time and dancer's action time.
-         */
-        private void KickTriggered()
-        {
-            double diff1 = Math.Abs((animationPlayers[0].CurrentTime.Subtract(KickTime)).TotalMilliseconds);
-
-
-            TimeSpan currentTime = animationPlayers[0].CurrentTime;
-            double halfTime = animationPlayers[0].CurrentClip.Duration.TotalMilliseconds / 2.0;
-            if (currentTime.TotalMilliseconds > halfTime)
-            {
-                diff1 = Math.Abs(diff1 - halfTime);
-            }
-
-
-            kickScore = Math.Max((int)(600 - diff1), 0);
-
-            AddEventTriggeredText("KickTriggered: " + kickScore);
         }
 
         /// <summary>
@@ -944,18 +958,18 @@ namespace LebaneseKinect
                                 rightFootZCounter++; // Head is still moving up.
                         }
                         #endregion
+                        float lky = skeleton.Joints[JointType.KneeLeft].Position.Y;
+                        float lkx = skeleton.Joints[JointType.KneeLeft].Position.X;
+                        float rky = skeleton.Joints[JointType.KneeRight].Position.Y;
+                        float rkx = skeleton.Joints[JointType.KneeRight].Position.X;
+                        TimeSpan time = videoTime.Elapsed;
 
-                        if (headYCounter < -10)
-                            CrossoverTriggered();
-                        if( (skeleton.Joints[JointType.KneeLeft].Position.Y - skeleton.Joints[JointType.KneeRight].Position.Y) > 30
-                            && Math.Abs(skeleton.Joints[JointType.KneeLeft].Position.X - skeleton.Joints[JointType.KneeRight].Position.X) > 15)
+                        if( (skeleton.Joints[JointType.KneeLeft].Position.Y - skeleton.Joints[JointType.KneeRight].Position.Y) > .21
+                            && Math.Abs(skeleton.Joints[JointType.KneeLeft].Position.X - skeleton.Joints[JointType.KneeRight].Position.X) > .25)
                             LeftKneeTriggered();
-                        if (headYCounter > 10)
-                            HomeTriggered();
-                        if (rightFootCounterTrigger  < -5 || leftFootCounterTrigger < -5)
-                            KickTriggered();
-                        //if ((skeleton.Joints[JointType.FootLeft].Position.Z + .2f) < skeleton.Joints[JointType.KneeLeft].Position.Z)
-                        //    KickTriggered();
+                        if ((skeleton.Joints[JointType.KneeLeft].Position.Y - skeleton.Joints[JointType.KneeRight].Position.Y) < -.21
+                            && Math.Abs(skeleton.Joints[JointType.KneeLeft].Position.X - skeleton.Joints[JointType.KneeRight].Position.X) > .25)
+                            RightKneeTriggered();
 
                         // Old, nasty code to advance horrible dance FSM.
                         switch (currentDabke)

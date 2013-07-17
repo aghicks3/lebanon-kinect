@@ -10,9 +10,9 @@ Content\Music\dabke.xnb
 Content\Music\dabke.wma
 Content\Video\tempIntro.xnb
 Content\Video\tempIntro.wmv
+Content\Video\Lebanon.xnb
+Content\Video\Lebanon.wmv
 Content\myFont.xnb
 Content\resultFont.xnb
 Content\KinectDepthVisualizer.xnb
 Content\Models\dabkeTexture_0.xnb
-Content\Video\Lebanon.xnb
-Content\Video\Lebanon.wmv

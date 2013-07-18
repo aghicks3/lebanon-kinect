@@ -109,6 +109,49 @@ namespace LebaneseKinect
         TimeSpan LeftKneeLift2;
         TimeSpan introScore;
 
+        //Second score block
+        TimeSpan LeftKneeLift3;
+        TimeSpan RightKneeift3;
+        TimeSpan LeftKneeLiftAndFrontTorso1;
+        TimeSpan RightKneeLiftAndBackTorso1;
+        TimeSpan LeftKneeLift4;
+        TimeSpan RightKneeLift4;
+        TimeSpan LeftKneeLiftandFrontTorso2;
+        TimeSpan RightKneeLiftAndBackTorso2;
+
+        //Third Score block
+        TimeSpan LeftKneeLiftAndLeftHand1;
+        TimeSpan RightKneeLiftAndLeftHand1;
+        TimeSpan LeftKneeLiftAndFrontTorsoAndLeftHand1;
+        TimeSpan RightKneeLiftAndBackTorsoAndLeftHand1;
+        TimeSpan LeftKneeLiftAndLeftHand2;
+        TimeSpan RightKneeLiftAndLeftHand2;
+        TimeSpan LeftKneeLiftFrontTorsoAndLeftHand2;
+        TimeSpan RightKneeLiftBackTorsoAndLeftHand2;
+
+       //Fourth Score block
+        TimeSpan KneelDownsAndClap;
+
+        //Fifth Score block
+        TimeSpan LeftKneeLift5;
+        TimeSpan RightKneeLift5;
+        TimeSpan LeftKneeLift6;
+        TimeSpan RightKneeLift6;
+        TimeSpan LeftKneeLift7;
+        TimeSpan RightKneeLift7;
+        TimeSpan LeftKneeLift8;
+        TimeSpan RightKneeLift8;
+
+        //Sixth Score block
+        TimeSpan MoveToRightAndWaiterHand;
+        TimeSpan ShrugShoulders;
+        TimeSpan LeftKneeLift9;;
+        TimeSpan RightKneeLift9;
+        TimeSpan LeftKneeLift10;
+        TimeSpan RightKneeLift10;
+
+
+
         public void setTime()
         {
             LeftKneeLift1 = new TimeSpan(0, 0, 0, 6, 562);
@@ -116,6 +159,58 @@ namespace LebaneseKinect
             LeftKneeLift2 = new TimeSpan(0, 0, 0, 8, 574);
             RightKneeLift2 = new TimeSpan(0, 0, 0, 9, 731);
             introScore = new TimeSpan(0,0,0,10,451);
+
+            LeftKneeLift3 = new TimeSpan(0, 0, 0, 10, 731);
+            RightKneeLift3 = new TimeSpan(0, 0, 0, 11, 843);
+            LeftKneeLiftAndFrontTorso1 = new TimeSpan(0,0,0,12,951);
+            RightKneeLiftAndBackTorso1 = new TimeSpan(0,0,0,14,172);
+            LeftKneeLift4 = new TimeSpan(0,0,0,15,146);
+            RightKneeLift4 = new TimeSpan(0,0,0,16,169);
+            LeftKneeLiftandFrontTorso2 = new TimeSpan(0,0,0,17,170);
+            RightKneeLift6andBackTorso2 = new TimeSpan(0,0,0,18,294);
+            Score2 = new TimeSpan(0,0,0,18,546);
+
+            LeftKneeLiftAndLeftHand1 = new TimeSpan(0,0,0,19,355);
+            RightKneeLiftAndLeftHand1 = new TimeSpan(0,0,0,20,311);
+            LeftKneeLiftAndFrontTorsoAndLeftHand1 = new TimeSpan(0,0,0,21,427);
+            RightKneeLiftAndBackTorsoAndLeftHand1 = new TimeSpan(0,0,0,22,556);
+            LeftKneeLiftAndLeftHand2 = new TimeSpan(0,0,0,23,512);
+            RightKneeLiftAndLeftHand2 = new TimeSpan(0,0,0,24,595);
+            LeftKneeLiftFrontTorsoAndLeftHand2 = new TimeSpan(0,0,0,25,654);
+            RightKneeLiftBackTorsoAndLeftHand2 = new TimeSpan(0,0,0,26,814);
+            //LeftKneeLift11 and LeftHand1 = new TimeSpan(0,0,0,27,859); We're ignoring this step for now.
+            Score3 = new TimeSpan(0,0,0,28,343);
+
+            KneelDownsAndClap = new TimeSpan(0,0,0,28,785);
+            Score4 = new TimeSpan(0,0,0,35,806);
+
+            LeftKneeLift5 = new TimeSpan(0,0,0,36,590);
+            RightKneeLift5 = new TimeSpan(0,0,0,37,460);
+            LeftKneeLift6 = new TimeSpan(0,0,0,38,574);
+            RightKneeLift6 = new TimeSpan(0,0,0,39,558);
+            LeftKneeLift7 = new TimeSpan(0,0,0,40,706);
+            RightKneeLift7 = new TimeSpan(0,0,0,41,809);
+            LeftKneeLift8 = new TimeSpan(0,0,0,42,857);
+            RightKneeLift8 = new TimeSpan(0,0,0,43,916);
+            Score5 = new TimeSpan(0,0,0,44,494);
+
+            MoveToRightAndWaiterHand = new TimeSpan(0,0,0,44,751); //Just detect waiter hand bones?
+            ShrugShoulders = new TimeSpan(0,0,0,46,612);
+            LeftKneeLift9 = new TimeSpan(0,0,0,49,288);
+            RightKneeLift9 = new TimeSpan(0,0,0,50,273);
+            LeftKneeLift10 = new TimeSpan(0,0,0,51,299);
+            RightKneeLift10 = new TimeSpan(0,0,0,52,379);
+            Score6 = new TimeSpan(0,0,0,53,225);
+
+
+
+
+
+
+
+
+            
+
         }
 
         SpriteFont font;

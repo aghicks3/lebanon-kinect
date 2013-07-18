@@ -7,13 +7,13 @@
       <Importer>XImporter</Importer>
       <Processor>SkinnedModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\man.xnb</Output>
-      <Time>2013-07-16T12:18:02.311544-04:00</Time>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\man.xnb</Output>
+      <Time>2013-07-17T15:39:50.819078-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\man_0.xml</Key>
-        <Value>2013-07-16T12:22:41.7745284-04:00</Value>
+        <Value>2013-07-17T15:41:06.7116792-07:00</Value>
       </Dependency>
-      <Request>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Request>
+      <Request>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\woman.X</Source>
@@ -21,13 +21,13 @@
       <Importer>XImporter</Importer>
       <Processor>SkinnedModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\woman.xnb</Output>
-      <Time>2013-07-16T12:18:02.363547-04:00</Time>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\woman.xnb</Output>
+      <Time>2013-07-17T15:39:50.8931252-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\woman_0.xml</Key>
-        <Value>2013-07-16T12:22:42.4225654-04:00</Value>
+        <Value>2013-07-17T15:41:07.6803216-07:00</Value>
       </Dependency>
-      <Request>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Request>
+      <Request>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Request>
     </Item>
     <Item>
       <Source>Textures\dsteps1OFF.png</Source>
@@ -35,8 +35,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps1OFF.xnb</Output>
-      <Time>2013-07-16T12:18:02.4985547-04:00</Time>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps1OFF.xnb</Output>
+      <Time>2013-07-17T15:39:51.362845-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\dsteps2OFF.png</Source>
@@ -44,8 +44,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps2OFF.xnb</Output>
-      <Time>2013-07-16T12:18:02.5025549-04:00</Time>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps2OFF.xnb</Output>
+      <Time>2013-07-17T15:39:51.3648463-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\dsteps3OFF.png</Source>
@@ -53,8 +53,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps3OFF.xnb</Output>
-      <Time>2013-07-16T12:18:02.5055551-04:00</Time>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps3OFF.xnb</Output>
+      <Time>2013-07-17T15:39:51.365847-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\joint.png</Source>
@@ -62,8 +62,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\joint.xnb</Output>
-      <Time>2013-07-16T12:18:02.5075552-04:00</Time>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\joint.xnb</Output>
+      <Time>2013-07-17T15:39:51.365847-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\backgrounddabke.png</Source>
@@ -71,8 +71,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\backgrounddabke.xnb</Output>
-      <Time>2013-07-16T12:18:02.4955545-04:00</Time>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\backgrounddabke.xnb</Output>
+      <Time>2013-07-17T15:39:51.3618452-07:00</Time>
     </Item>
     <Item>
       <Source>Textures\shadow.png</Source>
@@ -80,8 +80,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\shadow.xnb</Output>
-      <Time>2013-07-16T12:18:02.5095553-04:00</Time>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\shadow.xnb</Output>
+      <Time>2013-07-17T15:39:51.3668476-07:00</Time>
     </Item>
     <Item>
       <Source>Music\dabke.mp3</Source>
@@ -89,9 +89,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.xnb</Output>
-      <Extra>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.wma</Extra>
-      <Time>2013-07-16T12:18:02.4225503-04:00</Time>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.xnb</Output>
+      <Extra>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.wma</Extra>
+      <Time>2013-07-17T15:39:51.0092041-07:00</Time>
     </Item>
     <Item>
       <Source>Video\tempIntro.wmv</Source>
@@ -99,9 +99,19 @@
       <Importer>WmvImporter</Importer>
       <Processor>VideoProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.xnb</Output>
-      <Extra>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.wmv</Extra>
-      <Time>2013-07-16T12:18:04.2066524-04:00</Time>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.xnb</Output>
+      <Extra>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.wmv</Extra>
+      <Time>2013-07-17T15:39:55.7251219-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Video\Lebanon.wmv</Source>
+      <Name>Video\Lebanon</Name>
+      <Importer>WmvImporter</Importer>
+      <Processor>VideoProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.xnb</Output>
+      <Extra>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.wmv</Extra>
+      <Time>2013-07-17T15:39:52.9950947-07:00</Time>
     </Item>
     <Item>
       <Source>myFont.spritefont</Source>
@@ -109,8 +119,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\myFont.xnb</Output>
-      <Time>2013-07-16T12:18:04.2226533-04:00</Time>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\myFont.xnb</Output>
+      <Time>2013-07-17T15:39:55.7611463-07:00</Time>
     </Item>
     <Item>
       <Source>resultFont.spritefont</Source>
@@ -118,8 +128,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\resultFont.xnb</Output>
-      <Time>2013-07-16T12:18:04.3086582-04:00</Time>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\resultFont.xnb</Output>
+      <Time>2013-07-17T15:39:55.8222887-07:00</Time>
     </Item>
     <Item>
       <Source>KinectDepthVisualizer.fx</Source>
@@ -127,15 +137,15 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\KinectDepthVisualizer.xnb</Output>
-      <Time>2013-07-16T12:18:02.276542-04:00</Time>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\KinectDepthVisualizer.xnb</Output>
+      <Time>2013-07-17T15:39:50.799063-07:00</Time>
     </Item>
     <Item>
       <Source>Models\man.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\man_0.xml</Output>
-      <Time>2013-07-16T12:18:02.311544-04:00</Time>
+      <Time>2013-07-17T15:39:50.819078-07:00</Time>
     </Item>
     <Item>
       <Source>Models\dabkeTexture.png</Source>
@@ -150,25 +160,15 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Output>
-      <Time>2013-07-16T12:18:02.3025435-04:00</Time>
+      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Output>
+      <Time>2013-07-17T15:39:50.8100712-07:00</Time>
     </Item>
     <Item>
       <Source>Models\woman.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\woman_0.xml</Output>
-      <Time>2013-07-16T12:18:02.363547-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Video\Lebanon.wmv</Source>
-      <Name>Video\Lebanon</Name>
-      <Importer>WmvImporter</Importer>
-      <Processor>VideoProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.xnb</Output>
-      <Extra>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.wmv</Extra>
-      <Time>2013-07-11T13:17:03.5508772-04:00</Time>
+      <Time>2013-07-17T15:39:50.8931252-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -176,43 +176,43 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModelPipeline.dll</Key>
-        <Value>2013-07-16T12:22:40.6414636-04:00</Value>
+        <Key>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModelPipeline.dll</Key>
+        <Value>2013-07-17T15:41:04.1236717-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-04:00</Value>
+        <Value>2010-08-23T10:41:18-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T12:41:18-04:00</Value>
+        <Value>2010-08-23T10:41:18-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-04:00</Value>
+        <Value>2010-08-23T10:41:18-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-04:00</Value>
+        <Value>2010-08-23T10:41:18-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-04:00</Value>
+        <Value>2010-08-23T10:41:18-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T12:41:18-04:00</Value>
+        <Value>2010-08-23T10:41:18-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2013-06-07T11:54:52.9646356-04:00</Value>
+        <Key>C:\windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-06-14T13:11:27.5731405-07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

@@ -111,13 +111,14 @@ namespace LebaneseKinect
 
         //Second score block
         TimeSpan LeftKneeLift3;
-        TimeSpan RightKneeift3;
+        TimeSpan RightKneeLift3;
         TimeSpan LeftKneeLiftAndFrontTorso1;
         TimeSpan RightKneeLiftAndBackTorso1;
         TimeSpan LeftKneeLift4;
         TimeSpan RightKneeLift4;
         TimeSpan LeftKneeLiftandFrontTorso2;
         TimeSpan RightKneeLiftAndBackTorso2;
+        TimeSpan Score2;
 
         //Third Score block
         TimeSpan LeftKneeLiftAndLeftHand1;
@@ -128,9 +129,11 @@ namespace LebaneseKinect
         TimeSpan RightKneeLiftAndLeftHand2;
         TimeSpan LeftKneeLiftFrontTorsoAndLeftHand2;
         TimeSpan RightKneeLiftBackTorsoAndLeftHand2;
+        TimeSpan Score3;
 
        //Fourth Score block
         TimeSpan KneelDownsAndClap;
+        TimeSpan Score4;
 
         //Fifth Score block
         TimeSpan LeftKneeLift5;
@@ -141,14 +144,16 @@ namespace LebaneseKinect
         TimeSpan RightKneeLift7;
         TimeSpan LeftKneeLift8;
         TimeSpan RightKneeLift8;
+        TimeSpan Score5;
 
         //Sixth Score block
         TimeSpan MoveToRightAndWaiterHand;
         TimeSpan ShrugShoulders;
-        TimeSpan LeftKneeLift9;;
+        TimeSpan LeftKneeLift9;
         TimeSpan RightKneeLift9;
         TimeSpan LeftKneeLift10;
         TimeSpan RightKneeLift10;
+        TimeSpan Score6;
 
 
 
@@ -167,7 +172,7 @@ namespace LebaneseKinect
             LeftKneeLift4 = new TimeSpan(0,0,0,15,146);
             RightKneeLift4 = new TimeSpan(0,0,0,16,169);
             LeftKneeLiftandFrontTorso2 = new TimeSpan(0,0,0,17,170);
-            RightKneeLift6andBackTorso2 = new TimeSpan(0,0,0,18,294);
+            RightKneeLiftAndBackTorso2 = new TimeSpan(0,0,0,18,294);
             Score2 = new TimeSpan(0,0,0,18,546);
 
             LeftKneeLiftAndLeftHand1 = new TimeSpan(0,0,0,19,355);
@@ -257,7 +262,7 @@ namespace LebaneseKinect
             graphics.PreferredBackBufferHeight = WINDOW_HEIGHT;
             graphics.PreparingDeviceSettings += this.GraphicsDevicePreparingDeviceSettings;
             graphics.SynchronizeWithVerticalRetrace = true;
-            //graphics.IsFullScreen = true;
+            graphics.IsFullScreen = false;
             Content.RootDirectory = "Content";
             eventsTriggeredList = new List<string>();
             for (int i = 0; i < numberOfAnimationPlayers; i++)

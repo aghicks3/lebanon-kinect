@@ -179,7 +179,7 @@ namespace LebaneseKinect
         TimeSpan RightFootCross7;
         TimeSpan RightFootSwing7;
         TimeSpan RightFootCross8;
-        TimeSpan RightFootCross8;
+        TimeSpan RightFootSwing8;
         TimeSpan Score7;
 
 
@@ -257,7 +257,7 @@ namespace LebaneseKinect
             RightFootCross7 = new TimeSpan(0,0,0,68,478);
             RightFootSwing7 = new TimeSpan(0,0,0,68,981);
             RightFootCross8 = new TimeSpan(0,0,0,69,537);
-            RightFootCross8 = new TimeSpan(0,0,0,70,087);
+            RightFootSwing8 = new TimeSpan(0,0,0,70,087);
             Score7 = new TimeSpan(0,0,0,70,787);
             
 

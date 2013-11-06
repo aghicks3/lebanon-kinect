@@ -1,4 +1,4 @@
-#define USE_KINECT // Comment out this line to test without a Kinect!!!
+//#define USE_KINECT // Comment out this line to test without a Kinect!!!
 
 using System;
 using System.Diagnostics; 
@@ -205,7 +205,35 @@ namespace LebaneseKinect
             RightKneeLift9 = new TimeSpan(0,0,0,50,273);
             LeftKneeLift10 = new TimeSpan(0,0,0,51,299);
             RightKneeLift10 = new TimeSpan(0,0,0,52,379);
+            //LeftKneeLift11 = new TimeSpan(0,0,0,53,896);
+            //RightKneeKick11 = new TimeSpan(0,0,0,54,951);
+
             Score6 = new TimeSpan(0,0,0,53,225);
+            /*
+            RightFootCross1 = new TimeSpan(0,0,0,55,558);
+            RightFootSwing1 = new TimeSpan(0,0,0,56,175);
+            RightFootCross2 = new TimeSpan(0,0,0,56,678);
+            RightFootSwing2 = new TimeSpan(0,0,0,57,210);
+            LeftKneeBendCrouch1 = new TimeSpan(0,0,0,57,801);
+            LeftKneeBendCrouch2 = new TimeSpan(0,0,0,58,857);
+            RightFootCross3 = new TimeSpan(0,0,0,59,903);
+            RightFootSwing3 = new TimeSpan(0,0,0,60,483);
+            RightFootCross4 = new TimeSpan(0,0,0,60,952);
+            RightFootSwing4 = new TimeSpan(0,0,0,61,489);
+            LeftKneeBendCrouch3 = new TimeSpan(0,0,0,62,125);
+            LeftKneeBendCrouch4 = new TimeSpan(0,0,0,63,181);
+            RightFootCross5 = new TimeSpan(0,0,0,64,205);
+            RightFootSwing5 = new TimeSpan(0,0,0,64,724);
+            RightFootCross6 = new TimeSpan(0,0,0,65,261);
+            RightFootSwing6 = new TimeSpan(0,0,0,65,813);
+            LeftKneeBendCrouch5 = new TimeSpan(0,0,0,66,384);
+            LeftKneeBendCrouch6 = new TimeSpan(0,0,0,67,406);
+            RightFootCross7 = new TimeSpan(0,0,0,68,478);
+            RightFootSwing7 = new TimeSpan(0,0,0,68,981);
+            RightFootCross8 = new TimeSpan(0,0,0,69,537);
+            RightFootCross8 = new TimeSpan(0,0,0,70,087);
+            Score7 = new TimeSpan(0,0,0,70,787);
+            */
 
 
 

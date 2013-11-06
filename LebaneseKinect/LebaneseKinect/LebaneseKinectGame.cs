@@ -153,8 +153,34 @@ namespace LebaneseKinect
         TimeSpan RightKneeLift9;
         TimeSpan LeftKneeLift10;
         TimeSpan RightKneeLift10;
+        TimeSpan LeftKneeLift11;
+        TimeSpan RightKneeKick11;
+
         TimeSpan Score6;
 
+        TimeSpan RightFootCross1;
+        TimeSpan RightFootSwing1;
+        TimeSpan RightFootCross2;
+        TimeSpan RightFootSwing2;
+        TimeSpan LeftKneeBendCrouch1;
+        TimeSpan LeftKneeBendCrouch2;
+        TimeSpan RightFootCross3;
+        TimeSpan RightFootSwing3;
+        TimeSpan RightFootCross4;
+        TimeSpan RightFootSwing4;
+        TimeSpan LeftKneeBendCrouch3;
+        TimeSpan LeftKneeBendCrouch4;
+        TimeSpan RightFootCross5;
+        TimeSpan RightFootSwing5;
+        TimeSpan RightFootCross6;
+        TimeSpan RightFootSwing6;
+        TimeSpan LeftKneeBendCrouch5;
+        TimeSpan LeftKneeBendCrouch6;
+        TimeSpan RightFootCross7;
+        TimeSpan RightFootSwing7;
+        TimeSpan RightFootCross8;
+        TimeSpan RightFootCross8;
+        TimeSpan Score7;
 
 
         public void setTime()
@@ -205,11 +231,11 @@ namespace LebaneseKinect
             RightKneeLift9 = new TimeSpan(0,0,0,50,273);
             LeftKneeLift10 = new TimeSpan(0,0,0,51,299);
             RightKneeLift10 = new TimeSpan(0,0,0,52,379);
-            //LeftKneeLift11 = new TimeSpan(0,0,0,53,896);
-            //RightKneeKick11 = new TimeSpan(0,0,0,54,951);
+            LeftKneeLift11 = new TimeSpan(0,0,0,53,896);
+            RightKneeKick11 = new TimeSpan(0,0,0,54,951);
 
             Score6 = new TimeSpan(0,0,0,53,225);
-            /*
+            
             RightFootCross1 = new TimeSpan(0,0,0,55,558);
             RightFootSwing1 = new TimeSpan(0,0,0,56,175);
             RightFootCross2 = new TimeSpan(0,0,0,56,678);
@@ -233,7 +259,7 @@ namespace LebaneseKinect
             RightFootCross8 = new TimeSpan(0,0,0,69,537);
             RightFootCross8 = new TimeSpan(0,0,0,70,087);
             Score7 = new TimeSpan(0,0,0,70,787);
-            */
+            
 
 
 

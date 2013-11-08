@@ -11,7 +11,7 @@
       <Time>2013-06-03T16:34:13.8736898-04:00</Time>
       <Dependency>
         <Key>C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\obj\x86\Debug\Models\man_0.xml</Key>
-        <Value>2013-11-05T15:25:53.253461-05:00</Value>
+        <Value>2013-11-07T16:38:18.3452173-05:00</Value>
       </Dependency>
       <Request>C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Request>
     </Item>
@@ -25,7 +25,7 @@
       <Time>2013-06-03T16:34:13.9156922-04:00</Time>
       <Dependency>
         <Key>C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\obj\x86\Debug\Models\woman_0.xml</Key>
-        <Value>2013-11-05T15:25:54.1565127-05:00</Value>
+        <Value>2013-11-07T16:38:19.1852185-05:00</Value>
       </Dependency>
       <Request>C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Request>
     </Item>
@@ -185,7 +185,7 @@
     <Assemblies>
       <Assembly>
         <Key>C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModelPipeline.dll</Key>
-        <Value>2013-11-05T15:25:46.5110754-05:00</Value>
+        <Value>2013-11-07T16:38:15.2102071-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>

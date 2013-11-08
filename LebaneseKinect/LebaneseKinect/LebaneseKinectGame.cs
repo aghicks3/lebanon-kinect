@@ -112,12 +112,12 @@ namespace LebaneseKinect
         //Second score block
         TimeSpan LeftKneeLift3;
         TimeSpan RightKneeLift3;
-        TimeSpan LeftKneeLiftAndFrontTorso1;
-        TimeSpan RightKneeLiftAndBackTorso1;
+        TimeSpan LeftFootLiftAndFrontTorso1;
+        TimeSpan RightFootLiftAndBackTorso1;
         TimeSpan LeftKneeLift4;
         TimeSpan RightKneeLift4;
-        TimeSpan LeftKneeLiftandFrontTorso2;
-        TimeSpan RightKneeLiftAndBackTorso2;
+        TimeSpan LeftFootLiftandFrontTorso2;
+        TimeSpan RightFootLiftAndBackTorso2;
         TimeSpan Score2;
 
         //Third Score block
@@ -154,7 +154,7 @@ namespace LebaneseKinect
         TimeSpan LeftKneeLift10;
         TimeSpan RightKneeLift10;
         TimeSpan LeftKneeLift11;
-        TimeSpan RightKneeKick11;
+        TimeSpan RightKneeKick1;
 
         TimeSpan Score6;
 
@@ -182,6 +182,91 @@ namespace LebaneseKinect
         TimeSpan RightFootSwing8;
         TimeSpan Score7;
 
+        TimeSpan LeftKneeLiftAndCross;
+        TimeSpan RightKneeLiftAndCross;
+        TimeSpan LeftKneeLift12;
+        TimeSpan RightKneeLift11;
+        TimeSpan LeftKneeLift13;
+        TimeSpan RightKneeLift12;
+        TimeSpan LeftHandtoFaceSpinForward;
+        TimeSpan LeftHandtoFaceSpinBack;
+        TimeSpan RightKneeKick2;
+        TimeSpan Score8;
+
+        TimeSpan LeftKneeLift14;
+        TimeSpan RightKneeKick3;
+        TimeSpan LeftKneeLift15;
+        TimeSpan RightKneeKick4;
+        TimeSpan LeftKneeLift16;
+        TimeSpan LeftKneeLiftLeft;
+        TimeSpan LeftKneeLiftBack;
+        TimeSpan LeftKneeLiftRight;
+        TimeSpan Score9;
+
+        TimeSpan LeftKneeLift17 = new TimeSpan(0, 0, 0, 87, 668);
+        TimeSpan LeftKneeKick17 = new TimeSpan(0,0,0,88,099);
+        TimeSpan RightKneeLift13 = new TimeSpan(0,0,0,88,385);
+        TimeSpan LeftKneeLift18 = new TimeSpan(0,0,0,88,686);
+        TimeSpan LeftKneeKick18 = new TimeSpan(0,0,0,89,255);
+        TimeSpan RightKneeLift14 = new TimeSpan(0,0,0,89,508);
+        TimeSpan LeftKneeLift19 = new TimeSpan(0,0,0,90,059);
+        TimeSpan RightKneeKick5 = new TimeSpan(0,0,0,91,250);
+
+        TimeSpan LeftKneeLift20 = new TimeSpan(0,0,0,92,038);
+        TimeSpan LeftKneeKick20 = new TimeSpan(0,0,0,92,424);
+        TimeSpan RightKneeLift15 = new TimeSpan(0,0,0,92,675);
+        TimeSpan LeftKneeLift21 = new TimeSpan(0,0,0,92,976);
+        TimeSpan LeftKneeeKick21 = new TimeSpan(0,0,0,93,529);
+        TimeSpan RightKneeLift16 = new TimeSpan(0,0,0,93,831);
+        TimeSpan LeftKneeLift22 = new TimeSpan(0,0,0,94,569);
+        TimeSpan RightKneeKick6 = new TimeSpan(0,0,0,95,609);
+        TimeSpan Score10 = new TimeSpan(0,0,0,96, 681);
+
+        TimeSpan LeftFootLiftAndFrontTorso2 = new TimeSpan(0,0,0,96,336);
+        TimeSpan RightKneeKick7 = new TimeSpan(0,0,0,97,508);
+        TimeSpan LeftKneeLift23 = new TimeSpan(0,0,0,98,480);
+        TimeSpan RightKneeKick8 = new TimeSpan(0,0,0,99,621);
+        TimeSpan LeftKneeLift24 = new TimeSpan(0,0,0,100,660);
+        TimeSpan RightKneeKick9 = new TimeSpan(0,0,0,101,734);
+        TimeSpan LeftFootLiftAndFrontTorso3 = new TimeSpan(0,0,0,102, 738);
+        TimeSpan RightKneeKick10 = new TimeSpan(0,0,0,103,833);
+        TimeSpan LeftKneeKick = new TimeSpan(0,0,0,104,887);
+        TimeSpan RightKneeKick = new TimeSpan(0, 0, 0, 105, 974);
+        TimeSpan Score11 = new TimeSpan(0,0,0,106, 988);
+            
+        TimeSpan LeftKneeBendCrouch7 = new TimeSpan(0,0,0,107,526);
+        TimeSpan LeftKneeBendCrouch8 = new TimeSpan(0,0,0, 108, 047);
+        TimeSpan RightFootCross9 = new TimeSpan(0,0,0, 109, 101);
+        TimeSpan RightFootSwing9 = new TimeSpan(0,0,0, 109, 620);
+        TimeSpan RightFootCross10 = new TimeSpan(0,0,0, 110, 191);
+        TimeSpan RightFootSwing10 = new TimeSpan(0,0,0, 110, 711);
+        TimeSpan LeftKneeBendCrouch9 = new TimeSpan(0,0,0, 111, 248);
+        TimeSpan LeftKneeBendCrouch10 = new TimeSpan(0,0,0, 112, 356);
+        TimeSpan RightFootCross11 = new TimeSpan(0,0,0, 113, 393);
+        TimeSpan RightFootSwing11 = new TimeSpan(0,0,0, 113, 879);
+        TimeSpan RightFootCross12 = new TimeSpan(0,0,0, 114, 449);
+        TimeSpan RightFootSwing12 = new TimeSpan(0,0,0, 115, 019);
+        TimeSpan LeftKneeBendCrouch11 = new TimeSpan(0,0,0, 115, 572);
+        TimeSpan LeftKneeBendCrouch12 = new TimeSpan(0,0,0, 116, 611);
+        TimeSpan RightFootCross13 = new TimeSpan(0,0,0, 117, 619);
+        TimeSpan RightFootSwing13 = new TimeSpan(0,0,0, 118, 207);
+        TimeSpan RightFootCross14 = new TimeSpan(0,0,0, 118, 773);
+        TimeSpan RightFootSwing14 = new TimeSpan(0,0,0, 119, 326);
+        TimeSpan LeftKneeBendCrouch13 = new TimeSpan(0,0,0, 119, 880);
+        TimeSpan LeftKneeBendCrouch14 = new TimeSpan(0,0,0, 120, 906);
+        TimeSpan RightFootCross15 = new TimeSpan(0,0,0, 121, 892);
+        TimeSpan RightFootSwing15 = new TimeSpan(0,0,0, 122, 462);
+        TimeSpan RightFootCross16 = new TimeSpan(0,0,0, 123, 033);
+        TimeSpan RightFootSwing16 = new TimeSpan(0,0,0, 123, 551);
+        TimeSpan Score12 = new TimeSpan(0,0,0, 124,200);
+
+        TimeSpan LeftFootLiftAndFrontTorso = new TimeSpan(0,0,0, 124,217);
+        TimeSpan RightKneeKickAndUnderArm1 = new TimeSpan(0,0,0, 125,309);
+        TimeSpan LeftKneeLiftAndUnderArm = new TimeSpan(0,0,0, 126,413);
+        TimeSpan RightKneeKickAndUnderArm2 = new TimeSpan(0,0,0, 127,537);
+        TimeSpan RightKneeKneelAndUnderArm = new TimeSpan(0,0,0, 128,576);
+        TimeSpan RightKneeKneelAndUnderArmAndLeftHandBehind = new TimeSpan(0,0,0,132,163);
+        TimeSpan Score13 = new TimeSpan(0, 0, 0, 132, 800);
 
         public void setTime()
         {
@@ -193,12 +278,12 @@ namespace LebaneseKinect
 
             LeftKneeLift3 = new TimeSpan(0, 0, 0, 10, 731);
             RightKneeLift3 = new TimeSpan(0, 0, 0, 11, 843);
-            LeftKneeLiftAndFrontTorso1 = new TimeSpan(0,0,0,12,951);
-            RightKneeLiftAndBackTorso1 = new TimeSpan(0,0,0,14,172);
+            LeftFootLiftAndFrontTorso1 = new TimeSpan(0,0,0,12,951);
+            RightFootLiftAndBackTorso1 = new TimeSpan(0,0,0,14,172);
             LeftKneeLift4 = new TimeSpan(0,0,0,15,146);
             RightKneeLift4 = new TimeSpan(0,0,0,16,169);
-            LeftKneeLiftandFrontTorso2 = new TimeSpan(0,0,0,17,170);
-            RightKneeLiftAndBackTorso2 = new TimeSpan(0,0,0,18,294);
+            LeftFootLiftandFrontTorso2 = new TimeSpan(0,0,0,17,170);
+            RightFootLiftAndBackTorso2 = new TimeSpan(0,0,0,18,294);
             Score2 = new TimeSpan(0,0,0,18,546);
 
             LeftKneeLiftAndLeftHand1 = new TimeSpan(0,0,0,19,355);
@@ -232,7 +317,7 @@ namespace LebaneseKinect
             LeftKneeLift10 = new TimeSpan(0,0,0,51,299);
             RightKneeLift10 = new TimeSpan(0,0,0,52,379);
             LeftKneeLift11 = new TimeSpan(0,0,0,53,896);
-            RightKneeKick11 = new TimeSpan(0,0,0,54,951);
+            RightKneeKick1 = new TimeSpan(0,0,0,54,951);
 
             Score6 = new TimeSpan(0,0,0,53,225);
             
@@ -260,16 +345,92 @@ namespace LebaneseKinect
             RightFootSwing8 = new TimeSpan(0,0,0,70,087);
             Score7 = new TimeSpan(0,0,0,70,787);
             
+            LeftKneeLiftAndCross = new TimeSpan(0,0,0,71,366);
+            RightKneeLiftAndCross = new TimeSpan(0,0,0,72,472);
+            LeftKneeLift12 = new TimeSpan(0,0,0,73,007);
+            RightKneeLift11 = new TimeSpan(0,0,0,74,028);
+            LeftKneeLift13 = new TimeSpan(0,0,0,75,171);
+            RightKneeLift12 = new TimeSpan(0,0,0,76,246);
+            LeftHandtoFaceSpinForward = new TimeSpan(0,0,0,76,896);
+            LeftHandtoFaceSpinBack = new TimeSpan(0, 0, 0, 77, 364);
+            RightKneeKick2 = new TimeSpan(0,0,0,78,492);
+            Score8 = new TimeSpan(0, 0, 0, 79, 292);
 
+            LeftKneeLift14 = new TimeSpan(0,0,0,79,527);
+            RightKneeKick3 = new TimeSpan(0,0,0,80,569);
+            LeftKneeLift15 = new TimeSpan(0,0,0,81,707);
+            RightKneeKick4 = new TimeSpan(0,0,0,82,797);
+            LeftKneeLift16 = new TimeSpan(0,0,0,83,687);
+            LeftKneeLiftLeft = new TimeSpan(0,0,0,84,460);
+            LeftKneeLiftBack = new TimeSpan(0,0,0,85,646);
+            LeftKneeLiftRight = new TimeSpan(0,0,0,86,574);
+            Score9 = new TimeSpan(0,0,0,87,345);
+            
+            LeftKneeLift17 = new TimeSpan(0, 0, 0, 87, 668);
+            LeftKneeKick17 = new TimeSpan(0,0,0,88,099);
+            RightKneeLift13 = new TimeSpan(0,0,0,88,385);
+            LeftKneeLift18 = new TimeSpan(0,0,0,88,686);
+            LeftKneeKick18 = new TimeSpan(0,0,0,89,255);
+            RightKneeLift14 = new TimeSpan(0,0,0,89,508);
+            LeftKneeLift19 = new TimeSpan(0,0,0,90,059);
+            RightKneeKick5 = new TimeSpan(0,0,0,91,250);
 
+            LeftKneeLift20 = new TimeSpan(0,0,0,92,038);
+            LeftKneeKick20 = new TimeSpan(0,0,0,92,424);
+            RightKneeLift15 = new TimeSpan(0,0,0,92,675);
+            LeftKneeLift21 = new TimeSpan(0,0,0,92,976);
+            LeftKneeeKick21 = new TimeSpan(0,0,0,93,529);
+            RightKneeLift16 = new TimeSpan(0,0,0,93,831);
+            LeftKneeLift22 = new TimeSpan(0,0,0,94,569);
+            RightKneeKick6 = new TimeSpan(0,0,0,95,609);
+            Score10 = new TimeSpan(0,0,0,96, 681);
 
-
-
-
-
-
+            LeftFootLiftAndFrontTorso2 = new TimeSpan(0,0,0,96,336);
+            RightKneeKick7 = new TimeSpan(0,0,0,97,508);
+            LeftKneeLift23 = new TimeSpan(0,0,0,98,480);
+            RightKneeKick8 = new TimeSpan(0,0,0,99,621);
+            LeftKneeLift24 = new TimeSpan(0,0,0,100,660);
+            RightKneeKick9 = new TimeSpan(0,0,0,101,734);
+            LeftFootLiftAndFrontTorso3 = new TimeSpan(0,0,0,102, 738);
+            RightKneeKick10 = new TimeSpan(0,0,0,103,833);
+            LeftKneeKick = new TimeSpan(0,0,0,104,887);
+            RightKneeKick = new TimeSpan(0, 0, 0, 105, 974);
+            Score11 = new TimeSpan(0,0,0,106, 988);
             
 
+            LeftKneeBendCrouch7 = new TimeSpan(0,0,0,107,526);
+            LeftKneeBendCrouch8 = new TimeSpan(0,0,0, 108, 047);
+            RightFootCross9 = new TimeSpan(0,0,0, 109, 101);
+            RightFootSwing9 = new TimeSpan(0,0,0, 109, 620);
+            RightFootCross10 = new TimeSpan(0,0,0, 110, 191);
+            RightFootSwing10 = new TimeSpan(0,0,0, 110, 711);
+            LeftKneeBendCrouch9 = new TimeSpan(0,0,0, 111, 248);
+            LeftKneeBendCrouch10 = new TimeSpan(0,0,0, 112, 356);
+            RightFootCross11 = new TimeSpan(0,0,0, 113, 393);
+            RightFootSwing11 = new TimeSpan(0,0,0, 113, 879);
+            RightFootCross12 = new TimeSpan(0,0,0, 114, 449);
+            RightFootSwing12 = new TimeSpan(0,0,0, 115, 019);
+            LeftKneeBendCrouch11 = new TimeSpan(0,0,0, 115, 572);
+            LeftKneeBendCrouch12 = new TimeSpan(0,0,0, 116, 611);
+            RightFootCross13 = new TimeSpan(0,0,0, 117, 619);
+            RightFootSwing13 = new TimeSpan(0,0,0, 118, 207);
+            RightFootCross14 = new TimeSpan(0,0,0, 118, 773);
+            RightFootSwing14 = new TimeSpan(0,0,0, 119, 326);
+            LeftKneeBendCrouch13 = new TimeSpan(0,0,0, 119, 880);
+            LeftKneeBendCrouch14 = new TimeSpan(0,0,0, 120, 906);
+            RightFootCross15 = new TimeSpan(0,0,0, 121, 892);
+            RightFootSwing15 = new TimeSpan(0,0,0, 122, 462);
+            RightFootCross16 = new TimeSpan(0,0,0, 123, 033);
+            RightFootSwing16 = new TimeSpan(0,0,0, 123, 551);
+            Score12 = new TimeSpan(0,0,0, 124,200);
+
+            LeftFootLiftAndFrontTorso = new TimeSpan(0,0,0, 124,217);
+            RightKneeKickAndUnderArm1 = new TimeSpan(0,0,0, 125,309);
+            LeftKneeLiftAndUnderArm = new TimeSpan(0,0,0, 126,413);
+            RightKneeKickAndUnderArm2 = new TimeSpan(0,0,0, 127,537);
+            RightKneeKneelAndUnderArm = new TimeSpan(0,0,0, 128,576);
+            RightKneeKneelAndUnderArmAndLeftHandBehind = new TimeSpan(0,0,0,132,163);
+            Score13 = new TimeSpan(0,0,0,132,800);
         }
 
         SpriteFont font;
@@ -282,7 +443,6 @@ namespace LebaneseKinect
         int setScore = 0;
         int displayScore = 0;
         int tempScore = 0;
-        double previousDanceAnimationTimeMS = 0;
 
         Texture2D backgroundDabke;
         Rectangle backgroundRect = new Rectangle(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);

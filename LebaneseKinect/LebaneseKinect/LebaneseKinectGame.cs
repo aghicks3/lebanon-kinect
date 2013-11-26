@@ -350,56 +350,73 @@ namespace LebaneseKinect
 
 
         //Eighth Score block
-        TimeSpan FemHome5;
-        TimeSpan FemLeftFootGoFowardAndLeftHandUp1;
-        TimeSpan FemRightFootGoFowardAndRightHandUp1;
-        TimeSpan FemBothHandsScrollingDown1;
-        TimeSpan FemLeftFootGoFowardAndLeftHandUp2;
-        TimeSpan FemRightFootGoFowardAndLeftHandUp2;
-        TimeSpan FemBothHandsScrollingDown2;
-
+        TimeSpan FemRightElbowSway1;
+        TimeSpan FemLeftElbowSway1;
+        TimeSpan FemRightElbowSway2;
+        TimeSpan FemLeftElbowSway2;
+        TimeSpan FemRightElbowSway3;
+        TimeSpan FemLeftElbowSway3;
+        TimeSpan FemRightElbowSway4;
+        TimeSpan FemLeftElbowSway4;
 
         //Ninth Score block
-        TimeSpan FemScrollingHandsLeftSide1;
-        TimeSpan FemFrontTorsoAndShakeShoulders1;
-        TimeSpan FemScrollingHandsLeftSide2;
-        TimeSpan FemFrontTorsoAndShakeShoulders2;
-        TimeSpan FemRightKneeBackLift1;
-        TimeSpan FemLeftKneeBackLift1;
-        TimeSpan FemRightKneeFrontLift3;
-        TimeSpan FemHome6;
-        TimeSpan FemLeftKneeFrontLift4;
-        TimeSpan FemRightKneeFrontLift4;
-        TimeSpan FemLeftKneeLiftAndFrontTorso4;
-        TimeSpan FemRightKneeLiftAndBackTorso3;
-        TimeSpan FemLeftKneeFrontLift5;
-        TimeSpan FemRightKneeFrontLift5;
-
+        TimeSpan FemLeftWristArcRaise1;
+        TimeSpan FemRightWristArcRaise1;
+        TimeSpan FemHome1; //Hands at sides detection after fluttering hands down
+        TimeSpan FemLeftWristArcRaise2;
+        TimeSpan FemRightWristArcRaise2;
+        TimeSpan FemHome2; //Hands at sides detection after fluttering hands down
 
         //Tenth Score block
-        TimeSpan FemMoveToLeft5;
-        TimeSpan FemMoveToLeft6;
-        TimeSpan FemCrossOver9;
-        TimeSpan FemCrossOver10;
-        TimeSpan FemMoveToRight5;
-        TimeSpan FemMoveToRight6;
-        TimeSpan FemCrossOver11;
-        TimeSpan FemCrossOver12;
-        TimeSpan FemMoveToLeft7;
-        TimeSpan FemMoveToLeft8;
-        TimeSpan FemCrossOver13;
-        TimeSpan FemCrossOver14;
-        TimeSpan FemMoveToRight7;
-        TimeSpan FemMoveToRight8;
-        TimeSpan FemCrossOver15;
-        TimeSpan FemCrossOver16;
+        TimeSpan FemThrillerHandsLeft1;
+        TimeSpan FemLeftBendHipShake1;
+        TimeSpan FemThrillerHandsLeft2;
+        TimeSpan FemLeftBendHipShake2;
 
         //Eleventh Score block
-        TimeSpan FemLeftKneeFrontLift2;
-        TimeSpan FemTurnAroundWithRightKneeLift1;
-        TimeSpan FemTurnAroundWithLeftKneeLift1;
-        TimeSpan FemTurnAroundWithRightKneeLift2;
-        TimeSpan FemAllBodyScrollingDown1;
+        TimeSpan FemRightElbowSway5;
+        TimeSpan FemLeftElbowSway5;
+        TimeSpan FemRightElbowSway6;
+        TimeSpan FemLeftElbowSway6;
+        TimeSpan FemLeftKneeLift5;
+        TimeSpan FemRightKneeKick2;
+        TimeSpan FemLeftKneeLiftAndFrontTorso5;
+        TimeSpan FemRightKneeKick;
+        TimeSpan FemLeftKneeLift6;
+        TimeSpan FemRightKneeKick3;
+
+        //Twelth Score block
+        TimeSpan FemLeftKneeBendCrouch7;
+        TimeSpan FemLeftKneeBendCrouch8;
+        TimeSpan FemRightFootCross9;
+        TimeSpan FemRightFootSwing9;
+        TimeSpan FemRightFootCross10;
+        TimeSpan FemRightFootSwing10;
+        TimeSpan FemLeftKneeBendCrouch9;
+        TimeSpan FemLeftKneeBendCrouch10;
+        TimeSpan FemRightFootCross11;
+        TimeSpan FemRightFootSwing11;
+        TimeSpan FemRightFootCross12;
+        TimeSpan FemRightFootSwing12;
+        TimeSpan FemLeftKneeBendCrouch11;
+        TimeSpan FemLeftKneeBendCrouch12;
+        TimeSpan FemRightFootCross13;
+        TimeSpan FemRightFootSwing13;
+        TimeSpan FemRightFootCross14;
+        TimeSpan FemRightFootSwing14;
+        TimeSpan FemLeftKneeBendCrouch13;
+        TimeSpan FemLeftKneeBendCrouch14;
+        TimeSpan FemRightFootCross15;
+        TimeSpan FemRightFootSwing15;
+        TimeSpan FemRightFootCross16;
+        TimeSpan FemRightFootSwing16;
+
+        //Thirteenth Score block
+        TimeSpan FemLeftKneeLiftAndFrontTorso2;
+        TimeSpan FemBackSpinRightKneeLift1;
+        TimeSpan FemForwardSpinFacingRightKneeLift;
+        TimeSpan FemCrouchHipSwivel;
+        TimeSpan FemRightHandHigh;
 
         public void setTime()
         {
@@ -499,6 +516,8 @@ namespace LebaneseKinect
             FemMoveToLeftAndScrollingHands3 = new TimeSpan(0,0,0,49,112);
             FemMoveToLeftAndScrollingHands4 = new TimeSpan(0,0,0,50,252);
             FemCrouchAndHipShake4 = new TimeSpan(0,0,0,51,309);
+            FemLeftKneeLiftAndFrontTorso3 = new TimeSpan(0,0,0,53,896);
+            FemRightKneeKick1 = new TimeSpan(0,0,0,54,954);
             Score6 = new TimeSpan(0,0,0,53,225);
             
             RightFootCross1 = new TimeSpan(0,0,0,55,558);
@@ -523,6 +542,29 @@ namespace LebaneseKinect
             RightFootSwing7 = new TimeSpan(0,0,0,68,981);
             RightFootCross8 = new TimeSpan(0,0,0,69,537);
             RightFootSwing8 = new TimeSpan(0,0,0,70,087);
+
+            FemRightFootCross1 = new TimeSpan(0, 0, 0, 55, 558);
+            FemRightFootSwing1 = new TimeSpan(0, 0, 0, 56, 175);
+            FemRightFootCross2 = new TimeSpan(0, 0, 0, 56, 678);
+            FemRightFootSwing2 = new TimeSpan(0, 0, 0, 57, 210);
+            FemLeftKneeBendCrouch1 = new TimeSpan(0, 0, 0, 57, 801);
+            FemLeftKneeBendCrouch2 = new TimeSpan(0, 0, 0, 58, 857);
+            FemRightFootCross3 = new TimeSpan(0, 0, 0, 59, 903);
+            FemRightFootSwing3 = new TimeSpan(0, 0, 0, 60, 483);
+            FemRightFootCross4 = new TimeSpan(0, 0, 0, 60, 952);
+            FemRightFootSwing4 = new TimeSpan(0, 0, 0, 61, 489);
+            FemLeftKneeBendCrouch3 = new TimeSpan(0, 0, 0, 62, 125);
+            FemLeftKneeBendCrouch4 = new TimeSpan(0, 0, 0, 63, 181);
+            FemRightFootCross5 = new TimeSpan(0, 0, 0, 64, 205);
+            FemRightFootSwing5 = new TimeSpan(0, 0, 0, 64, 724);
+            FemRightFootCross6 = new TimeSpan(0, 0, 0, 65, 261);
+            FemRightFootSwing6 = new TimeSpan(0, 0, 0, 65, 813);
+            FemLeftKneeBendCrouch5 = new TimeSpan(0, 0, 0, 66, 384);
+            FemLeftKneeBendCrouch6 = new TimeSpan(0, 0, 0, 67, 406);
+            FemRightFootCross7 = new TimeSpan(0, 0, 0, 68, 478);
+            FemRightFootSwing7 = new TimeSpan(0, 0, 0, 68, 981);
+            FemRightFootCross8 = new TimeSpan(0, 0, 0, 69, 537);
+            FemRightFootSwing8 = new TimeSpan(0, 0, 0, 70, 087);
             Score7 = new TimeSpan(0,0,0,70,787);
             
             LeftKneeLiftAndCross = new TimeSpan(0,0,0,71,366);
@@ -534,6 +576,17 @@ namespace LebaneseKinect
             LeftHandtoFaceSpinForward = new TimeSpan(0,0,0,76,896);
             LeftHandtoFaceSpinBack = new TimeSpan(0, 0, 0, 77, 364);
             RightKneeKick2 = new TimeSpan(0,0,0,78,492);
+
+
+            FemRightElbowSway1 = new TimeSpan(0,0,0,70,578);
+            FemLeftElbowSway1 = new TimeSpan(0,0,0,71,617);
+            FemRightElbowSway2 = new TimeSpan(0,0,0,72,623);
+            FemLeftElbowSway2 = new TimeSpan(0,0,0,73,680);
+            FemRightElbowSway3 = new TimeSpan(0,0,0,74,770);
+            FemLeftElbowSway3 = new TimeSpan(0,0,0,75,858);
+            FemRightElbowSway4 = new TimeSpan(0, 0, 0, 76, 948);
+            FemLeftElbowSway4 = new TimeSpan(0, 0, 0, 78, 055);
+
             Score8 = new TimeSpan(0, 0, 0, 79, 292);
 
             LeftKneeLift14 = new TimeSpan(0,0,0,79,527);
@@ -544,6 +597,13 @@ namespace LebaneseKinect
             LeftKneeLiftLeft = new TimeSpan(0,0,0,84,460);
             LeftKneeLiftBack = new TimeSpan(0,0,0,85,646);
             LeftKneeLiftRight = new TimeSpan(0,0,0,86,574);
+
+            FemLeftWristArcRaise1 = new TimeSpan(0, 0, 0, 79, 648);
+            FemRightWristArcRaise1 = new TimeSpan(0, 0, 0, 80, 603);
+            FemHome1 = new TimeSpan(0,0,0,82,602);
+            FemLeftWristArcRaise2 = new TimeSpan(0, 0, 0, 83, 938);
+            FemRightWristArcRaise2 = new TimeSpan(0, 0, 0, 85, 011);
+            FemHome2 = new TimeSpan(0,0,0,86,859);
             Score9 = new TimeSpan(0,0,0,87,345);
             
             LeftKneeLift17 = new TimeSpan(0, 0, 0, 87, 668);
@@ -563,6 +623,11 @@ namespace LebaneseKinect
             RightKneeLift16 = new TimeSpan(0,0,0,93,831);
             LeftKneeLift22 = new TimeSpan(0,0,0,94,569);
             RightKneeKick6 = new TimeSpan(0,0,0,95,609);
+
+            FemThrillerHandsLeft1 = new TimeSpan(0,0,0,88,301);
+            FemLeftBendHipShake1 = new TimeSpan(0,0,0,90,413);
+            FemThrillerHandsLeft2 = new TimeSpan(0,0,0,92,628);
+            FemLeftBendHipShake2 = new TimeSpan(0,0,0,95,224);
             Score10 = new TimeSpan(0,0,0,96, 681);
 
             LeftFootLiftAndFrontTorso2 = new TimeSpan(0,0,0,96,336);
@@ -575,33 +640,45 @@ namespace LebaneseKinect
             RightKneeKick10 = new TimeSpan(0,0,0,103,833);
             LeftKneeKick = new TimeSpan(0,0,0,104,887);
             RightKneeKick = new TimeSpan(0, 0, 0, 105, 974);
-            Score11 = new TimeSpan(0,0,0,106, 988);
-            
 
-            LeftKneeBendCrouch7 = new TimeSpan(0,0,0,107,526);
-            LeftKneeBendCrouch8 = new TimeSpan(0,0,0, 108, 047);
-            RightFootCross9 = new TimeSpan(0,0,0, 109, 101);
-            RightFootSwing9 = new TimeSpan(0,0,0, 109, 620);
-            RightFootCross10 = new TimeSpan(0,0,0, 110, 191);
-            RightFootSwing10 = new TimeSpan(0,0,0, 110, 711);
-            LeftKneeBendCrouch9 = new TimeSpan(0,0,0, 111, 248);
-            LeftKneeBendCrouch10 = new TimeSpan(0,0,0, 112, 356);
-            RightFootCross11 = new TimeSpan(0,0,0, 113, 393);
-            RightFootSwing11 = new TimeSpan(0,0,0, 113, 879);
-            RightFootCross12 = new TimeSpan(0,0,0, 114, 449);
-            RightFootSwing12 = new TimeSpan(0,0,0, 115, 019);
-            LeftKneeBendCrouch11 = new TimeSpan(0,0,0, 115, 572);
-            LeftKneeBendCrouch12 = new TimeSpan(0,0,0, 116, 611);
-            RightFootCross13 = new TimeSpan(0,0,0, 117, 619);
-            RightFootSwing13 = new TimeSpan(0,0,0, 118, 207);
-            RightFootCross14 = new TimeSpan(0,0,0, 118, 773);
-            RightFootSwing14 = new TimeSpan(0,0,0, 119, 326);
-            LeftKneeBendCrouch13 = new TimeSpan(0,0,0, 119, 880);
-            LeftKneeBendCrouch14 = new TimeSpan(0,0,0, 120, 906);
-            RightFootCross15 = new TimeSpan(0,0,0, 121, 892);
-            RightFootSwing15 = new TimeSpan(0,0,0, 122, 462);
-            RightFootCross16 = new TimeSpan(0,0,0, 123, 033);
-            RightFootSwing16 = new TimeSpan(0,0,0, 123, 551);
+            FemRightElbowSway5 = new TimeSpan(0,0,0,96,789);
+            FemLeftElbowSway5 = new TimeSpan(0, 0, 0, 97, 862);
+            FemRightElbowSway6 = new TimeSpan(0,0,0,99,035);
+            FemLeftElbowSway6 = new TimeSpan(0,0,0,99,973);
+            FemLeftKneeLift5 = new TimeSpan(0, 0, 0, 100, 980);
+            FemRightKneeKick2 = new TimeSpan(0,0,0,102,086);
+            FemLeftKneeLiftAndFrontTorso5 = new TimeSpan(0,0,0,103,112);
+            FemRightKneeKick = new TimeSpan(0,0,0,104,198);
+            FemLeftKneeLift6 = new TimeSpan(0, 0, 0, 105, 237);
+            FemRightKneeKick3 = new TimeSpan(0,0,0,106,381);
+
+            Score11 = new TimeSpan(0,0,0,106, 988);
+
+
+            FemLeftKneeBendCrouch7 = new TimeSpan(0, 0, 0, 107, 526);
+            FemLeftKneeBendCrouch8 = new TimeSpan(0, 0, 0, 108, 047);
+            FemRightFootCross9 = new TimeSpan(0, 0, 0, 109, 101);
+            FemRightFootSwing9 = new TimeSpan(0, 0, 0, 109, 620);
+            FemRightFootCross10 = new TimeSpan(0, 0, 0, 110, 191);
+            FemRightFootSwing10 = new TimeSpan(0, 0, 0, 110, 711);
+            FemLeftKneeBendCrouch9 = new TimeSpan(0, 0, 0, 111, 248);
+            FemLeftKneeBendCrouch10 = new TimeSpan(0, 0, 0, 112, 356);
+            FemRightFootCross11 = new TimeSpan(0, 0, 0, 113, 393);
+            FemRightFootSwing11 = new TimeSpan(0, 0, 0, 113, 879);
+            FemRightFootCross12 = new TimeSpan(0, 0, 0, 114, 449);
+            FemRightFootSwing12 = new TimeSpan(0, 0, 0, 115, 019);
+            FemLeftKneeBendCrouch11 = new TimeSpan(0, 0, 0, 115, 572);
+            FemLeftKneeBendCrouch12 = new TimeSpan(0, 0, 0, 116, 611);
+            FemRightFootCross13 = new TimeSpan(0, 0, 0, 117, 619);
+            FemRightFootSwing13 = new TimeSpan(0, 0, 0, 118, 207);
+            FemRightFootCross14 = new TimeSpan(0, 0, 0, 118, 773);
+            FemRightFootSwing14 = new TimeSpan(0, 0, 0, 119, 326);
+            FemLeftKneeBendCrouch13 = new TimeSpan(0, 0, 0, 119, 880);
+            FemLeftKneeBendCrouch14 = new TimeSpan(0, 0, 0, 120, 906);
+            FemRightFootCross15 = new TimeSpan(0, 0, 0, 121, 892);
+            FemRightFootSwing15 = new TimeSpan(0, 0, 0, 122, 462);
+            FemRightFootCross16 = new TimeSpan(0, 0, 0, 123, 033);
+            FemRightFootSwing16 = new TimeSpan(0, 0, 0, 123, 551);
             Score12 = new TimeSpan(0,0,0, 124,200);
 
             LeftFootLiftAndFrontTorso = new TimeSpan(0,0,0, 124,217);
@@ -610,6 +687,13 @@ namespace LebaneseKinect
             RightKneeKickAndUnderArm2 = new TimeSpan(0,0,0, 127,537);
             RightKneeKneelAndUnderArm = new TimeSpan(0,0,0, 128,576);
             RightKneeKneelAndUnderArmAndLeftHandBehind = new TimeSpan(0,0,0,132,163);
+
+
+            FemLeftKneeLiftAndFrontTorso2 = new TimeSpan(0, 0, 0, 124, 298);
+            FemBackSpinRightKneeLift1 = new TimeSpan(0, 0, 0, 125, 765);
+            FemForwardSpinFacingRightKneeLift = new TimeSpan(0, 0, 0, 127, 225);
+            FemCrouchHipSwivel = new TimeSpan(0, 0, 0, 129, 471);
+            FemRightHandHigh = new TimeSpan(0, 0, 0, 131, 988);
             Score13 = new TimeSpan(0,0,0,132,800);
         }
 

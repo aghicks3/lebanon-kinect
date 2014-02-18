@@ -154,3 +154,4 @@ C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\b
 C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_LeftKneeLift_FrontTorso_LeftHand.xnb
 C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_RightKneeKneel_UnderArm_HandBehind.xnb
 C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_RightKneeLift_LeftHand.xnb
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\scoreBackground.xnb

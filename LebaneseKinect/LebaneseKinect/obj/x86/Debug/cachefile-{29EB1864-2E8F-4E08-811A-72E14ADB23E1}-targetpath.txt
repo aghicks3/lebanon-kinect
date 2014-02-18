@@ -70,3 +70,4 @@ Content\myFont.xnb
 Content\resultFont.xnb
 Content\KinectDepthVisualizer.xnb
 Content\Models\dabkeTexture_0.xnb
+Content\Textures\scoreBackground.xnb

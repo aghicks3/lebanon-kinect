@@ -656,6 +656,15 @@
       <Output>C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\obj\x86\Debug\Models\woman_0.xml</Output>
       <Time>2013-06-03T16:34:13.9156922-04:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\scoreBackground.png</Source>
+      <Name>Textures\scoreBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\scoreBackground.xnb</Output>
+      <Time>2014-01-31T14:02:08-05:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{29EB1864-2E8F-4E08-811A-72E14ADB23E1}</ContentProjectGUID>

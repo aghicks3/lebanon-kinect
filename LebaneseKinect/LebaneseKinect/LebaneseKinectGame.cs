@@ -1,4 +1,4 @@
- #define USE_KINECT // Comment out this line to test without a Kinect!!!
+#define USE_KINECT // Comment out this line to test without a Kinect!!!
 //irene version
 
 using System;
@@ -195,8 +195,8 @@ namespace LebaneseKinect
         TimeSpan RightKneeLift9;
         TimeSpan LeftKneeLift10;
         TimeSpan RightKneeLift10;
-        TimeSpan LeftKneeLift11;
-        TimeSpan RightKneeKick1;
+        TimeSpan LeftKneeBendCrouch0B;
+        TimeSpan LeftKneeBendCrouch0A;
         TimeSpan Score6;
 
         //Seventh score block
@@ -366,8 +366,8 @@ namespace LebaneseKinect
         TimeSpan FemMoveToLeftAndScrollingHands3;
         TimeSpan FemMoveToLeftAndScrollingHands4;
         TimeSpan FemCrouchAndHipShake4;
-        TimeSpan FemLeftKneeLiftAndFrontTorso3;
-        TimeSpan FemRightKneeKick1;
+        TimeSpan FemLeftKneeBendCrouch0B;
+        TimeSpan FemLeftKneeBendCrouch0A;
 
 
         //Seventh Score block
@@ -553,8 +553,8 @@ namespace LebaneseKinect
             RightKneeLift9 = new TimeSpan(0, 0, 0, 50, 273);
             LeftKneeLift10 = new TimeSpan(0, 0, 0, 51, 299);
             RightKneeLift10 = new TimeSpan(0, 0, 0, 52, 379);
-            LeftKneeLift11 = new TimeSpan(0, 0, 0, 53, 896);
-            RightKneeKick1 = new TimeSpan(0, 0, 0, 54, 951);
+            LeftKneeBendCrouch0B = new TimeSpan(0, 0, 0, 53, 649);
+            LeftKneeBendCrouch0A = new TimeSpan(0, 0, 0, 54, 688);
 
             FemMoveToRightAndScrollingHands3 = new TimeSpan(0, 0, 0, 44, 890);
             FemMoveToRightAndScrollingHands4 = new TimeSpan(0, 0, 0, 45, 944);
@@ -562,54 +562,56 @@ namespace LebaneseKinect
             FemMoveToLeftAndScrollingHands3 = new TimeSpan(0, 0, 0, 49, 112);
             FemMoveToLeftAndScrollingHands4 = new TimeSpan(0, 0, 0, 50, 252);
             FemCrouchAndHipShake4 = new TimeSpan(0, 0, 0, 51, 309);
+            FemLeftKneeBendCrouch0B = new TimeSpan(0,0,0,53,649);
+            FemLeftKneeBendCrouch0A = new TimeSpan(0,0,0,54,688);
             Score6 = new TimeSpan(0, 0, 0, 53, 225);
 
             //Score block 7
-            RightFootCross1 = new TimeSpan(0, 0, 0, 55, 558);
-            RightFootSwing1 = new TimeSpan(0, 0, 0, 56, 175);
-            RightFootCross2 = new TimeSpan(0, 0, 0, 56, 678);
+            RightFootCross1 = new TimeSpan(0, 0, 0, 55, 405);
+            RightFootSwing1 = new TimeSpan(0, 0, 0, 55, 876);
+            RightFootCross2 = new TimeSpan(0, 0, 0, 56, 544);
             RightFootSwing2 = new TimeSpan(0, 0, 0, 57, 210);
             LeftKneeBendCrouch1 = new TimeSpan(0, 0, 0, 57, 801);
             LeftKneeBendCrouch2 = new TimeSpan(0, 0, 0, 58, 857);
-            RightFootCross3 = new TimeSpan(0, 0, 0, 59, 903);
-            RightFootSwing3 = new TimeSpan(0, 0, 0, 60, 483);
-            RightFootCross4 = new TimeSpan(0, 0, 0, 60, 952);
-            RightFootSwing4 = new TimeSpan(0, 0, 0, 61, 489);
+            RightFootCross3 = new TimeSpan(0, 0, 0, 59, 795);
+            RightFootSwing3 = new TimeSpan(0, 0, 0, 60, 100);
+            RightFootCross4 = new TimeSpan(0, 0, 0, 60, 768);
+            RightFootSwing4 = new TimeSpan(0, 0, 0, 61, 294);
             LeftKneeBendCrouch3 = new TimeSpan(0, 0, 0, 62, 125);
             LeftKneeBendCrouch4 = new TimeSpan(0, 0, 0, 63, 181);
-            RightFootCross5 = new TimeSpan(0, 0, 0, 64, 205);
-            RightFootSwing5 = new TimeSpan(0, 0, 0, 64, 724);
-            RightFootCross6 = new TimeSpan(0, 0, 0, 65, 261);
-            RightFootSwing6 = new TimeSpan(0, 0, 0, 65, 813);
+            RightFootCross5 = new TimeSpan(0, 0, 0, 64, 020);
+            RightFootSwing5 = new TimeSpan(0, 0, 0, 64, 510);
+            RightFootCross6 = new TimeSpan(0, 0, 0, 65, 058);
+            RightFootSwing6 = new TimeSpan(0, 0, 0, 65, 604);
             LeftKneeBendCrouch5 = new TimeSpan(0, 0, 0, 66, 384);
             LeftKneeBendCrouch6 = new TimeSpan(0, 0, 0, 67, 406);
-            RightFootCross7 = new TimeSpan(0, 0, 0, 68, 478);
+            RightFootCross7 = new TimeSpan(0, 0, 0, 68, 783);
             RightFootSwing7 = new TimeSpan(0, 0, 0, 68, 981);
-            RightFootCross8 = new TimeSpan(0, 0, 0, 69, 537);
-            RightFootSwing8 = new TimeSpan(0, 0, 0, 70, 087);
+            RightFootCross8 = new TimeSpan(0, 0, 0, 69, 355);
+            RightFootSwing8 = new TimeSpan(0, 0, 0, 69, 896);
 
-            FemRightFootCross1 = new TimeSpan(0, 0, 0, 55, 558);
-            FemRightFootSwing1 = new TimeSpan(0, 0, 0, 56, 175);
-            FemRightFootCross2 = new TimeSpan(0, 0, 0, 56, 678);
+            FemRightFootCross1 = new TimeSpan(0, 0, 0, 55, 405);
+            FemRightFootSwing1 = new TimeSpan(0, 0, 0, 55, 876);
+            FemRightFootCross2 = new TimeSpan(0, 0, 0, 56, 544);
             FemRightFootSwing2 = new TimeSpan(0, 0, 0, 57, 210);
             FemLeftKneeBendCrouch1 = new TimeSpan(0, 0, 0, 57, 801);
             FemLeftKneeBendCrouch2 = new TimeSpan(0, 0, 0, 58, 857);
-            FemRightFootCross3 = new TimeSpan(0, 0, 0, 59, 903);
-            FemRightFootSwing3 = new TimeSpan(0, 0, 0, 60, 483);
-            FemRightFootCross4 = new TimeSpan(0, 0, 0, 60, 952);
-            FemRightFootSwing4 = new TimeSpan(0, 0, 0, 61, 489);
+            FemRightFootCross3 = new TimeSpan(0, 0, 0, 59, 795);
+            FemRightFootSwing3 = new TimeSpan(0, 0, 0, 60, 100);
+            FemRightFootCross4 = new TimeSpan(0, 0, 0, 60, 768);
+            FemRightFootSwing4 = new TimeSpan(0, 0, 0, 61, 294);
             FemLeftKneeBendCrouch3 = new TimeSpan(0, 0, 0, 62, 125);
             FemLeftKneeBendCrouch4 = new TimeSpan(0, 0, 0, 63, 181);
-            FemRightFootCross5 = new TimeSpan(0, 0, 0, 64, 205);
-            FemRightFootSwing5 = new TimeSpan(0, 0, 0, 64, 724);
-            FemRightFootCross6 = new TimeSpan(0, 0, 0, 65, 261);
-            FemRightFootSwing6 = new TimeSpan(0, 0, 0, 65, 813);
+            FemRightFootCross5 = new TimeSpan(0, 0, 0, 64, 020);
+            FemRightFootSwing5 = new TimeSpan(0, 0, 0, 64, 510);
+            FemRightFootCross6 = new TimeSpan(0, 0, 0, 65, 058);
+            FemRightFootSwing6 = new TimeSpan(0, 0, 0, 65, 604);
             FemLeftKneeBendCrouch5 = new TimeSpan(0, 0, 0, 66, 384);
             FemLeftKneeBendCrouch6 = new TimeSpan(0, 0, 0, 67, 406);
-            FemRightFootCross7 = new TimeSpan(0, 0, 0, 68, 478);
-            FemRightFootSwing7 = new TimeSpan(0, 0, 0, 68, 981);
-            FemRightFootCross8 = new TimeSpan(0, 0, 0, 69, 537);
-            FemRightFootSwing8 = new TimeSpan(0, 0, 0, 70, 087);
+            FemRightFootCross7 = new TimeSpan(0, 0, 0, 68, 344);
+            FemRightFootSwing7 = new TimeSpan(0, 0, 0, 68, 783);
+            FemRightFootCross8 = new TimeSpan(0, 0, 0, 69, 355);
+            FemRightFootSwing8 = new TimeSpan(0, 0, 0, 69, 896);
             Score7 = new TimeSpan(0, 0, 0, 70, 787);
 
             //Score block 8
@@ -703,54 +705,54 @@ namespace LebaneseKinect
             //Score 12
             LeftKneeBendCrouch7 = new TimeSpan(0, 0, 0, 107, 526);
             LeftKneeBendCrouch8 = new TimeSpan(0, 0, 0, 108, 047);
-            RightFootCross9 = new TimeSpan(0, 0, 0, 109, 101);
-            RightFootSwing9 = new TimeSpan(0, 0, 0, 109, 620);
-            RightFootCross10 = new TimeSpan(0, 0, 0, 110, 191);
-            RightFootSwing10 = new TimeSpan(0, 0, 0, 110, 711);
+            RightFootCross9 = new TimeSpan(0, 0, 0, 109, 046);
+            RightFootSwing9 = new TimeSpan(0, 0, 0, 109, 501);
+            RightFootCross10 = new TimeSpan(0, 0, 0, 110, 034);
+            RightFootSwing10 = new TimeSpan(0, 0, 0, 110, 624);
             LeftKneeBendCrouch9 = new TimeSpan(0, 0, 0, 111, 248);
             LeftKneeBendCrouch10 = new TimeSpan(0, 0, 0, 112, 356);
-            RightFootCross11 = new TimeSpan(0, 0, 0, 113, 393);
-            RightFootSwing11 = new TimeSpan(0, 0, 0, 113, 879);
-            RightFootCross12 = new TimeSpan(0, 0, 0, 114, 449);
-            RightFootSwing12 = new TimeSpan(0, 0, 0, 115, 019);
+            RightFootCross11 = new TimeSpan(0, 0, 0, 113, 354);
+            RightFootSwing11 = new TimeSpan(0, 0, 0, 113, 814);
+            RightFootCross12 = new TimeSpan(0, 0, 0, 114, 358);
+            RightFootSwing12 = new TimeSpan(0, 0, 0, 114, 938);
             LeftKneeBendCrouch11 = new TimeSpan(0, 0, 0, 115, 572);
             LeftKneeBendCrouch12 = new TimeSpan(0, 0, 0, 116, 611);
-            RightFootCross13 = new TimeSpan(0, 0, 0, 117, 619);
-            RightFootSwing13 = new TimeSpan(0, 0, 0, 118, 207);
-            RightFootCross14 = new TimeSpan(0, 0, 0, 118, 773);
-            RightFootSwing14 = new TimeSpan(0, 0, 0, 119, 326);
+            RightFootCross13 = new TimeSpan(0, 0, 0, 117, 662);
+            RightFootSwing13 = new TimeSpan(0, 0, 0, 118, 069);
+            RightFootCross14 = new TimeSpan(0, 0, 0, 118, 600);
+            RightFootSwing14 = new TimeSpan(0, 0, 0, 119, 207);
             LeftKneeBendCrouch13 = new TimeSpan(0, 0, 0, 119, 880);
             LeftKneeBendCrouch14 = new TimeSpan(0, 0, 0, 120, 906);
-            RightFootCross15 = new TimeSpan(0, 0, 0, 121, 892);
-            RightFootSwing15 = new TimeSpan(0, 0, 0, 122, 462);
-            RightFootCross16 = new TimeSpan(0, 0, 0, 123, 033);
-            RightFootSwing16 = new TimeSpan(0, 0, 0, 123, 551);
+            RightFootCross15 = new TimeSpan(0, 0, 0, 121, 919);
+            RightFootSwing15 = new TimeSpan(0, 0, 0, 122, 409);
+            RightFootCross16 = new TimeSpan(0, 0, 0, 122, 960);
+            RightFootSwing16 = new TimeSpan(0, 0, 0, 123, 498);
 
 
             FemLeftKneeBendCrouch7 = new TimeSpan(0, 0, 0, 107, 526);
             FemLeftKneeBendCrouch8 = new TimeSpan(0, 0, 0, 108, 047);
-            FemRightFootCross9 = new TimeSpan(0, 0, 0, 109, 101);
-            FemRightFootSwing9 = new TimeSpan(0, 0, 0, 109, 620);
-            FemRightFootCross10 = new TimeSpan(0, 0, 0, 110, 191);
-            FemRightFootSwing10 = new TimeSpan(0, 0, 0, 110, 711);
+            FemRightFootCross9 = new TimeSpan(0, 0, 0, 109, 046);
+            FemRightFootSwing9 = new TimeSpan(0, 0, 0, 109, 501);
+            FemRightFootCross10 = new TimeSpan(0, 0, 0, 110, 034);
+            FemRightFootSwing10 = new TimeSpan(0, 0, 0, 110, 624);
             FemLeftKneeBendCrouch9 = new TimeSpan(0, 0, 0, 111, 248);
             FemLeftKneeBendCrouch10 = new TimeSpan(0, 0, 0, 112, 356);
-            FemRightFootCross11 = new TimeSpan(0, 0, 0, 113, 393);
-            FemRightFootSwing11 = new TimeSpan(0, 0, 0, 113, 879);
-            FemRightFootCross12 = new TimeSpan(0, 0, 0, 114, 449);
-            FemRightFootSwing12 = new TimeSpan(0, 0, 0, 115, 019);
+            FemRightFootCross11 = new TimeSpan(0, 0, 0, 113, 354);
+            FemRightFootSwing11 = new TimeSpan(0, 0, 0, 113, 814);
+            FemRightFootCross12 = new TimeSpan(0, 0, 0, 114, 358);
+            FemRightFootSwing12 = new TimeSpan(0, 0, 0, 114, 938);
             FemLeftKneeBendCrouch11 = new TimeSpan(0, 0, 0, 115, 572);
             FemLeftKneeBendCrouch12 = new TimeSpan(0, 0, 0, 116, 611);
-            FemRightFootCross13 = new TimeSpan(0, 0, 0, 117, 619);
-            FemRightFootSwing13 = new TimeSpan(0, 0, 0, 118, 207);
-            FemRightFootCross14 = new TimeSpan(0, 0, 0, 118, 773);
-            FemRightFootSwing14 = new TimeSpan(0, 0, 0, 119, 326);
+            FemRightFootCross13 = new TimeSpan(0, 0, 0, 117, 662);
+            FemRightFootSwing13 = new TimeSpan(0, 0, 0, 118, 069);
+            FemRightFootCross14 = new TimeSpan(0, 0, 0, 118, 600);
+            FemRightFootSwing14 = new TimeSpan(0, 0, 0, 119, 207);
             FemLeftKneeBendCrouch13 = new TimeSpan(0, 0, 0, 119, 880);
             FemLeftKneeBendCrouch14 = new TimeSpan(0, 0, 0, 120, 906);
-            FemRightFootCross15 = new TimeSpan(0, 0, 0, 121, 892);
-            FemRightFootSwing15 = new TimeSpan(0, 0, 0, 122, 462);
-            FemRightFootCross16 = new TimeSpan(0, 0, 0, 123, 033);
-            FemRightFootSwing16 = new TimeSpan(0, 0, 0, 123, 551);
+            FemRightFootCross15 = new TimeSpan(0, 0, 0, 121, 919);
+            FemRightFootSwing15 = new TimeSpan(0, 0, 0, 122, 409);
+            FemRightFootCross16 = new TimeSpan(0, 0, 0, 122, 960);
+            FemRightFootSwing16 = new TimeSpan(0, 0, 0, 123, 498);
             Score12 = new TimeSpan(0, 0, 0, 124, 200);
 
             //Score 13
@@ -778,10 +780,10 @@ namespace LebaneseKinect
             tempFemStepsDone = 0;
             rightFootCrossed = false;
             arcedHands = false;
-            femPlaying = false;
+            /*femPlaying = false;
             malePlaying = false;
             femPlayingText = false;
-            malePlayingText = false;
+            malePlayingText = false;*/
             totalScore = 0;
             totalScoreF = 0;
             setScore = 0;
@@ -952,7 +954,7 @@ namespace LebaneseKinect
             jointTexture = Content.Load<Texture2D>("Textures\\joint");
             shadowTexture = Content.Load<Texture2D>("Textures\\shadow");
             backgroundDabke = Content.Load<Texture2D>("Textures\\backgroundDabke");
-            //scoreBackground = Content.Load<Texture2D>("Textures\\scoreBackground");
+            scoreBackground = Content.Load<Texture2D>("Textures\\scoreBackground");
             StepHomeOFF = Content.Load<Texture2D>("Textures\\dsteps1OFF");
             StepCrossOFF = Content.Load<Texture2D>("Textures\\dsteps2OFF");
             StepKickOFF = Content.Load<Texture2D>("Textures\\dsteps3OFF");
@@ -1571,15 +1573,15 @@ namespace LebaneseKinect
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeLift11.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeBendCrouch0B.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
                 {
-                    LeftKneeLift11 = stepFinished;
+                    LeftKneeBendCrouch0B = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeKick1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeBendCrouch0A.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
                 {
-                    RightKneeKick1 = stepFinished;
+                    LeftKneeBendCrouch0A = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
@@ -1617,6 +1619,18 @@ namespace LebaneseKinect
                 if (FemCrouchAndHipShake4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
                 {
                     FemCrouchAndHipShake4 = stepFinished;
+                    femStepsDone++;
+                    tempFemStepsDone++;
+                }
+                if (FemLeftKneeBendCrouch0B.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                {
+                    FemLeftKneeBendCrouch0B = stepFinished;
+                    femStepsDone++;
+                    tempFemStepsDone++;
+                }
+                if (FemLeftKneeBendCrouch0A.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                {
+                    FemLeftKneeBendCrouch0A = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
@@ -2765,6 +2779,8 @@ namespace LebaneseKinect
             if (gameEnd.Subtract(videoTime.Elapsed).Milliseconds < 0)
             {
                 scoreScreen = true;
+                malePlaying = false;
+                femPlaying = false;
             }
             //Loop back to the start
             if (!introPlaying && restartGameLoop.Subtract(videoTime.Elapsed).Milliseconds < 0)
@@ -2815,22 +2831,22 @@ namespace LebaneseKinect
             if (!malePlaying) return;
             setScore = tempScore;
             tempScore = 0;
-            if (setScore > (tempStepsDone * 300))
+            if (setScore > (tempStepsDone * 250))
             {
-                resultColor = Color.Green;
+                resultColor = Color.Cyan;
                 resultString = "EXCELLENT!";
                 textFadeOut = new TimeSpan(0, 0, 2); // 2-second fadeout for result text
             }
-            else if (setScore > (tempStepsDone * 200))/
+            else if (setScore > (tempStepsDone * 100))
             {
-                resultColor = Color.Yellow;
+                resultColor = Color.Green;
                 resultString = "GOOD";
                 textFadeOut = new TimeSpan(0, 0, 2); // 2-second fadeout for result text
             }
             else// if (setScore > (stepsDone*100))
             {
-                resultColor = Color.Red;
-                resultString = "KEEP TRYING";
+                resultColor = Color.Yellow;
+                resultString = "Okay";
                 textFadeOut = new TimeSpan(0, 0, 2); // 2-second fadeout for result text
             }
 
@@ -2852,22 +2868,22 @@ namespace LebaneseKinect
             if (!femPlaying) return;
             setScoreF = tempScoreF;
             tempScoreF = 0;
-            if (setScoreF > (tempFemStepsDone * 300))
+            if (setScoreF > (tempFemStepsDone * 250))
             {
-                resultColorF = Color.Green;
+                resultColorF = Color.Cyan;
                 resultStringF = "EXCELLENT!";
                 textFadeOut = new TimeSpan(0, 0, 2); // 2-second fadeout for result text
             }
-            else if (setScoreF > (tempFemStepsDone * 200))
+            else if (setScoreF > (tempFemStepsDone * 100))
             {
-                resultColorF = Color.Yellow;
+                resultColorF = Color.Green;
                 resultStringF = "GOOD";
                 textFadeOut = new TimeSpan(0, 0, 2); // 2-second fadeout for result text
             }
             else// if (setScore > (stepsDone*100))
             {
-                resultColorF = Color.Red;
-                resultStringF = "KEEP TRYING";
+                resultColorF = Color.Yellow;
+                resultStringF = "Okay";
                 textFadeOut = new TimeSpan(0, 0, 2); // 2-second fadeout for result text
             }
 
@@ -2884,6 +2900,41 @@ namespace LebaneseKinect
             tempFemStepsDone = 0;
         }
 
+        private void scoreDurationMove(double diff)
+        {
+            int earnedScore = Math.Max((int)(600 - diff), 0);
+            int modifiedScore;
+            if (earnedScore > 400)
+            {
+                modifiedScore= 400;
+            }
+            else
+            {
+                modifiedScore= Math.Max((int)(600 - diff), 0);
+            }
+            modifiedScore = Math.Max(modifiedScore, 100);
+            tempScore += modifiedScore;
+            stepsDone++;
+            tempStepsDone++;
+        }
+        private void scoreDurationMoveF(double diff)
+        {
+            int earnedScore = Math.Max((int)(600 - diff), 0);
+            int modifiedScore;
+            if (earnedScore > 400)
+            {
+                modifiedScore = 400;
+            }
+            else
+            {
+                modifiedScore = Math.Max((int)(600 - diff), 0);
+            }
+            modifiedScore = Math.Max(modifiedScore, 100);
+            tempScoreF += modifiedScore;
+            femStepsDone++;
+            tempFemStepsDone++;
+        }
+
         private void scoreMove(double diff)
         {
             int earnedScore = Math.Max((int)(600 - diff), 0);
@@ -2898,7 +2949,6 @@ namespace LebaneseKinect
             stepsDone++;
             tempStepsDone++;
         }
-
         private void scoreMoveF(double diff)
         {
             int earnedScore = Math.Max((int)(600 - diff), 0);
@@ -2928,7 +2978,6 @@ namespace LebaneseKinect
             double diff8 = Math.Abs((currentTime.Subtract(LeftKneeLift8).TotalMilliseconds));
             double diff9 = Math.Abs((currentTime.Subtract(LeftKneeLift9).TotalMilliseconds));
             double diff10 = Math.Abs((currentTime.Subtract(LeftKneeLift10).TotalMilliseconds));
-            double diff11 = Math.Abs((currentTime.Subtract(LeftKneeLift11).TotalMilliseconds));
             double diff12 = Math.Abs((currentTime.Subtract(LeftKneeLift12).TotalMilliseconds));
             double diff13 = Math.Abs((currentTime.Subtract(LeftKneeLift13).TotalMilliseconds));
             double diff14 = Math.Abs((currentTime.Subtract(LeftKneeLift14).TotalMilliseconds));
@@ -3312,7 +3361,7 @@ namespace LebaneseKinect
 
             if (diff1 < 600)
             {
-                scoreMove(diff1);
+                scoreDurationMove(diff1);
                 KneelDownsAndClap = stepFinished;
             }
         }
@@ -3324,7 +3373,7 @@ namespace LebaneseKinect
 
             if (diff1 < 600)
             {
-                scoreMove(diff1);
+                scoreDurationMove(diff1);
                 MoveToRightAndWaiterHand = stepFinished;
             }
         }
@@ -3336,7 +3385,7 @@ namespace LebaneseKinect
 
             if (diff1 < 600)
             {
-                scoreMove(diff1);
+                scoreDurationMove(diff1);
                 ShrugShoulders = stepFinished;
             }
         }
@@ -3553,6 +3602,8 @@ namespace LebaneseKinect
         private void LeftKneeBendCrouchTriggered()
         {
             TimeSpan currentTime = videoTime.Elapsed;
+            double diff0A = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch0A).TotalMilliseconds));  
+            double diff0B = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch0B).TotalMilliseconds));   
             double diff1 = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch2).TotalMilliseconds));
             double diff3 = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch3).TotalMilliseconds));
@@ -3568,6 +3619,16 @@ namespace LebaneseKinect
             double diff13 = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch13).TotalMilliseconds));
             double diff14 = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch14).TotalMilliseconds));
 
+            if (diff0A < 600)
+            {
+                scoreMove(diff0A);
+                LeftKneeBendCrouch1 = stepFinished;
+            }
+            if (diff0B < 600)
+            {
+                scoreMove(diff0B);
+                LeftKneeBendCrouch1 = stepFinished;
+            }
             if (diff1 < 600)
             {
                 scoreMove(diff1);
@@ -3646,7 +3707,6 @@ namespace LebaneseKinect
         {
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(RightKneeKick).TotalMilliseconds));
-            double diff2 = Math.Abs((currentTime.Subtract(RightKneeKick1).TotalMilliseconds));
             double diff3 = Math.Abs((currentTime.Subtract(RightKneeKick2).TotalMilliseconds));
             double diff4 = Math.Abs((currentTime.Subtract(RightKneeKick3).TotalMilliseconds));
             double diff5 = Math.Abs((currentTime.Subtract(RightKneeKick4).TotalMilliseconds));
@@ -3661,12 +3721,6 @@ namespace LebaneseKinect
             {
                 scoreMove(diff1);
                 RightKneeKick = stepFinished;
-            }
-
-            else if (diff2 < 600)
-            {
-                scoreMove(diff2);
-                RightKneeKick1 = stepFinished;
             }
             else if (diff3 < 600)
             {
@@ -3867,7 +3921,7 @@ namespace LebaneseKinect
 
             if (diff1 < 600)
             {
-                scoreMove(diff1);
+                scoreDurationMove(diff1);
                 RightKneeKneelAndUnderArmAndLeftHandBehind = stepFinished;
             }
         }
@@ -3977,23 +4031,23 @@ namespace LebaneseKinect
 
             if (diff1 < 600)
             {
-                scoreMoveF(diff1);
+                scoreDurationMoveF(diff1);
                 FemCrouchAndHipShake1 = stepFinished;
             }
 
             else if (diff2 < 600)
             {
-                scoreMoveF(diff2);
+                scoreDurationMoveF(diff2);
                 FemCrouchAndHipShake2 = stepFinished;
             }
             else if (diff3 < 600)
             {
-                scoreMoveF(diff3);
+                scoreDurationMoveF(diff3);
                 FemCrouchAndHipShake3 = stepFinished;
             }
             else if (diff4 < 600)
             {
-                scoreMoveF(diff4);
+                scoreDurationMoveF(diff4);
                 FemCrouchAndHipShake4 = stepFinished;
             }
         }
@@ -4144,13 +4198,13 @@ namespace LebaneseKinect
 
             if (diff1 < 600)
             {
-                scoreMoveF(diff1);
+                scoreDurationMoveF(diff1);
                 FemHipShakeBack1 = stepFinished;
             }
 
             else if (diff2 < 600)
             {
-                scoreMoveF(diff2);
+                scoreDurationMoveF(diff2);
                 FemHipShakeBack2 = stepFinished;
             }
         }
@@ -4201,13 +4255,13 @@ namespace LebaneseKinect
 
             if (diff1 < 600)
             {
-                scoreMoveF(diff1);
+                scoreDurationMoveF(diff1);
                 FemHipShakeFront1 = stepFinished;
             }
 
             else if (diff2 < 600)
             {
-                scoreMoveF(diff2);
+                scoreDurationMoveF(diff2);
                 FemHipShakeFront2 = stepFinished;
             }
         }
@@ -4422,6 +4476,8 @@ namespace LebaneseKinect
         private void FemLeftKneeBendCrouchTriggered()
         {
             TimeSpan currentTime = videoTime.Elapsed;
+            double diff0A = Math.Abs((currentTime.Subtract(FemLeftKneeBendCrouch0A).TotalMilliseconds));
+            double diff0B = Math.Abs((currentTime.Subtract(FemLeftKneeBendCrouch0B).TotalMilliseconds));
             double diff1 = Math.Abs((currentTime.Subtract(FemLeftKneeBendCrouch1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(FemLeftKneeBendCrouch2).TotalMilliseconds));
             double diff3 = Math.Abs((currentTime.Subtract(FemLeftKneeBendCrouch3).TotalMilliseconds));
@@ -4437,7 +4493,17 @@ namespace LebaneseKinect
             double diff13 = Math.Abs((currentTime.Subtract(FemLeftKneeBendCrouch13).TotalMilliseconds));
             double diff14 = Math.Abs((currentTime.Subtract(FemLeftKneeBendCrouch14).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if(diff0A < 600)
+            {
+                scoreMoveF(diff0A);
+                FemLeftKneeBendCrouch0A = stepFinished;
+            }
+            else if (diff0B < 600)
+            {
+                scoreMoveF(diff0B);
+                FemLeftKneeBendCrouch0B = stepFinished;
+            }
+            else if (diff1 < 600)
             {
                 scoreMoveF(diff1);
                 FemLeftKneeBendCrouch1 = stepFinished;
@@ -4624,7 +4690,7 @@ namespace LebaneseKinect
 
             if (diff1 < 600)
             {
-                scoreMoveF(diff1);
+                scoreDurationMoveF(diff1);
                 FemCrouchHipSwivel = stepFinished;
             }
         }
@@ -4732,7 +4798,6 @@ namespace LebaneseKinect
         {
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(FemRightKneeKick).TotalMilliseconds));
-            double diff2 = Math.Abs((currentTime.Subtract(FemRightKneeKick1).TotalMilliseconds));
             double diff3 = Math.Abs((currentTime.Subtract(FemRightKneeKick2).TotalMilliseconds));
             double diff4 = Math.Abs((currentTime.Subtract(FemRightKneeKick3).TotalMilliseconds));
 
@@ -4740,12 +4805,6 @@ namespace LebaneseKinect
             {
                 scoreMoveF(diff1);
                 FemRightKneeKick = stepFinished;
-            }
-
-            else if (diff2 < 600)
-            {
-                scoreMoveF(diff2);
-                FemRightKneeKick1 = stepFinished;
             }
             else if (diff3 < 600)
             {
@@ -4763,19 +4822,12 @@ namespace LebaneseKinect
         {//3, 5, 2
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(FemLeftKneeLiftAndFrontTorso2).TotalMilliseconds));
-            double diff2 = Math.Abs((currentTime.Subtract(FemLeftKneeLiftAndFrontTorso3).TotalMilliseconds));
             double diff3 = Math.Abs((currentTime.Subtract(FemLeftKneeLiftAndFrontTorso5).TotalMilliseconds));
 
             if (diff1 < 600)
             {
                 scoreMoveF(diff1);
                 FemLeftKneeLiftAndFrontTorso2 = stepFinished;
-            }
-
-            else if (diff2 < 600)
-            {
-                scoreMoveF(diff2);
-                FemLeftKneeLiftAndFrontTorso3 = stepFinished;
             }
             else if (diff3 < 600)
             {
@@ -4848,38 +4900,38 @@ namespace LebaneseKinect
                 String rating, ratingF;
                 Color ratingC, ratingFC;
                 //Display rating of how they did
-                if (displayScore > stepsDone * 300)
+                if (displayScore > stepsDone * 250)
                 {
-                    rating = "EXCELLENT!";
+                    rating = "DANCE STAR!";
+                    ratingC = Color.Cyan;
+                }
+                else if (displayScore > stepsDone/* * 100*/)
+                {
+                    rating = "Professional!";
                     ratingC = Color.Green;
                 }
-                else if (displayScore > stepsDone * 200)
+                else
                 {
-                    rating = "GOOD!";
+                    rating = "In Training";
                     ratingC = Color.Yellow;
                 }
-                else
-                {
-                    rating = "TRY AGAIN!";
-                    ratingC = Color.Red;
-                }
                 //Fem
-                if (displayScore > femStepsDone * 300)
+                if (displayScoreF > femStepsDone * 250)
                 {
-                    ratingF = "EXCELLENT!";
+                    ratingF = "DANCE STAR!";
+                    ratingFC = Color.Cyan;
+                }
+                else if (displayScoreF > femStepsDone /* * 100 */)
+                {
+                    ratingF = "Professional";
                     ratingFC = Color.Green;
                 }
-                else if (displayScore > femStepsDone * 200)
-                {
-                    ratingF = "GOOD!";
-                    ratingFC = Color.Yellow;
-                }
                 else
                 {
-                    ratingF = "TRY AGAIN!";
-                    ratingFC = Color.Red;
+                    ratingF = "In Training";
+                    ratingFC = Color.Yellow;
                 }
-                DrawDebugString(resultFont, ratingFC, (int)(WINDOW_WIDTH - 240), 400, ratingF);
+                DrawDebugString(resultFont, ratingFC, (int)(WINDOW_WIDTH/2 + 5), 400, ratingF);
                 DrawDebugString(resultFont, ratingC, (int)(5), 400, rating);
 
                 spriteBatch.End();
@@ -4923,2344 +4975,2348 @@ namespace LebaneseKinect
 
                     //malestart
                     int xlocation = 0;
-
-                    diff = (currentTime.Subtract(RightKneeLift1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
+                    if (malePlaying)
                     {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+
+                        diff = (currentTime.Subtract(RightKneeLift1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_RightKneeLift_FaceRight, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_RightKneeLift_FaceRight, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_FaceRight, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_FaceRight, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_RightKneeLift_FaceRight, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_RightKneeLift_FaceRight, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_FaceRight, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_FaceRight, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //scoreblock2
+                        //scoreblock2
 
-                    diff = (currentTime.Subtract(LeftKneeLift3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLiftAndFrontTorso1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLiftAndFrontTorso1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLiftAndBackTorso1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLiftAndBackTorso1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift4).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift4).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift4).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift4).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLiftAndFrontTorso2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLiftAndFrontTorso2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLiftAndBackTorso2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLiftAndBackTorso2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //scoreblock3
+                        //scoreblock3
 
-                    diff = (currentTime.Subtract(LeftKneeLiftAndLeftHand1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLiftAndLeftHand1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLiftAndLeftHand1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLiftAndLeftHand1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_RightKneeLift_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_RightKneeLift_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLiftAndFrontTorsoAndLeftHand1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLiftAndFrontTorsoAndLeftHand1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_FrontTorso_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_FrontTorso_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLiftAndBackTorsoAndLeftHand1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLiftAndBackTorsoAndLeftHand1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_RightKneeLift_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_RightKneeLift_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLiftAndLeftHand2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLiftAndLeftHand2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLiftAndLeftHand2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLiftAndLeftHand2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_RightKneeLift_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_RightKneeLift_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLiftAndFrontTorsoAndLeftHand2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLiftAndFrontTorsoAndLeftHand2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_FrontTorso_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_FrontTorso_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLiftAndBackTorsoAndLeftHand2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLiftAndBackTorsoAndLeftHand2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_RightKneeLift_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_RightKneeLift_LeftHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //scoreblock4
+                        //scoreblock4
 
-                    diff = (currentTime.Subtract(KneelDownsAndClap).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(KneelDownsAndClap).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_KneelandClap, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_KneelandClap, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //scoreblock5
+                        //scoreblock5
 
-                    diff = (currentTime.Subtract(LeftKneeLift5).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift5).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift5).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift5).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift6).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift6).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift6).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift6).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift7).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift7).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift7).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift7).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift8).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift8).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift8).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift8).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //scoreblock6
+                        //scoreblock6
 
-                    diff = (currentTime.Subtract(MoveToRightAndWaiterHand).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(MoveToRightAndWaiterHand).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_WaiterHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_WaiterHand, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(ShrugShoulders).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(ShrugShoulders).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_shrug, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_shrug, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift9).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift9).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift9).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift9).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift10).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift10).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift10).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift10).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift11).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch0B).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKick1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch0A).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //scoreblock7
+                        //scoreblock7
 
-                    diff = (currentTime.Subtract(RightFootCross1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeBendCrouch1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeBendCrouch2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross4).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross4).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeBendCrouch3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeBendCrouch4).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch4).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross5).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross5).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross6).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross6).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeBendCrouch5).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch5).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeBendCrouch6).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch6).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross7).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross7).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross8).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross8).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //scoreblock8
+                        //scoreblock8
 
-                    diff = (currentTime.Subtract(LeftKneeLiftAndCross).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLiftAndCross).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeCross, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeCross, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLiftAndCross).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLiftAndCross).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_RightKneeCross, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_RightKneeCross, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift12).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift12).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift11).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift11).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift13).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift13).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift12).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift12).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftHandtoFaceSpinForward).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftHandtoFaceSpinForward).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftHandToFace_Spin, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftHandToFace_Spin, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKick2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeKick2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //scoreblock9
+                        //scoreblock9
 
-                    diff = (currentTime.Subtract(LeftKneeLift14).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift14).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKick3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeKick3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift15).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift15).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKick4).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeKick4).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift16).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift16).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift16).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift16).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLiftLeft).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLiftLeft).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_FaceLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_FaceLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLiftBack).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLiftBack).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_FaceBack, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_FaceBack, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLiftRight).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLiftRight).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_FaceRight, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_FaceRight, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //scoreblock10
+                        //scoreblock10
 
-                    diff = (currentTime.Subtract(LeftKneeLift17).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift17).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeKick17).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeKick17).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift13).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift13).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift18).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift18).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeKick18).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeKick18).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift14).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift14).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift19).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift19).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKick5).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeKick5).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift20).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift20).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeKick20).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeKick20).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift15).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift15).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift21).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift21).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeKick21).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeKick21).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeLift16).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeLift16).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift22).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift22).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKick6).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeKick6).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //scoreblock11
+                        //scoreblock11
 
-                    diff = (currentTime.Subtract(LeftKneeLiftAndFrontTorso3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLiftAndFrontTorso3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKick7).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeKick7).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift23).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift23).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKick8).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeKick8).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLift24).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLift24).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKick9).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeKick9).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLiftAndFrontTorso4).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLiftAndFrontTorso4).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKick10).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeKick10).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeKick).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeKick).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKick).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeKick).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //scoreblock 12
+                        //scoreblock 12
 
-                    diff = (currentTime.Subtract(LeftKneeBendCrouch7).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch7).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeBendCrouch8).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch8).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross9).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross9).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross10).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross10).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeBendCrouch9).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch9).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeBendCrouch10).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch10).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross11).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross11).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross12).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross12).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeBendCrouch11).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch11).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeBendCrouch12).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch12).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross13).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross13).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross14).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross14).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeBendCrouch13).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch13).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeBendCrouch14).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeBendCrouch14).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross15).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross15).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightFootCross16).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightFootCross16).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //scoreblock 13
+                        //scoreblock 13
 
-                    diff = (currentTime.Subtract(LeftKneeLiftAndFrontTorso5).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLiftAndFrontTorso5).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKickAndUnderArm1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeKickAndUnderArm1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_RightKneeKick_UnderArm, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_RightKneeKick_UnderArm, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(LeftKneeLiftAndUnderArm).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(LeftKneeLiftAndUnderArm).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_LeftKneeLift_UnderArm, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_LeftKneeLift_UnderArm, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKickAndUnderArm2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeKickAndUnderArm2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_RightKneeKick_UnderArm, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_RightKneeKick_UnderArm, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKneelAndUnderArm).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeKneelAndUnderArm).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_RightKneeKneel_UnderArm, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_RightKneeKneel_UnderArm, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(RightKneeKneelAndUnderArmAndLeftHandBehind).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(RightKneeKneelAndUnderArmAndLeftHandBehind).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            spriteBatch.Draw(male_RightKneeKneel_UnderArm_HandBehind, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(male_RightKneeKneel_UnderArm_HandBehind, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                     }
                     //femalestart 
 
                     //First Female move
-
-                    diff = (currentTime.Subtract(FemLeftKneeLift1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
+                    if (femPlaying)
                     {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeLift1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeLift_FaceLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeLift_FaceLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightKneeLift1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightKneeLift1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_RightKneeLift_FaceLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_RightKneeLift_FaceLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeLift2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeLift2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeLift_FaceLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeLift_FaceLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightKneeLift2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightKneeLift2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_RightKneeLift_FaceLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_RightKneeLift_FaceLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //Second score block
+                        //Second score block
 
-                    diff = (currentTime.Subtract(FemLeftKneeLift3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeLift3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightKneeLift3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightKneeLift3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_RightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_RightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftFootLiftAndFrontTorso1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftFootLiftAndFrontTorso1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootLiftAndBackTorso1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootLiftAndBackTorso1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_RightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_RightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeLift4).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeLift4).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightKneeLift4).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightKneeLift4).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_RightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_RightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftFootLiftAndFrontTorso2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftFootLiftAndFrontTorso2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootLiftAndBackTorso2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootLiftAndBackTorso2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_RightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_RightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //Third Score block
+                        //Third Score block
 
-                    diff = (currentTime.Subtract(FemHandSwingFront1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemHandSwingFront1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_HandSwingFront, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_HandSwingFront, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemHandSwingRight1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemHandSwingRight1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_HandSwingRight, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_HandSwingRight, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemHipShakeBack1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemHipShakeBack1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_HipShakeBack, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_HipShakeBack, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemHandSwingBack1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemHandSwingBack1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_HandSwingBack, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_HandSwingBack, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemHandSwingLeft1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemHandSwingLeft1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_HandSwingLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_HandSwingLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemHipShakeFront1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemHipShakeFront1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_HipShakeFront, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_HipShakeFront, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //Fourth Score block
+                        //Fourth Score block
 
-                    diff = (currentTime.Subtract(FemHandSwingFront2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemHandSwingFront2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_HandSwingFront, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_HandSwingFront, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemHandSwingRight2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemHandSwingRight2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_HandSwingRight, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_HandSwingRight, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemHipShakeBack2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemHipShakeBack2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_HipShakeBack, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_HipShakeBack, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemHandSwingBack2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemHandSwingBack2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_HandSwingBack, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_HandSwingBack, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemHandSwingLeft2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemHandSwingLeft2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_HandSwingLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_HandSwingLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemHipShakeFront2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemHipShakeFront2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_HipShakeFront, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_HipShakeFront, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //Fifth Score block
+                        //Fifth Score block
 
-                    diff = (currentTime.Subtract(FemMoveToRightAndScrollingHands1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemMoveToRightAndScrollingHands1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ScrollingHands_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ScrollingHands_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemMoveToRightAndScrollingHands2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemMoveToRightAndScrollingHands2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ScrollingHands_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ScrollingHands_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemCrouchAndHipShake1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemCrouchAndHipShake1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_Crouch_HipShake, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_Crouch_HipShake, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemMoveToLeftAndScrollingHands1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemMoveToLeftAndScrollingHands1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ScrollingHands_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ScrollingHands_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemMoveToLeftAndScrollingHands2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemMoveToLeftAndScrollingHands2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ScrollingHands_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ScrollingHands_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemCrouchAndHipShake2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemCrouchAndHipShake2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_Crouch_HipShake, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_Crouch_HipShake, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //Sixth Score block
+                        //Sixth Score block
 
-                    diff = (currentTime.Subtract(FemMoveToRightAndScrollingHands3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemMoveToRightAndScrollingHands3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ScrollingHands_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ScrollingHands_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemMoveToRightAndScrollingHands4).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemMoveToRightAndScrollingHands4).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ScrollingHands_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ScrollingHands_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemCrouchAndHipShake3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemCrouchAndHipShake3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_Crouch_HipShake, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_Crouch_HipShake, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemMoveToLeftAndScrollingHands3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemMoveToLeftAndScrollingHands3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ScrollingHands_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ScrollingHands_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemMoveToLeftAndScrollingHands4).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemMoveToLeftAndScrollingHands4).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ScrollingHands_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ScrollingHands_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemCrouchAndHipShake4).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemCrouchAndHipShake4).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_Crouch_HipShake, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_Crouch_HipShake, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeLiftAndFrontTorso3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch0A).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightKneeKick1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch0B).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //Seventh Score block
+                        //Seventh Score block
 
-                    diff = (currentTime.Subtract(FemRightFootCross1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeBendCrouch1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeBendCrouch2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross4).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross4).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeBendCrouch3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeBendCrouch4).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch4).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross5).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross5).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross6).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross6).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeBendCrouch5).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch5).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeBendCrouch6).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch6).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross7).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross7).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross8).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross8).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //Eighth Score block
+                        //Eighth Score block
 
-                    diff = (currentTime.Subtract(FemRightElbowSway1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightElbowSway1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ElbowSway, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ElbowSway, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightElbowSway2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightElbowSway2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ElbowSway, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ElbowSway, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightElbowSway3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightElbowSway3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ElbowSway, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ElbowSway, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightElbowSway4).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightElbowSway4).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ElbowSway, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ElbowSway, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //Ninth Score block
+                        //Ninth Score block
 
-                    diff = (currentTime.Subtract(FemLeftWristArcRaise1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftWristArcRaise1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_WristArcRaise_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_WristArcRaise_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightWristArcRaise1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightWristArcRaise1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_WristArcRaise_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_WristArcRaise_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemHome1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemHome1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_Home, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_Home, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftWristArcRaise2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftWristArcRaise2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_WristArcRaise_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_WristArcRaise_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightWristArcRaise2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightWristArcRaise2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_WristArcRaise_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_WristArcRaise_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemHome2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemHome2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_Home, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_Home, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //Tenth Score block
+                        //Tenth Score block
 
-                    diff = (currentTime.Subtract(FemThrillerHandsLeft1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemThrillerHandsLeft1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ThrillerhandsLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ThrillerhandsLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftBendHipShake1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftBendHipShake1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftBendHipShake, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftBendHipShake, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemThrillerHandsLeft2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemThrillerHandsLeft2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ThrillerhandsLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ThrillerhandsLeft, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftBendHipShake2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftBendHipShake2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftBendHipShake, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftBendHipShake, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //Eleventh Score block
+                        //Eleventh Score block
 
-                    diff = (currentTime.Subtract(FemRightElbowSway5).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightElbowSway5).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ElbowSway, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ElbowSway, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightElbowSway6).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightElbowSway6).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_ElbowSway, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_ElbowSway, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeLift5).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeLift5).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightKneeKick2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightKneeKick2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeLiftAndFrontTorso5).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeLiftAndFrontTorso5).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightKneeKick).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightKneeKick).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeLift6).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeLift6).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightKneeKick3).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightKneeKick3).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_rightKneeKick, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //Twelth Score block
+                        //Twelth Score block
 
-                    diff = (currentTime.Subtract(FemLeftKneeBendCrouch7).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch7).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeBendCrouch8).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch8).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross9).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross9).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross10).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross10).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeBendCrouch9).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch9).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeBendCrouch10).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch10).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross11).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross11).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross12).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross12).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeBendCrouch11).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch11).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeBendCrouch12).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch12).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Left, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross13).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross13).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross14).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross14).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeBendCrouch13).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch13).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemLeftKneeBendCrouch14).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeBendCrouch14).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeBendCrouch_Right, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross15).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross15).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightFootCross16).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightFootCross16).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_crossover, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
-                    //Thirteenth Score block
+                        //Thirteenth Score block
 
-                    diff = (currentTime.Subtract(FemLeftKneeLiftAndFrontTorso2).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemLeftKneeLiftAndFrontTorso2).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_LeftKneeLift_FrontTorso, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemBackSpinRightKneeLift1).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemBackSpinRightKneeLift1).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_BackSpinRightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_BackSpinRightKneeLift, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemCrouchHipSwivel).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemCrouchHipSwivel).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_Crouch_HipSwivel, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_Crouch_HipSwivel, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    }
 
-                    diff = (currentTime.Subtract(FemRightHandHigh).TotalMilliseconds);
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        diff = (currentTime.Subtract(FemRightHandHigh).TotalMilliseconds);
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            spriteBatch.Draw(female_RightHandHigh, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         }
-                        spriteBatch.Draw(female_RightHandHigh, new Rectangle(xlocation, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                     }
-
 
                     spriteBatch.End();
 
@@ -7573,6 +7629,7 @@ namespace LebaneseKinect
                                             videoPlayer2.Play(video1);
                                             introPlaying = false;
                                             videoTime.Reset();
+                                            scoreScreen = false;
                                             gamePlaying = true;
                                             setTime();
                                             videoTime.Start();
@@ -7606,6 +7663,7 @@ namespace LebaneseKinect
                                             videoPlayer2.IsLooped = false;
                                             videoPlayer2.Play(video1);
                                             introPlaying = false;
+                                            scoreScreen = false;
                                             gamePlaying = true;
                                             setTime();
                                             videoTime.Reset();

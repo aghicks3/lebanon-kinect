@@ -2831,7 +2831,7 @@ namespace LebaneseKinect
             if (!malePlaying) return;
             setScore = tempScore;
             tempScore = 0;
-            if (setScore > (tempStepsDone * 250))
+            if (setScore > (tempStepsDone * 200))
             {
                 resultColor = Color.Cyan;
                 resultString = "EXCELLENT!";
@@ -2868,7 +2868,7 @@ namespace LebaneseKinect
             if (!femPlaying) return;
             setScoreF = tempScoreF;
             tempScoreF = 0;
-            if (setScoreF > (tempFemStepsDone * 250))
+            if (setScoreF > (tempFemStepsDone * 200))
             {
                 resultColorF = Color.Cyan;
                 resultStringF = "EXCELLENT!";
@@ -4900,14 +4900,14 @@ namespace LebaneseKinect
                 String rating, ratingF;
                 Color ratingC, ratingFC;
                 //Display rating of how they did
-                if (displayScore > stepsDone * 250)
+                if (displayScore > stepsDone * 180)
                 {
                     rating = "DANCE STAR!";
                     ratingC = Color.Cyan;
                 }
-                else if (displayScore > stepsDone/* * 100*/)
+                else if (displayScore > stepsDone * 100)
                 {
-                    rating = "Professional!";
+                    rating = "Professional";
                     ratingC = Color.Green;
                 }
                 else
@@ -4916,12 +4916,12 @@ namespace LebaneseKinect
                     ratingC = Color.Yellow;
                 }
                 //Fem
-                if (displayScoreF > femStepsDone * 250)
+                if (displayScoreF > femStepsDone * 180 )
                 {
                     ratingF = "DANCE STAR!";
                     ratingFC = Color.Cyan;
                 }
-                else if (displayScoreF > femStepsDone /* * 100 */)
+                else if (displayScoreF > femStepsDone  * 100 )
                 {
                     ratingF = "Professional";
                     ratingFC = Color.Green;
@@ -4931,8 +4931,8 @@ namespace LebaneseKinect
                     ratingF = "In Training";
                     ratingFC = Color.Yellow;
                 }
-                DrawDebugString(resultFont, ratingFC, (int)(WINDOW_WIDTH/2 + 5), 400, ratingF);
-                DrawDebugString(resultFont, ratingC, (int)(5), 400, rating);
+                DrawDebugString(resultFont, ratingFC, (int)(WINDOW_WIDTH/2 - 50), 400, ratingF);
+                DrawDebugString(resultFont, ratingC, (int)(5), 300, rating);
 
                 spriteBatch.End();
             }

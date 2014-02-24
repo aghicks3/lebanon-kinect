@@ -825,7 +825,7 @@ namespace LebaneseKinect
             graphics.PreferredBackBufferHeight = WINDOW_HEIGHT;
             graphics.PreparingDeviceSettings += this.GraphicsDevicePreparingDeviceSettings;
             graphics.SynchronizeWithVerticalRetrace = true;
-            graphics.IsFullScreen = false;
+            graphics.IsFullScreen = true;
             Content.RootDirectory = "Content";
             eventsTriggeredList = new List<string>();
             for (int i = 0; i < numberOfAnimationPlayers; i++)

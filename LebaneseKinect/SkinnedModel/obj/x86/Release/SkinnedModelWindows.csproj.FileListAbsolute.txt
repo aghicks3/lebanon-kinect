@@ -1,0 +1,6 @@
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModel\bin\x86\Release\SkinnedModel.dll
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModel\bin\x86\Release\SkinnedModel.pdb
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModel\obj\x86\Release\SkinnedModelWindows.csprojResolveAssemblyReference.cache
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModel\obj\x86\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModel\obj\x86\Release\SkinnedModel.dll
+C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModel\obj\x86\Release\SkinnedModel.pdb

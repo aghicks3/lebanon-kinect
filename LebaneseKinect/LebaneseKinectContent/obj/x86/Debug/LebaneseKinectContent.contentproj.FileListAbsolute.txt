@@ -2,3 +2,4 @@ C:\Users\Will\Documents\Visual Studio 2010\Projects\LebaneseKinect\LebaneseKinec
 C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\obj\x86\Debug\LebaneseKinectContent.contentprojResolveAssemblyReference.cache
 C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\obj\x86\Debug\LebaneseKinectContent.contentprojResolveAssemblyReference.cache
 C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\obj\x86\Debug\LebaneseKinectContent.contentprojResolveAssemblyReference.cache
+C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\obj\x86\Debug\LebaneseKinectContent.contentprojResolveAssemblyReference.cache

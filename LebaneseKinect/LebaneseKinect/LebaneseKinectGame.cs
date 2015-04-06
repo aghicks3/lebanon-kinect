@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-using SkinnedModel;
+//using SkinnedModel;
 using System.Timers;
 
 #if USE_KINECT
@@ -29,15 +29,27 @@ namespace LebaneseKinect
     /// </summary>
     public class LebaneseKinectGame : Microsoft.Xna.Framework.Game
     {
+        //Important Drew Hicks Refactor
+        enum GameState { ATTRACT, MENU, DANCE, SCORE, QUIT, Thu, Fri };
+        int gameState = (int)GameState.ATTRACT;
+
+        Dance dance1 = new Dance("Lebanon");
+
         // Declaring variables...
         bool bWantsToQuit = false;
+
+        const int SCORING_WINDOW_EASY = 600;
+        const int SCORING_WINDOW_MEDIUM = 300;
+        const int SCORING_WINDOW_HARD = 150;
+        int scoring_window = SCORING_WINDOW_MEDIUM;
+
 #if USE_KINECT
         KinectSensor kinect;
         Skeleton[] skeletonData;
         Skeleton skeleton;
         Boolean debugging = true;
-
 #endif
+
         const int WINDOW_WIDTH = 640;//720;
         const int WINDOW_HEIGHT = 480;
 
@@ -48,15 +60,6 @@ namespace LebaneseKinect
         float cameraArc = 0;
         float cameraRotation = 0;
         float cameraDistance = 18;
-
-        // Dabke dancer model variables
-        Model modelMan, modelWoman;
-        const int numberOfAnimationPlayers = 6;
-        const float spaceBetweenAnimationPlayers = 4.4f;//4.5f;
-        const float initialStartingPosition = -11.0f;
-        AnimationPlayer[] animationPlayers;
-        Matrix[] animationPlayersOffsets;
-        AnimationClip[] clips;
 
         RenderTarget2D backBuffer;
         Effect kinectDepthVisualizer;
@@ -90,6 +93,8 @@ namespace LebaneseKinect
         Texture2D male_LeftKneeLift_UnderArm, male_RightKneeCross, male_rightKneeKick, male_RightKneeKick_UnderArm;
         Texture2D male_RightKneeKneel_UnderArm, male_RightKneeKneel_UnderArm_HandBehind, male_rightKneeLift;
         Texture2D male_RightKneeLift_FaceRight, male_RightKneeLift_LeftHand, male_shrug, male_WaiterHand;
+
+        Texture2D n_MoveTarget;
 
         /* Keyboard controls
          *  Up arrow: kick
@@ -828,8 +833,6 @@ namespace LebaneseKinect
             graphics.IsFullScreen = true;
             Content.RootDirectory = "Content";
             eventsTriggeredList = new List<string>();
-            for (int i = 0; i < numberOfAnimationPlayers; i++)
-                shadowRects.Add(new Rectangle(0, 0, 64, 64));
         }
 
         private void GraphicsDevicePreparingDeviceSettings(object sender, PreparingDeviceSettingsEventArgs e)
@@ -888,64 +891,8 @@ namespace LebaneseKinect
         /// </summary>
         protected override void LoadContent()
         {
-            // Load our 3D dancer model(s)
-            modelMan = Content.Load<Model>("Models\\man");
-            modelWoman = Content.Load<Model>("Models\\woman");
-
-            // Our 3D models are skinned... notify if there's an error.  
-            SkinningData skinningDataMale = modelMan.Tag as SkinningData;
-            if (skinningDataMale == null)
-                throw new InvalidOperationException
-                    ("This model does not contain a SkinningData tag.");
-
-            SkinningData skinningDataFemale = modelWoman.Tag as SkinningData;
-            if (skinningDataFemale == null)
-                throw new InvalidOperationException
-                    ("This model does not contain a SkinningData tag.");
-
-            // "Take_001" is the basic dance animation.  More (better-named) clips will also be loaded here.
-            clips = new AnimationClip[6];
-            clips[0] = skinningDataMale.AnimationClips["Take_001"];
-            clips[1] = skinningDataFemale.AnimationClips["Take_001"];
-            clips[2] = skinningDataMale.AnimationClips["Take_001"];
-            clips[3] = skinningDataFemale.AnimationClips["Take_001"];
-            clips[4] = skinningDataMale.AnimationClips["Take_001"];
-            clips[5] = skinningDataFemale.AnimationClips["Take_001"];
-            //AnimationClip clip = skinningData.AnimationClips["Take_001"];
-
             font = Content.Load<SpriteFont>("myFont");
             resultFont = Content.Load<SpriteFont>("resultFont");
-
-            animationPlayers = new AnimationPlayer[numberOfAnimationPlayers];
-            animationPlayersOffsets = new Matrix[numberOfAnimationPlayers];
-            for (int i = 0; i < numberOfAnimationPlayers; i++)
-            {
-                if (i % 2 == 0)
-                {
-                    animationPlayers[i] = new AnimationPlayer(skinningDataMale);
-                }
-                else
-                {
-                    animationPlayers[i] = new AnimationPlayer(skinningDataFemale);
-                }
-
-                animationPlayers[i].StartClip(clips[i]);
-
-
-                // Create an animation player, and start decoding an animation clip.
-                //animationPlayers[i] = (i % 2 == 0) ? new AnimationPlayer(skinningDataMale) : new AnimationPlayer(skinningDataFemale);
-
-                // Animate all three dancers.  TODO: Have slightly varying dances to look more genuine.
-                //animationPlayers[i].StartClip(clip);
-                //animationPlayers[i].StartClip(clips[i%3]);
-                //animationPlayers[i].StartClip(clips[i % 6]);
-                //animationPlayers[i].CurrentClip.Keyframes[0].
-
-                //animationPlayersOffsets[i] = new Matrix();
-                float offsetX = initialStartingPosition + (spaceBetweenAnimationPlayers * (float)i);
-                animationPlayersOffsets[i] = Matrix.CreateTranslation(new Vector3(offsetX, 0.0f, 0.0f));
-
-            }
 
             kinectDepthVisualizer = Content.Load<Effect>("KinectDepthVisualizer");
             // Create and load all the dance step icons
@@ -1015,8 +962,12 @@ namespace LebaneseKinect
             male_shrug = Content.Load<Texture2D>("Sprites\\male_shrug");
             male_WaiterHand = Content.Load<Texture2D>("Sprites\\male_WaiterHand");
 
+            n_MoveTarget = Content.Load<Texture2D>("Sprites\\n_MoveTarget");
+
             song = Content.Load<Song>("Music\\dabke");
             //MediaPlayer.Play(song);
+
+            dance1.LoadContent(Content);
 
             video = Content.Load<Video>("Video\\tempIntro");
             video1 = Content.Load<Video>("Video\\Lebanon");
@@ -1024,6 +975,8 @@ namespace LebaneseKinect
             videoPlayer.Play(video1);
             introVideoTime.Start();
             videoPlayer.IsLooped = true;
+
+            
         }
 
         /// <summary>
@@ -1070,7 +1023,7 @@ namespace LebaneseKinect
                         videoPlayer2 = new VideoPlayer();
                         videoPlayer2.Play(video1);
                         introPlaying = false;
-                        gamePlaying = true;
+                        gamePlaying = true;                    
                         setTime();
                         videoTime.Start();
                     }
@@ -1127,25 +1080,25 @@ namespace LebaneseKinect
 
 
                 /*Check each step to see if it is hit*/
-                if (LeftKneeLift1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLift1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLift1 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeLift2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLift2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLift2 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLift1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLift1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLift1 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLift2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLift2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLift2 = stepFinished;
                     stepsDone++;
@@ -1153,25 +1106,25 @@ namespace LebaneseKinect
                 }
 
                 //Fem scores
-                if (FemLeftKneeLift1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemLeftKneeLift1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemLeftKneeLift1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightKneeLift1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightKneeLift1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightKneeLift1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemLeftKneeLift2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemLeftKneeLift2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemLeftKneeLift2 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightKneeLift2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightKneeLift2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightKneeLift2 = stepFinished;
                     femStepsDone++;
@@ -1186,49 +1139,49 @@ namespace LebaneseKinect
                 /*Finish checking steps for the intro*/
 
                 //Score for block 2
-                if (LeftKneeLift3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLift3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLift3 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLift3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLift3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLift3 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeLiftAndFrontTorso1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLiftAndFrontTorso1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLiftAndFrontTorso1 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLiftAndBackTorso1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLiftAndBackTorso1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLiftAndBackTorso1 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeLift4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLift4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLift4 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLift4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLift4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLift4 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeLiftAndFrontTorso2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLiftAndFrontTorso2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLiftAndFrontTorso2 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLiftAndBackTorso2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLiftAndBackTorso2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLiftAndBackTorso2 = stepFinished;
                     stepsDone++;
@@ -1236,49 +1189,49 @@ namespace LebaneseKinect
                 }
 
                 //Fem times
-                if (FemLeftKneeLift3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemLeftKneeLift3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemLeftKneeLift3 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightKneeLift3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightKneeLift3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightKneeLift3 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemLeftFootLiftAndFrontTorso1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemLeftFootLiftAndFrontTorso1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemLeftFootLiftAndFrontTorso1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootLiftAndBackTorso1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootLiftAndBackTorso1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootLiftAndBackTorso1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemLeftKneeLift4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemLeftKneeLift4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemLeftKneeLift4 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightKneeLift4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightKneeLift4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightKneeLift4 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemLeftFootLiftAndFrontTorso2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemLeftFootLiftAndFrontTorso2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemLeftFootLiftAndFrontTorso2 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootLiftAndBackTorso2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootLiftAndBackTorso2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootLiftAndBackTorso2 = stepFinished;
                     femStepsDone++;
@@ -1294,49 +1247,49 @@ namespace LebaneseKinect
                 //Done with score block 2
 
                 //Start score block 3
-                if (LeftKneeLiftAndLeftHand1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLiftAndLeftHand1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLiftAndLeftHand1 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLiftAndLeftHand1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLiftAndLeftHand1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLiftAndLeftHand1 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeLiftAndFrontTorsoAndLeftHand1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLiftAndFrontTorsoAndLeftHand1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLiftAndFrontTorsoAndLeftHand1 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeLiftAndLeftHand1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLiftAndLeftHand1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLiftAndLeftHand1 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLiftAndBackTorsoAndLeftHand1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLiftAndBackTorsoAndLeftHand1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLiftAndBackTorsoAndLeftHand1 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLiftAndLeftHand2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLiftAndLeftHand2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLiftAndLeftHand2 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeLiftAndFrontTorsoAndLeftHand2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLiftAndFrontTorsoAndLeftHand2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLiftAndFrontTorsoAndLeftHand2 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLiftAndBackTorsoAndLeftHand2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLiftAndBackTorsoAndLeftHand2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLiftAndBackTorsoAndLeftHand2 = stepFinished;
                     stepsDone++;
@@ -1344,37 +1297,37 @@ namespace LebaneseKinect
                 }
 
                 //Fem scores block 3
-                if (FemHandSwingFront1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemHandSwingFront1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemHandSwingFront1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemHandSwingRight1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemHandSwingRight1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemHandSwingRight1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemHipShakeBack1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemHipShakeBack1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemHipShakeBack1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemHandSwingBack1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemHandSwingBack1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemHandSwingBack1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemHandSwingLeft1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemHandSwingLeft1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemHandSwingLeft1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemHipShakeFront1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemHipShakeFront1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemHipShakeFront1 = stepFinished;
                     femStepsDone++;
@@ -1390,44 +1343,44 @@ namespace LebaneseKinect
                 //Done with score block 3
 
                 //Start score block 4
-                if (KneelDownsAndClap.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (KneelDownsAndClap.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     KneelDownsAndClap = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
                 //Fem scores block 4
-                if (FemHandSwingFront2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemHandSwingFront2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemHandSwingFront2 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemHandSwingRight2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemHandSwingRight2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemHandSwingRight2 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemHipShakeBack2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemHipShakeBack2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemHipShakeBack2 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemHandSwingBack2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemHandSwingBack2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemHandSwingBack2 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemHandSwingLeft2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemHandSwingLeft2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemHandSwingLeft2 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemHipShakeFront2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemHipShakeFront2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemHipShakeFront2 = stepFinished;
                     femStepsDone++;
@@ -1442,49 +1395,49 @@ namespace LebaneseKinect
                 //End score block 4
 
                 //Start score block 5
-                if (LeftKneeLift5.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLift5.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLift5 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLift5.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLift5.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLift5 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeLift6.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLift6.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLift6 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLift6.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLift6.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLift6 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeLift7.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLift7.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLift7 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLift7.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLift7.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLift7 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeLift8.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLift8.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLift8 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLift8.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLift8.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLift8 = stepFinished;
                     stepsDone++;
@@ -1492,37 +1445,37 @@ namespace LebaneseKinect
                 }
 
                 //Fem score block 5
-                if (FemMoveToRightAndScrollingHands1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemMoveToRightAndScrollingHands1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemMoveToRightAndScrollingHands1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemMoveToRightAndScrollingHands2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemMoveToRightAndScrollingHands2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemMoveToRightAndScrollingHands2 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemCrouchAndHipShake1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemCrouchAndHipShake1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemCrouchAndHipShake1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemMoveToLeftAndScrollingHands1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemMoveToLeftAndScrollingHands1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemMoveToLeftAndScrollingHands1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemMoveToLeftAndScrollingHands2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemMoveToLeftAndScrollingHands2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemMoveToLeftAndScrollingHands2 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemCrouchAndHipShake2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemCrouchAndHipShake2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemCrouchAndHipShake2 = stepFinished;
                     femStepsDone++;
@@ -1537,98 +1490,98 @@ namespace LebaneseKinect
                 //End score block 5
 
                 //Start score block 6
-                if (MoveToRightAndWaiterHand.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (MoveToRightAndWaiterHand.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     MoveToRightAndWaiterHand = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (ShrugShoulders.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (ShrugShoulders.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     ShrugShoulders = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeLift9.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLift9.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLift9 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLift9.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLift9.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLift9 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeLift10.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeLift10.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeLift10 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightKneeLift10.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightKneeLift10.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightKneeLift10 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeBendCrouch0B.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeBendCrouch0B.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeBendCrouch0B = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeBendCrouch0A.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeBendCrouch0A.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeBendCrouch0A = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
                 //Fem score block 6
-                if (FemMoveToRightAndScrollingHands3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemMoveToRightAndScrollingHands3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemMoveToRightAndScrollingHands3 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemMoveToRightAndScrollingHands4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemMoveToRightAndScrollingHands4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemMoveToRightAndScrollingHands4 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemCrouchAndHipShake3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemCrouchAndHipShake3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemCrouchAndHipShake3 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemMoveToLeftAndScrollingHands3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemMoveToLeftAndScrollingHands3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemMoveToLeftAndScrollingHands3 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemMoveToLeftAndScrollingHands4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemMoveToLeftAndScrollingHands4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemMoveToLeftAndScrollingHands4 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemCrouchAndHipShake4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemCrouchAndHipShake4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemCrouchAndHipShake4 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemLeftKneeBendCrouch0B.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemLeftKneeBendCrouch0B.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemLeftKneeBendCrouch0B = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemLeftKneeBendCrouch0A.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemLeftKneeBendCrouch0A.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemLeftKneeBendCrouch0A = stepFinished;
                     femStepsDone++;
@@ -1643,133 +1596,133 @@ namespace LebaneseKinect
                 //end score block 6
 
                 //Start score block 7
-                if (RightFootCross1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootCross1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootCross1 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootSwing1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootSwing1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootSwing1 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootCross2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootCross2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootCross2 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootSwing2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootSwing2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootSwing2 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeBendCrouch1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeBendCrouch1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeBendCrouch1 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeBendCrouch2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeBendCrouch2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeBendCrouch2 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootCross3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootCross3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootCross3 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootSwing3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootSwing3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootSwing3 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootCross4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootCross4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootCross4 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootSwing4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootSwing4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootSwing4 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeBendCrouch3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeBendCrouch3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeBendCrouch3 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeBendCrouch4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeBendCrouch4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeBendCrouch4 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootCross5.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootCross5.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootCross5 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootSwing5.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootSwing5.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootSwing5 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootCross6.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootCross6.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootCross6 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootSwing6.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootSwing6.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootSwing6 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeBendCrouch5.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeBendCrouch5.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeBendCrouch5 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (LeftKneeBendCrouch6.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (LeftKneeBendCrouch6.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     LeftKneeBendCrouch6 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootCross7.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootCross7.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootCross7 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootSwing7.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootSwing7.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootSwing7 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootCross8.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootCross8.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootCross8 = stepFinished;
                     stepsDone++;
                     tempStepsDone++;
                 }
-                if (RightFootSwing8.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (RightFootSwing8.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     RightFootSwing8 = stepFinished;
                     stepsDone++;
@@ -1777,133 +1730,133 @@ namespace LebaneseKinect
                 }
 
                 //Fem scores block 7
-                if (FemRightFootCross1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootCross1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootCross1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootSwing1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootSwing1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootSwing1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootCross2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootCross2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootCross2 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootSwing2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootSwing2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootSwing2 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemLeftKneeBendCrouch1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemLeftKneeBendCrouch1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemLeftKneeBendCrouch1 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemLeftKneeBendCrouch2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemLeftKneeBendCrouch2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemLeftKneeBendCrouch2 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootCross3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootCross3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootCross3 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootSwing3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootSwing3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootSwing3 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootCross4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootCross4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootCross4 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootSwing4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootSwing4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootSwing4 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemLeftKneeBendCrouch3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemLeftKneeBendCrouch3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemLeftKneeBendCrouch3 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemLeftKneeBendCrouch4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemLeftKneeBendCrouch4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemLeftKneeBendCrouch4 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootCross5.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootCross5.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootCross5 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootSwing5.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootSwing5.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootSwing5 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootCross6.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootCross6.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootCross6 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootSwing6.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootSwing6.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootSwing6 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemLeftKneeBendCrouch5.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemLeftKneeBendCrouch5.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemLeftKneeBendCrouch5 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemLeftKneeBendCrouch6.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemLeftKneeBendCrouch6.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemLeftKneeBendCrouch6 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootCross7.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootCross7.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootCross7 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootSwing7.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootSwing7.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootSwing7 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootCross8.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootCross8.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootCross8 = stepFinished;
                     femStepsDone++;
                     tempFemStepsDone++;
                 }
-                if (FemRightFootSwing8.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+                if (FemRightFootSwing8.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
                 {
                     FemRightFootSwing8 = stepFinished;
                     femStepsDone++;
@@ -1920,55 +1873,55 @@ namespace LebaneseKinect
             //End score block 7
 
             //Score block 8
-            if (LeftKneeLiftAndCross.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLiftAndCross.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLiftAndCross = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeLiftAndCross.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeLiftAndCross.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeLiftAndCross = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLift12.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLift12.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLift12 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeLift11.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeLift11.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeLift11 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLift13.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLift13.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLift13 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeLift12.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeLift12.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeLift12 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftHandtoFaceSpinForward.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftHandtoFaceSpinForward.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftHandtoFaceSpinForward = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftHandtoFaceSpinBack.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftHandtoFaceSpinBack.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftHandtoFaceSpinBack = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeKick2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeKick2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeKick2 = stepFinished;
                 stepsDone++;
@@ -1976,49 +1929,49 @@ namespace LebaneseKinect
             }
 
             //Fem moves block 8
-            if (FemRightElbowSway1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightElbowSway1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightElbowSway1 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftElbowSway1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftElbowSway1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftElbowSway1 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightElbowSway2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightElbowSway2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightElbowSway2 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftElbowSway2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftElbowSway2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftElbowSway2 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightElbowSway3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightElbowSway3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightElbowSway3 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftElbowSway3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftElbowSway3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftElbowSway3 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightElbowSway4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightElbowSway4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightElbowSway4 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftElbowSway4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftElbowSway4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftElbowSway4 = stepFinished;
                 femStepsDone++;
@@ -2034,49 +1987,49 @@ namespace LebaneseKinect
             //end score block 8
 
             //Begin score block 9
-            if (LeftKneeLift14.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLift14.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLift14 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeKick3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeKick3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeKick3 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLift15.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLift15.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLift15 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeKick4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeKick4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeKick4 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLift16.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLift16.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLift16 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLiftLeft.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLiftLeft.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLiftLeft = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLiftBack.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLiftBack.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLiftBack = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLiftRight.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLiftRight.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLiftRight = stepFinished;
                 stepsDone++;
@@ -2084,37 +2037,37 @@ namespace LebaneseKinect
             }
 
             //Fem moves block 9
-            if (FemLeftWristArcRaise1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftWristArcRaise1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftWristArcRaise1 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightWristArcRaise1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightWristArcRaise1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightWristArcRaise1 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemHome1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemHome1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemHome1 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftWristArcRaise2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftWristArcRaise2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftWristArcRaise2 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightWristArcRaise2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightWristArcRaise2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightWristArcRaise2 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemHome2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemHome2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemHome2 = stepFinished;
                 femStepsDone++;
@@ -2130,49 +2083,49 @@ namespace LebaneseKinect
             //end score block 9
 
             //Start score block 10
-            if (LeftKneeLift17.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLift17.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLift17 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeKick17.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeKick17.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeKick17 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeLift13.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeLift13.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeLift13 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLift18.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLift18.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLift18 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeKick18.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeKick18.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeKick18 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeLift14.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeLift14.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeLift14 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLift19.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLift19.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLift19 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeKick5.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeKick5.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeKick5 = stepFinished;
                 stepsDone++;
@@ -2180,49 +2133,49 @@ namespace LebaneseKinect
             }
 
 
-            if (LeftKneeLift20.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLift20.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLift20 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeKick20.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeKick20.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeKick20 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeLift15.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeLift15.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeLift15 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLift21.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLift21.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLift21 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeKick21.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeKick21.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeKick21 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeLift16.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeLift16.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeLift16 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLift22.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLift22.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLift22 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeKick6.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeKick6.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeKick6 = stepFinished;
                 stepsDone++;
@@ -2230,25 +2183,25 @@ namespace LebaneseKinect
             }
 
             //Fem score block 10
-            if (FemThrillerHandsLeft1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemThrillerHandsLeft1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemThrillerHandsLeft1 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftBendHipShake1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftBendHipShake1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftBendHipShake1 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemThrillerHandsLeft2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemThrillerHandsLeft2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemThrillerHandsLeft2 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftBendHipShake2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftBendHipShake2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftBendHipShake2 = stepFinished;
                 femStepsDone++;
@@ -2264,61 +2217,61 @@ namespace LebaneseKinect
             //end score block 10
 
             //Start score block 11
-            if (LeftKneeLiftAndFrontTorso3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLiftAndFrontTorso3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLiftAndFrontTorso3 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeKick7.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeKick7.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeKick7 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLift23.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLift23.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLift23 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeKick8.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeKick8.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeKick8 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLift24.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLift24.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLift24 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeKick9.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeKick9.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeKick9 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLiftAndFrontTorso4.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLiftAndFrontTorso4.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLiftAndFrontTorso4 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeKick10.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeKick10.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeKick10 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeKick.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeKick.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeKick = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeKick.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeKick.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeKick = stepFinished;
                 stepsDone++;
@@ -2326,61 +2279,61 @@ namespace LebaneseKinect
             }
 
             //Fem score block 11
-            if (FemRightElbowSway5.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightElbowSway5.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightElbowSway5 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftElbowSway5.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftElbowSway5.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftElbowSway5 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightElbowSway6.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightElbowSway6.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightElbowSway6 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftElbowSway6.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftElbowSway6.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftElbowSway6 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftKneeLift5.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftKneeLift5.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftKneeLift5 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightKneeKick2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightKneeKick2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightKneeKick2 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftKneeLiftAndFrontTorso5.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftKneeLiftAndFrontTorso5.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftKneeLiftAndFrontTorso5 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightKneeKick.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightKneeKick.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightKneeKick = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftKneeLift6.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftKneeLift6.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftKneeLift6 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightKneeKick3.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightKneeKick3.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightKneeKick3 = stepFinished;
                 femStepsDone++;
@@ -2396,145 +2349,145 @@ namespace LebaneseKinect
             //end score block 11
 
             //Start score block 12
-            if (LeftKneeBendCrouch7.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeBendCrouch7.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeBendCrouch7 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeBendCrouch8.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeBendCrouch8.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeBendCrouch8 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootCross9.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootCross9.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootCross9 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootSwing9.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootSwing9.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootSwing9 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootCross10.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootCross10.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootCross10 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootSwing10.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootSwing10.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootSwing10 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeBendCrouch9.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeBendCrouch9.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeBendCrouch9 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeBendCrouch10.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeBendCrouch10.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeBendCrouch10 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootCross11.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootCross11.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootCross11 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootSwing11.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootSwing11.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootSwing11 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootCross12.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootCross12.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootCross12 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootSwing12.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootSwing12.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootSwing12 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeBendCrouch11.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeBendCrouch11.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeBendCrouch11 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeBendCrouch12.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeBendCrouch12.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeBendCrouch12 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootCross13.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootCross13.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootCross13 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootSwing13.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootSwing13.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootSwing13 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootCross14.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootCross14.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootCross14 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootSwing14.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootSwing14.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootSwing14 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeBendCrouch13.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeBendCrouch13.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeBendCrouch13 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeBendCrouch14.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeBendCrouch14.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeBendCrouch14 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootCross15.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootCross15.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootCross15 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootSwing15.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootSwing15.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootSwing15 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootCross16.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootCross16.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootCross16 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightFootSwing16.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightFootSwing16.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightFootSwing16 = stepFinished;
                 stepsDone++;
@@ -2542,145 +2495,145 @@ namespace LebaneseKinect
             }
 
             //Fem score block 12
-            if (FemLeftKneeBendCrouch7.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftKneeBendCrouch7.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftKneeBendCrouch7 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftKneeBendCrouch8.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftKneeBendCrouch8.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftKneeBendCrouch8 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootCross9.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootCross9.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootCross9 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootSwing9.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootSwing9.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootSwing9 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootCross10.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootCross10.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootCross10 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootSwing10.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootSwing10.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootSwing10 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftKneeBendCrouch9.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftKneeBendCrouch9.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftKneeBendCrouch9 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftKneeBendCrouch10.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftKneeBendCrouch10.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftKneeBendCrouch10 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootCross11.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootCross11.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootCross11 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootSwing11.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootSwing11.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootSwing11 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootCross12.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootCross12.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootCross12 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootSwing12.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootSwing12.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootSwing12 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftKneeBendCrouch11.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftKneeBendCrouch11.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftKneeBendCrouch11 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftKneeBendCrouch12.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftKneeBendCrouch12.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftKneeBendCrouch12 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootCross13.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootCross13.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootCross13 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootSwing13.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootSwing13.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootSwing13 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootCross14.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootCross14.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootCross14 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootSwing14.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootSwing14.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootSwing14 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftKneeBendCrouch13.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftKneeBendCrouch13.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftKneeBendCrouch13 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemLeftKneeBendCrouch14.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftKneeBendCrouch14.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftKneeBendCrouch14 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootCross15.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootCross15.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootCross15 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootSwing15.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootSwing15.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootSwing15 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootCross16.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootCross16.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootCross16 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightFootSwing16.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightFootSwing16.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightFootSwing16 = stepFinished;
                 femStepsDone++;
@@ -2696,37 +2649,37 @@ namespace LebaneseKinect
             //end score block 12
 
             //start score block 13
-            if (LeftKneeLiftAndFrontTorso5.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLiftAndFrontTorso5.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLiftAndFrontTorso5 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeKickAndUnderArm1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeKickAndUnderArm1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeKickAndUnderArm1 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (LeftKneeLiftAndUnderArm.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (LeftKneeLiftAndUnderArm.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 LeftKneeLiftAndUnderArm = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeKickAndUnderArm2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeKickAndUnderArm2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeKickAndUnderArm2 = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeKneelAndUnderArm.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeKneelAndUnderArm.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeKneelAndUnderArm = stepFinished;
                 stepsDone++;
                 tempStepsDone++;
             }
-            if (RightKneeKneelAndUnderArmAndLeftHandBehind.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (RightKneeKneelAndUnderArmAndLeftHandBehind.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 RightKneeKneelAndUnderArmAndLeftHandBehind = stepFinished;
                 stepsDone++;
@@ -2734,31 +2687,31 @@ namespace LebaneseKinect
             }
 
             //Fem score block 13
-            if (FemLeftKneeLiftAndFrontTorso2.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemLeftKneeLiftAndFrontTorso2.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemLeftKneeLiftAndFrontTorso2 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemBackSpinRightKneeLift1.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemBackSpinRightKneeLift1.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemBackSpinRightKneeLift1 = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemForwardSpinFacingRightKneeLift.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemForwardSpinFacingRightKneeLift.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemForwardSpinFacingRightKneeLift = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemCrouchHipSwivel.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemCrouchHipSwivel.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemCrouchHipSwivel = stepFinished;
                 femStepsDone++;
                 tempFemStepsDone++;
             }
-            if (FemRightHandHigh.Subtract(videoTime.Elapsed).Milliseconds + 600 < 0)
+            if (FemRightHandHigh.Subtract(videoTime.Elapsed).Milliseconds + scoring_window < 0)
             {
                 FemRightHandHigh = stepFinished;
                 femStepsDone++;
@@ -2902,7 +2855,7 @@ namespace LebaneseKinect
 
         private void scoreDurationMove(double diff)
         {
-            int earnedScore = Math.Max((int)(600 - diff), 0);
+            int earnedScore = Math.Max((int)(scoring_window - diff), 0);
             int modifiedScore;
             if (earnedScore > 400)
             {
@@ -2910,7 +2863,7 @@ namespace LebaneseKinect
             }
             else
             {
-                modifiedScore= Math.Max((int)(600 - diff), 0);
+                modifiedScore= Math.Max((int)(scoring_window - diff), 0);
             }
             modifiedScore = Math.Max(modifiedScore, 100);
             tempScore += modifiedScore;
@@ -2919,7 +2872,7 @@ namespace LebaneseKinect
         }
         private void scoreDurationMoveF(double diff)
         {
-            int earnedScore = Math.Max((int)(600 - diff), 0);
+            int earnedScore = Math.Max((int)(scoring_window - diff), 0);
             int modifiedScore;
             if (earnedScore > 400)
             {
@@ -2927,7 +2880,7 @@ namespace LebaneseKinect
             }
             else
             {
-                modifiedScore = Math.Max((int)(600 - diff), 0);
+                modifiedScore = Math.Max((int)(scoring_window - diff), 0);
             }
             modifiedScore = Math.Max(modifiedScore, 100);
             tempScoreF += modifiedScore;
@@ -2937,28 +2890,28 @@ namespace LebaneseKinect
 
         private void scoreMove(double diff)
         {
-            int earnedScore = Math.Max((int)(600 - diff), 0);
+            int earnedScore = Math.Max((int)(scoring_window - diff), 0);
             if (earnedScore > 400)
             {
                 tempScore += 400;
             }
             else
             {
-                tempScore += Math.Max((int)(600 - diff), 0);
+                tempScore += Math.Max((int)(scoring_window - diff), 0);
             }
             stepsDone++;
             tempStepsDone++;
         }
         private void scoreMoveF(double diff)
         {
-            int earnedScore = Math.Max((int)(600 - diff), 0);
+            int earnedScore = Math.Max((int)(scoring_window - diff), 0);
             if (earnedScore > 400)
             {
                 tempScoreF += 400;
             }
             else
             {
-                tempScoreF += Math.Max((int)(600 - diff), 0);
+                tempScoreF += Math.Max((int)(scoring_window - diff), 0);
             }
             femStepsDone++;
             tempFemStepsDone++;
@@ -2992,124 +2945,124 @@ namespace LebaneseKinect
             double diff23 = Math.Abs((currentTime.Subtract(LeftKneeLift23).TotalMilliseconds));
             double diff24 = Math.Abs((currentTime.Subtract(LeftKneeLift24).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 LeftKneeLift1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMove(diff2);
                 LeftKneeLift2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMove(diff3);
                 LeftKneeLift3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMove(diff4);
                 LeftKneeLift4 = stepFinished;
             }
-            else if (diff5 < 600)
+            else if (diff5 < scoring_window)
             {
                 scoreMove(diff5);
                 LeftKneeLift5 = stepFinished;
             }
-            else if (diff6 < 600)
+            else if (diff6 < scoring_window)
             {
                 scoreMove(diff6);
                 LeftKneeLift6 = stepFinished;
             }
-            else if (diff7 < 600)
+            else if (diff7 < scoring_window)
             {
                 scoreMove(diff7);
                 LeftKneeLift7 = stepFinished;
             }
-            else if (diff8 < 600)
+            else if (diff8 < scoring_window)
             {
                 scoreMove(diff8);
                 LeftKneeLift8 = stepFinished;
             }
-            else if (diff9 < 600)
+            else if (diff9 < scoring_window)
             {
                 scoreMove(diff9);
                 LeftKneeLift9 = stepFinished;
             }
-            else if (diff10 < 600)
+            else if (diff10 < scoring_window)
             {
                 scoreMove(diff10);
                 LeftKneeLift10 = stepFinished;
             }
-            else if (diff10 < 600)
+            else if (diff10 < scoring_window)
             {
                 scoreMove(diff10);
                 LeftKneeLift10 = stepFinished;
             }
 
-            else if (diff12 < 600)
+            else if (diff12 < scoring_window)
             {
                 scoreMove(diff12);
                 LeftKneeLift12 = stepFinished;
             }
-            else if (diff13 < 600)
+            else if (diff13 < scoring_window)
             {
                 scoreMove(diff13);
                 LeftKneeLift13 = stepFinished;
             }
-            else if (diff14 < 600)
+            else if (diff14 < scoring_window)
             {
                 scoreMove(diff14);
                 LeftKneeLift14 = stepFinished;
             }
-            else if (diff15 < 600)
+            else if (diff15 < scoring_window)
             {
                 scoreMove(diff15);
                 LeftKneeLift15 = stepFinished;
             }
-            else if (diff16 < 600)
+            else if (diff16 < scoring_window)
             {
                 scoreMove(diff16);
                 LeftKneeLift16 = stepFinished;
             }
-            else if (diff17 < 600)
+            else if (diff17 < scoring_window)
             {
                 scoreMove(diff17);
                 LeftKneeLift17 = stepFinished;
             }
-            else if (diff18 < 600)
+            else if (diff18 < scoring_window)
             {
                 scoreMove(diff18);
                 LeftKneeLift18 = stepFinished;
             }
-            else if (diff19 < 600)
+            else if (diff19 < scoring_window)
             {
                 scoreMove(diff19);
                 LeftKneeLift19 = stepFinished;
             }
-            else if (diff20 < 600)
+            else if (diff20 < scoring_window)
             {
                 scoreMove(diff20);
                 LeftKneeLift20 = stepFinished;
             }
-            else if (diff21 < 600)
+            else if (diff21 < scoring_window)
             {
                 scoreMove(diff21);
                 LeftKneeLift21 = stepFinished;
             }
-            else if (diff22 < 600)
+            else if (diff22 < scoring_window)
             {
                 scoreMove(diff22);
                 LeftKneeLift22 = stepFinished;
             }
-            else if (diff23 < 600)
+            else if (diff23 < scoring_window)
             {
                 scoreMove(diff23);
                 LeftKneeLift23 = stepFinished;
             }
-            else if (diff24 < 600)
+            else if (diff24 < scoring_window)
             {
                 scoreMove(diff24);
                 LeftKneeLift24 = stepFinished;
@@ -3138,84 +3091,84 @@ namespace LebaneseKinect
             double diff15 = Math.Abs((currentTime.Subtract(RightKneeLift15).TotalMilliseconds));
             double diff16 = Math.Abs((currentTime.Subtract(RightKneeLift16).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 RightKneeLift1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMove(diff2);
                 RightKneeLift2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMove(diff3);
                 RightKneeLift3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMove(diff4);
                 RightKneeLift4 = stepFinished;
             }
-            else if (diff5 < 600)
+            else if (diff5 < scoring_window)
             {
                 scoreMove(diff5);
                 RightKneeLift5 = stepFinished;
             }
-            else if (diff6 < 600)
+            else if (diff6 < scoring_window)
             {
                 scoreMove(diff6);
                 RightKneeLift6 = stepFinished;
             }
-            else if (diff7 < 600)
+            else if (diff7 < scoring_window)
             {
                 scoreMove(diff7);
                 RightKneeLift7 = stepFinished;
             }
-            else if (diff8 < 600)
+            else if (diff8 < scoring_window)
             {
                 scoreMove(diff8);
                 RightKneeLift8 = stepFinished;
             }
-            else if (diff9 < 600)
+            else if (diff9 < scoring_window)
             {
                 scoreMove(diff9);
                 RightKneeLift9 = stepFinished;
             }
-            else if (diff10 < 600)
+            else if (diff10 < scoring_window)
             {
                 scoreMove(diff10);
                 RightKneeLift10 = stepFinished;
             }
-            else if (diff11 < 600)
+            else if (diff11 < scoring_window)
             {
                 scoreMove(diff11);
                 RightKneeLift11 = stepFinished;
             }
 
-            else if (diff12 < 600)
+            else if (diff12 < scoring_window)
             {
                 scoreMove(diff12);
                 RightKneeLift12 = stepFinished;
             }
-            else if (diff13 < 600)
+            else if (diff13 < scoring_window)
             {
                 scoreMove(diff13);
                 RightKneeLift13 = stepFinished;
             }
-            else if (diff14 < 600)
+            else if (diff14 < scoring_window)
             {
                 scoreMove(diff14);
                 RightKneeLift14 = stepFinished;
             }
-            else if (diff15 < 600)
+            else if (diff15 < scoring_window)
             {
                 scoreMove(diff15);
                 RightKneeLift15 = stepFinished;
             }
-            else if (diff16 < 600)
+            else if (diff16 < scoring_window)
             {
                 scoreMove(diff16);
                 RightKneeLift16 = stepFinished;
@@ -3231,28 +3184,28 @@ namespace LebaneseKinect
             double diff4 = Math.Abs((currentTime.Subtract(LeftKneeLiftAndFrontTorso4).TotalMilliseconds));
             double diff5 = Math.Abs((currentTime.Subtract(LeftKneeLiftAndFrontTorso5).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 LeftKneeLiftAndFrontTorso1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMove(diff2);
                 LeftKneeLiftAndFrontTorso2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMove(diff3);
                 LeftKneeLiftAndFrontTorso3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMove(diff4);
                 LeftKneeLiftAndFrontTorso4 = stepFinished;
             }
-            else if (diff5 < 600)
+            else if (diff5 < scoring_window)
             {
                 scoreMove(diff5);
                 LeftKneeLiftAndFrontTorso5 = stepFinished;
@@ -3265,13 +3218,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(RightKneeLiftAndBackTorso1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(RightKneeLiftAndBackTorso2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 RightKneeLiftAndBackTorso1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMove(diff2);
                 RightKneeLiftAndBackTorso2 = stepFinished;
@@ -3284,13 +3237,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(LeftKneeLiftAndLeftHand1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(LeftKneeLiftAndLeftHand2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 LeftKneeLiftAndLeftHand1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMove(diff2);
                 LeftKneeLiftAndLeftHand2 = stepFinished;
@@ -3303,13 +3256,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(RightKneeLiftAndLeftHand1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(RightKneeLiftAndLeftHand2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 RightKneeLiftAndLeftHand1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMove(diff2);
                 RightKneeLiftAndLeftHand2 = stepFinished;
@@ -3322,13 +3275,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(LeftKneeLiftAndFrontTorsoAndLeftHand1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(LeftKneeLiftAndFrontTorsoAndLeftHand2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 LeftKneeLiftAndFrontTorsoAndLeftHand1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMove(diff2);
                 LeftKneeLiftAndFrontTorsoAndLeftHand2 = stepFinished;
@@ -3341,13 +3294,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(RightKneeLiftAndBackTorsoAndLeftHand1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(RightKneeLiftAndBackTorsoAndLeftHand2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 RightKneeLiftAndBackTorsoAndLeftHand1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMove(diff2);
                 RightKneeLiftAndBackTorsoAndLeftHand2 = stepFinished;
@@ -3359,7 +3312,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(KneelDownsAndClap).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreDurationMove(diff1);
                 KneelDownsAndClap = stepFinished;
@@ -3371,7 +3324,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(MoveToRightAndWaiterHand).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreDurationMove(diff1);
                 MoveToRightAndWaiterHand = stepFinished;
@@ -3383,7 +3336,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(ShrugShoulders).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreDurationMove(diff1);
                 ShrugShoulders = stepFinished;
@@ -3410,84 +3363,84 @@ namespace LebaneseKinect
             double diff15 = Math.Abs((currentTime.Subtract(RightFootCross15).TotalMilliseconds));
             double diff16 = Math.Abs((currentTime.Subtract(RightFootCross16).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 RightFootCross1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMove(diff2);
                 RightFootCross2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMove(diff3);
                 RightFootCross3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMove(diff4);
                 RightFootCross4 = stepFinished;
             }
-            else if (diff5 < 600)
+            else if (diff5 < scoring_window)
             {
                 scoreMove(diff5);
                 RightFootCross5 = stepFinished;
             }
-            else if (diff6 < 600)
+            else if (diff6 < scoring_window)
             {
                 scoreMove(diff6);
                 RightFootCross6 = stepFinished;
             }
-            else if (diff7 < 600)
+            else if (diff7 < scoring_window)
             {
                 scoreMove(diff7);
                 RightFootCross7 = stepFinished;
             }
-            else if (diff8 < 600)
+            else if (diff8 < scoring_window)
             {
                 scoreMove(diff8);
                 RightFootCross8 = stepFinished;
             }
-            else if (diff9 < 600)
+            else if (diff9 < scoring_window)
             {
                 scoreMove(diff9);
                 RightFootCross9 = stepFinished;
             }
-            else if (diff10 < 600)
+            else if (diff10 < scoring_window)
             {
                 scoreMove(diff10);
                 RightFootCross10 = stepFinished;
             }
-            else if (diff11 < 600)
+            else if (diff11 < scoring_window)
             {
                 scoreMove(diff11);
                 RightFootCross11 = stepFinished;
             }
 
-            else if (diff12 < 600)
+            else if (diff12 < scoring_window)
             {
                 scoreMove(diff12);
                 RightFootCross12 = stepFinished;
             }
-            else if (diff13 < 600)
+            else if (diff13 < scoring_window)
             {
                 scoreMove(diff13);
                 RightFootCross13 = stepFinished;
             }
-            else if (diff14 < 600)
+            else if (diff14 < scoring_window)
             {
                 scoreMove(diff14);
                 RightFootCross14 = stepFinished;
             }
-            else if (diff15 < 600)
+            else if (diff15 < scoring_window)
             {
                 scoreMove(diff15);
                 RightFootCross15 = stepFinished;
             }
-            else if (diff16 < 600)
+            else if (diff16 < scoring_window)
             {
                 scoreMove(diff16);
                 RightFootCross16 = stepFinished;
@@ -3515,84 +3468,84 @@ namespace LebaneseKinect
             double diff16 = Math.Abs((currentTime.Subtract(RightFootSwing16).TotalMilliseconds));
 
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 RightFootSwing1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMove(diff2);
                 RightFootSwing2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMove(diff3);
                 RightFootSwing3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMove(diff4);
                 RightFootSwing4 = stepFinished;
             }
-            else if (diff5 < 600)
+            else if (diff5 < scoring_window)
             {
                 scoreMove(diff5);
                 RightFootSwing5 = stepFinished;
             }
-            else if (diff6 < 600)
+            else if (diff6 < scoring_window)
             {
                 scoreMove(diff6);
                 RightFootSwing6 = stepFinished;
             }
-            else if (diff7 < 600)
+            else if (diff7 < scoring_window)
             {
                 scoreMove(diff7);
                 RightFootSwing7 = stepFinished;
             }
-            else if (diff8 < 600)
+            else if (diff8 < scoring_window)
             {
                 scoreMove(diff8);
                 RightFootSwing8 = stepFinished;
             }
-            else if (diff9 < 600)
+            else if (diff9 < scoring_window)
             {
                 scoreMove(diff9);
                 RightFootSwing9 = stepFinished;
             }
-            else if (diff10 < 600)
+            else if (diff10 < scoring_window)
             {
                 scoreMove(diff10);
                 RightFootSwing10 = stepFinished;
             }
-            else if (diff11 < 600)
+            else if (diff11 < scoring_window)
             {
                 scoreMove(diff11);
                 RightFootSwing11 = stepFinished;
             }
 
-            else if (diff12 < 600)
+            else if (diff12 < scoring_window)
             {
                 scoreMove(diff12);
                 RightFootSwing12 = stepFinished;
             }
-            else if (diff13 < 600)
+            else if (diff13 < scoring_window)
             {
                 scoreMove(diff13);
                 RightFootSwing13 = stepFinished;
             }
-            else if (diff14 < 600)
+            else if (diff14 < scoring_window)
             {
                 scoreMove(diff14);
                 RightFootSwing14 = stepFinished;
             }
-            else if (diff15 < 600)
+            else if (diff15 < scoring_window)
             {
                 scoreMove(diff15);
                 RightFootSwing15 = stepFinished;
             }
-            else if (diff16 < 600)
+            else if (diff16 < scoring_window)
             {
                 scoreMove(diff16);
                 RightFootSwing16 = stepFinished;
@@ -3619,84 +3572,84 @@ namespace LebaneseKinect
             double diff13 = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch13).TotalMilliseconds));
             double diff14 = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch14).TotalMilliseconds));
 
-            if (diff0A < 600)
+            if (diff0A < scoring_window)
             {
                 scoreMove(diff0A);
                 LeftKneeBendCrouch1 = stepFinished;
             }
-            if (diff0B < 600)
+            if (diff0B < scoring_window)
             {
                 scoreMove(diff0B);
                 LeftKneeBendCrouch1 = stepFinished;
             }
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 LeftKneeBendCrouch1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMove(diff2);
                 LeftKneeBendCrouch2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMove(diff3);
                 LeftKneeBendCrouch3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMove(diff4);
                 LeftKneeBendCrouch4 = stepFinished;
             }
-            else if (diff5 < 600)
+            else if (diff5 < scoring_window)
             {
                 scoreMove(diff5);
                 LeftKneeBendCrouch5 = stepFinished;
             }
-            else if (diff6 < 600)
+            else if (diff6 < scoring_window)
             {
                 scoreMove(diff6);
                 LeftKneeBendCrouch6 = stepFinished;
             }
-            else if (diff7 < 600)
+            else if (diff7 < scoring_window)
             {
                 scoreMove(diff7);
                 LeftKneeBendCrouch7 = stepFinished;
             }
-            else if (diff8 < 600)
+            else if (diff8 < scoring_window)
             {
                 scoreMove(diff8);
                 LeftKneeBendCrouch8 = stepFinished;
             }
-            else if (diff9 < 600)
+            else if (diff9 < scoring_window)
             {
                 scoreMove(diff9);
                 LeftKneeBendCrouch9 = stepFinished;
             }
-            else if (diff10 < 600)
+            else if (diff10 < scoring_window)
             {
                 scoreMove(diff10);
                 LeftKneeBendCrouch10 = stepFinished;
             }
-            else if (diff11 < 600)
+            else if (diff11 < scoring_window)
             {
                 scoreMove(diff11);
                 LeftKneeBendCrouch11 = stepFinished;
             }
 
-            else if (diff12 < 600)
+            else if (diff12 < scoring_window)
             {
                 scoreMove(diff12);
                 LeftKneeBendCrouch12 = stepFinished;
             }
-            else if (diff13 < 600)
+            else if (diff13 < scoring_window)
             {
                 scoreMove(diff13);
                 LeftKneeBendCrouch13 = stepFinished;
             }
-            else if (diff14 < 600)
+            else if (diff14 < scoring_window)
             {
                 scoreMove(diff14);
                 LeftKneeBendCrouch14 = stepFinished;
@@ -3717,52 +3670,52 @@ namespace LebaneseKinect
             double diff10 = Math.Abs((currentTime.Subtract(RightKneeKick9).TotalMilliseconds));
             double diff11 = Math.Abs((currentTime.Subtract(RightKneeKick10).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 RightKneeKick = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMove(diff3);
                 RightKneeKick2 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMove(diff4);
                 RightKneeKick3 = stepFinished;
             }
-            else if (diff5 < 600)
+            else if (diff5 < scoring_window)
             {
                 scoreMove(diff5);
                 RightKneeKick4 = stepFinished;
             }
-            else if (diff6 < 600)
+            else if (diff6 < scoring_window)
             {
                 scoreMove(diff6);
                 RightKneeKick5 = stepFinished;
             }
-            else if (diff7 < 600)
+            else if (diff7 < scoring_window)
             {
                 scoreMove(diff7);
                 RightKneeKick6 = stepFinished;
             }
-            else if (diff8 < 600)
+            else if (diff8 < scoring_window)
             {
                 scoreMove(diff8);
                 RightKneeKick7 = stepFinished;
             }
-            else if (diff9 < 600)
+            else if (diff9 < scoring_window)
             {
                 scoreMove(diff9);
                 RightKneeKick8 = stepFinished;
             }
-            else if (diff10 < 600)
+            else if (diff10 < scoring_window)
             {
                 scoreMove(diff10);
                 RightKneeKick9 = stepFinished;
             }
-            else if (diff11 < 600)
+            else if (diff11 < scoring_window)
             {
                 scoreMove(diff11);
                 RightKneeKick10 = stepFinished;
@@ -3779,27 +3732,27 @@ namespace LebaneseKinect
             double diff20 = Math.Abs((currentTime.Subtract(LeftKneeKick20).TotalMilliseconds));
             double diff21 = Math.Abs((currentTime.Subtract(LeftKneeKick21).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 LeftKneeKick = stepFinished;
             }
-            else if (diff17 < 600)
+            else if (diff17 < scoring_window)
             {
                 scoreMove(diff17);
                 LeftKneeKick17 = stepFinished;
             }
-            else if (diff18 < 600)
+            else if (diff18 < scoring_window)
             {
                 scoreMove(diff18);
                 LeftKneeKick18 = stepFinished;
             }
-            else if (diff20 < 600)
+            else if (diff20 < scoring_window)
             {
                 scoreMove(diff20);
                 LeftKneeKick20 = stepFinished;
             }
-            else if (diff21 < 600)
+            else if (diff21 < scoring_window)
             {
                 scoreMove(diff21);
                 LeftKneeKick21 = stepFinished;
@@ -3811,7 +3764,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(LeftHandtoFaceSpinBack).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 LeftHandtoFaceSpinBack = stepFinished;
@@ -3823,7 +3776,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(LeftKneeLiftAndCross).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 LeftKneeLiftAndCross = stepFinished;
@@ -3835,7 +3788,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(LeftHandtoFaceSpinForward).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 LeftHandtoFaceSpinForward = stepFinished;
@@ -3847,7 +3800,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(RightKneeLiftAndCross).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 RightKneeLiftAndCross = stepFinished;
@@ -3859,7 +3812,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(LeftKneeLiftLeft).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 LeftKneeLiftLeft = stepFinished;
@@ -3871,7 +3824,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(LeftKneeLiftBack).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 LeftKneeLiftBack = stepFinished;
@@ -3883,7 +3836,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(LeftKneeLiftRight).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 LeftKneeLiftRight = stepFinished;
@@ -3895,7 +3848,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(RightKneeKneelAndUnderArm).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 RightKneeKneelAndUnderArm = stepFinished;
@@ -3907,7 +3860,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(LeftKneeLiftAndUnderArm).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 LeftKneeLiftAndUnderArm = stepFinished;
@@ -3919,7 +3872,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(RightKneeKneelAndUnderArmAndLeftHandBehind).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreDurationMove(diff1);
                 RightKneeKneelAndUnderArmAndLeftHandBehind = stepFinished;
@@ -3932,13 +3885,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(RightKneeKickAndUnderArm1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(RightKneeKickAndUnderArm2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMove(diff1);
                 RightKneeKickAndUnderArm1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMove(diff2);
                 RightKneeKickAndUnderArm2 = stepFinished;
@@ -3957,33 +3910,33 @@ namespace LebaneseKinect
             double diff5 = Math.Abs((currentTime.Subtract(FemLeftKneeLift5).TotalMilliseconds));
             double diff6 = Math.Abs((currentTime.Subtract(FemLeftKneeLift6).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemLeftKneeLift1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemLeftKneeLift2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMoveF(diff3);
                 FemLeftKneeLift3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMoveF(diff4);
                 FemLeftKneeLift4 = stepFinished;
             }
-            else if (diff5 < 600)
+            else if (diff5 < scoring_window)
             {
                 scoreMoveF(diff5);
                 FemLeftKneeLift5 = stepFinished;
             }
-            else if (diff6 < 600)
+            else if (diff6 < scoring_window)
             {
                 scoreMoveF(diff6);
                 FemLeftKneeLift6 = stepFinished;
@@ -3998,23 +3951,23 @@ namespace LebaneseKinect
             double diff3 = Math.Abs((currentTime.Subtract(FemRightKneeLift3).TotalMilliseconds));
             double diff4 = Math.Abs((currentTime.Subtract(FemRightKneeLift4).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemRightKneeLift1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemRightKneeLift2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMoveF(diff3);
                 FemRightKneeLift3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMoveF(diff4);
                 FemRightKneeLift4 = stepFinished;
@@ -4029,23 +3982,23 @@ namespace LebaneseKinect
             double diff3 = Math.Abs((currentTime.Subtract(FemCrouchAndHipShake3).TotalMilliseconds));
             double diff4 = Math.Abs((currentTime.Subtract(FemCrouchAndHipShake4).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreDurationMoveF(diff1);
                 FemCrouchAndHipShake1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreDurationMoveF(diff2);
                 FemCrouchAndHipShake2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreDurationMoveF(diff3);
                 FemCrouchAndHipShake3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreDurationMoveF(diff4);
                 FemCrouchAndHipShake4 = stepFinished;
@@ -4060,23 +4013,23 @@ namespace LebaneseKinect
             double diff3 = Math.Abs((currentTime.Subtract(FemMoveToRightAndScrollingHands3).TotalMilliseconds));
             double diff4 = Math.Abs((currentTime.Subtract(FemMoveToRightAndScrollingHands4).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemMoveToRightAndScrollingHands1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemMoveToRightAndScrollingHands2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMoveF(diff3);
                 FemMoveToRightAndScrollingHands3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMoveF(diff4);
                 FemMoveToRightAndScrollingHands4 = stepFinished;
@@ -4091,23 +4044,23 @@ namespace LebaneseKinect
             double diff3 = Math.Abs((currentTime.Subtract(FemMoveToLeftAndScrollingHands3).TotalMilliseconds));
             double diff4 = Math.Abs((currentTime.Subtract(FemMoveToLeftAndScrollingHands4).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemMoveToLeftAndScrollingHands1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemMoveToLeftAndScrollingHands2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMoveF(diff3);
                 FemMoveToLeftAndScrollingHands3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMoveF(diff4);
                 FemMoveToLeftAndScrollingHands4 = stepFinished;
@@ -4120,13 +4073,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(FemLeftFootLiftAndFrontTorso1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(FemLeftFootLiftAndFrontTorso2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemLeftFootLiftAndFrontTorso1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemLeftFootLiftAndFrontTorso2 = stepFinished;
@@ -4139,13 +4092,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(FemRightFootLiftAndBackTorso1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(FemRightFootLiftAndBackTorso2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemRightFootLiftAndBackTorso1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemRightFootLiftAndBackTorso2 = stepFinished;
@@ -4158,13 +4111,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(FemHandSwingFront1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(FemHandSwingFront2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemHandSwingFront1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemHandSwingFront2 = stepFinished;
@@ -4177,13 +4130,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(FemHandSwingRight1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(FemHandSwingRight2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemHandSwingRight1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemHandSwingRight2 = stepFinished;
@@ -4196,13 +4149,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(FemHipShakeBack1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(FemHipShakeBack2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreDurationMoveF(diff1);
                 FemHipShakeBack1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreDurationMoveF(diff2);
                 FemHipShakeBack2 = stepFinished;
@@ -4215,13 +4168,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(FemHandSwingBack1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(FemHandSwingBack2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemHandSwingBack1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemHandSwingBack2 = stepFinished;
@@ -4234,13 +4187,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(FemHandSwingLeft1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(FemHandSwingLeft2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemHandSwingLeft1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemHandSwingLeft2 = stepFinished;
@@ -4253,13 +4206,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(FemHipShakeFront1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(FemHipShakeFront2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreDurationMoveF(diff1);
                 FemHipShakeFront1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreDurationMoveF(diff2);
                 FemHipShakeFront2 = stepFinished;
@@ -4287,83 +4240,83 @@ namespace LebaneseKinect
             double diff15 = Math.Abs((currentTime.Subtract(FemRightFootCross15).TotalMilliseconds));
             double diff16 = Math.Abs((currentTime.Subtract(FemRightFootCross16).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemRightFootCross1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemRightFootCross2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMoveF(diff3);
                 FemRightFootCross3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMoveF(diff4);
                 FemRightFootCross4 = stepFinished;
             }
-            else if (diff5 < 600)
+            else if (diff5 < scoring_window)
             {
                 scoreMoveF(diff5);
                 FemRightFootCross5 = stepFinished;
             }
-            else if (diff6 < 600)
+            else if (diff6 < scoring_window)
             {
                 scoreMoveF(diff6);
                 FemRightFootCross6 = stepFinished;
             }
-            else if (diff7 < 600)
+            else if (diff7 < scoring_window)
             {
                 scoreMoveF(diff7);
                 FemRightFootCross7 = stepFinished;
             }
-            else if (diff8 < 600)
+            else if (diff8 < scoring_window)
             {
                 scoreMoveF(diff8);
                 FemRightFootCross8 = stepFinished;
             }
-            else if (diff9 < 600)
+            else if (diff9 < scoring_window)
             {
                 scoreMoveF(diff9);
                 FemRightFootCross9 = stepFinished;
             }
-            else if (diff10 < 600)
+            else if (diff10 < scoring_window)
             {
                 scoreMoveF(diff10);
                 FemRightFootCross10 = stepFinished;
             }
-            else if (diff11 < 600)
+            else if (diff11 < scoring_window)
             {
                 scoreMoveF(diff11);
                 FemRightFootCross11 = stepFinished;
             }
-            else if (diff12 < 600)
+            else if (diff12 < scoring_window)
             {
                 scoreMoveF(diff12);
                 FemRightFootCross12 = stepFinished;
             }
-            else if (diff13 < 600)
+            else if (diff13 < scoring_window)
             {
                 scoreMoveF(diff13);
                 FemRightFootCross13 = stepFinished;
             }
-            else if (diff14 < 600)
+            else if (diff14 < scoring_window)
             {
                 scoreMoveF(diff14);
                 FemRightFootCross14 = stepFinished;
             }
-            else if (diff15 < 600)
+            else if (diff15 < scoring_window)
             {
                 scoreMoveF(diff15);
                 FemRightFootCross15 = stepFinished;
             }
-            else if (diff16 < 600)
+            else if (diff16 < scoring_window)
             {
                 scoreMoveF(diff16);
                 FemRightFootCross16 = stepFinished;
@@ -4390,83 +4343,83 @@ namespace LebaneseKinect
             double diff15 = Math.Abs((currentTime.Subtract(FemRightFootSwing15).TotalMilliseconds));
             double diff16 = Math.Abs((currentTime.Subtract(FemRightFootSwing16).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemRightFootSwing1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemRightFootSwing2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMoveF(diff3);
                 FemRightFootSwing3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMoveF(diff4);
                 FemRightFootSwing4 = stepFinished;
             }
-            else if (diff5 < 600)
+            else if (diff5 < scoring_window)
             {
                 scoreMoveF(diff5);
                 FemRightFootSwing5 = stepFinished;
             }
-            else if (diff6 < 600)
+            else if (diff6 < scoring_window)
             {
                 scoreMoveF(diff6);
                 FemRightFootSwing6 = stepFinished;
             }
-            else if (diff7 < 600)
+            else if (diff7 < scoring_window)
             {
                 scoreMoveF(diff7);
                 FemRightFootSwing7 = stepFinished;
             }
-            else if (diff8 < 600)
+            else if (diff8 < scoring_window)
             {
                 scoreMoveF(diff8);
                 FemRightFootSwing8 = stepFinished;
             }
-            else if (diff9 < 600)
+            else if (diff9 < scoring_window)
             {
                 scoreMoveF(diff9);
                 FemRightFootSwing9 = stepFinished;
             }
-            else if (diff10 < 600)
+            else if (diff10 < scoring_window)
             {
                 scoreMoveF(diff10);
                 FemRightFootSwing10 = stepFinished;
             }
-            else if (diff11 < 600)
+            else if (diff11 < scoring_window)
             {
                 scoreMoveF(diff11);
                 FemRightFootSwing11 = stepFinished;
             }
-            else if (diff12 < 600)
+            else if (diff12 < scoring_window)
             {
                 scoreMoveF(diff12);
                 FemRightFootSwing12 = stepFinished;
             }
-            else if (diff13 < 600)
+            else if (diff13 < scoring_window)
             {
                 scoreMoveF(diff13);
                 FemRightFootSwing13 = stepFinished;
             }
-            else if (diff14 < 600)
+            else if (diff14 < scoring_window)
             {
                 scoreMoveF(diff14);
                 FemRightFootSwing14 = stepFinished;
             }
-            else if (diff15 < 600)
+            else if (diff15 < scoring_window)
             {
                 scoreMoveF(diff15);
                 FemRightFootSwing15 = stepFinished;
             }
-            else if (diff16 < 600)
+            else if (diff16 < scoring_window)
             {
                 scoreMoveF(diff16);
                 FemRightFootSwing16 = stepFinished;
@@ -4493,83 +4446,83 @@ namespace LebaneseKinect
             double diff13 = Math.Abs((currentTime.Subtract(FemLeftKneeBendCrouch13).TotalMilliseconds));
             double diff14 = Math.Abs((currentTime.Subtract(FemLeftKneeBendCrouch14).TotalMilliseconds));
 
-            if(diff0A < 600)
+            if(diff0A < scoring_window)
             {
                 scoreMoveF(diff0A);
                 FemLeftKneeBendCrouch0A = stepFinished;
             }
-            else if (diff0B < 600)
+            else if (diff0B < scoring_window)
             {
                 scoreMoveF(diff0B);
                 FemLeftKneeBendCrouch0B = stepFinished;
             }
-            else if (diff1 < 600)
+            else if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemLeftKneeBendCrouch1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemLeftKneeBendCrouch2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMoveF(diff3);
                 FemLeftKneeBendCrouch3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMoveF(diff4);
                 FemLeftKneeBendCrouch4 = stepFinished;
             }
-            else if (diff5 < 600)
+            else if (diff5 < scoring_window)
             {
                 scoreMoveF(diff5);
                 FemLeftKneeBendCrouch5 = stepFinished;
             }
-            else if (diff6 < 600)
+            else if (diff6 < scoring_window)
             {
                 scoreMoveF(diff6);
                 FemLeftKneeBendCrouch6 = stepFinished;
             }
-            else if (diff7 < 600)
+            else if (diff7 < scoring_window)
             {
                 scoreMoveF(diff7);
                 FemLeftKneeBendCrouch7 = stepFinished;
             }
-            else if (diff8 < 600)
+            else if (diff8 < scoring_window)
             {
                 scoreMoveF(diff8);
                 FemLeftKneeBendCrouch8 = stepFinished;
             }
-            else if (diff9 < 600)
+            else if (diff9 < scoring_window)
             {
                 scoreMoveF(diff9);
                 FemLeftKneeBendCrouch9 = stepFinished;
             }
-            else if (diff10 < 600)
+            else if (diff10 < scoring_window)
             {
                 scoreMoveF(diff10);
                 FemLeftKneeBendCrouch10 = stepFinished;
             }
-            else if (diff11 < 600)
+            else if (diff11 < scoring_window)
             {
                 scoreMoveF(diff11);
                 FemLeftKneeBendCrouch11 = stepFinished;
             }
-            else if (diff12 < 600)
+            else if (diff12 < scoring_window)
             {
                 scoreMoveF(diff12);
                 FemLeftKneeBendCrouch12 = stepFinished;
             }
-            else if (diff13 < 600)
+            else if (diff13 < scoring_window)
             {
                 scoreMoveF(diff13);
                 FemLeftKneeBendCrouch13 = stepFinished;
             }
-            else if (diff14 < 600)
+            else if (diff14 < scoring_window)
             {
                 scoreMoveF(diff14);
                 FemLeftKneeBendCrouch14 = stepFinished;
@@ -4582,13 +4535,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(FemLeftWristArcRaise1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(FemLeftWristArcRaise2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemLeftWristArcRaise1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemLeftWristArcRaise2 = stepFinished;
@@ -4601,13 +4554,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(FemRightWristArcRaise1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(FemRightWristArcRaise2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemRightWristArcRaise1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemRightWristArcRaise2 = stepFinished;
@@ -4620,13 +4573,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(FemHome1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(FemHome2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemHome1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemHome2 = stepFinished;
@@ -4639,13 +4592,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(FemThrillerHandsLeft1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(FemThrillerHandsLeft2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemThrillerHandsLeft1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemThrillerHandsLeft2 = stepFinished;
@@ -4658,13 +4611,13 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(FemLeftBendHipShake1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(FemLeftBendHipShake2).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemLeftBendHipShake1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemLeftBendHipShake2 = stepFinished;
@@ -4676,7 +4629,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(FemRightHandHigh).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemRightHandHigh = stepFinished;
@@ -4688,7 +4641,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(FemCrouchHipSwivel).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreDurationMoveF(diff1);
                 FemCrouchHipSwivel = stepFinished;
@@ -4700,7 +4653,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(FemForwardSpinFacingRightKneeLift).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemForwardSpinFacingRightKneeLift = stepFinished;
@@ -4717,33 +4670,33 @@ namespace LebaneseKinect
             double diff5 = Math.Abs((currentTime.Subtract(FemRightElbowSway5).TotalMilliseconds));
             double diff6 = Math.Abs((currentTime.Subtract(FemRightElbowSway6).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemRightElbowSway1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemRightElbowSway2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMoveF(diff3);
                 FemRightElbowSway3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMoveF(diff4);
                 FemRightElbowSway4 = stepFinished;
             }
-            else if (diff5 < 600)
+            else if (diff5 < scoring_window)
             {
                 scoreMoveF(diff5);
                 FemRightElbowSway5 = stepFinished;
             }
-            else if (diff6 < 600)
+            else if (diff6 < scoring_window)
             {
                 scoreMoveF(diff6);
                 FemRightElbowSway6 = stepFinished;
@@ -4761,33 +4714,33 @@ namespace LebaneseKinect
             double diff5 = Math.Abs((currentTime.Subtract(FemLeftElbowSway5).TotalMilliseconds));
             double diff6 = Math.Abs((currentTime.Subtract(FemLeftElbowSway6).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemLeftElbowSway1 = stepFinished;
             }
 
-            else if (diff2 < 600)
+            else if (diff2 < scoring_window)
             {
                 scoreMoveF(diff2);
                 FemLeftElbowSway2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMoveF(diff3);
                 FemLeftElbowSway3 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMoveF(diff4);
                 FemLeftElbowSway4 = stepFinished;
             }
-            else if (diff5 < 600)
+            else if (diff5 < scoring_window)
             {
                 scoreMoveF(diff5);
                 FemLeftElbowSway5 = stepFinished;
             }
-            else if (diff6 < 600)
+            else if (diff6 < scoring_window)
             {
                 scoreMoveF(diff6);
                 FemLeftElbowSway6 = stepFinished;
@@ -4801,17 +4754,17 @@ namespace LebaneseKinect
             double diff3 = Math.Abs((currentTime.Subtract(FemRightKneeKick2).TotalMilliseconds));
             double diff4 = Math.Abs((currentTime.Subtract(FemRightKneeKick3).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemRightKneeKick = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMoveF(diff3);
                 FemRightKneeKick2 = stepFinished;
             }
-            else if (diff4 < 600)
+            else if (diff4 < scoring_window)
             {
                 scoreMoveF(diff4);
                 FemRightKneeKick3 = stepFinished;
@@ -4824,12 +4777,12 @@ namespace LebaneseKinect
             double diff1 = Math.Abs((currentTime.Subtract(FemLeftKneeLiftAndFrontTorso2).TotalMilliseconds));
             double diff3 = Math.Abs((currentTime.Subtract(FemLeftKneeLiftAndFrontTorso5).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemLeftKneeLiftAndFrontTorso2 = stepFinished;
             }
-            else if (diff3 < 600)
+            else if (diff3 < scoring_window)
             {
                 scoreMoveF(diff3);
                 FemLeftKneeLiftAndFrontTorso5 = stepFinished;
@@ -4841,7 +4794,7 @@ namespace LebaneseKinect
             TimeSpan currentTime = videoTime.Elapsed;
             double diff1 = Math.Abs((currentTime.Subtract(FemBackSpinRightKneeLift1).TotalMilliseconds));
 
-            if (diff1 < 600)
+            if (diff1 < scoring_window)
             {
                 scoreMoveF(diff1);
                 FemBackSpinRightKneeLift1 = stepFinished;
@@ -4973,8 +4926,12 @@ namespace LebaneseKinect
                     TimeSpan currentTime = videoTime.Elapsed;
                     double diff = 0.0;
 
+                    dance1.Draw(currentTime, spriteBatch); //I can draw moves from a move batch
+
                     //malestart
                     int xlocation = 0;
+                    spriteBatch.Draw(n_MoveTarget, new Rectangle(0 + maleRectDiff, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
+                    
                     if (malePlaying)
                     {
 
@@ -6268,6 +6225,7 @@ namespace LebaneseKinect
                     }
                     //femalestart 
 
+                    spriteBatch.Draw(n_MoveTarget, new Rectangle(500 - maleRectDiff, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                     //First Female move
                     if (femPlaying)
                     {
@@ -7341,6 +7299,7 @@ namespace LebaneseKinect
                     new Rectangle(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT),
                     null,
                     Color.White);
+                DrawSkeleton(SharedSpriteBatch, new Vector2(WINDOW_WIDTH, WINDOW_HEIGHT), jointTexture);
                 SharedSpriteBatch.End();
 #endif
             }

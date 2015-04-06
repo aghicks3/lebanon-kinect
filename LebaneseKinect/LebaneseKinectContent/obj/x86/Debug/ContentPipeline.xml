@@ -7,13 +7,13 @@
       <Importer>XImporter</Importer>
       <Processor>SkinnedModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\man.xnb</Output>
-      <Time>2013-07-17T15:39:50.819078-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\man.xnb</Output>
+      <Time>2015-03-17T09:32:32.3905892-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\man_0.xml</Key>
-        <Value>2013-07-17T15:41:06.7116792-07:00</Value>
+        <Value>2015-03-18T12:24:38.3467047-04:00</Value>
       </Dependency>
-      <Request>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Request>
+      <Request>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Request>
     </Item>
     <Item>
       <Source>Models\woman.X</Source>
@@ -21,13 +21,13 @@
       <Importer>XImporter</Importer>
       <Processor>SkinnedModelProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\woman.xnb</Output>
-      <Time>2013-07-17T15:39:50.8931252-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\woman.xnb</Output>
+      <Time>2015-03-17T09:32:32.4062153-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\woman_0.xml</Key>
-        <Value>2013-07-17T15:41:07.6803216-07:00</Value>
+        <Value>2015-03-18T12:24:38.7499714-04:00</Value>
       </Dependency>
-      <Request>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Request>
+      <Request>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Request>
     </Item>
     <Item>
       <Source>Textures\dsteps1OFF.png</Source>
@@ -35,8 +35,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps1OFF.xnb</Output>
-      <Time>2013-07-17T15:39:51.362845-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps1OFF.xnb</Output>
+      <Time>2015-03-17T09:32:32.6093495-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\dsteps2OFF.png</Source>
@@ -44,8 +44,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps2OFF.xnb</Output>
-      <Time>2013-07-17T15:39:51.3648463-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps2OFF.xnb</Output>
+      <Time>2015-03-17T09:32:32.6093495-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\dsteps3OFF.png</Source>
@@ -53,8 +53,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps3OFF.xnb</Output>
-      <Time>2013-07-17T15:39:51.365847-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps3OFF.xnb</Output>
+      <Time>2015-03-17T09:32:32.6093495-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\joint.png</Source>
@@ -62,8 +62,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\joint.xnb</Output>
-      <Time>2013-07-17T15:39:51.365847-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\joint.xnb</Output>
+      <Time>2015-03-17T09:32:32.6093495-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\backgrounddabke.png</Source>
@@ -71,8 +71,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\backgrounddabke.xnb</Output>
-      <Time>2013-07-17T15:39:51.3618452-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\backgrounddabke.xnb</Output>
+      <Time>2015-03-17T09:32:32.6093495-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\shadow.png</Source>
@@ -80,8 +80,503 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\shadow.xnb</Output>
-      <Time>2013-07-17T15:39:51.3668476-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\shadow.xnb</Output>
+      <Time>2015-03-17T09:32:32.6249761-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_BackSpinRightKneeLift.png</Source>
+      <Name>Sprites\female_BackSpinRightKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_BackSpinRightKneeLift.xnb</Output>
+      <Time>2015-03-17T09:32:32.484344-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_crossover.png</Source>
+      <Name>Sprites\female_crossover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_crossover.xnb</Output>
+      <Time>2015-03-17T09:32:32.546847-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_Crouch_HipShake.png</Source>
+      <Name>Sprites\female_Crouch_HipShake</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_Crouch_HipShake.xnb</Output>
+      <Time>2015-03-17T09:32:32.484344-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_Crouch_HipSwivel.png</Source>
+      <Name>Sprites\female_Crouch_HipSwivel</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_Crouch_HipSwivel.xnb</Output>
+      <Time>2015-03-17T09:32:32.4999692-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_ElbowSway.png</Source>
+      <Name>Sprites\female_ElbowSway</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_ElbowSway.xnb</Output>
+      <Time>2015-03-17T09:32:32.4999692-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_HandSwingBack.png</Source>
+      <Name>Sprites\female_HandSwingBack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_HandSwingBack.xnb</Output>
+      <Time>2015-03-17T09:32:32.4999692-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_HandSwingFront.png</Source>
+      <Name>Sprites\female_HandSwingFront</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_HandSwingFront.xnb</Output>
+      <Time>2015-03-17T09:32:32.4999692-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_HandSwingLeft.png</Source>
+      <Name>Sprites\female_HandSwingLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_HandSwingLeft.xnb</Output>
+      <Time>2015-03-17T09:32:32.4999692-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_HandSwingRight.png</Source>
+      <Name>Sprites\female_HandSwingRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_HandSwingRight.xnb</Output>
+      <Time>2015-03-17T09:32:32.4999692-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_HipShake.png</Source>
+      <Name>Sprites\female_HipShake</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_HipShake.xnb</Output>
+      <Time>2015-03-17T09:32:32.4999692-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_HipShakeBack.png</Source>
+      <Name>Sprites\female_HipShakeBack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_HipShakeBack.xnb</Output>
+      <Time>2015-03-17T09:32:32.4999692-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_HipShakeFront.png</Source>
+      <Name>Sprites\female_HipShakeFront</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_HipShakeFront.xnb</Output>
+      <Time>2015-03-17T09:32:32.5155952-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_Home.png</Source>
+      <Name>Sprites\female_Home</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_Home.xnb</Output>
+      <Time>2015-03-17T09:32:32.5155952-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_LeftBendHipShake.png</Source>
+      <Name>Sprites\female_LeftBendHipShake</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_LeftBendHipShake.xnb</Output>
+      <Time>2015-03-17T09:32:32.5155952-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_LeftKneeBendCrouch_Left.png</Source>
+      <Name>Sprites\female_LeftKneeBendCrouch_Left</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_LeftKneeBendCrouch_Left.xnb</Output>
+      <Time>2015-03-17T09:32:32.5155952-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_LeftKneeBendCrouch_Right.png</Source>
+      <Name>Sprites\female_LeftKneeBendCrouch_Right</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_LeftKneeBendCrouch_Right.xnb</Output>
+      <Time>2015-03-17T09:32:32.5155952-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_LeftKneeKick.png</Source>
+      <Name>Sprites\female_LeftKneeKick</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_LeftKneeKick.xnb</Output>
+      <Time>2015-03-17T09:32:32.5155952-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_LeftKneeLift.png</Source>
+      <Name>Sprites\female_LeftKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_LeftKneeLift.xnb</Output>
+      <Time>2015-03-17T09:32:32.5155952-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_LeftKneeLift_FaceLeft.png</Source>
+      <Name>Sprites\female_LeftKneeLift_FaceLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_LeftKneeLift_FaceLeft.xnb</Output>
+      <Time>2015-03-17T09:32:32.531221-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_LeftKneeLift_FrontTorso.png</Source>
+      <Name>Sprites\female_LeftKneeLift_FrontTorso</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_LeftKneeLift_FrontTorso.xnb</Output>
+      <Time>2015-03-17T09:32:32.531221-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_RightHandHigh.png</Source>
+      <Name>Sprites\female_RightHandHigh</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_RightHandHigh.xnb</Output>
+      <Time>2015-03-17T09:32:32.531221-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_rightKneeKick.png</Source>
+      <Name>Sprites\female_rightKneeKick</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_rightKneeKick.xnb</Output>
+      <Time>2015-03-17T09:32:32.546847-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_RightKneeLift.png</Source>
+      <Name>Sprites\female_RightKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_RightKneeLift.xnb</Output>
+      <Time>2015-03-17T09:32:32.531221-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_RightKneeLift_FaceLeft.png</Source>
+      <Name>Sprites\female_RightKneeLift_FaceLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_RightKneeLift_FaceLeft.xnb</Output>
+      <Time>2015-03-17T09:32:32.531221-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_ScrollingHands_Left.png</Source>
+      <Name>Sprites\female_ScrollingHands_Left</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_ScrollingHands_Left.xnb</Output>
+      <Time>2015-03-17T09:32:32.531221-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_ScrollingHands_Right.png</Source>
+      <Name>Sprites\female_ScrollingHands_Right</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_ScrollingHands_Right.xnb</Output>
+      <Time>2015-03-17T09:32:32.531221-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_ThrillerhandsLeft.png</Source>
+      <Name>Sprites\female_ThrillerhandsLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_ThrillerhandsLeft.xnb</Output>
+      <Time>2015-03-17T09:32:32.546847-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_WristArcRaise_Left.png</Source>
+      <Name>Sprites\female_WristArcRaise_Left</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_WristArcRaise_Left.xnb</Output>
+      <Time>2015-03-17T09:32:32.546847-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\female_WristArcRaise_Right.png</Source>
+      <Name>Sprites\female_WristArcRaise_Right</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\female_WristArcRaise_Right.xnb</Output>
+      <Time>2015-03-17T09:32:32.546847-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_crossover.png</Source>
+      <Name>Sprites\male_crossover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_crossover.xnb</Output>
+      <Time>2015-03-17T09:32:32.5937237-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_KneelandClap.png</Source>
+      <Name>Sprites\male_KneelandClap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_KneelandClap.xnb</Output>
+      <Time>2015-03-17T09:32:32.546847-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_LeftHandToFace_Spin.png</Source>
+      <Name>Sprites\male_LeftHandToFace_Spin</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_LeftHandToFace_Spin.xnb</Output>
+      <Time>2015-03-17T09:32:32.546847-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_LeftKneeBendCrouch_Left.png</Source>
+      <Name>Sprites\male_LeftKneeBendCrouch_Left</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_LeftKneeBendCrouch_Left.xnb</Output>
+      <Time>2015-03-17T09:32:32.5624725-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_LeftKneeBendCrouch_Right.png</Source>
+      <Name>Sprites\male_LeftKneeBendCrouch_Right</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_LeftKneeBendCrouch_Right.xnb</Output>
+      <Time>2015-03-17T09:32:32.5624725-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_LeftKneeCross.png</Source>
+      <Name>Sprites\male_LeftKneeCross</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_LeftKneeCross.xnb</Output>
+      <Time>2015-03-17T09:32:32.5624725-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_LeftKneeKick.png</Source>
+      <Name>Sprites\male_LeftKneeKick</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_LeftKneeKick.xnb</Output>
+      <Time>2015-03-17T09:32:32.5624725-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_LeftKneeLift.png</Source>
+      <Name>Sprites\male_LeftKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_LeftKneeLift.xnb</Output>
+      <Time>2015-03-17T09:32:32.5624725-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_LeftKneeLift_FaceBack.png</Source>
+      <Name>Sprites\male_LeftKneeLift_FaceBack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_LeftKneeLift_FaceBack.xnb</Output>
+      <Time>2015-03-17T09:32:32.5624725-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_LeftKneeLift_FaceLeft.png</Source>
+      <Name>Sprites\male_LeftKneeLift_FaceLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_LeftKneeLift_FaceLeft.xnb</Output>
+      <Time>2015-03-17T09:32:32.5624725-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_LeftKneeLift_FaceRight.png</Source>
+      <Name>Sprites\male_LeftKneeLift_FaceRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_LeftKneeLift_FaceRight.xnb</Output>
+      <Time>2015-03-17T09:32:32.5624725-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_LeftKneeLift_FrontTorso.png</Source>
+      <Name>Sprites\male_LeftKneeLift_FrontTorso</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_LeftKneeLift_FrontTorso.xnb</Output>
+      <Time>2015-03-17T09:32:32.5624725-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_LeftKneeLift_LeftHand.png</Source>
+      <Name>Sprites\male_LeftKneeLift_LeftHand</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_LeftKneeLift_LeftHand.xnb</Output>
+      <Time>2015-03-17T09:32:32.5780983-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_LeftKneeLift_UnderArm.png</Source>
+      <Name>Sprites\male_LeftKneeLift_UnderArm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_LeftKneeLift_UnderArm.xnb</Output>
+      <Time>2015-03-17T09:32:32.5780983-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_RightKneeCross.png</Source>
+      <Name>Sprites\male_RightKneeCross</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_RightKneeCross.xnb</Output>
+      <Time>2015-03-17T09:32:32.5780983-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_rightKneeKick.png</Source>
+      <Name>Sprites\male_rightKneeKick</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_rightKneeKick.xnb</Output>
+      <Time>2015-03-17T09:32:32.5937237-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_RightKneeKick_UnderArm.png</Source>
+      <Name>Sprites\male_RightKneeKick_UnderArm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_RightKneeKick_UnderArm.xnb</Output>
+      <Time>2015-03-17T09:32:32.5780983-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_RightKneeKneel_UnderArm.png</Source>
+      <Name>Sprites\male_RightKneeKneel_UnderArm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_RightKneeKneel_UnderArm.xnb</Output>
+      <Time>2015-03-17T09:32:32.5780983-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_rightKneeLift.png</Source>
+      <Name>Sprites\male_rightKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_rightKneeLift.xnb</Output>
+      <Time>2015-03-17T09:32:32.5937237-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_RightKneeLift_FaceRight.png</Source>
+      <Name>Sprites\male_RightKneeLift_FaceRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_RightKneeLift_FaceRight.xnb</Output>
+      <Time>2015-03-17T09:32:32.5937237-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_shrug.png</Source>
+      <Name>Sprites\male_shrug</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_shrug.xnb</Output>
+      <Time>2015-03-17T09:32:32.5937237-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_WaiterHand.png</Source>
+      <Name>Sprites\male_WaiterHand</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_WaiterHand.xnb</Output>
+      <Time>2015-03-17T09:32:32.5937237-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_LeftKneeLift_FrontTorso_LeftHand.png</Source>
+      <Name>Sprites\male_LeftKneeLift_FrontTorso_LeftHand</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_LeftKneeLift_FrontTorso_LeftHand.xnb</Output>
+      <Time>2015-03-17T09:32:32.5780983-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_RightKneeKneel_UnderArm_HandBehind.png</Source>
+      <Name>Sprites\male_RightKneeKneel_UnderArm_HandBehind</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_RightKneeKneel_UnderArm_HandBehind.xnb</Output>
+      <Time>2015-03-17T09:32:32.5780983-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\male_RightKneeLift_LeftHand.png</Source>
+      <Name>Sprites\male_RightKneeLift_LeftHand</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\male_RightKneeLift_LeftHand.xnb</Output>
+      <Time>2015-03-17T09:32:32.5937237-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\scoreBackground.png</Source>
+      <Name>Textures\scoreBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\scoreBackground.xnb</Output>
+      <Time>2015-03-17T09:32:32.6249761-04:00</Time>
     </Item>
     <Item>
       <Source>Music\dabke.mp3</Source>
@@ -89,9 +584,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.xnb</Output>
-      <Extra>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.wma</Extra>
-      <Time>2013-07-17T15:39:51.0092041-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.xnb</Output>
+      <Extra>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.wma</Extra>
+      <Time>2015-03-17T09:32:32.4530922-04:00</Time>
     </Item>
     <Item>
       <Source>Video\tempIntro.wmv</Source>
@@ -99,9 +594,9 @@
       <Importer>WmvImporter</Importer>
       <Processor>VideoProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.xnb</Output>
-      <Extra>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.wmv</Extra>
-      <Time>2013-07-17T15:39:55.7251219-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.xnb</Output>
+      <Extra>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\tempIntro.wmv</Extra>
+      <Time>2015-03-17T09:32:33.7213233-04:00</Time>
     </Item>
     <Item>
       <Source>Video\Lebanon.wmv</Source>
@@ -109,9 +604,9 @@
       <Importer>WmvImporter</Importer>
       <Processor>VideoProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.xnb</Output>
-      <Extra>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.wmv</Extra>
-      <Time>2013-07-17T15:39:52.9950947-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.xnb</Output>
+      <Extra>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.wmv</Extra>
+      <Time>2015-03-17T09:32:33.0468736-04:00</Time>
     </Item>
     <Item>
       <Source>myFont.spritefont</Source>
@@ -119,8 +614,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\myFont.xnb</Output>
-      <Time>2013-07-17T15:39:55.7611463-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\myFont.xnb</Output>
+      <Time>2015-03-17T09:32:33.7213233-04:00</Time>
     </Item>
     <Item>
       <Source>resultFont.spritefont</Source>
@@ -128,8 +623,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\resultFont.xnb</Output>
-      <Time>2013-07-17T15:39:55.8222887-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\resultFont.xnb</Output>
+      <Time>2015-03-18T12:24:54.6700523-04:00</Time>
     </Item>
     <Item>
       <Source>KinectDepthVisualizer.fx</Source>
@@ -137,15 +632,15 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\KinectDepthVisualizer.xnb</Output>
-      <Time>2013-07-17T15:39:50.799063-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\KinectDepthVisualizer.xnb</Output>
+      <Time>2015-03-17T09:32:32.3905892-04:00</Time>
     </Item>
     <Item>
       <Source>Models\man.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\man_0.xml</Output>
-      <Time>2013-07-17T15:39:50.819078-07:00</Time>
+      <Time>2015-03-17T09:32:32.3905892-04:00</Time>
     </Item>
     <Item>
       <Source>Models\dabkeTexture.png</Source>
@@ -160,15 +655,24 @@
         <Data Key="PremultiplyAlpha" Type="bool">true</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Output>
-      <Time>2013-07-17T15:39:50.8100712-07:00</Time>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Output>
+      <Time>2015-03-17T09:32:32.3905892-04:00</Time>
     </Item>
     <Item>
       <Source>Models\woman.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\woman_0.xml</Output>
-      <Time>2013-07-17T15:39:50.8931252-07:00</Time>
+      <Time>2015-03-17T09:32:32.4062153-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\n_MoveTarget.png</Source>
+      <Name>Sprites\n_MoveTarget</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\n_MoveTarget.xnb</Output>
+      <Time>2015-03-30T16:17:32.857002-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -176,43 +680,43 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModelPipeline.dll</Key>
-        <Value>2013-07-17T15:41:04.1236717-07:00</Value>
+        <Key>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModelPipeline.dll</Key>
+        <Value>2015-03-18T12:24:37.7985019-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T10:41:18-07:00</Value>
+        <Value>2010-08-23T15:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T10:41:18-07:00</Value>
+        <Value>2010-08-23T15:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T10:41:18-07:00</Value>
+        <Value>2010-08-23T15:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T10:41:18-07:00</Value>
+        <Value>2010-08-23T15:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T10:41:18-07:00</Value>
+        <Value>2010-08-23T15:41:18-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T10:41:18-07:00</Value>
+        <Value>2010-08-23T15:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2013-06-14T13:11:27.5731405-07:00</Value>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2015-03-17T09:18:07.7313873-04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

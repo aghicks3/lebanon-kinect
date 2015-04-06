@@ -2,7 +2,7 @@
 <XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics" xmlns:Framework="Microsoft.Xna.Framework">
   <Asset Type="Graphics:NodeContent">
     <Identity>
-      <SourceFilename>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\Models\man.X</SourceFilename>
+      <SourceFilename>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\Models\man.X</SourceFilename>
       <SourceTool>XImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -15476,7 +15476,7 @@
   <Resources>
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Identity>
-        <SourceFilename>C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\Models\man.X</SourceFilename>
+        <SourceFilename>C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\Models\man.X</SourceFilename>
         <SourceTool>XImporter</SourceTool>
       </Identity>
       <OpaqueData>

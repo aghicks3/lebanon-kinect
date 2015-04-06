@@ -60,6 +60,7 @@ Content\Sprites\male_WaiterHand.xnb
 Content\Sprites\male_LeftKneeLift_FrontTorso_LeftHand.xnb
 Content\Sprites\male_RightKneeKneel_UnderArm_HandBehind.xnb
 Content\Sprites\male_RightKneeLift_LeftHand.xnb
+Content\Textures\scoreBackground.xnb
 Content\Music\dabke.xnb
 Content\Music\dabke.wma
 Content\Video\tempIntro.xnb
@@ -70,4 +71,4 @@ Content\myFont.xnb
 Content\resultFont.xnb
 Content\KinectDepthVisualizer.xnb
 Content\Models\dabkeTexture_0.xnb
-Content\Textures\scoreBackground.xnb
+Content\Sprites\n_MoveTarget.xnb

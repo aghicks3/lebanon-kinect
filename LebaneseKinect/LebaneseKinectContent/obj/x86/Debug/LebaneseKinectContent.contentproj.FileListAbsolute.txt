@@ -3,3 +3,4 @@ C:\Users\Stephen\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectCo
 C:\Users\Adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\obj\x86\Debug\LebaneseKinectContent.contentprojResolveAssemblyReference.cache
 C:\Users\Genesisrm\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\obj\x86\Debug\LebaneseKinectContent.contentprojResolveAssemblyReference.cache
 C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\obj\x86\Debug\LebaneseKinectContent.contentprojResolveAssemblyReference.cache
+C:\Users\Izzy\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinectContent\obj\x86\Debug\LebaneseKinectContent.contentprojResolveAssemblyReference.cache

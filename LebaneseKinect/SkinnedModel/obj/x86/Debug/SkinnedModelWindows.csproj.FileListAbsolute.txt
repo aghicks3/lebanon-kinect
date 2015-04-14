@@ -34,3 +34,9 @@ C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\SkinnedModel\obj\x86\Debug\S
 C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\SkinnedModel\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\SkinnedModel\obj\x86\Debug\SkinnedModel.dll
 C:\Users\Drew\Desktop\lebanon-kinect\LebaneseKinect\SkinnedModel\obj\x86\Debug\SkinnedModel.pdb
+C:\Users\Izzy\Desktop\lebanon-kinect\LebaneseKinect\SkinnedModel\bin\x86\Debug\SkinnedModel.dll
+C:\Users\Izzy\Desktop\lebanon-kinect\LebaneseKinect\SkinnedModel\bin\x86\Debug\SkinnedModel.pdb
+C:\Users\Izzy\Desktop\lebanon-kinect\LebaneseKinect\SkinnedModel\obj\x86\Debug\SkinnedModelWindows.csprojResolveAssemblyReference.cache
+C:\Users\Izzy\Desktop\lebanon-kinect\LebaneseKinect\SkinnedModel\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Izzy\Desktop\lebanon-kinect\LebaneseKinect\SkinnedModel\obj\x86\Debug\SkinnedModel.dll
+C:\Users\Izzy\Desktop\lebanon-kinect\LebaneseKinect\SkinnedModel\obj\x86\Debug\SkinnedModel.pdb

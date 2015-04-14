@@ -17,26 +17,39 @@ namespace LebaneseKinect
     class DanceMove
     {
         String moveIconName;
+        public String moveGender = "male";
         Texture2D moveIcon;
         public TimeSpan moveSpan;
-
-        private static ContentManager myContent;
 
         public DanceMove(TimeSpan moveSpan, string moveIconName)
         {
             // TODO: Complete member initialization
             this.moveSpan = moveSpan;
             this.moveIconName = moveIconName;
+            this.completed = false;
         }
 
         public void LoadContent(ContentManager content)
-        {      
-            moveIcon = content.Load<Texture2D>("Sprites\\female_crossover");
+        {
+            try
+            { moveIcon = content.Load<Texture2D>("MoveIcons\\" + moveGender + "_" + moveIconName); }
+            catch (Exception e)
+            {
+                moveIcon = null;
+                Console.WriteLine("Couldn't load the icon " + moveGender + "_" + moveIconName);
+            }
         }
 
         public Texture2D GetMoveIcon()
         {
             return moveIcon;
         }
+
+        public String GetName()
+        {
+            return moveIconName;
+        }
+
+        public bool completed { get; set; }
     }
 }

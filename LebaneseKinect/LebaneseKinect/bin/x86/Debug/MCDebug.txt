@@ -1,0 +1,70 @@
+File created using StreamWriter class.
+RightKneeLiftFaceLeft unknown
+HandSwingFront unknown
+HandSwingRight unknown
+HipShakeBack unknown
+HandSwingBack unknown
+HandSwingLeft unknown
+HipShakeFront unknown
+HandSwingFront unknown
+HandSwingRight unknown
+HipShakeBack unknown
+HandSwingBack unknown
+HandSwingLeft unknown
+HipShakeFront unknown
+ScrollingHandsRight unknown
+ScrollingHandsRight unknown
+CrouchAndHipShake unknown
+ScrollingHandsLeft unknown
+ScrollingHandsLeft unknown
+CrouchAndHipShake unknown
+ScrollingHandsRight unknown
+ScrollingHandsRight unknown
+CrouchAndHipShake unknown
+ScrollingHandsLeft unknown
+ScrollingHandsLeft unknown
+CrouchAndHipShake unknown
+ElbowSway unknown
+LeftElbowSway unknown
+ElbowSway unknown
+LeftElbowSway unknown
+ElbowSway unknown
+LeftElbowSway unknown
+ElbowSway unknown
+LeftElbowSway unknown
+LeftWristArcRaise unknown
+RightWristArcRaise unknown
+Home unknown
+LeftWristArcRaise unknown
+RightWristArcRaise unknown
+Home unknown
+ThrillerHandsLeft unknown
+LeftBendHipShake unknown
+ThrillerHandsLeft unknown
+LeftBendHipShake unknown
+ElbowSway unknown
+LeftElbowSway unknown
+ElbowSway unknown
+LeftElbowSway unknown
+LeftKneeBendCrouch unknown
+LeftKneeBendCrouch unknown
+LeftKneeBendCrouch unknown
+LeftKneeBendCrouch unknown
+LeftKneeBendCrouch unknown
+LeftKneeBendCrouch unknown
+LeftKneeBendCrouch unknown
+LeftKneeBendCrouch unknown
+BackSpinRightKneeLift unknown
+ForwardSpinFacingRightKneeLift unknown
+CrouchAndHipSwivel unknown
+RightHandHigh unknown
+File created using StreamWriter class.
+File created using StreamWriter class.
+File created using StreamWriter class.
+File created using StreamWriter class.
+File created using StreamWriter class.
+File created using StreamWriter class.
+File created using StreamWriter class.
+File created using StreamWriter class.
+File created using StreamWriter class.
+File created using StreamWriter class.

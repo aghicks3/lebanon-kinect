@@ -143,284 +143,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Sprites\female_BackSpinRightKneeLift.png">
-      <Name>female_BackSpinRightKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_crossover.png">
-      <Name>female_crossover</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_Crouch_HipShake.png">
-      <Name>female_Crouch_HipShake</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_Crouch_HipSwivel.png">
-      <Name>female_Crouch_HipSwivel</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_ElbowSway.png">
-      <Name>female_ElbowSway</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_HandSwingBack.png">
-      <Name>female_HandSwingBack</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_HandSwingFront.png">
-      <Name>female_HandSwingFront</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_HandSwingLeft.png">
-      <Name>female_HandSwingLeft</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_HandSwingRight.png">
-      <Name>female_HandSwingRight</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_HipShake.png">
-      <Name>female_HipShake</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_HipShakeBack.png">
-      <Name>female_HipShakeBack</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_HipShakeFront.png">
-      <Name>female_HipShakeFront</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_Home.png">
-      <Name>female_Home</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_LeftBendHipShake.png">
-      <Name>female_LeftBendHipShake</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_LeftKneeBendCrouch_Left.png">
-      <Name>female_LeftKneeBendCrouch_Left</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_LeftKneeBendCrouch_Right.png">
-      <Name>female_LeftKneeBendCrouch_Right</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_LeftKneeKick.png">
-      <Name>female_LeftKneeKick</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_LeftKneeLift.png">
-      <Name>female_LeftKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_LeftKneeLift_FaceLeft.png">
-      <Name>female_LeftKneeLift_FaceLeft</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_LeftKneeLift_FrontTorso.png">
-      <Name>female_LeftKneeLift_FrontTorso</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_RightHandHigh.png">
-      <Name>female_RightHandHigh</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_rightKneeKick.png">
-      <Name>female_rightKneeKick</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_RightKneeLift.png">
-      <Name>female_RightKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_RightKneeLift_FaceLeft.png">
-      <Name>female_RightKneeLift_FaceLeft</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_ScrollingHands_Left.png">
-      <Name>female_ScrollingHands_Left</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_ScrollingHands_Right.png">
-      <Name>female_ScrollingHands_Right</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_ThrillerhandsLeft.png">
-      <Name>female_ThrillerhandsLeft</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_WristArcRaise_Left.png">
-      <Name>female_WristArcRaise_Left</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\female_WristArcRaise_Right.png">
-      <Name>female_WristArcRaise_Right</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_crossover.png">
-      <Name>male_crossover</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_KneelandClap.png">
-      <Name>male_KneelandClap</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_LeftHandToFace_Spin.png">
-      <Name>male_LeftHandToFace_Spin</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_LeftKneeBendCrouch_Left.png">
-      <Name>male_LeftKneeBendCrouch_Left</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_LeftKneeBendCrouch_Right.png">
-      <Name>male_LeftKneeBendCrouch_Right</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_LeftKneeCross.png">
-      <Name>male_LeftKneeCross</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_LeftKneeKick.png">
-      <Name>male_LeftKneeKick</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_LeftKneeLift.png">
-      <Name>male_LeftKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_LeftKneeLift_FaceBack.png">
-      <Name>male_LeftKneeLift_FaceBack</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_LeftKneeLift_FaceLeft.png">
-      <Name>male_LeftKneeLift_FaceLeft</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_LeftKneeLift_FaceRight.png">
-      <Name>male_LeftKneeLift_FaceRight</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_LeftKneeLift_FrontTorso.png">
-      <Name>male_LeftKneeLift_FrontTorso</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_LeftKneeLift_LeftHand.png">
-      <Name>male_LeftKneeLift_LeftHand</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_LeftKneeLift_UnderArm.png">
-      <Name>male_LeftKneeLift_UnderArm</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_RightKneeCross.png">
-      <Name>male_RightKneeCross</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_rightKneeKick.png">
-      <Name>male_rightKneeKick</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_RightKneeKick_UnderArm.png">
-      <Name>male_RightKneeKick_UnderArm</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_RightKneeKneel_UnderArm.png">
-      <Name>male_RightKneeKneel_UnderArm</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_rightKneeLift.png">
-      <Name>male_rightKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_RightKneeLift_FaceRight.png">
-      <Name>male_RightKneeLift_FaceRight</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_shrug.png">
-      <Name>male_shrug</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites\male_WaiterHand.png">
-      <Name>male_WaiterHand</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Sprites\male_LeftKneeLift_FrontTorso_LeftHand.png">
-      <Name>male_LeftKneeLift_FrontTorso_LeftHand</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Sprites\male_RightKneeKneel_UnderArm_HandBehind.png">
-      <Name>male_RightKneeKneel_UnderArm_HandBehind</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Sprites\male_RightKneeLift_LeftHand.png">
-      <Name>male_RightKneeLift_LeftHand</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Textures\scoreBackground.png">
       <Name>scoreBackground</Name>
       <Importer>TextureImporter</Importer>
@@ -442,175 +164,6 @@
       <Name>Lebanon2</Name>
       <Importer>WmvImporter</Importer>
       <Processor>VideoProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Sprites2\Male\Back_LeftKneeLift.png">
-      <Name>Back_LeftKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Back_RightKneeLift.png">
-      <Name>Back_RightKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Front_KneelAndClap.png">
-      <Name>Front_KneelAndClap</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Front_LeftKneeAndFrontTorso.png">
-      <Name>Front_LeftKneeAndFrontTorso</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Front_LeftKneeLift.png">
-      <Name>Front_LeftKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Front_RightKneeKick.png">
-      <Name>Front_RightKneeKick</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Front_RightKneeLift.png">
-      <Name>Front_RightKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Front_SideLeftAnkle.png">
-      <Name>Front_SideLeftAnkle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Front_SideRightAnkle.png">
-      <Name>Front_SideRightAnkle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Left_LeftKneeLift.png">
-      <Name>Left_LeftKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Left_RightKneeLift.png">
-      <Name>Left_RightKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Right_LeftKneeBack.png">
-      <Name>Right_LeftKneeBack</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Right_LeftKneeKick.png">
-      <Name>Right_LeftKneeKick</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Right_LeftKneeLift.png">
-      <Name>Right_LeftKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Right_RightKneeKick.png">
-      <Name>Right_RightKneeKick</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Male\Right_RightKneeLift.png">
-      <Name>Right_RightKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Sprites2\Female\BackSide_LeftKneeLift.png">
-      <Name>BackSide_LeftKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\BackSide_RightKneeLift.png">
-      <Name>BackSide_RightKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\LeftKneeLift.png">
-      <Name>LeftKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\LeftKneeLiftAndFrontTorso.png">
-      <Name>LeftKneeLiftAndFrontTorso</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\LeftSide_FemLeftKneeLift.png">
-      <Name>LeftSide_FemLeftKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\LeftSide_FemRightKneeLift.png">
-      <Name>LeftSide_FemRightKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\RightKneeKick.png">
-      <Name>RightKneeKick</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\RightKneeLift.png">
-      <Name>RightKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\RightSide_LeftKneeKick.png">
-      <Name>RightSide_LeftKneeKick</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\RightSide_LeftKneeLift.png">
-      <Name>RightSide_LeftKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\RightSide_RightKneeBack.png">
-      <Name>RightSide_RightKneeBack</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\RightSide_RightKneeKick.png">
-      <Name>RightSide_RightKneeKick</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\RightSide_RightKneeLift.png">
-      <Name>RightSide_RightKneeLift</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\ScrollingHands.png">
-      <Name>ScrollingHands</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\SideLeftAnkle.png">
-      <Name>SideLeftAnkle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\SideRightAnkle.png">
-      <Name>SideRightAnkle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-    <Compile Include="Sprites2\Female\ThrillerHandsRight.png">
-      <Name>ThrillerHandsRight</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -762,6 +315,307 @@
     </Compile>
     <Compile Include="Textures\righthandraise.png">
       <Name>righthandraise</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MoveIcons\female_BackSpinRightKneeLift.png">
+      <Name>female_BackSpinRightKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_CrouchAndHipShake.png">
+      <Name>female_CrouchAndHipShake</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_CrouchAndHipSwivel.png">
+      <Name>female_CrouchAndHipSwivel</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_ElbowSway.png">
+      <Name>female_ElbowSway</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_HandSwingBack.png">
+      <Name>female_HandSwingBack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_HandSwingFront.png">
+      <Name>female_HandSwingFront</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_HandSwingLeft.png">
+      <Name>female_HandSwingLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_HandSwingRight.png">
+      <Name>female_HandSwingRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_HipShake.png">
+      <Name>female_HipShake</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_HipShakeBack.png">
+      <Name>female_HipShakeBack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_HipShakeFront.png">
+      <Name>female_HipShakeFront</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Home.png">
+      <Name>female_Home</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_LeftBendHipShake.png">
+      <Name>female_LeftBendHipShake</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_LeftKneeBendCrouchLeft.png">
+      <Name>female_LeftKneeBendCrouchLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_LeftKneeBendCrouchRight.png">
+      <Name>female_LeftKneeBendCrouchRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_LeftKneeKick.png">
+      <Name>female_LeftKneeKick</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_LeftKneeLift.png">
+      <Name>female_LeftKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_LeftKneeLiftFaceLeft.png">
+      <Name>female_LeftKneeLiftFaceLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_LeftKneeLiftAndFrontTorso.png">
+      <Name>female_LeftKneeLiftAndFrontTorso</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_RightFootCross.png">
+      <Name>female_RightFootCross</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_RightHandRaise.png">
+      <Name>female_RightHandRaise</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_RightKneeKick.png">
+      <Name>female_RightKneeKick</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_RightKneeLift.png">
+      <Name>female_RightKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_RightKneeLiftFaceLeft.png">
+      <Name>female_RightKneeLiftFaceLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_ScrollingHandsLeft.png">
+      <Name>female_ScrollingHandsLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_ScrollingHandsRight.png">
+      <Name>female_ScrollingHandsRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_ThrillerHandsLeft.png">
+      <Name>female_ThrillerHandsLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_LeftWristArcRaise.png">
+      <Name>female_LeftWristArcRaise</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_RightWristArcRaise.png">
+      <Name>female_RightWristArcRaise</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MoveIcons\female_Back_LeftKneeLift.png">
+      <Name>female_Back_LeftKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Back_RightKneeLift.png">
+      <Name>female_Back_RightKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Front_KneelAndClap.png">
+      <Name>female_Front_KneelAndClap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Front_LeftKneeAndFrontTorso.png">
+      <Name>female_Front_LeftKneeAndFrontTorso</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Front_LeftKneeLift.png">
+      <Name>female_Front_LeftKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Front_RightKneeKick.png">
+      <Name>female_Front_RightKneeKick</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Front_RightKneeLift.png">
+      <Name>female_Front_RightKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Front_SideLeftAnkle.png">
+      <Name>female_Front_SideLeftAnkle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Front_SideRightAnkle.png">
+      <Name>female_Front_SideRightAnkle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Left_LeftKneeLift.png">
+      <Name>female_Left_LeftKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Left_RightKneeLift.png">
+      <Name>female_Left_RightKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Right_LeftKneeBack.png">
+      <Name>female_Right_LeftKneeBack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Right_LeftKneeKick.png">
+      <Name>female_Right_LeftKneeKick</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Right_LeftKneeLift.png">
+      <Name>female_Right_LeftKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Right_RightKneeKick.png">
+      <Name>female_Right_RightKneeKick</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\female_Right_RightKneeLift.png">
+      <Name>female_Right_RightKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\male_BackSideLeftKneeLift.png">
+      <Name>male_BackSideLeftKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\male_BackSide_RightKneeLift.png">
+      <Name>male_BackSide_RightKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\male_LeftSide_FemLeftKneeLift.png">
+      <Name>male_LeftSide_FemLeftKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\male_LeftSide_FemRightKneeLift.png">
+      <Name>male_LeftSide_FemRightKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\male_RightSide_LeftKneeKick.png">
+      <Name>male_RightSide_LeftKneeKick</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\male_RightSide_LeftKneeLift.png">
+      <Name>male_RightSide_LeftKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\male_RightSide_RightKneeBack.png">
+      <Name>male_RightSide_RightKneeBack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\male_RightSide_RightKneeKick.png">
+      <Name>male_RightSide_RightKneeKick</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\male_RightSide_RightKneeLift.png">
+      <Name>male_RightSide_RightKneeLift</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\male_ScrollingHands.png">
+      <Name>male_ScrollingHands</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\male_SideLeftAnkle.png">
+      <Name>male_SideLeftAnkle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\male_SideRightAnkle.png">
+      <Name>male_SideRightAnkle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="MoveIcons\male_ThrillerHandsRight.png">
+      <Name>male_ThrillerHandsRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MoveIcons\female_KneelAndClap.png">
+      <Name>female_KneelAndClap</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

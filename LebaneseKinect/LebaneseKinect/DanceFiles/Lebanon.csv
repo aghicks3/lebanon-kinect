@@ -1,0 +1,306 @@
+
+//Score block 1
+M, LeftKneeLiftFaceRight, 0, 0, 0, 6, 562
+M, RightKneeLiftFaceRight, 0, 0, 0, 7, 602
+M, LeftKneeLiftFaceRight, 0, 0, 0, 8, 574
+M, RightKneeLift, 0, 0, 0, 9, 731
+
+F, LeftKneeLiftFaceLeft, 0, 0, 0, 6, 562
+F, RightKneeLiftFaceLeft, 0, 0, 0, 7, 602
+F, LeftKneeLiftFaceLeft, 0, 0, 0, 8, 574
+F, RightKneeLift, 0, 0, 0, 9, 731
+
+N, Score1, 0, 0, 0, 10, 451
+
+//Second score block
+M, LeftKneeLift, 0, 0, 0, 10, 731
+M, RightKneeLift, 0, 0, 0, 11, 843
+M, LeftKneeLiftAndFrontTorso, 0, 0, 0, 12, 951
+M, RightKneeLift, 0, 0, 0, 14, 172
+M, LeftKneeLift, 0, 0, 0, 15, 146
+M, RightKneeLift, 0, 0, 0, 16, 169
+M, LeftKneeLiftAndFrontTorso, 0, 0, 0, 17, 170
+M, RightKneeLift, 0, 0, 0, 18, 294
+
+F, LeftKneeLift, 0, 0, 0, 10, 731
+F, RightKneeLift, 0, 0, 0, 11, 843
+F, LeftKneeLiftAndFrontTorso, 0, 0, 0, 12, 951
+F, RightKneeLift, 0, 0, 0, 14, 172
+F, LeftKneeLift, 0, 0, 0, 15, 146
+F, RightKneeLift, 0, 0, 0, 16, 169
+F, LeftKneeLiftAndFrontTorso, 0, 0, 0, 17, 170
+F, RightKneeLift, 0, 0, 0, 18, 294
+N, Score2, 0, 0, 0, 18, 546
+
+//Score block 3
+M, LeftKneeLiftAndLeftHand, 0, 0, 0, 19, 355
+M, RightKneeLiftAndLeftHand, 0, 0, 0, 20, 311
+M, LeftKneeLiftAndFrontTorsoAndLeftHand, 0, 0, 0, 21, 427
+M, RightKneeLiftAndLeftHand, 0, 0, 0, 22, 556
+M, LeftKneeLiftAndLeftHand, 0, 0, 0, 23, 512
+M, RightKneeLiftAndLeftHand, 0, 0, 0, 24, 595
+M, LeftKneeLiftAndFrontTorsoAndLeftHand, 0, 0, 0, 25, 654
+M, RightKneeLiftAndLeftHand, 0, 0, 0, 26, 814
+//LeftKneeLift and LeftHand, 0,0,0,27,859 We're ignoring this step for now.
+
+F, HandSwingFront, 0, 0, 0, 19, 492
+F, HandSwingRight, 0, 0, 0, 20, 615
+F, HipShakeBack, 0, 0, 0, 21, 151
+F, HandSwingBack, 0, 0, 0, 23, 834
+F, HandSwingLeft, 0, 0, 0, 25, 046
+F, HipShakeFront, 0, 0, 0, 25, 479
+N, Score3, 0, 0, 0, 28, 343
+
+//Score block 4
+M, KneelAndClap, 0, 0, 0, 28, 785
+
+F, HandSwingFront, 0, 0, 0, 28, 192
+F, HandSwingRight, 0, 0, 0, 29, 318
+F, HipShakeBack, 0, 0, 0, 29, 707
+F, HandSwingBack, 0, 0, 0, 32, 517
+F, HandSwingLeft, 0, 0, 0, 33, 562
+F, HipShakeFront, 0, 0, 0, 34, 045
+N, Score4, 0, 0, 0, 35, 806
+
+//Score block 5
+M, LeftKneeLift, 0, 0, 0, 36, 590
+M, RightKneeLift, 0, 0, 0, 37, 460
+M, LeftKneeLift, 0, 0, 0, 38, 574
+M, RightKneeLift, 0, 0, 0, 39, 558
+M, LeftKneeLift, 0, 0, 0, 40, 706
+M, RightKneeLift, 0, 0, 0, 41, 809
+M, LeftKneeLift, 0, 0, 0, 42, 857
+M, RightKneeLift, 0, 0, 0, 43, 916
+
+F, ScrollingHandsRight, 0, 0, 0, 36, 228
+F, ScrollingHandsRight, 0, 0, 0, 37, 496
+F, CrouchAndHipShake, 0, 0, 0, 38, 552
+F, ScrollingHandsLeft, 0, 0, 0, 40, 698
+F, ScrollingHandsLeft, 0, 0, 0, 41, 670
+F, CrouchAndHipShake, 0, 0, 0, 42, 728
+N, Score5, 0, 0, 0, 44, 494
+
+//Score block 6
+M, WaiterHand, 0, 0, 0, 44, 751
+M, ShrugShoulders, 0, 0, 0, 46, 612
+M, LeftKneeLift, 0, 0, 0, 49, 288
+M, RightKneeLift, 0, 0, 0, 50, 273
+M, LeftKneeLift, 0, 0, 0, 51, 299
+M, RightKneeLift, 0, 0, 0, 52, 379
+M, LeftKneeBendCrouchLeft, 0, 0, 0, 53, 649
+M, LeftKneeBendCrouchRight, 0, 0, 0, 54, 688
+
+F, ScrollingHandsRight, 0, 0, 0, 44, 890
+F, ScrollingHandsRight, 0, 0, 0, 45, 944
+F, CrouchAndHipShake, 0, 0, 0, 47, 034
+F, ScrollingHandsLeft, 0, 0, 0, 49, 112
+F, ScrollingHandsLeft, 0, 0, 0, 50, 252
+F, CrouchAndHipShake, 0, 0, 0, 51, 309
+F, LeftKneeBendCrouchLeft, 0,0,0,53,649
+F, LeftKneeBendCrouchRight, 0,0,0,54,688
+N, Score6, 0, 0, 0, 53, 225
+
+//Score block 7
+M, RightFootCross, 0, 0, 0, 55, 405
+M, RightFootSwing, 0, 0, 0, 55, 876
+M, RightFootCross, 0, 0, 0, 56, 544
+M, RightFootSwing, 0, 0, 0, 57, 210
+M, LeftKneeBendCrouchLeft, 0, 0, 0, 57, 801
+M, LeftKneeBendCrouchRight, 0, 0, 0, 58, 857
+M, RightFootCross, 0, 0, 0, 59, 795
+M, RightFootSwing, 0, 0, 0, 60, 100
+M, RightFootCross, 0, 0, 0, 60, 768
+M, RightFootSwing, 0, 0, 0, 61, 294
+M, LeftKneeBendCrouchLeft, 0, 0, 0, 62, 125
+M, LeftKneeBendCrouchRight, 0, 0, 0, 63, 181
+M, RightFootCross, 0, 0, 0, 64, 020
+M, RightFootSwing, 0, 0, 0, 64, 510
+M, RightFootCross, 0, 0, 0, 65, 058
+M, RightFootSwing, 0, 0, 0, 65, 604
+M, LeftKneeBendCrouchLeft, 0, 0, 0, 66, 384
+M, LeftKneeBendCrouchRight, 0, 0, 0, 67, 406
+M, RightFootCross, 0, 0, 0, 68, 783
+M, RightFootSwing, 0, 0, 0, 68, 981
+M, RightFootCross, 0, 0, 0, 69, 355
+M, RightFootSwing, 0, 0, 0, 69, 896
+
+F, RightFootCross, 0, 0, 0, 55, 405
+F, RightFootSwing, 0, 0, 0, 55, 876
+F, RightFootCross, 0, 0, 0, 56, 544
+F, RightFootSwing, 0, 0, 0, 57, 210
+F, LeftKneeBendCrouchLeft, 0, 0, 0, 57, 801
+F, LeftKneeBendCrouchRight, 0, 0, 0, 58, 857
+F, RightFootCross, 0, 0, 0, 59, 795
+F, RightFootSwing, 0, 0, 0, 60, 100
+F, RightFootCross, 0, 0, 0, 60, 768
+F, RightFootSwing, 0, 0, 0, 61, 294
+F, LeftKneeBendCrouchLeft, 0, 0, 0, 62, 125
+F, LeftKneeBendCrouchRight, 0, 0, 0, 63, 181
+F, RightFootCross, 0, 0, 0, 64, 020
+F, RightFootSwing, 0, 0, 0, 64, 510
+F, RightFootCross, 0, 0, 0, 65, 058
+F, RightFootSwing, 0, 0, 0, 65, 604
+F, LeftKneeBendCrouchLeft, 0, 0, 0, 66, 384
+F, LeftKneeBendCrouchRight, 0, 0, 0, 67, 406
+F, RightFootCross, 0, 0, 0, 68, 344
+F, RightFootSwing, 0, 0, 0, 68, 783
+F, RightFootCross, 0, 0, 0, 69, 355
+F, RightFootSwing, 0, 0, 0, 69, 896
+N, Score7, 0, 0, 0, 70, 787
+
+//Score block 8
+M, LeftKneeLiftAndCross, 0, 0, 0, 71, 366
+M, RightKneeLiftAndCross, 0, 0, 0, 72, 472
+M, LeftKneeLift, 0, 0, 0, 73, 007
+M, RightKneeLift, 0, 0, 0, 74, 028
+M, LeftKneeLift, 0, 0, 0, 75, 171
+M, RightKneeLift, 0, 0, 0, 76, 246
+M, LeftHandtoFaceSpinForward, 0, 0, 0, 76, 896
+M, LeftHandtoFaceSpinBack, 0, 0, 0, 77, 364
+M, RightKneeKick, 0, 0, 0, 78, 492
+
+F, ElbowSway, 0, 0, 0, 70, 578
+F, LeftElbowSway, 0, 0, 0, 71, 617
+F, ElbowSway, 0, 0, 0, 72, 623
+F, LeftElbowSway, 0, 0, 0, 73, 680
+F, ElbowSway, 0, 0, 0, 74, 770
+F, LeftElbowSway, 0, 0, 0, 75, 858
+F, ElbowSway, 0, 0, 0, 76, 948
+F, LeftElbowSway, 0, 0, 0, 78, 055
+N, Score8, 0, 0, 0, 79, 292
+
+//Score block 9
+M, LeftKneeLift, 0, 0, 0, 79, 527
+M, RightKneeKick, 0, 0, 0, 80, 569
+M, LeftKneeLift, 0, 0, 0, 81, 707
+M, RightKneeKick, 0, 0, 0, 82, 797
+M, LeftKneeLift, 0, 0, 0, 83, 687
+M, LeftKneeLiftLeft, 0, 0, 0, 84, 460
+M, LeftKneeLiftBack, 0, 0, 0, 85, 646
+M, LeftKneeLiftRight, 0, 0, 0, 86, 574
+
+F, LeftWristArcRaise, 0, 0, 0, 79, 648
+F, RightWristArcRaise, 0, 0, 0, 80, 603
+F, Home, 0, 0, 0, 82, 602
+F, LeftWristArcRaise, 0, 0, 0, 83, 938
+F, RightWristArcRaise, 0, 0, 0, 85, 011
+F, Home, 0, 0, 0, 86, 859
+N, Score9, 0, 0, 0, 87, 345
+
+//Score block 10
+M, LeftKneeLift, 0, 0, 0, 87, 668
+M, LeftKneeKick, 0, 0, 0, 88, 099
+M, RightKneeLift, 0, 0, 0, 88, 385
+M, LeftKneeLift, 0, 0, 0, 88, 686
+M, LeftKneeKick, 0, 0, 0, 89, 255
+M, RightKneeLift, 0, 0, 0, 89, 508
+M, LeftKneeLift, 0, 0, 0, 90, 059
+M, RightKneeKick, 0, 0, 0, 91, 250
+
+M, LeftKneeLift, 0, 0, 0, 92, 038
+M, LeftKneeKick, 0, 0, 0, 92, 424
+M, RightKneeLift, 0, 0, 0, 92, 675
+M, LeftKneeLift, 0, 0, 0, 92, 976
+M, LeftKneeKick, 0, 0, 0, 93, 529
+M, RightKneeLift, 0, 0, 0, 93, 831
+M, LeftKneeLift, 0, 0, 0, 94, 569
+M, RightKneeKick, 0, 0, 0, 95, 609
+
+F, ThrillerHandsLeft, 0, 0, 0, 88, 301
+F, LeftBendHipShake, 0, 0, 0, 90, 413
+F, ThrillerHandsLeft, 0, 0, 0, 92, 628
+F, LeftBendHipShake, 0, 0, 0, 95, 224
+N, Score10, 0, 0, 0, 96, 681
+
+//Score block 11
+M, LeftKneeLiftAndFrontTorso, 0, 0, 0, 96, 336
+M, RightKneeKick, 0, 0, 0, 97, 508
+M, LeftKneeLift, 0, 0, 0, 98, 480
+M, RightKneeKick, 0, 0, 0, 99, 621
+M, LeftKneeLift, 0, 0, 0, 100, 660
+M, RightKneeKick, 0, 0, 0, 101, 734
+M, LeftKneeLiftAndFrontTorso, 0, 0, 0, 102, 738
+M, RightKneeKick, 0, 0, 0, 103, 833
+M, LeftKneeKick, 0, 0, 0, 104, 887
+M, RightKneeKick, 0, 0, 0, 105, 974
+
+F, ElbowSway, 0, 0, 0, 96, 789
+F, LeftElbowSway, 0, 0, 0, 97, 862
+F, ElbowSway, 0, 0, 0, 99, 035
+F, LeftElbowSway, 0, 0, 0, 99, 973
+F, LeftKneeLift, 0, 0, 0, 100, 980
+F, RightKneeKick, 0, 0, 0, 102, 086
+F, LeftKneeLiftAndFrontTorso, 0, 0, 0, 103, 112
+F, RightKneeKick, 0, 0, 0, 104, 198
+F, LeftKneeLift, 0, 0, 0, 105, 237
+F, RightKneeKick, 0, 0, 0, 106, 381
+N, Score11, 0, 0, 0, 106, 988
+
+//Score 12
+M, LeftKneeBendCrouch, 0, 0, 0, 107, 526
+M, LeftKneeBendCrouch, 0, 0, 0, 108, 047
+M, RightFootCross, 0, 0, 0, 109, 046
+M, RightFootSwing, 0, 0, 0, 109, 501
+M, RightFootCross, 0, 0, 0, 110, 034
+M, RightFootSwing, 0, 0, 0, 110, 624
+M, LeftKneeBendCrouch, 0, 0, 0, 111, 248
+M, LeftKneeBendCrouch, 0, 0, 0, 112, 356
+M, RightFootCross, 0, 0, 0, 113, 354
+M, RightFootSwing, 0, 0, 0, 113, 814
+M, RightFootCross, 0, 0, 0, 114, 358
+M, RightFootSwing, 0, 0, 0, 114, 938
+M, LeftKneeBendCrouch, 0, 0, 0, 115, 572
+M, LeftKneeBendCrouch, 0, 0, 0, 116, 611
+M, RightFootCross, 0, 0, 0, 117, 662
+M, RightFootSwing, 0, 0, 0, 118, 069
+M, RightFootCross, 0, 0, 0, 118, 600
+M, RightFootSwing, 0, 0, 0, 119, 207
+M, LeftKneeBendCrouch, 0, 0, 0, 119, 880
+M, LeftKneeBendCrouch, 0, 0, 0, 120, 906
+M, RightFootCross, 0, 0, 0, 121, 919
+M, RightFootSwing, 0, 0, 0, 122, 409
+M, RightFootCross, 0, 0, 0, 122, 960
+M, RightFootSwing, 0, 0, 0, 123, 498
+
+
+F, LeftKneeBendCrouch, 0, 0, 0, 107, 526
+F, LeftKneeBendCrouch, 0, 0, 0, 108, 047
+F, RightFootCross, 0, 0, 0, 109, 046
+F, RightFootSwing, 0, 0, 0, 109, 501
+F, RightFootCross, 0, 0, 0, 110, 034
+F, RightFootSwing, 0, 0, 0, 110, 624
+F, LeftKneeBendCrouch, 0, 0, 0, 111, 248
+F, LeftKneeBendCrouch, 0, 0, 0, 112, 356
+F, RightFootCross, 0, 0, 0, 113, 354
+F, RightFootSwing, 0, 0, 0, 113, 814
+F, RightFootCross, 0, 0, 0, 114, 358
+F, RightFootSwing, 0, 0, 0, 114, 938
+F, LeftKneeBendCrouch, 0, 0, 0, 115, 572
+F, LeftKneeBendCrouch, 0, 0, 0, 116, 611
+F, RightFootCross, 0, 0, 0, 117, 662
+F, RightFootSwing, 0, 0, 0, 118, 069
+F, RightFootCross, 0, 0, 0, 118, 600
+F, RightFootSwing, 0, 0, 0, 119, 207
+F, LeftKneeBendCrouch, 0, 0, 0, 119, 880
+F, LeftKneeBendCrouch, 0, 0, 0, 120, 906
+F, RightFootCross, 0, 0, 0, 121, 919
+F, RightFootSwing, 0, 0, 0, 122, 409
+F, RightFootCross, 0, 0, 0, 122, 960
+F, RightFootSwing, 0, 0, 0, 123, 498
+N, Score12, 0, 0, 0, 124, 200
+
+//Score 13
+M, LeftKneeLiftAndFrontTorso, 0, 0, 0, 124, 217
+M, RightKneeKickAndUnderArm, 0, 0, 0, 125, 309
+M, LeftKneeLiftAndUnderArm, 0, 0, 0, 126, 413
+M, RightKneeKickAndUnderArm, 0, 0, 0, 127, 537
+M, RightKneeKneelAndUnderArm, 0, 0, 0, 128, 576
+M, RightKneeKneelAndUnderArmAndLeftHandBehind, 0, 0, 0, 132, 163
+
+//F, ale set times
+F, LeftKneeLiftAndFrontTorso, 0, 0, 0, 124, 298
+F, BackSpinRightKneeLift, 0, 0, 0, 125, 765
+F, ForwardSpinFacingRightKneeLift, 0, 0, 0, 127, 225
+F, CrouchAndHipShake, 0, 0, 0, 129, 471
+F, RightHandRaise, 0, 0, 0, 131, 988
+N, Score13, 0, 0, 0, 132, 800

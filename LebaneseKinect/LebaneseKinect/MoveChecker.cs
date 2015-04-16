@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,13 +36,13 @@ namespace LebaneseKinect
         //Head pos
         float hx, hy;
 
-        public int CheckMove(DanceMove move, TimeSpan currentTime)
+        public bool CheckMove(DanceMove move, TimeSpan currentTime)
         {
             //return -1 if move not triggered
             //otherwise, return the score for that move
 
             //TODO: call this somewhere else
-            int score = -1;
+            bool score = false;
             switch (move.GetName())
             {
                 //TODO: There MUST be a better way of doing this than a huge switch statement
@@ -99,6 +100,13 @@ namespace LebaneseKinect
                 case "RightKneeKickUnderArm":
                     if (RightKneeKickAndUnderArmTriggered()) score = ScoreMove(move, currentTime);
                     break;
+                case "RightKneeLiftFaceLeft":
+                    if (RightKneeLiftFaceLeftTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "BackSpinRightKneeLift":
+                case "RightKneeLiftFaceBack":
+                    if (RightKneeLiftFaceBackwardTriggered()) score = ScoreMove(move, currentTime);
+                    break;
                 #endregion
                 #region "male special moves for Dance1"
                 case "KneelAndClap":
@@ -122,6 +130,7 @@ namespace LebaneseKinect
                 case "RightFootCross":
                     if (RightFootCrossTriggered()) score = ScoreMove(move, currentTime);
                     break;
+                case "LeftKneeBendCrouch":
                 case "LeftKneeBendCrouchLeft":
                 case "LeftKneeBendCrouchRight":
                     if (LeftKneeBendCrouchTriggered()) score = ScoreMove(move, currentTime);
@@ -133,50 +142,126 @@ namespace LebaneseKinect
                     if (LeftHandToFaceSpinBackwardTriggered()) score = ScoreMove(move, currentTime);
                     break;
                 #endregion
+                #region "f moves dance 1"
+                case "HandSwingFront":
+                    if (RightHandToFaceSpinForwardTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "HandSwingBack":
+                    if (RightHandToFaceSpinBackwardTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "HandSwingRight":
+                    if (RightHandToFaceSpinForwardTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "HandSwingLeft":
+                    if (RightHandToFaceSpinBackwardTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "HipShakeBack":
+                    if (HipShakeFaceBackwardTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "HipShakeFront":
+                    if (HipShakeFaceForwardTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "CrouchAndHipShake":
+                    if (CrouchAndHipShakeTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "ElbowSway":
+                case "RightElbowSway":
+                    if (ElbowSwayRightTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "LeftElbowSway":
+                    if (ElbowSwayLeftTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "ScrollingHandsRight":
+                    if (ScrollingHandsRightTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "ScrollingHandsLeft":
+                    if (ScrollingHandsRightTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "LeftHandRaise":
+                case "LeftWristArcRaise":
+                    if (LeftHandRaiseTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "RightHandRaise":
+                case "RightWristArcRaise":
+                    if (RightHandRaiseTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "Home":
+                    if (HandsOnHipsTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "ThrillerHandsLeft":
+                    if (ThrillerHandsLeftTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                case "LeftBendHipShake":
+                    if (LeftBendHipShakeTriggered()) score = ScoreMove(move, currentTime);
+                    break;
+                #endregion
                 default:
-                    //do stuff
+                    //GLOBALS.writer.WriteLine(move.GetName() + " unknown");
+                    move.ScoreMove(currentTime);
                     break;
             }
 
             return score;
         }
 
-        public int ScoreMove(DanceMove move, TimeSpan currentTime)
+        public bool ScoreMove(DanceMove move, TimeSpan currentTime)
         {
-            double diff = Math.Abs((currentTime.Subtract(move.moveSpan).TotalMilliseconds));
-            return Math.Min(400, Math.Max((int)(scoring_window - diff), 0));
+            return true;
+            //double diff = Math.Abs((currentTime.Subtract(move.moveSpan).TotalMilliseconds));
+            //return (GLOBALS.SCORING_WINDOW - diff) > 0;
         }
 
         #region Individual Move Check Functions
         //Left knee lift move, total of 24 for the male
+
+        public bool LeftHandRaiseTriggered()
+        {
+            return lhy - hy > .15;
+        }
+        public bool RightHandRaiseTriggered()
+        {
+            return rhy - hy > .15;
+        }
         private bool LeftKneeTriggered()
         {
             //same for male and female
-            return (lky > rky && lay > ray && distance2d(lkx, rkx, lky, rky) > .2);
+            bool yes = (lky > rky && lay > ray && distance2d(lkx, rkx, lky, rky) > .2);
+            if (yes)
+                return true;
+            else
+                return false;
         }
-        private bool RightShoulderForwardTriggered()
+        private bool FaceLeftTriggered()
         {
-            return (rsz < lsz) || (rsz - lsz) < -.05; //?? TODO: Are these the same idea?
+            return (rsz - lsz) < -.05; //?? TODO: Are these the same idea?
         }
-        private bool LeftShoulderForwardTriggered()
+        private bool FaceRightTriggered()
         {
             return (lsz - rsz) < -.05;
         }
+        private bool FaceForwardTriggered()
+        {
+            return (rhx - lhx) > .25;
+        }
+        private bool FaceBackwardTriggered()
+        {
+            return (lhx - rhx) > .25;
+        }
         private bool LeftKneeLiftAndFrontTorsoTriggered()
         {
-            return LeftKneeTriggered() && RightShoulderForwardTriggered();
+            return LeftKneeTriggered() && FaceLeftTriggered();
         }
-        private bool LeftHandRaisedTriggered()
+        private bool LeftHandToFaceTriggered()
         {
             return (Math.Abs(hx - lhx) < .25) && (Math.Abs(hy - lhy) < .25);
         }
         private bool LeftKneeLiftAndFrontTorsoAndLeftHandTriggered()
         {
-            return LeftHandRaisedTriggered() && LeftKneeLiftAndFrontTorsoTriggered();
+            return LeftHandToFaceTriggered() && LeftKneeLiftAndFrontTorsoTriggered();
         }
         private bool LeftKneeLiftAndLeftHandTriggered()
         {
-            return LeftHandRaisedTriggered() && LeftKneeTriggered();
+            return LeftHandToFaceTriggered() && LeftKneeTriggered();
         }
         private bool LeftKneeCrossTriggered()
         {
@@ -192,11 +277,11 @@ namespace LebaneseKinect
         }
         private bool LeftKneeLiftFaceLeftTriggered() //left knee lifted, facing left
         {
-            return LeftKneeTriggered() && RightShoulderForwardTriggered();
+            return LeftKneeTriggered() && FaceLeftTriggered();
         }
         private bool LeftKneeLiftFaceRightTriggered() //left knee lifted, facing right
         {
-            return LeftKneeTriggered() && LeftShoulderForwardTriggered();
+            return LeftKneeTriggered() && FaceRightTriggered();
         }
         private bool LeftKneeLiftFaceBackTriggered() //left knee lifted, facing backwards
         {
@@ -213,23 +298,31 @@ namespace LebaneseKinect
         }
         private bool RightKneeTriggered() //right knee lifted
         {
-            return (rky > lky && ray > lay && distance2d(rkx, lkx, rky, lky) > .2);
+            return (rky > lky && ray > lay && distance2d(lkx, rkx, lky, rky) > .2);
         }
         private bool RightKneeLiftAndBackTorsoTriggered()
         {
-            return !RightShoulderForwardTriggered() && RightKneeTriggered();
+            return !FaceLeftTriggered() && RightKneeTriggered();
         }
         private bool RightKneeLiftAndBackTorsoAndLeftHandTriggered()
         {
-            return LeftHandRaisedTriggered() && RightKneeLiftAndBackTorsoTriggered();
+            return LeftHandToFaceTriggered() && RightKneeLiftAndBackTorsoTriggered();
         }
         private bool RightKneeLiftAndLeftHandTriggered()
         {
-            return RightKneeTriggered() && LeftHandRaisedTriggered();
+            return RightKneeTriggered() && LeftHandToFaceTriggered();
         }
         private bool RightKneeLiftAndCrossTriggered()
         {
             return RightKneeTriggered() && LeftKneeCrossTriggered();
+        }
+        private bool RightKneeLiftFaceLeftTriggered()
+        {
+            return RightKneeTriggered() && FaceLeftTriggered();
+        }
+        private bool RightKneeLiftFaceBackwardTriggered()
+        {
+            return RightKneeTriggered() && FaceBackwardTriggered();
         }
         private bool KneelingTriggered()
         {
@@ -271,33 +364,47 @@ namespace LebaneseKinect
         }
         private bool RightFootCrossTriggered() //RightFootSwing, if we've seen a cross, look for a swing back
         {
-            if (!rightFootCrossed && RightFootOverTriggered())
+            if (!rightFootCrossed && !RightFootOverTriggered())
             {
                 rightFootCrossed = true;
                 return true;
             }
             return false;
         }
+        private bool CrouchTriggered()
+        {
+            return (rhy - wstry) > .01 && (lhy - wstly) > 0.01;
+        }
         private bool LeftKneeBendCrouchTriggered()
         {
             return (lkz - wstrz) < -.05; //TODO: Test this step.
         }
-        private bool FaceForwardTriggered()
-        {
-            return (rsx - lsx) > .01;
-        }
-        private bool FaceBackwardTriggered()
-        {
-            return (lsx - rsx) > .01;
-        }
         private bool LeftHandToFaceSpinForwardTriggered()
         {
-            return LeftHandRaisedTriggered() && FaceForwardTriggered();
+            return LeftHandToFaceTriggered() && FaceForwardTriggered();
         }
         private bool LeftHandToFaceSpinBackwardTriggered()
         {
-            return LeftHandRaisedTriggered() && FaceBackwardTriggered();
+            return LeftHandToFaceTriggered() && FaceBackwardTriggered();
         }
+
+        private bool RightHandToFaceSpinForwardTriggered()
+        {
+            return RightHandToFaceTriggered() && FaceForwardTriggered();
+        }
+        private bool RightHandToFaceSpinBackwardTriggered()
+        {
+            return RightHandToFaceTriggered() && FaceBackwardTriggered();
+        }
+        private bool RightHandToFaceSpinLeftTriggered()
+        {
+            return RightHandToFaceTriggered() && FaceLeftTriggered();
+        }
+        private bool RightHandToFaceSpinRightTriggered()
+        {
+            return RightHandToFaceTriggered() && FaceRightTriggered();
+        }
+
         private bool RightKneeKickTriggered()
         {
             return ((rkz - wstrz) < -.05) && ((raz - rkz) < -.05);
@@ -310,6 +417,100 @@ namespace LebaneseKinect
         {
             return RightArmRaisedTriggered() && RightKneeKickTriggered();
         }
+
+        private bool ForwardSpinFacingRightKneeLiftTriggered()
+        {
+            return FaceForwardTriggered() && RightKneeTriggered();
+        }
+
+        private bool RightHandToFaceTriggered()
+        {
+            return (Math.Abs(hx - rhx) < .25) && (Math.Abs(hy - rhy) < .25);
+        }
+
+        private bool HipShakeTriggered()
+        {
+            return (((wstrx - rkx) > .01 && (wstlx - lkx) > .01)
+                                    || ((rkx - wstrx) > .01 && (lkx - wstlx) > .01));
+        }
+
+        private bool HipShakeFaceForwardTriggered()
+        {
+            return HipShakeTriggered() && FaceForwardTriggered();
+        }
+
+        private bool HipShakeFaceBackwardTriggered()
+        {
+            return HipShakeTriggered() && FaceBackwardTriggered();
+        }
+
+        private bool CrouchAndHipShakeTriggered()
+        {
+            return HipShakeTriggered() && CrouchTriggered();
+        }
+
+        private bool RightHandOutTriggered()
+        {
+            return Math.Abs(rhy - rey) < .05;
+        }
+
+        private bool LeftHandOutTriggered()
+        {
+            return Math.Abs(lhy - ley) < .05;
+        }
+
+        private bool LeftHandAboveRightHandTriggered()
+        {
+            return (lhy - rhy) > .01;
+        }
+
+        private bool RightHandAboveLeftHandTriggered()
+        {
+            return (rhy - lhy) > .01;
+        }
+
+        private bool ScrollingHandsRightTriggered()
+        {
+            return LeftHandToFaceTriggered() && RightHandOutTriggered() && LeftHandAboveRightHandTriggered();
+        }
+
+        private bool ScrollingHandsLeftTriggered()
+        {
+            return RightHandToFaceTriggered() && LeftHandOutTriggered() && RightHandAboveLeftHandTriggered();
+        }
+
+        private bool HandsOnHipsTriggered()
+        {
+            return rhy < spineY && lhy < spineY && ley > wstly && rey > wstry;
+        }
+
+        private bool ElbowSwayLeftTriggered()
+        {
+            return HandsOnHipsTriggered() && FaceLeftTriggered();
+        }
+
+        private bool ElbowSwayRightTriggered()
+        {
+            return HandsOnHipsTriggered() && FaceRightTriggered();
+        }
+
+        private bool ThrillerHandsLeftTriggered()
+        {
+            //(rhy > spineY && lhy > spineY)
+            return FaceLeftTriggered() && LeftHandOutTriggered();
+        }
+
+        private bool BendLeftTriggered()
+        {
+            //(Math.Abs(rhx - rkx) > .1)
+            return (Math.Abs(csx - wstlx) > .1 || Math.Abs(csx - wstrx) > .1);
+        }
+
+        private bool LeftBendHipShakeTriggered()
+        {
+            return FaceLeftTriggered() && BendLeftTriggered();
+        }
+
         #endregion
 
         private double distance2d(float x1, float x2, float y1, float y2)
@@ -326,59 +527,59 @@ namespace LebaneseKinect
 
             //otherwise set up all the values
             //Knees and ankles
-            float lky = skeleton.Joints[JointType.KneeLeft].Position.Y;
-            float lkx = skeleton.Joints[JointType.KneeLeft].Position.X;
-            float lkz = skeleton.Joints[JointType.KneeLeft].Position.Z;
-            float rkx = skeleton.Joints[JointType.KneeRight].Position.X;
-            float rky = skeleton.Joints[JointType.KneeRight].Position.Y;
-            float rkz = skeleton.Joints[JointType.KneeRight].Position.Z;
-            float lax = skeleton.Joints[JointType.AnkleLeft].Position.X;
-            float lay = skeleton.Joints[JointType.AnkleLeft].Position.Y;
-            float laz = skeleton.Joints[JointType.AnkleLeft].Position.Z;
-            float rax = skeleton.Joints[JointType.AnkleRight].Position.X;
-            float ray = skeleton.Joints[JointType.AnkleRight].Position.Y;
-            float raz = skeleton.Joints[JointType.AnkleRight].Position.Z;
+             lky = skeleton.Joints[JointType.KneeLeft].Position.Y;
+             lkx = skeleton.Joints[JointType.KneeLeft].Position.X;
+             lkz = skeleton.Joints[JointType.KneeLeft].Position.Z;
+             rkx = skeleton.Joints[JointType.KneeRight].Position.X;
+             rky = skeleton.Joints[JointType.KneeRight].Position.Y;
+             rkz = skeleton.Joints[JointType.KneeRight].Position.Z;
+             lax = skeleton.Joints[JointType.AnkleLeft].Position.X;
+             lay = skeleton.Joints[JointType.AnkleLeft].Position.Y;
+             laz = skeleton.Joints[JointType.AnkleLeft].Position.Z;
+             rax = skeleton.Joints[JointType.AnkleRight].Position.X;
+             ray = skeleton.Joints[JointType.AnkleRight].Position.Y;
+             raz = skeleton.Joints[JointType.AnkleRight].Position.Z;
 
             //Hands
-            float lhy = skeleton.Joints[JointType.HandLeft].Position.Y;
-            float lhx = skeleton.Joints[JointType.HandLeft].Position.X;
-            float lhz = skeleton.Joints[JointType.HandLeft].Position.Z;
-            float rhy = skeleton.Joints[JointType.HandRight].Position.Y;
-            float rhx = skeleton.Joints[JointType.HandRight].Position.X;
+             lhy = skeleton.Joints[JointType.HandLeft].Position.Y;
+             lhx = skeleton.Joints[JointType.HandLeft].Position.X;
+             lhz = skeleton.Joints[JointType.HandLeft].Position.Z;
+             rhy = skeleton.Joints[JointType.HandRight].Position.Y;
+             rhx = skeleton.Joints[JointType.HandRight].Position.X;
 
             //Spine is the cnter of the torso
-            float spineX = skeleton.Joints[JointType.Spine].Position.X;
-            float spineY = skeleton.Joints[JointType.Spine].Position.Y;
+             spineX = skeleton.Joints[JointType.Spine].Position.X;
+             spineY = skeleton.Joints[JointType.Spine].Position.Y;
 
             //Shoulders
-            float rsx = skeleton.Joints[JointType.ShoulderRight].Position.X;
-            float rsy = skeleton.Joints[JointType.ShoulderRight].Position.Y;
-            float rsz = skeleton.Joints[JointType.ShoulderRight].Position.Z;
-            float lsx = skeleton.Joints[JointType.ShoulderLeft].Position.X;
-            float lsy = skeleton.Joints[JointType.ShoulderLeft].Position.Y;
-            float lsz = skeleton.Joints[JointType.ShoulderLeft].Position.Z;
-            float csx = skeleton.Joints[JointType.ShoulderCenter].Position.X;
-            float csy = skeleton.Joints[JointType.ShoulderCenter].Position.Y;
+             rsx = skeleton.Joints[JointType.ShoulderRight].Position.X;
+             rsy = skeleton.Joints[JointType.ShoulderRight].Position.Y;
+             rsz = skeleton.Joints[JointType.ShoulderRight].Position.Z;
+             lsx = skeleton.Joints[JointType.ShoulderLeft].Position.X;
+             lsy = skeleton.Joints[JointType.ShoulderLeft].Position.Y;
+             lsz = skeleton.Joints[JointType.ShoulderLeft].Position.Z;
+             csx = skeleton.Joints[JointType.ShoulderCenter].Position.X;
+             csy = skeleton.Joints[JointType.ShoulderCenter].Position.Y;
 
             //Elbows
-            float rex = skeleton.Joints[JointType.ElbowRight].Position.X;
-            float rey = skeleton.Joints[JointType.ElbowRight].Position.Y;
-            float rez = skeleton.Joints[JointType.ElbowRight].Position.Z;
-            float lex = skeleton.Joints[JointType.ElbowLeft].Position.X;
-            float ley = skeleton.Joints[JointType.ElbowLeft].Position.Y;
-            float lez = skeleton.Joints[JointType.ElbowLeft].Position.Z;
+             rex = skeleton.Joints[JointType.ElbowRight].Position.X;
+             rey = skeleton.Joints[JointType.ElbowRight].Position.Y;
+             rez = skeleton.Joints[JointType.ElbowRight].Position.Z;
+             lex = skeleton.Joints[JointType.ElbowLeft].Position.X;
+             ley = skeleton.Joints[JointType.ElbowLeft].Position.Y;
+             lez = skeleton.Joints[JointType.ElbowLeft].Position.Z;
 
             //Waist
-            float wstrx = skeleton.Joints[JointType.HipRight].Position.X;
-            float wstry = skeleton.Joints[JointType.HipRight].Position.Y;
-            float wstrz = skeleton.Joints[JointType.HipRight].Position.Z;
-            float wstlx = skeleton.Joints[JointType.HipLeft].Position.X;
-            float wstly = skeleton.Joints[JointType.HipLeft].Position.Y;
-            float wstlz = skeleton.Joints[JointType.HipLeft].Position.Z;
+             wstrx = skeleton.Joints[JointType.HipRight].Position.X;
+             wstry = skeleton.Joints[JointType.HipRight].Position.Y;
+             wstrz = skeleton.Joints[JointType.HipRight].Position.Z;
+             wstlx = skeleton.Joints[JointType.HipLeft].Position.X;
+             wstly = skeleton.Joints[JointType.HipLeft].Position.Y;
+             wstlz = skeleton.Joints[JointType.HipLeft].Position.Z;
 
             //Head pos
-            float hx = skeleton.Joints[JointType.Head].Position.X;
-            float hy = skeleton.Joints[JointType.Head].Position.Y;
+             hx = skeleton.Joints[JointType.Head].Position.X;
+             hy = skeleton.Joints[JointType.Head].Position.Y;
         }
     }
 }

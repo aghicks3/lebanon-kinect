@@ -26,7 +26,7 @@ namespace LebaneseKinect
         String moviePath;
         Video movieFile;
 
-        MoveChecker mc = new MoveChecker();
+        public MoveChecker mc = new MoveChecker();
 
         public Dance(string p_moviePath)
         {
@@ -38,6 +38,11 @@ namespace LebaneseKinect
 
         }
 
+        public Video GetMovie()
+        {
+            return movieFile;
+        }
+
         public Dance()
         {
             // TODO: Complete member initialization
@@ -47,6 +52,7 @@ namespace LebaneseKinect
         {
             this.movieFile = content.Load<Video>("Video\\" + moviePath);
             SetTimes();
+
             foreach (DanceMove move in m_danceMoves)
             {
                 move.LoadContent(content);
@@ -93,168 +99,259 @@ namespace LebaneseKinect
         public void Draw(TimeSpan currentTime, SpriteBatch sb)
         {
             Console.WriteLine("I am running this!");
+            int maleRectDiff = GLOBALS.WINDOW_WIDTH / 2 - 100; //(probably don't do this here... need some globals)
 
             //go through dance moves (added in order) until we are past the scoring threshhold
             //draw them
-            int WINDOW_WIDTH = 640;//720;
-            int WINDOW_HEIGHT = 480;
-            int maleRectDiff = WINDOW_WIDTH / 2 - 100; //(probably don't do this here... need some globals)
-            TimeSpan thisBlock = new TimeSpan();
-            foreach (DanceMove move in m_scoreBlock)
+            if (GLOBALS.PLAYER_ONE_ACTIVE)
             {
-                double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
-                if (Math.Abs(diff) < 2000)
+                foreach (DanceMove move in m_scoreBlock)
                 {
-                    int xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                    if (diff > 0)
+                    double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+
+                    if (diff < -2000) //moves MUST BE in chronological order to do this
+                        break;
+
+                    if (Math.Abs(diff) < 2000)
                     {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff);
+                        int xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                        if (diff > 0)
+                        {
+                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                        }
+                        move.Draw(sb, xlocation, currentTime);
                     }
-                    if (move.GetMoveIcon() != null)
-                        sb.Draw(move.GetMoveIcon(), new Rectangle(xlocation, WINDOW_HEIGHT - 250, 120, WINDOW_HEIGHT - 350), Color.White);
                 }
-            }
-            foreach (DanceMove move in f_scoreBlock)
-            {
-                double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
-                if (Math.Abs(diff) < 2000)
+
+                foreach (DanceMove move in m_danceMoves)
                 {
-                    int xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                    if (diff > 0)
+                    double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+
+                    if (diff < -2000) //moves MUST BE in chronological order to do this
+                        break;
+
+                    if (Math.Abs(diff) < 2000)
                     {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff);
+                        int xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                        if (diff > 0)
+                        {
+                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+                        }
+                        move.Draw(sb, xlocation, currentTime);
                     }
-                    if (move.GetMoveIcon() != null)
-                        sb.Draw(move.GetMoveIcon(), new Rectangle(xlocation, WINDOW_HEIGHT - 250, 120, WINDOW_HEIGHT - 350), Color.White);
+                    //fail
+                    if (diff > 600)
+                    {
+                        move.ScoreMove(currentTime);
+                    }
                 }
             }
 
-            foreach (DanceMove move in m_danceMoves)
+            if (GLOBALS.PLAYER_TWO_ACTIVE)
             {
-                if (move.completed) continue;
-                
-                double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
-                if (Math.Abs(diff) < 2000)
+                foreach (DanceMove move in f_scoreBlock)
                 {
-                    int xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                    if (diff > 0)
-                    {
-                        xlocation = Convert.ToInt32(0 + maleRectDiff);
-                    }
-                    if(move.GetMoveIcon() != null)
-                        sb.Draw(move.GetMoveIcon(), new Rectangle(xlocation, WINDOW_HEIGHT - 250, 120, WINDOW_HEIGHT - 350), Color.White);
-                }
-            }
-            foreach (DanceMove move in f_danceMoves)
-            {
-                if (move.completed) continue;
+                    double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
 
-                double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
-                if (Math.Abs(diff) < 2000)
-                {
-                    int xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                    if (diff > 0)
+                    if (diff < -2000) //moves MUST BE in chronological order to do this
+                        break;
+
+                    if (Math.Abs(diff) < 2000)
                     {
-                        xlocation = Convert.ToInt32(500 - maleRectDiff);
+                        int xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                        if (diff > 0)
+                        {
+                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                        }
+                        move.Draw(sb, xlocation, currentTime);
                     }
-                    if (move.GetMoveIcon() != null)
-                        sb.Draw(move.GetMoveIcon(), new Rectangle(xlocation, WINDOW_HEIGHT - 250, 120, WINDOW_HEIGHT - 350), Color.White);
+                }
+
+                foreach (DanceMove move in f_danceMoves)
+                {
+                    double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+                    if (diff < -2000) //moves MUST BE in chronological order to do this
+                        break;
+
+                    if (Math.Abs(diff) < 2000)
+                    {
+                        int xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                        if (diff > 0)
+                        {
+                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                        }
+                        move.Draw(sb, xlocation, currentTime);
+                    }
+                    //fail
+                    if (diff > 600)
+                    {
+                        move.ScoreMove(currentTime);
+                    }
                 }
             }
         }
 
-        public int ScoreMovesFake(TimeSpan currentTime)
+        public bool ScoreBlockFake(TimeSpan currentTime)
         {
-            int score = 0;
-            //first find the current block. This is the next block in the list that is after the current time.
-            /*
-            TimeSpan thisBlock = new TimeSpan();
-            foreach (DanceMove move in m_scoreBlock)
-            {
-                double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
-                if (diff < 0)
-                {
-                    move.completed = true;
-                }
-                else
-                {
-                    thisBlock = move.moveSpan;
-                    break;
-                }
-            }*/
-
             //then, go through the moves in the current list and check for the move name, or if they're after the current block, don't bother checking
-            foreach (DanceMove move in m_danceMoves)
+            foreach (DanceMove move in f_scoreBlock)
+            {
+                if (move.completed)
+                    continue;
+                double diff = Math.Abs(currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+                if (diff < 50)
+                {
+                    move.ScoreMove(currentTime, false);
+                }
+            }
+            foreach (DanceMove move in m_scoreBlock)
             {
                 //moves are in the list sorted by time, if we're past "thisblock" then we don't need to check any more moves
                 if (move.completed)
                     continue;
 
                 //if (move.moveSpan.CompareTo(thisBlock) >= 0)
-                    //break;
+                //break;
 
-                  if (Keyboard.GetState().IsKeyDown(Keys.Space))
-                 {
-                    double diff = Math.Abs(currentTime.Subtract(move.moveSpan).TotalMilliseconds);
-                    if (diff < 600)
-                    {
-                        move.completed = true;
-                        score += (int)Math.Min(600 - diff, 400);
-                        break;
-                    }
+                double diff = Math.Abs(currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+                if (diff < 50)
+                {
+                    move.ScoreMove(currentTime, false);
+                    return true;
                 }
+
             }
-
-
-            return score;
+            return false;
         }
 
-        public int ScoreMoves(TimeSpan currentTime, Skeleton skeleton)
+        public int ScoreMovesFake(TimeSpan currentTime)
         {
+            return 0;
+            
             int score = 0;
-
-            //first find the current block. This is the next block in the list that is after the current time.
-            TimeSpan thisBlock = new TimeSpan();
-            foreach (DanceMove move in m_scoreBlock)
-            {
-                double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
-                if (diff < -600)
-                {
-                    move.completed = true;
-                }
-                else
-                {
-                    thisBlock = move.moveSpan;
-                    break;
-                }
-            }
+            bool keydown = (Keyboard.GetState().IsKeyDown(Keys.Space));
+            //if (!keydown)
+                //return score;
 
             //then, go through the moves in the current list and check for the move name, or if they're after the current block, don't bother checking
-            mc.UpdateSkeleton(skeleton);
-            foreach (DanceMove move in m_scoreBlock)
+            foreach (DanceMove move in m_danceMoves)
             {
-                //moves are in the list sorted by time, if we're past "thisblock" then we don't need to check any more moves
                 if (move.completed)
                     continue;
 
-                if (move.moveSpan.CompareTo(thisBlock) >= 0)
-                    break;
-
-                if (mc.CheckMove(move, currentTime) > -1)
-                {
-                    move.completed = true;
+                 if (keydown)
+                 {
+                    double diff = Math.Abs(currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+                    if (diff < GLOBALS.SCORING_WINDOW)
+                    {
+                        //mc.CheckMove(move, currentTime); //only for debug
+                        move.ScoreMove(currentTime);
+                        if (diff < GLOBALS.EXCELLENT_WINDOW)
+                            score += 400;
+                        else if (diff < GLOBALS.GOOD_WINDOW)
+                            score += 200;
+                        else
+                            score += 100;
+                        break;
+                    }
                 }
+
+                break; //this will only work if the moves are in chronological order!
             }
 
+            foreach (DanceMove move in f_danceMoves)
+            {
+                if (move.completed)
+                    continue;
 
+                if (keydown)
+                {
+                    double diff = Math.Abs(currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+                    if (diff < GLOBALS.SCORING_WINDOW)
+                    {
+                        //mc.CheckMove(move, currentTime); //only for debug
+                        move.ScoreMove(currentTime);
+                        if (diff < GLOBALS.EXCELLENT_WINDOW)
+                            score += 400;
+                        else if (diff < GLOBALS.GOOD_WINDOW)
+                            score += 200;
+                        else
+                            score += 100;
+                        break;
+                    }
+                }
+
+                break; //this will only work if the moves are in chronological order!
+            }
+            return score;
+        }
+
+        public int ScoreMoves(TimeSpan currentTime, Skeleton skeleton, int player)
+        {
+            int score = 0;
+
+            //then, go through the moves in the current list and check for the move name, or if they're after the current block, don't bother checking
+            //mc.UpdateSkeleton(skeleton);
+            if(GLOBALS.PLAYER_ONE_ACTIVE && player == 1)
+            {
+                foreach (DanceMove move in m_danceMoves)
+                {
+                    //moves are in the list sorted by time, if we're past "thisblock" then we don't need to check any more moves
+                    if (move.completed)
+                        continue;
+
+                    double diff = Math.Abs(currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+                    if (diff < GLOBALS.SCORING_WINDOW)
+                    {
+                        if (mc.CheckMove(move, currentTime))
+                        {
+                            move.ScoreMove(currentTime);
+                            if (diff < GLOBALS.EXCELLENT_WINDOW)
+                                score += 400;
+                            else if (diff < GLOBALS.GOOD_WINDOW)
+                                score += 200;
+                            else
+                                score += 100;
+                            break;
+                        }
+                    }
+                    break; //this will only work if the moves are in chronological order!
+                }
+            }
+            else if (GLOBALS.PLAYER_TWO_ACTIVE && player == 2)
+            {
+                foreach (DanceMove move in f_danceMoves)
+                {
+                    //moves are in the list sorted by time, if we're past "thisblock" then we don't need to check any more moves
+                    if (move.completed)
+                        continue;
+
+                    double diff = Math.Abs(currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+                    if (diff < GLOBALS.SCORING_WINDOW)
+                    {
+                        if (mc.CheckMove(move, currentTime))
+                        {
+                            move.ScoreMove(currentTime);
+                            if (diff < GLOBALS.EXCELLENT_WINDOW)
+                                score += 400;
+                            else if (diff < GLOBALS.GOOD_WINDOW)
+                                score += 200;
+                            else
+                                score += 100;
+                            break;
+                        }
+                    }
+                    break; //this will only work if the moves are in chronological order!
+                }
+            }  
             return score;
         }
 
         //load hard-coded timings for dance 1
         public void SetTimes()
         {
-            string dancename = "Dance1";
-            StreamReader inp_stm = new StreamReader("DanceFiles//" + dancename + ".csv");
+            
+            StreamReader inp_stm = new StreamReader("DanceFiles//" + moviePath + ".csv");
 
             while(!inp_stm.EndOfStream)
             {
@@ -271,6 +368,21 @@ namespace LebaneseKinect
                                 Int32.Parse(inp_ar[3]), 
                                 Int32.Parse(inp_ar[4]), 
                                 Int32.Parse(inp_ar[5]), 
+                                Int32.Parse(inp_ar[6])), inp_ar[1].Trim());
+                        }
+                        catch (Exception e)
+                        {
+
+                        }
+                        break;
+                    case "F":
+                        try
+                        {
+                            AddDanceMove('f', new TimeSpan(
+                                Int32.Parse(inp_ar[2]),
+                                Int32.Parse(inp_ar[3]),
+                                Int32.Parse(inp_ar[4]),
+                                Int32.Parse(inp_ar[5]),
                                 Int32.Parse(inp_ar[6])), inp_ar[1].Trim());
                         }
                         catch (Exception e)

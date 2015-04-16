@@ -101,6 +101,7 @@
   <ItemGroup>
     <Compile Include="Dance.cs" />
     <Compile Include="DanceMove.cs" />
+    <Compile Include="GLOBALS.cs" />
     <Compile Include="MoveChecker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
@@ -148,7 +149,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DanceFiles\Dance1.csv">
+    <Content Include="DanceFiles\Lebanon.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DanceFiles\Lebanon2.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

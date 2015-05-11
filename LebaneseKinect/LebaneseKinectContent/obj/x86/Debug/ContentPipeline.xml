@@ -990,6 +990,15 @@
       <Output>C:\Users\Izzy\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightHandRaise.xnb</Output>
       <Time>2015-04-06T15:57:12.363-04:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\continueBackground.png</Source>
+      <Name>Textures\continueBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Izzy\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\continueBackground.xnb</Output>
+      <Time>2015-05-03T18:10:41.0815-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

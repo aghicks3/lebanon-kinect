@@ -1,4 +1,4 @@
-#define USE_KINECT // Comment out this line to test without a Kinect!!!
+//#define USE_KINECT // Comment out this line to test without a Kinect!!!
 //irene version
 
 using System;
@@ -30,12 +30,14 @@ namespace LebaneseKinect
     public class LebaneseKinectGame : Microsoft.Xna.Framework.Game
     {
         //Important Drew Hicks Refactor
-        enum GameState { ATTRACT, MENU, HOWTOPLAY, DANCE, SCORE, QUIT};
+        enum GameState { ATTRACT, MENU, HOWTOPLAY, DANCE, SCORE, CONTINUE, QUIT};
         int gameState = (int)GameState.ATTRACT;
 
         Dance dance1 = new Dance("Lebanon");
         Dance dance2 = new Dance("Lebanon2");
-        Dance selectedDance; 
+        Dance dance3 = new Dance("tempIntro");
+        Dance selectedDance;
+        int selectedDanceNum = 0;
 
         // Declaring variables...
         bool bWantsToQuit = false;
@@ -75,6 +77,7 @@ namespace LebaneseKinect
         Texture2D jointTexture, shadowTexture;
         Texture2D StepHomeOFF, StepCrossOFF, StepKickOFF;
         Stopwatch videoTime = new Stopwatch();
+        Stopwatch loopTime = new Stopwatch();
         Stopwatch introVideoTime = new Stopwatch();
         Vector2[] buttonPositions = { new Vector2(5, 5), new Vector2(75, 5), new Vector2(145, 5), new Vector2(215, 5), new Vector2(285, 5), new Vector2(355, 5) }; //currently unused
 
@@ -319,10 +322,10 @@ namespace LebaneseKinect
         TimeSpan Score13 = new TimeSpan(0, 0, 0, 132, 800);
 
         TimeSpan gameEnd;
-        TimeSpan restartGameLoop;
+        TimeSpan restartGameLoop = new TimeSpan(0, 0, 0, 10, 000);
         TimeSpan showInstructions = new TimeSpan(0, 0, 0, 10, 0);
 
-        TimeSpan marker;
+       // TimeSpan marker;
 
         /*Female Times //////////////////
         */
@@ -783,8 +786,8 @@ namespace LebaneseKinect
             FemRightHandHigh = new TimeSpan(0, 0, 0, 131, 988);
             Score13 = new TimeSpan(0, 0, 0, 132, 800);
 
-            gameEnd = new TimeSpan(0, 0, 0, 136, 500);
-            restartGameLoop = new TimeSpan(0, 0, 0, 146, 500);
+            gameEnd = new TimeSpan(0, 0, 0, 16, 500);//136, 500?
+            restartGameLoop = new TimeSpan(0, 0, 0, 10, 000);
             
             #endregion
 
@@ -815,7 +818,7 @@ namespace LebaneseKinect
         TimeSpan p1textFadeOut = new TimeSpan(0, 0, 0);
         TimeSpan p2textFadeOut = new TimeSpan(0, 0, 0);
 
-        Texture2D backgroundDabke, scoreBackground, howtoplay;
+        Texture2D backgroundDabke, scoreBackground, continueBackground, howtoplay;
         Rectangle backgroundRect = new Rectangle(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
         List<Rectangle> shadowRects = new List<Rectangle>();
 
@@ -836,7 +839,7 @@ namespace LebaneseKinect
             graphics.PreferredBackBufferHeight = WINDOW_HEIGHT;
             graphics.PreparingDeviceSettings += this.GraphicsDevicePreparingDeviceSettings;
             graphics.SynchronizeWithVerticalRetrace = true;
-            graphics.IsFullScreen = true;
+            graphics.IsFullScreen = false;
             Content.RootDirectory = "Content";
             eventsTriggeredList = new List<string>();
             //for (int i = 0; i < numberOfAnimationPlayers; i++)
@@ -912,6 +915,7 @@ namespace LebaneseKinect
             shadowTexture = Content.Load<Texture2D>("Textures\\shadow");
             backgroundDabke = Content.Load<Texture2D>("Textures\\backgroundDabke");
             scoreBackground = Content.Load<Texture2D>("Textures\\scoreBackground");
+            continueBackground = Content.Load<Texture2D>("Textures\\continueBackground");
             StepHomeOFF = Content.Load<Texture2D>("Textures\\dsteps1OFF");
             StepCrossOFF = Content.Load<Texture2D>("Textures\\dsteps2OFF");
             StepKickOFF = Content.Load<Texture2D>("Textures\\dsteps3OFF");
@@ -983,6 +987,7 @@ namespace LebaneseKinect
 
             dance1.LoadContent(Content);
             dance2.LoadContent(Content);
+            dance3.LoadContent(Content);
 
             video = Content.Load<Video>("Video\\tempIntro");
             video1 = Content.Load<Video>("Video\\Lebanon");
@@ -991,7 +996,21 @@ namespace LebaneseKinect
             introVideoTime.Start();
             videoPlayer.IsLooped = true;
 
-            selectedDance = dance1; //pick the dance
+            switch (selectedDanceNum % 3)
+            {
+                case 1:
+                    selectedDance = dance1;
+                    break;
+                case 2:
+                    selectedDance = dance2;
+                    break;
+                case 0:
+                    selectedDance = dance3;
+                    break;
+                default:
+                    selectedDance = dance1;
+                    break;
+            }
         }
 
         /// <summary>
@@ -1004,6 +1023,34 @@ namespace LebaneseKinect
             Content.Unload();
         }
 
+
+        private void IncrementDance()
+        {
+            selectedDanceNum++;
+            switch (selectedDanceNum % 3)
+            {
+                case 1:
+                    selectedDance = dance1;
+                    break;
+                case 2:
+                    selectedDance = dance2;
+                    break;
+                case 0:
+                    selectedDance = dance3;
+                    break;
+                default:
+                    selectedDance = dance1;
+                    break;
+            }
+
+            if(videoPlayer2 != null)
+                videoPlayer2.Dispose();
+            loopTime.Reset();
+            loopTime.Start();
+            GLOBALS.PLAYER_ONE_ACTIVE = true;
+            GLOBALS.PLAYER_TWO_ACTIVE = true;
+            gameState = (int)GameState.HOWTOPLAY; 
+        }
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -1037,11 +1084,12 @@ namespace LebaneseKinect
                         // SPACEBAR stops the intro video, if it is playing...
                         //malePlaying = true; //generic man playing
                         videoPlayer.Dispose();
-                        marker = gameTime.TotalGameTime;
-                        GLOBALS.PLAYER_ONE_ACTIVE = true;
-                        GLOBALS.PLAYER_TWO_ACTIVE = true;
-                        gameState = (int)GameState.HOWTOPLAY;                 
+                        IncrementDance();                
 
+                    }
+                    else if (gameState == (int)GameState.CONTINUE)
+                    {
+                        IncrementDance();
                     }
                     else
                     {
@@ -1057,12 +1105,13 @@ namespace LebaneseKinect
 
             if (gameState == (int)GameState.HOWTOPLAY)
             {             
-                if (gameTime.TotalGameTime.CompareTo(marker.Add(showInstructions)) > 0 || Keyboard.GetState().IsKeyDown(Keys.A)) //when to start the video
+                if (restartGameLoop.CompareTo(loopTime.Elapsed) < 0 || Keyboard.GetState().IsKeyDown(Keys.A)) //when to start the video
                 {                     
                     videoPlayer2 = new VideoPlayer();
                     videoPlayer2.Play(selectedDance.GetMovie());
                     gameState = (int)GameState.DANCE;
                     setTime();
+                    loopTime.Reset();
                     videoTime.Start();
                 }
             }
@@ -2775,21 +2824,35 @@ namespace LebaneseKinect
                 //We are at the end of the dance video, time to display scores
                 if (gameEnd.Subtract(videoTime.Elapsed).Milliseconds < 0)
                 {
+                    loopTime.Reset();
+                    loopTime.Start();
+                    videoTime.Reset();
+                    videoPlayer2.Stop();
                     gameState = (int)GameState.SCORE;
                     GLOBALS.PLAYER_ONE_ACTIVE = false;
                     GLOBALS.PLAYER_TWO_ACTIVE = false;
                 }
             }
-           
+
+            //Show Score, go to CONTINUE
+            if (gameState == (int)GameState.SCORE && restartGameLoop.CompareTo(loopTime.Elapsed) < 0)
+            {
+                loopTime.Reset();
+                loopTime.Start();
+                gameState = (int)GameState.CONTINUE;
+            }
+
             //Loop back to the start
-            if (gameState == (int)GameState.SCORE && restartGameLoop.Subtract(videoTime.Elapsed).Milliseconds < 0)
+            if (gameState == (int)GameState.CONTINUE && restartGameLoop.CompareTo(loopTime.Elapsed) < 0)
             {
                 videoPlayer2.Dispose();
                 videoPlayer = new VideoPlayer();
                 videoPlayer.IsLooped = true;
                 videoPlayer.Play(video1);
+                selectedDanceNum = 0;
                 gameState = (int)GameState.ATTRACT;
                 videoTime.Reset();
+                loopTime.Reset();
                 introVideoTime.Reset();
                 introVideoTime.Start();
             }
@@ -4938,6 +5001,16 @@ namespace LebaneseKinect
 
                 spriteBatch.End();
             }
+            else if (gameState == (int)GameState.CONTINUE)
+            {
+                spriteBatch.Begin();
+                if (continueBackground != null)
+                {
+                    // Draw score screen over top
+                    spriteBatch.Draw(continueBackground, new Rectangle(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT), Color.White);
+                }
+                spriteBatch.End();
+            }
             else if (gameState == (int)GameState.DANCE) // Intro video is no longer playing...
             {
 
@@ -4976,11 +5049,11 @@ namespace LebaneseKinect
                     double diff = 0.0;
                     //malestart
                     int xlocation = 0;
-                    
+
                     selectedDance.Draw(currentTime, spriteBatch); //I can draw moves from a move batch
-                    if(GLOBALS.PLAYER_ONE_ACTIVE)
+                    if (GLOBALS.PLAYER_ONE_ACTIVE)
                         spriteBatch.Draw(n_MoveTarget, new Rectangle(0 + maleRectDiff, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                    if(GLOBALS.PLAYER_TWO_ACTIVE)
+                    if (GLOBALS.PLAYER_TWO_ACTIVE)
                         spriteBatch.Draw(n_MoveTarget, new Rectangle(500 - maleRectDiff, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
 
                     if (false)
@@ -7330,7 +7403,7 @@ namespace LebaneseKinect
                         }
                         #endregion
                     }
-                     
+
                     spriteBatch.End();
 
 #if USE_KINECT
@@ -7363,18 +7436,18 @@ namespace LebaneseKinect
             base.Draw(gameTime); // Draw base XNA stuff...
         }
 
-        private void DrawSkeletons(SpriteBatch spriteBatch, Vector2 resolution, Texture2D img, Skeleton skel)
+        private void DrawSkeletons(SpriteBatch spriteBatch, Vector2 resolution, Texture2D img)
         {
 #if USE_KINECT
             // Draw debug skeleton dots dots on the screen if player is being tracked by Kinect
-            if (skel != null)
-            {
-                foreach (Joint joint in skel.Joints)
-                {
-                    Vector2 position = new Vector2((((0.5f * joint.Position.X) + 0.5f) * (resolution.X)), (((-0.5f * joint.Position.Y) + 0.5f) * (resolution.Y)));
-                    spriteBatch.Draw(img, new Rectangle(Convert.ToInt32(position.X), Convert.ToInt32(position.Y), 10, 10), Color.Red);
-                }
-            }
+            //if (skeleton != null)
+            //{
+                //foreach (Joint joint in skeleton.Joints)
+                //{
+                //   Vector2 position = new Vector2((((0.5f * joint.Position.X) + 0.5f) * (resolution.X)), (((-0.5f * joint.Position.Y) + 0.5f) * (resolution.Y)));
+                //    spriteBatch.Draw(img, new Rectangle(Convert.ToInt32(position.X), Convert.ToInt32(position.Y), 10, 10), Color.Red);
+                //}
+            //}
 #endif
         }
 
@@ -7558,69 +7631,6 @@ namespace LebaneseKinect
 
                         TimeSpan time = videoTime.Elapsed;
 
-                        if (false)
-                        {
-                            #region old skel code
-                            /*
-                            //Knees and ankles
-                            float lky = skeleton.Joints[JointType.KneeLeft].Position.Y;
-                            float lkx = skeleton.Joints[JointType.KneeLeft].Position.X;
-                            float lkz = skeleton.Joints[JointType.KneeLeft].Position.Z;
-                            float rkx = skeleton.Joints[JointType.KneeRight].Position.X;
-                            float rky = skeleton.Joints[JointType.KneeRight].Position.Y;
-                            float rkz = skeleton.Joints[JointType.KneeRight].Position.Z;
-                            float lax = skeleton.Joints[JointType.AnkleLeft].Position.X;
-                            float lay = skeleton.Joints[JointType.AnkleLeft].Position.Y;
-                            float laz = skeleton.Joints[JointType.AnkleLeft].Position.Z;
-                            float rax = skeleton.Joints[JointType.AnkleRight].Position.X;
-                            float ray = skeleton.Joints[JointType.AnkleRight].Position.Y;
-                            float raz = skeleton.Joints[JointType.AnkleRight].Position.Z;
-
-                            //Hands
-                            float lhy = skeleton.Joints[JointType.HandLeft].Position.Y;
-                            float lhx = skeleton.Joints[JointType.HandLeft].Position.X;
-                            float lhz = skeleton.Joints[JointType.HandLeft].Position.Z;
-                            float rhy = skeleton.Joints[JointType.HandRight].Position.Y;
-                            float rhx = skeleton.Joints[JointType.HandRight].Position.X;
-
-                            //Spine is the cnter of the torso
-                            float spineX = skeleton.Joints[JointType.Spine].Position.X;
-                            float spineY = skeleton.Joints[JointType.Spine].Position.Y;
-
-                            //Shoulders
-                            float rsx = skeleton.Joints[JointType.ShoulderRight].Position.X;
-                            float rsy = skeleton.Joints[JointType.ShoulderRight].Position.Y;
-                            float rsz = skeleton.Joints[JointType.ShoulderRight].Position.Z;
-                            float lsx = skeleton.Joints[JointType.ShoulderLeft].Position.X;
-                            float lsy = skeleton.Joints[JointType.ShoulderLeft].Position.Y;
-                            float lsz = skeleton.Joints[JointType.ShoulderLeft].Position.Z;
-                            float csx = skeleton.Joints[JointType.ShoulderCenter].Position.X;
-                            float csy = skeleton.Joints[JointType.ShoulderCenter].Position.Y;
-
-                            //Elbows
-                            float rex = skeleton.Joints[JointType.ElbowRight].Position.X;
-                            float rey = skeleton.Joints[JointType.ElbowRight].Position.Y;
-                            float rez = skeleton.Joints[JointType.ElbowRight].Position.Z;
-                            float lex = skeleton.Joints[JointType.ElbowLeft].Position.X;
-                            float ley = skeleton.Joints[JointType.ElbowLeft].Position.Y;
-                            float lez = skeleton.Joints[JointType.ElbowLeft].Position.Z;
-
-                            //Waist
-                            float wstrx = skeleton.Joints[JointType.HipRight].Position.X;
-                            float wstry = skeleton.Joints[JointType.HipRight].Position.Y;
-                            float wstrz = skeleton.Joints[JointType.HipRight].Position.Z;
-                            float wstlx = skeleton.Joints[JointType.HipLeft].Position.X;
-                            float wstly = skeleton.Joints[JointType.HipLeft].Position.Y;
-                            float wstlz = skeleton.Joints[JointType.HipLeft].Position.Z;
-
-                            //Head pos
-                            float hx = skeleton.Joints[JointType.Head].Position.X;
-                            
-                            float hy = skeleton.Joints[JointType.Head].Position.Y;
-                            */
-                            #endregion
-                        }
-                        
                         float lhy = skel.Joints[JointType.HandLeft].Position.Y;
                         float hy = skel.Joints[JointType.Head].Position.Y;
                         //Player Recog- Must hold hand up for a set period of time to register, cannot already have that player playing
@@ -7655,7 +7665,7 @@ namespace LebaneseKinect
                                             if (gameState == (int)GameState.ATTRACT && GLOBALS.PLAYER_ONE_ACTIVE)
                                             {
                                                 videoPlayer.Dispose();
-                                                gameState = (int)GameState.HOWTOPLAY;
+                                                IncrementDance();
                                             }
                                         }
                                     }
@@ -7682,7 +7692,72 @@ namespace LebaneseKinect
                                             if (gameState == (int)GameState.ATTRACT && GLOBALS.PLAYER_TWO_ACTIVE)
                                             {
                                                 videoPlayer.Dispose();
-                                                gameState = (int)GameState.HOWTOPLAY;
+                                                IncrementDance();
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        if (gameState == (int)GameState.CONTINUE)
+                        {
+                            selectedDance.mc.UpdateSkeleton(skel);
+                            if (!GLOBALS.PLAYER_ONE_ACTIVE && selectedDance.mc.LeftHandRaiseTriggered())
+                            {
+                                if (!GLOBALS.PLAYER_TWO_ACTIVE || numPeople > 1)
+                                {
+                                    if (malePlayerRecog == stepFinished) //Start recording
+                                    {
+                                        if (gameState == (int)GameState.ATTRACT) malePlayerRecog = introVideoTime.Elapsed;
+                                        else malePlayerRecog = videoTime.Elapsed;
+                                    }
+                                    else
+                                    { //If their hand has been up for over 5 seconds
+                                        if (videoTime.Elapsed.Subtract(malePlayerRecog).Milliseconds > 800 || (gameState == (int)GameState.ATTRACT && introVideoTime.Elapsed.Subtract(malePlayerRecog).Milliseconds > 800))
+                                        {
+                                            GLOBALS.PLAYER_ONE_ACTIVE = true;
+                                            P1skeleton = skel.TrackingId;
+                                            malePlayingText = true;
+                                            p1textFadeOut = new TimeSpan(0, 0, 3); // 3-second fadeout
+                                            //ensure 1 person doesn't count as 2
+                                            /*      if ((femPlaying && numPeople < 2))
+                                                  {
+                                                      malePlaying = false;
+                                                      malePlayingText = false;
+                                                      p1textFadeOut = new TimeSpan(0, 0, 0); // 3-second fadeout
+                                                  }*/
+                                            if (gameState == (int)GameState.ATTRACT && GLOBALS.PLAYER_ONE_ACTIVE)
+                                            {
+                                                videoPlayer.Dispose();
+                                                IncrementDance();
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            //right hand raised = play as female
+                            if (!GLOBALS.PLAYER_TWO_ACTIVE && selectedDance.mc.RightHandRaiseTriggered())
+                            {
+                                if (!GLOBALS.PLAYER_ONE_ACTIVE || numPeople > 1)
+                                {
+                                    if (femPlayerRecog == stepFinished) //Start recording
+                                    {
+                                        if (gameState == (int)GameState.ATTRACT) femPlayerRecog = introVideoTime.Elapsed;
+                                        else femPlayerRecog = videoTime.Elapsed;
+                                    }
+                                    else
+                                    { //If their hand has been up for over 3 seconds
+                                        if (videoTime.Elapsed.Subtract(femPlayerRecog).Milliseconds > 800 || (gameState == (int)GameState.ATTRACT && introVideoTime.Elapsed.Subtract(femPlayerRecog).Milliseconds > 800))
+                                        {
+                                            GLOBALS.PLAYER_TWO_ACTIVE = true;
+                                            P2skeleton = skel.TrackingId;
+                                            femPlayingText = true;
+                                            p2textFadeOut = new TimeSpan(0, 0, 3); // 3-second fadebout
+                                            if (gameState == (int)GameState.ATTRACT && GLOBALS.PLAYER_TWO_ACTIVE)
+                                            {
+                                                videoPlayer.Dispose();
+                                                IncrementDance();
                                             }
                                         }
                                     }

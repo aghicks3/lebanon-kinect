@@ -1,0 +1,232 @@
+//Male Steps
+//First Block
+M,LeftKneeLiftFaceRight, 0, 0, 0, 6, 200
+M,RightKneeLiftFaceRight, 0, 0, 0, 7, 300
+M,LeftKneeLiftFaceRight, 0, 0, 0, 8, 300
+M,RightKneeLiftFaceRight, 0, 0, 0, 9, 300
+M,LeftKneeLiftFaceRight, 0, 0, 0, 10, 300
+M,RightKneeLiftFaceRight, 0, 0, 0, 11, 300
+M,LeftKneeLiftFaceRight, 0, 0, 0, 12, 300
+M,RightKneeLiftFaceRight, 0, 0, 0, 13, 300
+N, Score1, 0, 0, 0, 13, 300
+
+M,LeftKneeBack, 0, 0, 0, 15, 335
+M,LeftKneeBack, 0, 0, 0, 17, 247
+M,LeftKneeBack, 0, 0, 0, 19, 336
+M,LeftKneeBack, 0, 0, 0, 21, 270
+
+
+//second block
+M,RightKneeKick, 0,0,0,23,300
+M,RightKneeKick, 0, 0, 0, 25, 300
+M,LeftKneeLiftAndFrontTorso, 0,0,0,26,226
+M,RightKneeLift, 0,0,0,27,260
+M,LeftKneeLiftAndFrontTorso, 0, 0, 0, 28, 226
+M,RightKneeLift, 0, 0, 0, 29, 260
+M,LeftKneeLiftAndFrontTorso, 0, 0, 0, 30, 226
+M,RightKneeLift, 0, 0, 0, 31, 260
+N, Score1, 0, 0, 0, 31, 260
+
+M, LeftKneeLift, 0, 0, 0, 31, 545
+M, LeftKneeLift, 0, 0, 0, 32, 545
+M,RightKneeKick, 0, 0, 0, 33, 545
+M, LeftKneeLift, 0, 0, 0, 34, 560
+M, LeftKneeLift, 0, 0, 0, 35, 560
+M,RightKneeKick, 0, 0, 0, 36, 560
+M, LeftKneeLift, 0, 0, 0, 37, 575
+M, LeftKneeLift, 0, 0, 0, 38, 575
+M,RightKneeKick, 0, 0, 0, 39, 575
+M, LeftKneeLift, 0, 0, 0, 40, 567
+M, LeftKneeLift, 0, 0, 0, 41, 567
+M,RightKneeKick, 0, 0, 0, 42, 567
+M, LeftKneeLift, 0, 0, 0, 43, 559
+M, LeftKneeLift, 0, 0, 0, 44, 559
+M,RightKneeKick, 0, 0, 0, 45, 559
+M, LeftKneeLift, 0, 0, 0, 46, 559
+M, LeftKneeLift, 0, 0, 0, 47, 559
+M,RightKneeKick, 0, 0, 0, 48, 559
+M, LeftKneeLift, 0, 0, 0, 49, 472
+M, LeftKneeLift, 0, 0, 0, 50, 472
+M,RightKneeKick, 0, 0, 0, 51, 472
+M, LeftKneeLift, 0, 0, 0, 52, 472
+M, LeftKneeLift, 0, 0, 0, 53, 472
+M,RightKneeKick, 0, 0, 0, 54, 472
+N, Score2, 0, 0, 0, 55, 800
+
+//Third Block -- tons of spinning this is reallllllly annoying
+M,LeftKneeLift, 0, 0, 0, 57, 430
+M,RightKneeLift, 0, 0, 0, 58, 300
+M,LeftKneeLift, 0, 0, 0, 63, 300
+M,RightKneeLift, 0, 0, 0, 64, 231
+M,LeftKneeLift, 0, 0, 0, 69, 333
+M,RightKneeLift, 0, 0, 0, 70, 229
+N, Score3, 0,0,0,71,300
+
+//Fourth Block
+M, LeftKneeLift, 0, 0, 0, 73, 334
+M, LeftKneeLift, 0, 0, 0, 75, 334
+M,RightKneeKick, 0,0,0,75,334
+M, LeftKneeLift, 0, 0, 0, 76, 318
+M, LeftKneeLift, 0, 0, 0, 77, 318 
+M,RightKneeKick, 0,0,0,78,318
+M, LeftKneeLift, 0, 0, 0, 79, 304
+M, LeftKneeLift, 0, 0, 0, 80, 304
+M,RightKneeKick, 0,0,0,81,304
+M, LeftKneeLift, 0, 0, 0, 82, 386
+M, LeftKneeLift, 0, 0, 0, 83, 386
+M,RightKneeKick, 0,0,0,84,386
+N, Score4, 0,0,0,84,900
+
+//Fifth Block
+M,SideRightAnkle, 0,0,0,85,613
+M,SideLeftAnkle, 0,0,0,86,457
+M,SideRightAnkle, 0,0,0,87,454
+M,SideLeftAnkle, 0,0,0,88,334
+M,LeftKneeLift, 0,0,0,89,633
+M,RightKneeLift, 0,0,0,90,786
+N, Score5, 0,0,0,91,100
+
+//Sixth Block
+M,LeftKneeLiftAndFrontTorso, 0,0,0,91,684
+M,SideLeftAnkle, 0,0,0,93,406
+M,SideRightAnkle, 0,0,0,94,440
+M,SideLeftAnkle, 0,0,0,95,422
+M,SideRightAnkle, 0,0,0,96,440
+
+M,LeftKneeLiftAndFrontTorso, 0,0,0,99,557
+M,LeftKneeLift, 0, 0, 0, 101, 718
+M,RightKneeLift, 0, 0, 0, 102, 615
+M,LeftKneeLift, 0, 0, 0, 103, 511
+M,RightKneeKick, 0, 0, 0, 104, 720
+N, Score6, 0, 0, 0, 104, 900
+
+//Seventh Block
+M,LeftKneeLiftAndFrontTorso, 0, 0, 0, 105, 665
+M,LeftKneeLift, 0, 0, 0, 107, 884
+M,RightKneeLift, 0, 0, 0, 108, 696
+M,LeftKneeLift, 0, 0, 0, 109, 726
+M,RightKneeKick, 0, 0, 0, 110, 817
+M,LeftKneeLiftAndFrontTorso, 0, 0, 0, 111, 654
+N, Score7, 0, 0, 0, 111, 900
+
+//Eight Block
+M,KneelDownAndClap, 0, 0, 0, 113, 400
+M,KneelDownAndClap, 0, 0, 0, 113, 864
+M,KneelDownAndClap, 0, 0, 0, 114, 354
+M,KneelDownAndClap, 0, 0, 0, 114, 863
+M,KneelDownAndClap, 0, 0, 0, 115, 352
+M,KneelDownAndClap, 0, 0, 0, 115, 860
+M,KneelDownAndClap, 0, 0, 0, 116, 351
+M,KneelDownAndClap, 0, 0, 0, 116, 842
+M,KneelDownAndClap, 0, 0, 0, 117, 348
+M,KneelDownAndClap, 0, 0, 0, 117, 858
+M,KneelDownAndClap, 0, 0, 0, 118, 331
+M,KneelDownAndClap, 0, 0, 0, 118, 807
+N, Score8, 0, 0, 0, 119, 000
+
+//Ninth Block
+M,RightKneeKick, 0, 0, 0, 121, 189
+M,RightKneeKick, 0, 0, 0, 124, 169
+M,RightKneeKick, 0, 0, 0, 127, 095
+M,RightKneeKick, 0, 0, 0, 130, 200
+M,RightKneeKick, 0, 0, 0, 133, 184
+N, Score9, 0, 0, 0, 133, 200
+
+//ale Steps
+//First Block
+F,LeftKneeLiftFaceLeft, 0, 0, 0, 6, 200
+F,RightKneeLiftFaceLeft, 0, 0, 0, 7, 300
+F,LeftKneeLiftFaceLeft, 0, 0, 0, 8, 300
+F,RightKneeLiftFaceLeft, 0, 0, 0, 9, 300
+F,LeftKneeLiftFaceLeft, 0, 0, 0, 10, 300
+F,RightKneeLiftFaceLeft, 0, 0, 0, 11, 300
+F,LeftKneeLiftFaceLeft, 0, 0, 0, 12, 300
+F,RightKneeLiftFaceLeft, 0, 0, 0, 13, 300
+
+F,LeftKneeBack, 0, 0, 0, 15, 335
+F,LeftKneeBack, 0, 0, 0, 17, 247
+F,LeftKneeBack, 0, 0, 0, 19, 336
+F,LeftKneeBack, 0, 0, 0, 21, 270
+
+//second block
+F,RightKneeKick, 0, 0, 0, 23, 300
+F,RightKneeKick, 0, 0, 0, 25, 300
+F,LeftKneeLiftAndFrontTorso, 0, 0, 0, 26, 226
+F,RightKneeLift, 0, 0, 0, 27, 260
+F,LeftKneeLiftAndFrontTorso, 0, 0, 0, 28, 226
+F,RightKneeLift, 0, 0, 0, 29, 260
+F,LeftKneeLiftAndFrontTorso, 0, 0, 0, 30, 226
+F,RightKneeLift, 0, 0, 0, 31, 260
+
+F,RightKneeKick, 0, 0, 0, 33, 545
+F,RightKneeKick, 0, 0, 0, 36, 560
+F,RightKneeKick, 0, 0, 0, 39, 575
+F,RightKneeKick, 0, 0, 0, 42, 567
+F,RightKneeKick, 0, 0, 0, 45, 713
+F,RightKneeKick, 0, 0, 0, 48, 559
+F,RightKneeKick, 0, 0, 0, 51, 472
+F,RightKneeKick, 0, 0, 0, 54, 472
+
+//Third Block
+F,LeftKneeLift, 0, 0, 0, 57, 430
+F,RightKneeLift, 0, 0, 0, 58, 300
+F,LeftKneeLift, 0, 0, 0, 63, 300
+F,RightKneeLift, 0, 0, 0, 64, 231
+F,LeftKneeLift, 0, 0, 0, 69, 333
+F,RightKneeLift, 0, 0, 0, 70, 229
+
+//Fourth Block
+F,RightKneeKick, 0, 0, 0, 75, 334
+F,RightKneeKick, 0, 0, 0, 78, 318
+F,RightKneeKick, 0, 0, 0, 81, 304
+F,RightKneeKick, 0, 0, 0, 84, 386
+
+//Fifth Block
+F,SideRightAnkle, 0, 0, 0, 85, 613
+F,SideLeftAnkle, 0, 0, 0, 86, 457
+F,SideRightAnkle, 0, 0, 0, 87, 454
+F,SideLeftAnkle, 0, 0, 0, 88, 334
+F,LeftKneeLift, 0, 0, 0, 89, 633
+F,RightKneeLift, 0, 0, 0, 90, 786
+
+//Sixth Block
+F,LeftKneeLiftAndFrontTorso, 0, 0, 0, 91, 684
+F,SideLeftAnkle, 0, 0, 0, 93, 406
+F,SideRightAnkle, 0, 0, 0, 94, 440
+F,SideLeftAnkle, 0, 0, 0, 95, 422
+F,SideRightAnkle, 0, 0, 0, 96, 440
+F,LeftKneeLiftAndFrontTorso, 0, 0, 0, 99, 557
+F,LeftKneeLift, 0, 0, 0, 101, 718
+F,RightKneeLift, 0, 0, 0, 102, 615
+F,LeftKneeLift, 0, 0, 0, 103, 511
+F,RightKneeKick, 0, 0, 0, 104, 720
+
+//Seventh Block
+F,LeftKneeLiftAndFrontTorso, 0, 0, 0, 105, 665
+F,LeftKneeLift, 0, 0, 0, 107, 884
+F,RightKneeLift, 0, 0, 0, 108, 696
+F,LeftKneeLift, 0, 0, 0, 109, 726
+F,RightKneeKick, 0, 0, 0, 110, 817
+F,LeftKneeLiftAndFrontTorso, 0, 0, 0, 111, 654
+
+//Eight Block
+F,ScrollingHands, 0, 0, 0, 113, 400
+F,ScrollingHands, 0, 0, 0, 113, 864
+F,ScrollingHands, 0, 0, 0, 114, 354
+F,ScrollingHands, 0, 0, 0, 114, 863
+F,ScrollingHands, 0, 0, 0, 115, 352
+F,ScrollingHands, 0, 0, 0, 115, 860
+
+F,ThrillerHandsRight, 0, 0, 0, 116, 339
+F,ThrillerHandsRight, 0, 0, 0, 116, 800
+F,ThrillerHandsRight, 0, 0, 0, 117, 300
+F,ThrillerHandsRight, 0, 0, 0, 117, 825
+F,ThrillerHandsRight, 0, 0, 0, 118, 300
+F,ThrillerHandsRight, 0, 0, 0, 118, 800
+
+ //Ninth Block
+F,RightKneeKick, 0, 0, 0, 121, 189
+F,RightKneeKick, 0, 0, 0, 124, 169
+F,RightKneeKick, 0, 0, 0, 127, 095
+F,RightKneeKick, 0, 0, 0, 130, 200
+F,RightKneeKick, 0, 0, 0, 133, 184

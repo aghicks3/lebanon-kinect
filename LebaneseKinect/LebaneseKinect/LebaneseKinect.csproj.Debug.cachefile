@@ -104,9 +104,12 @@ Content\MoveIcons\male_SideRightAnkle.xnb
 Content\MoveIcons\male_ThrillerHandsRight.xnb
 Content\MoveIcons\female_KneelAndClap.xnb
 Content\MoveIcons\female_RightHandRaise.xnb
+Content\Textures\continueBackground.xnb
 Content\Music\dabke.wma
 Content\Video\tempIntro.wmv
 Content\Video\Lebanon.wmv
 Content\Video\Lebanon2.wmv
 DanceFiles\Lebanon.csv
 DanceFiles\Lebanon2.csv
+DanceFiles\Alaweh.csv
+DanceFiles\tempIntro.csv

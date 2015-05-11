@@ -108,3 +108,4 @@ Content\MoveIcons\male_SideRightAnkle.xnb
 Content\MoveIcons\male_ThrillerHandsRight.xnb
 Content\MoveIcons\female_KneelAndClap.xnb
 Content\MoveIcons\female_RightHandRaise.xnb
+Content\Textures\continueBackground.xnb

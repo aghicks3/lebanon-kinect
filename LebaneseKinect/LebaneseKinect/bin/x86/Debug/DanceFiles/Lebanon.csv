@@ -301,6 +301,6 @@ M, RightKneeKneelAndUnderArmAndLeftHandBehind, 0, 0, 0, 132, 163
 F, LeftKneeLiftAndFrontTorso, 0, 0, 0, 124, 298
 F, BackSpinRightKneeLift, 0, 0, 0, 125, 765
 F, ForwardSpinFacingRightKneeLift, 0, 0, 0, 127, 225
-F, CrouchAndHipSwivel, 0, 0, 0, 129, 471
-F, RightHandHigh, 0, 0, 0, 131, 988
+F, CrouchAndHipShake, 0, 0, 0, 129, 471
+F, RightHandRaise, 0, 0, 0, 131, 988
 N, Score13, 0, 0, 0, 132, 800

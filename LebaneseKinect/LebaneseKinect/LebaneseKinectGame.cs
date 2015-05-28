@@ -37,7 +37,7 @@ namespace LebaneseKinect
         Dance dance2 = new Dance("Lebanon2");
         Dance dance3 = new Dance("tempIntro");
         Dance selectedDance;
-        int selectedDanceNum = 0;
+        int selectedDanceNum = 1;
 
         // Declaring variables...
         bool bWantsToQuit = false;
@@ -786,7 +786,7 @@ namespace LebaneseKinect
             FemRightHandHigh = new TimeSpan(0, 0, 0, 131, 988);
             Score13 = new TimeSpan(0, 0, 0, 132, 800);
 
-            gameEnd = new TimeSpan(0, 0, 0, 16, 500);//136, 500?
+            gameEnd = new TimeSpan(0, 0, 0, 136, 500);//136, 500?
             restartGameLoop = new TimeSpan(0, 0, 0, 10, 000);
             
             #endregion
@@ -1011,6 +1011,8 @@ namespace LebaneseKinect
                     selectedDance = dance1;
                     break;
             }
+
+            gameEnd = selectedDance.GetMovie().Duration;
         }
 
         /// <summary>

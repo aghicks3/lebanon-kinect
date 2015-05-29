@@ -24,7 +24,7 @@ namespace LebaneseKinect
 
         static GLOBALS()
         {
-            writer = new StreamWriter("MCDebug.txt", true);
+            writer = new StreamWriter("MCDebug.txt", false);
             writer.WriteLine("File created using StreamWriter class.");
         }
     }

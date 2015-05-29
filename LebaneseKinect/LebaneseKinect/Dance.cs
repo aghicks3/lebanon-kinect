@@ -226,7 +226,7 @@ namespace LebaneseKinect
 
         public int ScoreMovesFake(TimeSpan currentTime)
         {
-            return 0;
+            //return 0;
             
             int score = 0;
             bool keydown = (Keyboard.GetState().IsKeyDown(Keys.Space));

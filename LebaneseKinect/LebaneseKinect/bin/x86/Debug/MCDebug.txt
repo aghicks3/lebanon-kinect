@@ -1,70 +1,342 @@
 File created using StreamWriter class.
-RightKneeLiftFaceLeft unknown
-HandSwingFront unknown
-HandSwingRight unknown
-HipShakeBack unknown
-HandSwingBack unknown
-HandSwingLeft unknown
-HipShakeFront unknown
-HandSwingFront unknown
-HandSwingRight unknown
-HipShakeBack unknown
-HandSwingBack unknown
-HandSwingLeft unknown
-HipShakeFront unknown
-ScrollingHandsRight unknown
-ScrollingHandsRight unknown
-CrouchAndHipShake unknown
-ScrollingHandsLeft unknown
-ScrollingHandsLeft unknown
-CrouchAndHipShake unknown
-ScrollingHandsRight unknown
-ScrollingHandsRight unknown
-CrouchAndHipShake unknown
-ScrollingHandsLeft unknown
-ScrollingHandsLeft unknown
-CrouchAndHipShake unknown
-ElbowSway unknown
-LeftElbowSway unknown
-ElbowSway unknown
-LeftElbowSway unknown
-ElbowSway unknown
-LeftElbowSway unknown
-ElbowSway unknown
-LeftElbowSway unknown
-LeftWristArcRaise unknown
-RightWristArcRaise unknown
-Home unknown
-LeftWristArcRaise unknown
-RightWristArcRaise unknown
-Home unknown
-ThrillerHandsLeft unknown
-LeftBendHipShake unknown
-ThrillerHandsLeft unknown
-LeftBendHipShake unknown
-ElbowSway unknown
-LeftElbowSway unknown
-ElbowSway unknown
-LeftElbowSway unknown
-LeftKneeBendCrouch unknown
-LeftKneeBendCrouch unknown
-LeftKneeBendCrouch unknown
-LeftKneeBendCrouch unknown
-LeftKneeBendCrouch unknown
-LeftKneeBendCrouch unknown
-LeftKneeBendCrouch unknown
-LeftKneeBendCrouch unknown
-BackSpinRightKneeLift unknown
-ForwardSpinFacingRightKneeLift unknown
-CrouchAndHipSwivel unknown
-RightHandHigh unknown
-File created using StreamWriter class.
-File created using StreamWriter class.
-File created using StreamWriter class.
-File created using StreamWriter class.
-File created using StreamWriter class.
-File created using StreamWriter class.
-File created using StreamWriter class.
-File created using StreamWriter class.
-File created using StreamWriter class.
-File created using StreamWriter class.
+Gender, MoveName, 0,0,0,4,808
+Gender, MoveName, 0,0,0,4,824
+Gender, MoveName, 0,0,0,4,841
+Gender, MoveName, 0,0,0,4,858
+Gender, MoveName, 0,0,0,4,875
+Gender, MoveName, 0,0,0,4,891
+Gender, MoveName, 0,0,0,4,908
+Gender, MoveName, 0,0,0,5,310
+Gender, MoveName, 0,0,0,5,327
+Gender, MoveName, 0,0,0,5,344
+Gender, MoveName, 0,0,0,5,360
+Gender, MoveName, 0,0,0,5,377
+Gender, MoveName, 0,0,0,5,395
+Gender, MoveName, 0,0,0,5,411
+Gender, MoveName, 0,0,0,6,70
+Gender, MoveName, 0,0,0,6,82
+Gender, MoveName, 0,0,0,6,97
+Gender, MoveName, 0,0,0,6,114
+Gender, MoveName, 0,0,0,6,135
+Gender, MoveName, 0,0,0,6,147
+Gender, MoveName, 0,0,0,6,384
+Gender, MoveName, 0,0,0,6,404
+Gender, MoveName, 0,0,0,6,419
+Gender, MoveName, 0,0,0,6,435
+Gender, MoveName, 0,0,0,6,449
+Gender, MoveName, 0,0,0,6,465
+Gender, MoveName, 0,0,0,6,618
+Gender, MoveName, 0,0,0,6,635
+Gender, MoveName, 0,0,0,6,653
+Gender, MoveName, 0,0,0,6,669
+Gender, MoveName, 0,0,0,6,684
+Gender, MoveName, 0,0,0,6,703
+Gender, MoveName, 0,0,0,6,717
+Gender, MoveName, 0,0,0,7,286
+Gender, MoveName, 0,0,0,7,303
+Gender, MoveName, 0,0,0,7,319
+Gender, MoveName, 0,0,0,7,339
+Gender, MoveName, 0,0,0,7,352
+Gender, MoveName, 0,0,0,7,369
+Gender, MoveName, 0,0,0,7,386
+Gender, MoveName, 0,0,0,7,403
+Gender, MoveName, 0,0,0,7,888
+Gender, MoveName, 0,0,0,7,905
+Gender, MoveName, 0,0,0,7,922
+Gender, MoveName, 0,0,0,7,939
+Gender, MoveName, 0,0,0,7,955
+Gender, MoveName, 0,0,0,7,972
+Gender, MoveName, 0,0,0,7,989
+Gender, MoveName, 0,0,0,8,508
+Gender, MoveName, 0,0,0,8,524
+Gender, MoveName, 0,0,0,8,541
+Gender, MoveName, 0,0,0,8,558
+Gender, MoveName, 0,0,0,8,575
+Gender, MoveName, 0,0,0,8,591
+Gender, MoveName, 0,0,0,8,742
+Gender, MoveName, 0,0,0,8,759
+Gender, MoveName, 0,0,0,8,776
+Gender, MoveName, 0,0,0,8,792
+Gender, MoveName, 0,0,0,8,809
+Gender, MoveName, 0,0,0,8,826
+Gender, MoveName, 0,0,0,8,843
+Gender, MoveName, 0,0,0,9,44
+Gender, MoveName, 0,0,0,9,60
+Gender, MoveName, 0,0,0,9,77
+Gender, MoveName, 0,0,0,9,94
+Gender, MoveName, 0,0,0,9,111
+Gender, MoveName, 0,0,0,9,127
+Gender, MoveName, 0,0,0,9,144
+Gender, MoveName, 0,0,0,9,161
+Gender, MoveName, 0,0,0,9,613
+Gender, MoveName, 0,0,0,9,630
+Gender, MoveName, 0,0,0,9,646
+Gender, MoveName, 0,0,0,9,663
+Gender, MoveName, 0,0,0,9,680
+Gender, MoveName, 0,0,0,9,699
+Gender, MoveName, 0,0,0,9,713
+Gender, MoveName, 0,0,0,9,730
+Gender, MoveName, 0,0,0,10,199
+Gender, MoveName, 0,0,0,10,216
+Gender, MoveName, 0,0,0,10,233
+Gender, MoveName, 0,0,0,10,249
+Gender, MoveName, 0,0,0,10,268
+Gender, MoveName, 0,0,0,10,283
+Gender, MoveName, 0,0,0,10,299
+Gender, MoveName, 0,0,0,10,768
+Gender, MoveName, 0,0,0,10,785
+Gender, MoveName, 0,0,0,10,801
+Gender, MoveName, 0,0,0,10,818
+Gender, MoveName, 0,0,0,10,835
+Gender, MoveName, 0,0,0,10,852
+Gender, MoveName, 0,0,0,11,36
+Gender, MoveName, 0,0,0,11,53
+Gender, MoveName, 0,0,0,11,69
+Gender, MoveName, 0,0,0,11,86
+Gender, MoveName, 0,0,0,11,108
+Gender, MoveName, 0,0,0,11,120
+Gender, MoveName, 0,0,0,11,321
+Gender, MoveName, 0,0,0,11,337
+Gender, MoveName, 0,0,0,11,354
+Gender, MoveName, 0,0,0,11,371
+Gender, MoveName, 0,0,0,11,387
+Gender, MoveName, 0,0,0,11,404
+Gender, MoveName, 0,0,0,11,421
+Gender, MoveName, 0,0,0,11,438
+Gender, MoveName, 0,0,0,11,840
+Gender, MoveName, 0,0,0,11,856
+Gender, MoveName, 0,0,0,11,873
+Gender, MoveName, 0,0,0,11,890
+Gender, MoveName, 0,0,0,11,906
+Gender, MoveName, 0,0,0,11,923
+Gender, MoveName, 0,0,0,12,108
+Gender, MoveName, 0,0,0,12,125
+Gender, MoveName, 0,0,0,12,141
+Gender, MoveName, 0,0,0,12,158
+Gender, MoveName, 0,0,0,12,174
+Gender, MoveName, 0,0,0,12,191
+Gender, MoveName, 0,0,0,12,210
+Gender, MoveName, 0,0,0,12,392
+Gender, MoveName, 0,0,0,12,409
+Gender, MoveName, 0,0,0,12,426
+Gender, MoveName, 0,0,0,12,442
+Gender, MoveName, 0,0,0,12,459
+Gender, MoveName, 0,0,0,12,476
+Gender, MoveName, 0,0,0,12,492
+Gender, MoveName, 0,0,0,12,510
+Gender, MoveName, 0,0,0,12,526
+Gender, MoveName, 0,0,0,12,543
+Gender, MoveName, 0,0,0,12,559
+Gender, MoveName, 0,0,0,12,576
+Gender, MoveName, 0,0,0,12,593
+Gender, MoveName, 0,0,0,12,961
+Gender, MoveName, 0,0,0,12,978
+Gender, MoveName, 0,0,0,12,995
+Gender, MoveName, 0,0,0,13,12
+Gender, MoveName, 0,0,0,13,28
+Gender, MoveName, 0,0,0,13,246
+Gender, MoveName, 0,0,0,13,263
+Gender, MoveName, 0,0,0,13,279
+Gender, MoveName, 0,0,0,13,296
+Gender, MoveName, 0,0,0,13,314
+Gender, MoveName, 0,0,0,13,330
+Gender, MoveName, 0,0,0,13,564
+Gender, MoveName, 0,0,0,13,581
+Gender, MoveName, 0,0,0,13,597
+Gender, MoveName, 0,0,0,13,614
+Gender, MoveName, 0,0,0,13,631
+Gender, MoveName, 0,0,0,13,648
+Gender, MoveName, 0,0,0,13,664
+Gender, MoveName, 0,0,0,13,681
+Gender, MoveName, 0,0,0,13,698
+Gender, MoveName, 0,0,0,13,715
+Gender, MoveName, 0,0,0,13,731
+Gender, MoveName, 0,0,0,14,117
+Gender, MoveName, 0,0,0,14,134
+Gender, MoveName, 0,0,0,14,150
+Gender, MoveName, 0,0,0,14,167
+Gender, MoveName, 0,0,0,14,183
+Gender, MoveName, 0,0,0,14,200
+Gender, MoveName, 0,0,0,14,217
+Gender, MoveName, 0,0,0,14,234
+Gender, MoveName, 0,0,0,14,250
+Gender, MoveName, 0,0,0,14,267
+Gender, MoveName, 0,0,0,14,284
+Gender, MoveName, 0,0,0,14,301
+Gender, MoveName, 0,0,0,14,317
+Gender, MoveName, 0,0,0,14,703
+Gender, MoveName, 0,0,0,14,719
+Gender, MoveName, 0,0,0,14,736
+Gender, MoveName, 0,0,0,14,753
+Gender, MoveName, 0,0,0,14,769
+Gender, MoveName, 0,0,0,14,786
+Gender, MoveName, 0,0,0,14,803
+Gender, MoveName, 0,0,0,14,820
+Gender, MoveName, 0,0,0,14,839
+Gender, MoveName, 0,0,0,14,853
+Gender, MoveName, 0,0,0,14,870
+Gender, MoveName, 0,0,0,14,887
+Gender, MoveName, 0,0,0,14,906
+Gender, MoveName, 0,0,0,14,920
+Gender, MoveName, 0,0,0,14,939
+Gender, MoveName, 0,0,0,14,954
+Gender, MoveName, 0,0,0,15,289
+Gender, MoveName, 0,0,0,15,305
+Gender, MoveName, 0,0,0,15,322
+Gender, MoveName, 0,0,0,15,339
+Gender, MoveName, 0,0,0,15,557
+Gender, MoveName, 0,0,0,15,574
+Gender, MoveName, 0,0,0,15,592
+Gender, MoveName, 0,0,0,15,592
+Gender, MoveName, 0,0,0,15,608
+Gender, MoveName, 0,0,0,15,624
+Gender, MoveName, 0,0,0,15,860
+Gender, MoveName, 0,0,0,15,860
+Gender, MoveName, 0,0,0,15,891
+Gender, MoveName, 0,0,0,15,891
+Gender, MoveName, 0,0,0,15,908
+Gender, MoveName, 0,0,0,15,925
+Gender, MoveName, 0,0,0,15,941
+Gender, MoveName, 0,0,0,15,958
+Gender, MoveName, 0,0,0,15,975
+Gender, MoveName, 0,0,0,15,992
+Gender, MoveName, 0,0,0,16,13
+Gender, MoveName, 0,0,0,16,25
+Gender, MoveName, 0,0,0,16,46
+Gender, MoveName, 0,0,0,16,62
+Gender, MoveName, 0,0,0,16,80
+Gender, MoveName, 0,0,0,16,430
+Gender, MoveName, 0,0,0,16,451
+Gender, MoveName, 0,0,0,16,464
+Gender, MoveName, 0,0,0,16,481
+Gender, MoveName, 0,0,0,16,495
+Gender, MoveName, 0,0,0,16,514
+Gender, MoveName, 0,0,0,16,530
+Gender, MoveName, 0,0,0,16,549
+Gender, MoveName, 0,0,0,16,564
+Gender, MoveName, 0,0,0,16,581
+Gender, MoveName, 0,0,0,16,596
+Gender, MoveName, 0,0,0,16,614
+Gender, MoveName, 0,0,0,16,631
+Gender, MoveName, 0,0,0,16,651
+Gender, MoveName, 0,0,0,16,665
+Gender, MoveName, 0,0,0,16,681
+Gender, MoveName, 0,0,0,16,997
+Gender, MoveName, 0,0,0,17,17
+Gender, MoveName, 0,0,0,17,30
+Gender, MoveName, 0,0,0,17,49
+Gender, MoveName, 0,0,0,17,64
+Gender, MoveName, 0,0,0,17,82
+Gender, MoveName, 0,0,0,17,97
+Gender, MoveName, 0,0,0,17,116
+Gender, MoveName, 0,0,0,17,130
+Gender, MoveName, 0,0,0,17,161
+Gender, MoveName, 0,0,0,17,161
+Gender, MoveName, 0,0,0,17,182
+Gender, MoveName, 0,0,0,17,197
+Gender, MoveName, 0,0,0,17,218
+Gender, MoveName, 0,0,0,17,232
+Gender, MoveName, 0,0,0,17,249
+Gender, MoveName, 0,0,0,17,265
+Gender, MoveName, 0,0,0,17,601
+Gender, MoveName, 0,0,0,17,619
+Gender, MoveName, 0,0,0,17,632
+Gender, MoveName, 0,0,0,17,649
+Gender, MoveName, 0,0,0,17,666
+Gender, MoveName, 0,0,0,17,900
+Gender, MoveName, 0,0,0,17,917
+Gender, MoveName, 0,0,0,17,934
+Gender, MoveName, 0,0,0,17,951
+Gender, MoveName, 0,0,0,17,967
+Gender, MoveName, 0,0,0,17,985
+Gender, MoveName, 0,0,0,18,169
+Gender, MoveName, 0,0,0,18,185
+Gender, MoveName, 0,0,0,18,202
+Gender, MoveName, 0,0,0,18,218
+Gender, MoveName, 0,0,0,18,235
+Gender, MoveName, 0,0,0,18,253
+Gender, MoveName, 0,0,0,18,269
+Gender, MoveName, 0,0,0,18,286
+Gender, MoveName, 0,0,0,18,302
+Gender, MoveName, 0,0,0,18,319
+Gender, MoveName, 0,0,0,18,336
+Gender, MoveName, 0,0,0,18,352
+Gender, MoveName, 0,0,0,18,369
+Gender, MoveName, 0,0,0,18,386
+Gender, MoveName, 0,0,0,18,402
+Gender, MoveName, 0,0,0,18,420
+Gender, MoveName, 0,0,0,18,436
+Gender, MoveName, 0,0,0,18,738
+Gender, MoveName, 0,0,0,18,754
+Gender, MoveName, 0,0,0,18,772
+Gender, MoveName, 0,0,0,18,789
+Gender, MoveName, 0,0,0,18,804
+Gender, MoveName, 0,0,0,18,821
+Gender, MoveName, 0,0,0,18,838
+Gender, MoveName, 0,0,0,18,855
+Gender, MoveName, 0,0,0,18,871
+Gender, MoveName, 0,0,0,18,888
+Gender, MoveName, 0,0,0,18,905
+Gender, MoveName, 0,0,0,18,922
+Gender, MoveName, 0,0,0,18,938
+Gender, MoveName, 0,0,0,18,955
+Gender, MoveName, 0,0,0,18,972
+Gender, MoveName, 0,0,0,19,290
+Gender, MoveName, 0,0,0,19,307
+Gender, MoveName, 0,0,0,19,323
+Gender, MoveName, 0,0,0,19,340
+Gender, MoveName, 0,0,0,19,357
+Gender, MoveName, 0,0,0,19,374
+Gender, MoveName, 0,0,0,19,390
+Gender, MoveName, 0,0,0,19,407
+Gender, MoveName, 0,0,0,19,424
+Gender, MoveName, 0,0,0,19,441
+Gender, MoveName, 0,0,0,19,457
+Gender, MoveName, 0,0,0,19,474
+Gender, MoveName, 0,0,0,19,491
+Gender, MoveName, 0,0,0,19,507
+Gender, MoveName, 0,0,0,19,524
+Gender, MoveName, 0,0,0,19,830
+Gender, MoveName, 0,0,0,19,846
+Gender, MoveName, 0,0,0,19,863
+Gender, MoveName, 0,0,0,19,879
+Gender, MoveName, 0,0,0,19,895
+Gender, MoveName, 0,0,0,20,110
+Gender, MoveName, 0,0,0,20,127
+Gender, MoveName, 0,0,0,20,144
+Gender, MoveName, 0,0,0,20,161
+Gender, MoveName, 0,0,0,20,178
+Gender, MoveName, 0,0,0,20,395
+Gender, MoveName, 0,0,0,20,414
+Gender, MoveName, 0,0,0,20,429
+Gender, MoveName, 0,0,0,20,447
+Gender, MoveName, 0,0,0,20,462
+Gender, MoveName, 0,0,0,20,663
+Gender, MoveName, 0,0,0,20,680
+Gender, MoveName, 0,0,0,20,696
+Gender, MoveName, 0,0,0,20,714
+Gender, MoveName, 0,0,0,20,730
+Gender, MoveName, 0,0,0,20,948
+Gender, MoveName, 0,0,0,20,964
+Gender, MoveName, 0,0,0,20,981
+Gender, MoveName, 0,0,0,21,190
+Gender, MoveName, 0,0,0,21,199
+Gender, MoveName, 0,0,0,21,215
+Gender, MoveName, 0,0,0,21,232
+Gender, MoveName, 0,0,0,21,249
+Gender, MoveName, 0,0,0,21,500
+Gender, MoveName, 0,0,0,21,520
+Gender, MoveName, 0,0,0,21,534
+Gender, MoveName, 0,0,0,21,737
+Gender, MoveName, 0,0,0,21,755
+Gender, MoveName, 0,0,0,21,771
+Gender, MoveName, 0,0,0,21,789
+Gender, MoveName, 0,0,0,21,803
+Gender, MoveName, 0,0,0,22,38
+Gender, MoveName, 0,0,0,22,57
+Gender, MoveName, 0,0,0,22,72
+Gender, MoveName, 0,0,0,22,87
+Gender, MoveName, 0,0,0,22,103
+Gender, MoveName, 0,0,0,22,605
+Gender, MoveName, 0,0,0,22,627
+Gender, MoveName, 0,0,0,22,641

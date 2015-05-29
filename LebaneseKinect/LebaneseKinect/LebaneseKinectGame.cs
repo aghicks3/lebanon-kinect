@@ -1069,9 +1069,10 @@ namespace LebaneseKinect
                 Keyboard.GetState().IsKeyDown(Keys.Q))
             {
                 bWantsToQuit = true;
+                GLOBALS.writer.Close();
                 #if USE_KINECT
                 kinect.Dispose();
-                GLOBALS.writer.Close();
+                
                 #endif
             }
 
@@ -1120,7 +1121,13 @@ namespace LebaneseKinect
 
             if (gameState == (int)GameState.DANCE)
             {
-
+                //easy dance editing
+                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                {
+                    TimeSpan now = videoTime.Elapsed;
+                    GLOBALS.writer.WriteLine("Gender, MoveName, " + now.Days + "," + now.Hours + "," + now.Minutes + "," + now.Seconds + "," + now.Milliseconds );
+                }
+                
                 if (Keyboard.GetState().IsKeyDown(Keys.Left) || Keyboard.GetState().IsKeyDown(Keys.Right))
                 {
                     if (!bCrossoverKeyPressed)

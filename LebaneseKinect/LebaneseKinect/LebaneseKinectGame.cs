@@ -41,6 +41,7 @@ namespace LebaneseKinect
 
         // Declaring variables...
         bool bWantsToQuit = false;
+        bool keydown = false;
 
         const int SCORING_WINDOW_EASY = 600;
         const int SCORING_WINDOW_MEDIUM = 300;
@@ -1124,8 +1125,16 @@ namespace LebaneseKinect
                 //easy dance editing
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter))
                 {
-                    TimeSpan now = videoTime.Elapsed;
-                    GLOBALS.writer.WriteLine("Gender, MoveName, " + now.Days + "," + now.Hours + "," + now.Minutes + "," + now.Seconds + "," + now.Milliseconds );
+                    if (!keydown)
+                    {
+                        keydown = true;
+                        TimeSpan now = videoTime.Elapsed;
+                        GLOBALS.writer.WriteLine("Gender, MoveName, " + now.Days + "," + now.Hours + "," + now.Minutes + "," + now.Seconds + "," + now.Milliseconds);
+                    }
+                }
+                else
+                {
+                    keydown = false;
                 }
                 
                 if (Keyboard.GetState().IsKeyDown(Keys.Left) || Keyboard.GetState().IsKeyDown(Keys.Right))

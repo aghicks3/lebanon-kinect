@@ -30,12 +30,12 @@ namespace LebaneseKinect
     public class LebaneseKinectGame : Microsoft.Xna.Framework.Game
     {
         //Important Drew Hicks Refactor
-        enum GameState { ATTRACT, MENU, HOWTOPLAY, DANCE, SCORE, CONTINUE, QUIT};
+        enum GameState { ATTRACT, MENU, HOWTOPLAY, DANCE, SCORE, CONTINUE, QUIT };
         int gameState = (int)GameState.ATTRACT;
 
         Dance dance1 = new Dance("Lebanon");
         Dance dance2 = new Dance("Lebanon2");
-        Dance dance3 = new Dance("tempIntro");
+        Dance dance3 = new Dance("Lebanon3");
         Dance selectedDance;
         int selectedDanceNum = 1;
 
@@ -56,7 +56,7 @@ namespace LebaneseKinect
         int P2skeleton; //keep tracking IDs for players
         Boolean debugging = true;
 #endif
-        
+
         const int WINDOW_WIDTH = 640;//720;
         const int WINDOW_HEIGHT = 480;
 
@@ -173,7 +173,7 @@ namespace LebaneseKinect
         TimeSpan LeftKneeLiftAndFrontTorso2;
         TimeSpan RightKneeLiftAndBackTorso2;
         TimeSpan Score2;
-        
+
         //Third Score block
         TimeSpan LeftKneeLiftAndLeftHand1;
         TimeSpan RightKneeLiftAndLeftHand1;
@@ -326,7 +326,7 @@ namespace LebaneseKinect
         TimeSpan restartGameLoop = new TimeSpan(0, 0, 0, 10, 000);
         TimeSpan showInstructions = new TimeSpan(0, 0, 0, 10, 0);
 
-       // TimeSpan marker;
+        // TimeSpan marker;
 
         /*Female Times //////////////////
         */
@@ -578,8 +578,8 @@ namespace LebaneseKinect
             FemMoveToLeftAndScrollingHands3 = new TimeSpan(0, 0, 0, 49, 112);
             FemMoveToLeftAndScrollingHands4 = new TimeSpan(0, 0, 0, 50, 252);
             FemCrouchAndHipShake4 = new TimeSpan(0, 0, 0, 51, 309);
-            FemLeftKneeBendCrouch0B = new TimeSpan(0,0,0,53,649);
-            FemLeftKneeBendCrouch0A = new TimeSpan(0,0,0,54,688);
+            FemLeftKneeBendCrouch0B = new TimeSpan(0, 0, 0, 53, 649);
+            FemLeftKneeBendCrouch0A = new TimeSpan(0, 0, 0, 54, 688);
             Score6 = new TimeSpan(0, 0, 0, 53, 225);
 
             //Score block 7
@@ -789,7 +789,7 @@ namespace LebaneseKinect
 
             gameEnd = new TimeSpan(0, 0, 0, 136, 500);//136, 500?
             restartGameLoop = new TimeSpan(0, 0, 0, 10, 000);
-            
+
             #endregion
 
             stepsDone = 0;
@@ -826,7 +826,7 @@ namespace LebaneseKinect
         List<string> eventsTriggeredList;
 
         protected Song song;
-        VideoPlayer videoPlayer, videoPlayer2;
+        VideoPlayer videoPlayer, videoPlayer2, videoPlayer3;
         Video video;
         Video video1;
 
@@ -844,7 +844,7 @@ namespace LebaneseKinect
             Content.RootDirectory = "Content";
             eventsTriggeredList = new List<string>();
             //for (int i = 0; i < numberOfAnimationPlayers; i++)
-                //shadowRects.Add(new Rectangle(0, 0, 64, 64));
+            //shadowRects.Add(new Rectangle(0, 0, 64, 64));
         }
 
         private void GraphicsDevicePreparingDeviceSettings(object sender, PreparingDeviceSettingsEventArgs e)
@@ -990,7 +990,7 @@ namespace LebaneseKinect
             dance2.LoadContent(Content);
             dance3.LoadContent(Content);
 
-            video = Content.Load<Video>("Video\\tempIntro");
+            video = Content.Load<Video>("Video\\Lebanon2");
             video1 = Content.Load<Video>("Video\\Lebanon");
             videoPlayer = new VideoPlayer();
             videoPlayer.Play(video1);
@@ -1046,13 +1046,21 @@ namespace LebaneseKinect
                     break;
             }
 
-            if(videoPlayer2 != null)
+            if (videoPlayer2 != null)
                 videoPlayer2.Dispose();
             loopTime.Reset();
             loopTime.Start();
             GLOBALS.PLAYER_ONE_ACTIVE = true;
             GLOBALS.PLAYER_TWO_ACTIVE = true;
-            gameState = (int)GameState.HOWTOPLAY; 
+            gameState = (int)GameState.HOWTOPLAY;
+
+            if (videoPlayer3 != null)
+                videoPlayer3.Dispose();
+            loopTime.Reset();
+            loopTime.Start();
+            GLOBALS.PLAYER_ONE_ACTIVE = true;
+            GLOBALS.PLAYER_TWO_ACTIVE = true;
+            gameState = (int)GameState.HOWTOPLAY;
         }
         /// <summary>
         /// Allows the game to run logic such as updating the world,
@@ -1071,10 +1079,10 @@ namespace LebaneseKinect
             {
                 bWantsToQuit = true;
                 GLOBALS.writer.Close();
-                #if USE_KINECT
+#if USE_KINECT
                 kinect.Dispose();
                 
-                #endif
+#endif
             }
 
             // Press spacebar to advance your current dance steps without actually dancing.
@@ -1083,12 +1091,12 @@ namespace LebaneseKinect
             {
                 if (!bSpaceKeyPressed)
                 {
-                    if(gameState == (int)GameState.ATTRACT)
+                    if (gameState == (int)GameState.ATTRACT)
                     {
                         // SPACEBAR stops the intro video, if it is playing...
                         //malePlaying = true; //generic man playing
                         videoPlayer.Dispose();
-                        IncrementDance();                
+                        IncrementDance();
 
                     }
                     else if (gameState == (int)GameState.CONTINUE)
@@ -1108,9 +1116,9 @@ namespace LebaneseKinect
                 bSpaceKeyPressed = false;
 
             if (gameState == (int)GameState.HOWTOPLAY)
-            {             
+            {
                 if (restartGameLoop.CompareTo(loopTime.Elapsed) < 0 || Keyboard.GetState().IsKeyDown(Keys.A)) //when to start the video
-                {                     
+                {
                     videoPlayer2 = new VideoPlayer();
                     videoPlayer2.Play(selectedDance.GetMovie());
                     gameState = (int)GameState.DANCE;
@@ -1136,7 +1144,7 @@ namespace LebaneseKinect
                 {
                     keydown = false;
                 }
-                
+
                 if (Keyboard.GetState().IsKeyDown(Keys.Left) || Keyboard.GetState().IsKeyDown(Keys.Right))
                 {
                     if (!bCrossoverKeyPressed)
@@ -2983,11 +2991,11 @@ namespace LebaneseKinect
             int modifiedScore;
             if (earnedScore > 400)
             {
-                modifiedScore= 400;
+                modifiedScore = 400;
             }
             else
             {
-                modifiedScore= Math.Max((int)(GLOBALS.SCORING_WINDOW - diff), 0);
+                modifiedScore = Math.Max((int)(GLOBALS.SCORING_WINDOW - diff), 0);
             }
             modifiedScore = Math.Max(modifiedScore, 100);
             tempScore += modifiedScore;
@@ -3679,8 +3687,8 @@ namespace LebaneseKinect
         private void LeftKneeBendCrouchTriggered()
         {
             TimeSpan currentTime = videoTime.Elapsed;
-            double diff0A = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch0A).TotalMilliseconds));  
-            double diff0B = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch0B).TotalMilliseconds));   
+            double diff0A = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch0A).TotalMilliseconds));
+            double diff0B = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch0B).TotalMilliseconds));
             double diff1 = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch1).TotalMilliseconds));
             double diff2 = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch2).TotalMilliseconds));
             double diff3 = Math.Abs((currentTime.Subtract(LeftKneeBendCrouch3).TotalMilliseconds));
@@ -4570,7 +4578,7 @@ namespace LebaneseKinect
             double diff13 = Math.Abs((currentTime.Subtract(FemLeftKneeBendCrouch13).TotalMilliseconds));
             double diff14 = Math.Abs((currentTime.Subtract(FemLeftKneeBendCrouch14).TotalMilliseconds));
 
-            if(diff0A < GLOBALS.SCORING_WINDOW)
+            if (diff0A < GLOBALS.SCORING_WINDOW)
             {
                 scoreMoveF(diff0A);
                 FemLeftKneeBendCrouch0A = stepFinished;
@@ -7504,7 +7512,7 @@ namespace LebaneseKinect
 
                 spriteBatch.Draw(n_P1icon, new Rectangle((WINDOW_WIDTH / 2) - 270, WINDOW_HEIGHT - 150, 120, 150), Color.White);
                 spriteBatch.Draw(n_P2icon, new Rectangle((WINDOW_WIDTH / 2) + 150, WINDOW_HEIGHT - 150, 120, 150), Color.White);
-            
+
             }
             else if (bShowDebugText)
             {
@@ -7554,7 +7562,7 @@ namespace LebaneseKinect
             //GraphicsDevice.BlendState = DefaultBlendState;
         }
 
-        
+
 #if USE_KINECT
         void kinect_DepthFrameReady(object sender, DepthImageFrameReadyEventArgs e)
         {
@@ -7815,10 +7823,10 @@ namespace LebaneseKinect
                             }
                         }
 
-                        #if nothing
+#if nothing
                         if (false)
                         {
-                            #region old move recognition
+        #region old move recognition
                             //////////////////////////////////////////////////
                             //MALE MOVE RECOGNITION
                             /////////////////////////////////////////////////
@@ -8189,7 +8197,7 @@ namespace LebaneseKinect
 
                             #endregion
                         }
-                        #endif    
+#endif    
                     }
                             
                 }

@@ -159,7 +159,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DanceFiles\Alaweh.csv">
+    <Content Include="DanceFiles\Lebanon3Actual.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

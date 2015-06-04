@@ -360,7 +360,6 @@ C:\Users\Izzy\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug
 C:\Users\Izzy\Desktop\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\continueBackground.xnb
 C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\DanceFiles\Lebanon.csv
 C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\DanceFiles\Lebanon2.csv
-C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\DanceFiles\Alaweh.csv
 C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\DanceFiles\tempIntro.csv
 C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\scoreBackground.xnb
 C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\n_MoveTarget.xnb
@@ -457,3 +456,4 @@ C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect
 C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon2.wmv
 C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon3Actual.xnb
 C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon3Actual.wmv
+C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\DanceFiles\Lebanon3Actual.csv

@@ -35,9 +35,9 @@ namespace LebaneseKinect
 
         Dance dance1 = new Dance("Lebanon");
         Dance dance2 = new Dance("Lebanon2");
-        Dance dance3 = new Dance("Lebanon3");
+        Dance dance3 = new Dance("Lebanon3Actual");
         Dance selectedDance;
-        int selectedDanceNum = 1;
+        int selectedDanceNum = 2;
 
         // Declaring variables...
         bool bWantsToQuit = false;

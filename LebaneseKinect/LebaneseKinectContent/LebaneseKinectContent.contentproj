@@ -86,13 +86,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Video\tempIntro.wmv">
-      <Name>tempIntro</Name>
-      <Importer>WmvImporter</Importer>
-      <Processor>VideoProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="myFont.spritefont">
       <Name>myFont</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -626,11 +619,13 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Content Include="Video\Alaweh.wmv">
-      <Name>Alaweh</Name>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Video\Lebanon3Actual.wmv">
+      <Name>Lebanon3Actual</Name>
       <Importer>WmvImporter</Importer>
       <Processor>VideoProcessor</Processor>
-    </Content>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 

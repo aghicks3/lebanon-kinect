@@ -105,11 +105,13 @@ Content\resultFont.xnb
 Content\KinectDepthVisualizer.xnb
 Content\Models\dabkeTexture_0.xnb
 Content\Video\Lebanon3Actual.xnb
+Content\Textures\scoreBackground3.xnb
+Content\Textures\scoreBackground2.xnb
 Content\Music\dabke.wma
 Content\Video\Lebanon.wmv
 Content\Video\Lebanon2.wmv
 Content\Video\Lebanon3Actual.wmv
 DanceFiles\Lebanon.csv
 DanceFiles\Lebanon2.csv
-DanceFiles\Alaweh.csv
+DanceFiles\Lebanon3Actual.csv
 DanceFiles\tempIntro.csv

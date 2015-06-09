@@ -109,3 +109,5 @@ Content\KinectDepthVisualizer.xnb
 Content\Models\dabkeTexture_0.xnb
 Content\Video\Lebanon3Actual.xnb
 Content\Video\Lebanon3Actual.wmv
+Content\Textures\scoreBackground3.xnb
+Content\Textures\scoreBackground2.xnb

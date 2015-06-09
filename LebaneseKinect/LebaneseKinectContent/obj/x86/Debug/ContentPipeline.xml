@@ -999,6 +999,24 @@
       <Extra>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon3Actual.wmv</Extra>
       <Time>2015-06-04T11:10:50.9375-04:00</Time>
     </Item>
+    <Item>
+      <Source>Textures\scoreBackground3.png</Source>
+      <Name>Textures\scoreBackground3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\scoreBackground3.xnb</Output>
+      <Time>2015-06-08T13:37:55.3769531-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Textures\scoreBackground2.png</Source>
+      <Name>Textures\scoreBackground2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\scoreBackground2.xnb</Output>
+      <Time>2015-06-08T13:37:55.3642578-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

@@ -154,8 +154,8 @@ namespace LebaneseKinect
         int displayScoreF = 0;
         int tempScore = 0;
         int tempScoreF = 0;
-        static int maleRectDiff = WINDOW_WIDTH / 2 - 100;
-
+        //static int maleRectDiff = WINDOW_WIDTH / 2 - 100;
+        static int maleRectDiff = WINDOW_WIDTH / 2 + 50;
         //First Male move
         TimeSpan RightKneeLift1;
         TimeSpan LeftKneeLift1;
@@ -819,7 +819,7 @@ namespace LebaneseKinect
         TimeSpan p1textFadeOut = new TimeSpan(0, 0, 0);
         TimeSpan p2textFadeOut = new TimeSpan(0, 0, 0);
 
-        Texture2D backgroundDabke, scoreBackground, continueBackground, howtoplay;
+        Texture2D backgroundDabke, scoreBackground, scoreBackground2, scoreBackground3, continueBackground, howtoplay;
         Rectangle backgroundRect = new Rectangle(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
         List<Rectangle> shadowRects = new List<Rectangle>();
 
@@ -916,6 +916,8 @@ namespace LebaneseKinect
             shadowTexture = Content.Load<Texture2D>("Textures\\shadow");
             backgroundDabke = Content.Load<Texture2D>("Textures\\backgroundDabke");
             scoreBackground = Content.Load<Texture2D>("Textures\\scoreBackground");
+            scoreBackground2 = Content.Load<Texture2D>("Textures\\scoreBackground2");
+            scoreBackground3 = Content.Load<Texture2D>("Textures\\scoreBackground3");
             continueBackground = Content.Load<Texture2D>("Textures\\continueBackground");
             StepHomeOFF = Content.Load<Texture2D>("Textures\\dsteps1OFF");
             StepCrossOFF = Content.Load<Texture2D>("Textures\\dsteps2OFF");
@@ -2875,7 +2877,7 @@ namespace LebaneseKinect
                 videoPlayer = new VideoPlayer();
                 videoPlayer.IsLooped = true;
                 videoPlayer.Play(video1);
-                selectedDanceNum = 0;
+                selectedDanceNum = 2;
                 gameState = (int)GameState.ATTRACT;
                 videoTime.Reset();
                 loopTime.Reset();
@@ -5078,10 +5080,11 @@ namespace LebaneseKinect
 
                     selectedDance.Draw(currentTime, spriteBatch); //I can draw moves from a move batch
                     if (GLOBALS.PLAYER_ONE_ACTIVE)
-                        spriteBatch.Draw(n_MoveTarget, new Rectangle(0 + maleRectDiff, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
+                        //spriteBatch.Draw(n_MoveTarget, new Rectangle(0 + maleRectDiff, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
+                        spriteBatch.Draw(n_MoveTarget, new Rectangle(maleRectDiff + 30, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                     if (GLOBALS.PLAYER_TWO_ACTIVE)
                         spriteBatch.Draw(n_MoveTarget, new Rectangle(500 - maleRectDiff, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-
+                        //spriteBatch.Draw(n_MoveTarget, new Rectangle(400 - maleRectDiff, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                     if (false)
                     {
                         #region old dance drawing

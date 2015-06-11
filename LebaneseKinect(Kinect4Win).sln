@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LebaneseKinect", "LebaneseKinect\LebaneseKinect\LebaneseKinect.csproj", "{5FE450AE-891E-4B55-9198-BD67127F72F0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LebaneseKinectContent", "LebaneseKinect\LebaneseKinectContent\LebaneseKinectContent.contentproj", "{29EB1864-2E8F-4E08-811A-72E14ADB23E1}"

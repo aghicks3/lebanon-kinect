@@ -99,7 +99,7 @@ M, RightKneeKick, 0,0,1,19,334
 M, LeftKneeKick, 0,0,1,20,342
 
 
-M, KneeAndClap, 0,0,1,21,887
+M, KneelAndClap, 0,0,1,21,887
 
 
 M, LeftKneeLiftAndCross, 0,0,1,30,510
@@ -130,7 +130,7 @@ F, FrontHop, 0,0,0,6,949
 F, RightKneeBack, 0,0,0,7,430
 F, RightKneeBack, 0,0,0,8,431
 F, LeftKneeLiftAndCross, 0,0,0,9,547
-F, FrontLeftKneeLif, 0,0,0,10,80
+F, FrontLeftKneeLift , 0,0,0,10,80
 F, LeftKneeKick, 0,0,0,10,614
 F, LeftFootLiftCross, 0,0,0,11,30
 F, LeftKneeKick, 0,0,0,11,513

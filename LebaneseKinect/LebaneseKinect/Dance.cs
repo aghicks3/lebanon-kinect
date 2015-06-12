@@ -98,7 +98,7 @@ namespace LebaneseKinect
 
         public void Draw(TimeSpan currentTime, SpriteBatch sb)
         {
-            Console.WriteLine("I am running this!");
+            //Console.WriteLine("I am running this!");
             //int maleRectDiff = GLOBALS.WINDOW_WIDTH / 2 - 100; //(probably don't do this here... need some globals)
             
             /** This line affects the sprite speed **/
@@ -109,94 +109,193 @@ namespace LebaneseKinect
             /** PLAYER ON THE LEFT **/
             if (GLOBALS.PLAYER_ONE_ACTIVE)
             {
-                foreach (DanceMove move in m_scoreBlock)
+                if (moviePath.Equals("Lebanon2"))
                 {
-                    double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
-
-                    if (diff < -2000) //moves MUST BE in chronological order to do this
-                        break;
-
-                    if (Math.Abs(diff) < 2000)
+                    System.Diagnostics.Debug.Write("VIDEO 2 IS NOW PLAYING");
+                    foreach (DanceMove move in f_scoreBlock)
                     {
+                        double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
 
-                        int xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        if (diff < -2000) //moves MUST BE in chronological order to do this
+                            break;
+
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
+
+                            int xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            move.Draw(sb, xlocation, currentTime);
                         }
-                        move.Draw(sb, xlocation, currentTime);
+                    }
+
+                    foreach (DanceMove move in f_danceMoves)
+                    {
+                        double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+
+                        if (diff < -2000) //moves MUST BE in chronological order to do this
+                            break;
+
+                        if (Math.Abs(diff) < 2000)
+                        {
+                            int xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            move.Draw(sb, xlocation, currentTime);
+                        }
+                        //fail
+                        if (diff > 600)
+                        {
+                            move.ScoreMove(currentTime);
+                        }
+                    }
+
+                }
+                else
+                {
+                    foreach (DanceMove move in m_scoreBlock)
+                    {
+                        double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+
+                        if (diff < -2000) //moves MUST BE in chronological order to do this
+                            break;
+
+                        if (Math.Abs(diff) < 2000)
+                        {
+
+                            int xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            move.Draw(sb, xlocation, currentTime);
+                        }
+                    }
+
+                    foreach (DanceMove move in m_danceMoves)
+                    {
+                        double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+
+                        if (diff < -2000) //moves MUST BE in chronological order to do this
+                            break;
+
+                        if (Math.Abs(diff) < 2000)
+                        {
+                            int xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(0 + maleRectDiff);
+                            }
+                            move.Draw(sb, xlocation, currentTime);
+                        }
+                        //fail
+                        if (diff > 600)
+                        {
+                            move.ScoreMove(currentTime);
+                        }
                     }
                 }
-
-                foreach (DanceMove move in m_danceMoves)
-                {
-                    double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
-
-                    if (diff < -2000) //moves MUST BE in chronological order to do this
-                        break;
-
-                    if (Math.Abs(diff) < 2000)
-                    {
-                        int xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
-                        {
-                            xlocation = Convert.ToInt32(0 + maleRectDiff);
-                        }
-                        move.Draw(sb, xlocation, currentTime);
-                    }
-                    //fail
-                    if (diff > 600)
-                    {
-                        move.ScoreMove(currentTime);
-                    }
-                }
+         
             }
 
             /** PLAYER ON THE RIGHT **/
             if (GLOBALS.PLAYER_TWO_ACTIVE)
             {
-                foreach (DanceMove move in f_scoreBlock)
-                {
-                    double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
 
-                    if (diff < -2000) //moves MUST BE in chronological order to do this
-                        break;
-
-                    if (Math.Abs(diff) < 2000)
+                if(moviePath.Equals("Lebanon2")) {
+                    foreach (DanceMove move in m_scoreBlock)
                     {
-                        int xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+
+                        if (diff < -2000) //moves MUST BE in chronological order to do this
+                            break;
+
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            int xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            move.Draw(sb, xlocation, currentTime);
                         }
-                        move.Draw(sb, xlocation, currentTime);
+                    }
+
+                    foreach (DanceMove move in m_danceMoves)
+                    {
+                        /** This line affects the sprite speed **/
+                        maleRectDiff = GLOBALS.WINDOW_WIDTH / 2 - 149;
+
+                        double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+                        if (diff < -2000) //moves MUST BE in chronological order to do this
+                            break;
+
+                        if (Math.Abs(diff) < 2000)
+                        {
+                            int xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            move.Draw(sb, xlocation, currentTime);
+                        }
+                        //fail
+                        if (diff > 600)
+                        {
+                            move.ScoreMove(currentTime);
+                        }
                     }
                 }
-
-                foreach (DanceMove move in f_danceMoves)
+                else 
                 {
-                    /** This line affects the sprite speed **/
-                    maleRectDiff = GLOBALS.WINDOW_WIDTH / 2 - 149;
-
-                    double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
-                    if (diff < -2000) //moves MUST BE in chronological order to do this
-                        break;
-
-                    if (Math.Abs(diff) < 2000)
+                    foreach (DanceMove move in f_scoreBlock)
                     {
-                        int xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
-                        if (diff > 0)
+                        double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+
+                        if (diff < -2000) //moves MUST BE in chronological order to do this
+                            break;
+
+                        if (Math.Abs(diff) < 2000)
                         {
-                            xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            int xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            move.Draw(sb, xlocation, currentTime);
                         }
-                        move.Draw(sb, xlocation, currentTime);
                     }
-                    //fail
-                    if (diff > 600)
+
+                    foreach (DanceMove move in f_danceMoves)
                     {
-                        move.ScoreMove(currentTime);
+                        /** This line affects the sprite speed **/
+                        maleRectDiff = GLOBALS.WINDOW_WIDTH / 2 - 149;
+
+                        double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
+                        if (diff < -2000) //moves MUST BE in chronological order to do this
+                            break;
+
+                        if (Math.Abs(diff) < 2000)
+                        {
+                            int xlocation = Convert.ToInt32(500 - maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
+                            if (diff > 0)
+                            {
+                                xlocation = Convert.ToInt32(500 - maleRectDiff);
+                            }
+                            move.Draw(sb, xlocation, currentTime);
+                        }
+                        //fail
+                        if (diff > 600)
+                        {
+                            move.ScoreMove(currentTime);
+                        }
                     }
                 }
+               
             }
         }
 

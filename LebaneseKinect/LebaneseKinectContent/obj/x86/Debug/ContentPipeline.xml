@@ -8,10 +8,10 @@
       <Processor>SkinnedModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\man.xnb</Output>
-      <Time>2015-06-04T11:07:52.461914-04:00</Time>
+      <Time>2015-06-12T15:56:50.6171875-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\man_0.xml</Key>
-        <Value>2015-06-11T13:30:13.7929687-04:00</Value>
+        <Value>2015-06-12T15:57:45.6992188-04:00</Value>
       </Dependency>
       <Request>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Request>
     </Item>
@@ -22,10 +22,10 @@
       <Processor>SkinnedModelProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\woman.xnb</Output>
-      <Time>2015-06-04T11:07:52.4833984-04:00</Time>
+      <Time>2015-06-12T15:56:50.678711-04:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\Models\woman_0.xml</Key>
-        <Value>2015-06-11T13:30:14.2929687-04:00</Value>
+        <Value>2015-06-12T15:57:46.1992188-04:00</Value>
       </Dependency>
       <Request>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Request>
     </Item>
@@ -36,7 +36,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps1OFF.xnb</Output>
-      <Time>2015-06-04T11:07:53.5253906-04:00</Time>
+      <Time>2015-06-12T15:56:52.2158203-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\dsteps2OFF.png</Source>
@@ -45,7 +45,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps2OFF.xnb</Output>
-      <Time>2015-06-04T11:07:53.5253906-04:00</Time>
+      <Time>2015-06-12T15:56:52.2167969-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\dsteps3OFF.png</Source>
@@ -54,7 +54,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\dsteps3OFF.xnb</Output>
-      <Time>2015-06-04T11:07:53.5263671-04:00</Time>
+      <Time>2015-06-12T15:56:52.2167969-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\joint.png</Source>
@@ -63,7 +63,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\joint.xnb</Output>
-      <Time>2015-06-04T11:07:53.5683593-04:00</Time>
+      <Time>2015-06-12T15:56:52.2578125-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\backgrounddabke.png</Source>
@@ -72,7 +72,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\backgrounddabke.xnb</Output>
-      <Time>2015-06-04T11:07:53.4804687-04:00</Time>
+      <Time>2015-06-12T15:56:52.163086-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\shadow.png</Source>
@@ -81,7 +81,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\shadow.xnb</Output>
-      <Time>2015-06-04T11:07:53.5927734-04:00</Time>
+      <Time>2015-06-12T15:56:52.2763672-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\scoreBackground.png</Source>
@@ -90,7 +90,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\scoreBackground.xnb</Output>
-      <Time>2015-06-04T11:07:53.5917968-04:00</Time>
+      <Time>2015-06-12T15:56:52.2753907-04:00</Time>
     </Item>
     <Item>
       <Source>Sprites\n_MoveTarget.png</Source>
@@ -99,7 +99,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\n_MoveTarget.xnb</Output>
-      <Time>2015-06-04T11:07:53.2509765-04:00</Time>
+      <Time>2015-06-12T15:56:52.0439453-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\instructions.png</Source>
@@ -108,7 +108,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\instructions.xnb</Output>
-      <Time>2015-06-04T11:07:53.5664062-04:00</Time>
+      <Time>2015-06-12T15:56:52.256836-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_KneelAndClap.png</Source>
@@ -117,7 +117,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_KneelAndClap.xnb</Output>
-      <Time>2015-06-04T11:07:52.5537109-04:00</Time>
+      <Time>2015-06-12T15:56:51.0566407-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftHandToFaceSpinForward.png</Source>
@@ -126,7 +126,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftHandToFaceSpinForward.xnb</Output>
-      <Time>2015-06-04T11:07:52.5546875-04:00</Time>
+      <Time>2015-06-12T15:56:51.0576172-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeBendCrouchLeft.png</Source>
@@ -135,7 +135,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeBendCrouchLeft.xnb</Output>
-      <Time>2015-06-04T11:07:52.5546875-04:00</Time>
+      <Time>2015-06-12T15:56:51.0576172-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeBendCrouchRight.png</Source>
@@ -144,7 +144,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeBendCrouchRight.xnb</Output>
-      <Time>2015-06-04T11:07:52.555664-04:00</Time>
+      <Time>2015-06-12T15:56:51.0585938-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeKick.png</Source>
@@ -153,7 +153,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeKick.xnb</Output>
-      <Time>2015-06-04T11:07:52.5595703-04:00</Time>
+      <Time>2015-06-12T15:56:51.1132813-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeLift.png</Source>
@@ -162,7 +162,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.5605468-04:00</Time>
+      <Time>2015-06-12T15:56:51.1142578-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeLiftAndCross.png</Source>
@@ -171,7 +171,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeLiftAndCross.xnb</Output>
-      <Time>2015-06-04T11:07:52.5605468-04:00</Time>
+      <Time>2015-06-12T15:56:51.1142578-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeLiftAndFrontTorso.png</Source>
@@ -180,7 +180,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeLiftAndFrontTorso.xnb</Output>
-      <Time>2015-06-04T11:07:52.5615234-04:00</Time>
+      <Time>2015-06-12T15:56:51.1142578-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeLiftAndFrontTorsoAndLeftHand.png</Source>
@@ -189,7 +189,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeLiftAndFrontTorsoAndLeftHand.xnb</Output>
-      <Time>2015-06-04T11:07:52.5615234-04:00</Time>
+      <Time>2015-06-12T15:56:51.1152344-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeLiftAndLeftHand.png</Source>
@@ -198,7 +198,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeLiftAndLeftHand.xnb</Output>
-      <Time>2015-06-04T11:07:52.5625-04:00</Time>
+      <Time>2015-06-12T15:56:51.1152344-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeLiftAndUnderArm.png</Source>
@@ -207,7 +207,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeLiftAndUnderArm.xnb</Output>
-      <Time>2015-06-04T11:07:52.5625-04:00</Time>
+      <Time>2015-06-12T15:56:51.1152344-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeLiftFaceLeft.png</Source>
@@ -216,7 +216,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeLiftFaceLeft.xnb</Output>
-      <Time>2015-06-04T11:07:52.571289-04:00</Time>
+      <Time>2015-06-12T15:56:51.1738282-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeLiftFaceRight.png</Source>
@@ -225,7 +225,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeLiftFaceRight.xnb</Output>
-      <Time>2015-06-04T11:07:52.571289-04:00</Time>
+      <Time>2015-06-12T15:56:51.1748047-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightFootCross.png</Source>
@@ -234,7 +234,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightFootCross.xnb</Output>
-      <Time>2015-06-04T11:07:52.5732421-04:00</Time>
+      <Time>2015-06-12T15:56:51.1757813-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeKick.png</Source>
@@ -243,7 +243,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeKick.xnb</Output>
-      <Time>2015-06-04T11:07:52.5742187-04:00</Time>
+      <Time>2015-06-12T15:56:51.1757813-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeKickAndUnderArm.png</Source>
@@ -252,7 +252,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeKickAndUnderArm.xnb</Output>
-      <Time>2015-06-04T11:07:52.5742187-04:00</Time>
+      <Time>2015-06-12T15:56:51.1767578-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeKneelAndUnderArm.png</Source>
@@ -261,7 +261,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeKneelAndUnderArm.xnb</Output>
-      <Time>2015-06-04T11:07:52.5742187-04:00</Time>
+      <Time>2015-06-12T15:56:51.1767578-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeKneelAndUnderArmAndLeftHandBehind.png</Source>
@@ -270,7 +270,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeKneelAndUnderArmAndLeftHandBehind.xnb</Output>
-      <Time>2015-06-04T11:07:52.5751953-04:00</Time>
+      <Time>2015-06-12T15:56:51.1767578-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeLift.png</Source>
@@ -279,7 +279,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.5751953-04:00</Time>
+      <Time>2015-06-12T15:56:51.1777344-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeLiftAndCross.png</Source>
@@ -288,7 +288,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeLiftAndCross.xnb</Output>
-      <Time>2015-06-04T11:07:52.5761718-04:00</Time>
+      <Time>2015-06-12T15:56:51.1777344-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeLiftAndLeftHand.png</Source>
@@ -297,7 +297,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeLiftAndLeftHand.xnb</Output>
-      <Time>2015-06-04T11:07:52.5761718-04:00</Time>
+      <Time>2015-06-12T15:56:51.2275391-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_ShrugShoulders.png</Source>
@@ -306,7 +306,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_ShrugShoulders.xnb</Output>
-      <Time>2015-06-04T11:07:52.5791015-04:00</Time>
+      <Time>2015-06-12T15:56:51.2304688-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_WaiterHand.png</Source>
@@ -315,7 +315,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_WaiterHand.xnb</Output>
-      <Time>2015-06-04T11:07:52.5820312-04:00</Time>
+      <Time>2015-06-12T15:56:51.2324219-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\neutral_block.png</Source>
@@ -324,7 +324,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\neutral_block.xnb</Output>
-      <Time>2015-06-04T11:07:52.5820312-04:00</Time>
+      <Time>2015-06-12T15:56:51.2324219-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeLiftFaceRight.png</Source>
@@ -333,7 +333,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeLiftFaceRight.xnb</Output>
-      <Time>2015-06-04T11:07:52.5771484-04:00</Time>
+      <Time>2015-06-12T15:56:51.2285157-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\lefthandraise.png</Source>
@@ -342,7 +342,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\lefthandraise.xnb</Output>
-      <Time>2015-06-04T11:07:53.5683593-04:00</Time>
+      <Time>2015-06-12T15:56:52.2578125-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\righthandraise.png</Source>
@@ -351,7 +351,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\righthandraise.xnb</Output>
-      <Time>2015-06-04T11:07:53.5742187-04:00</Time>
+      <Time>2015-06-12T15:56:52.2587891-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_BackSpinRightKneeLift.png</Source>
@@ -360,7 +360,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_BackSpinRightKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.4833984-04:00</Time>
+      <Time>2015-06-12T15:56:50.6796875-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_CrouchAndHipShake.png</Source>
@@ -369,7 +369,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_CrouchAndHipShake.xnb</Output>
-      <Time>2015-06-04T11:07:52.4853515-04:00</Time>
+      <Time>2015-06-12T15:56:50.765625-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_CrouchAndHipSwivel.png</Source>
@@ -378,7 +378,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_CrouchAndHipSwivel.xnb</Output>
-      <Time>2015-06-04T11:07:52.4863281-04:00</Time>
+      <Time>2015-06-12T15:56:50.765625-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_ElbowSway.png</Source>
@@ -387,7 +387,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_ElbowSway.xnb</Output>
-      <Time>2015-06-04T11:07:52.4863281-04:00</Time>
+      <Time>2015-06-12T15:56:50.7666016-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_HandSwingBack.png</Source>
@@ -396,7 +396,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_HandSwingBack.xnb</Output>
-      <Time>2015-06-04T11:07:52.4892578-04:00</Time>
+      <Time>2015-06-12T15:56:50.7695313-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_HandSwingFront.png</Source>
@@ -405,7 +405,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_HandSwingFront.xnb</Output>
-      <Time>2015-06-04T11:07:52.4902343-04:00</Time>
+      <Time>2015-06-12T15:56:50.7695313-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_HandSwingLeft.png</Source>
@@ -414,7 +414,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_HandSwingLeft.xnb</Output>
-      <Time>2015-06-04T11:07:52.4951171-04:00</Time>
+      <Time>2015-06-12T15:56:50.8291016-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_HandSwingRight.png</Source>
@@ -423,7 +423,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_HandSwingRight.xnb</Output>
-      <Time>2015-06-04T11:07:52.4951171-04:00</Time>
+      <Time>2015-06-12T15:56:50.8300782-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_HipShake.png</Source>
@@ -432,7 +432,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_HipShake.xnb</Output>
-      <Time>2015-06-04T11:07:52.4960937-04:00</Time>
+      <Time>2015-06-12T15:56:50.8300782-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_HipShakeBack.png</Source>
@@ -441,7 +441,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_HipShakeBack.xnb</Output>
-      <Time>2015-06-04T11:07:52.4960937-04:00</Time>
+      <Time>2015-06-12T15:56:50.8300782-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_HipShakeFront.png</Source>
@@ -450,7 +450,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_HipShakeFront.xnb</Output>
-      <Time>2015-06-04T11:07:52.4960937-04:00</Time>
+      <Time>2015-06-12T15:56:50.8310547-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Home.png</Source>
@@ -459,7 +459,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Home.xnb</Output>
-      <Time>2015-06-04T11:07:52.4970703-04:00</Time>
+      <Time>2015-06-12T15:56:50.8310547-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftBendHipShake.png</Source>
@@ -468,7 +468,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftBendHipShake.xnb</Output>
-      <Time>2015-06-04T11:07:52.4970703-04:00</Time>
+      <Time>2015-06-12T15:56:50.8320313-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftKneeBendCrouchLeft.png</Source>
@@ -477,7 +477,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKneeBendCrouchLeft.xnb</Output>
-      <Time>2015-06-04T11:07:52.4980468-04:00</Time>
+      <Time>2015-06-12T15:56:50.8320313-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftKneeBendCrouchRight.png</Source>
@@ -486,7 +486,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKneeBendCrouchRight.xnb</Output>
-      <Time>2015-06-04T11:07:52.4990234-04:00</Time>
+      <Time>2015-06-12T15:56:50.8330078-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftKneeKick.png</Source>
@@ -495,7 +495,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKneeKick.xnb</Output>
-      <Time>2015-06-04T11:07:52.4990234-04:00</Time>
+      <Time>2015-06-12T15:56:50.8330078-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftKneeLift.png</Source>
@@ -504,7 +504,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.4990234-04:00</Time>
+      <Time>2015-06-12T15:56:50.8330078-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftKneeLiftFaceLeft.png</Source>
@@ -513,7 +513,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKneeLiftFaceLeft.xnb</Output>
-      <Time>2015-06-04T11:07:52.5-04:00</Time>
+      <Time>2015-06-12T15:56:50.8339844-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftKneeLiftAndFrontTorso.png</Source>
@@ -522,7 +522,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKneeLiftAndFrontTorso.xnb</Output>
-      <Time>2015-06-04T11:07:52.5-04:00</Time>
+      <Time>2015-06-12T15:56:50.8339844-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_RightFootCross.png</Source>
@@ -531,7 +531,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightFootCross.xnb</Output>
-      <Time>2015-06-04T11:07:52.5302734-04:00</Time>
+      <Time>2015-06-12T15:56:50.9384766-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_RightHandRaise.png</Source>
@@ -540,7 +540,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightHandRaise.xnb</Output>
-      <Time>2015-06-04T11:07:52.53125-04:00</Time>
+      <Time>2015-06-12T15:56:50.9384766-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_RightKneeKick.png</Source>
@@ -549,7 +549,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightKneeKick.xnb</Output>
-      <Time>2015-06-04T11:07:52.53125-04:00</Time>
+      <Time>2015-06-12T15:56:50.9394532-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_RightKneeLift.png</Source>
@@ -558,7 +558,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.53125-04:00</Time>
+      <Time>2015-06-12T15:56:50.9394532-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_RightKneeLiftFaceLeft.png</Source>
@@ -567,7 +567,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightKneeLiftFaceLeft.xnb</Output>
-      <Time>2015-06-04T11:07:52.5322265-04:00</Time>
+      <Time>2015-06-12T15:56:50.9394532-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_ScrollingHandsLeft.png</Source>
@@ -576,7 +576,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_ScrollingHandsLeft.xnb</Output>
-      <Time>2015-06-04T11:07:52.5351562-04:00</Time>
+      <Time>2015-06-12T15:56:50.9423828-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_ScrollingHandsRight.png</Source>
@@ -585,7 +585,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_ScrollingHandsRight.xnb</Output>
-      <Time>2015-06-04T11:07:52.5517578-04:00</Time>
+      <Time>2015-06-12T15:56:51.0556641-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_ThrillerHandsLeft.png</Source>
@@ -594,7 +594,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_ThrillerHandsLeft.xnb</Output>
-      <Time>2015-06-04T11:07:52.5527343-04:00</Time>
+      <Time>2015-06-12T15:56:51.0556641-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftWristArcRaise.png</Source>
@@ -603,7 +603,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftWristArcRaise.xnb</Output>
-      <Time>2015-06-04T11:07:52.5214843-04:00</Time>
+      <Time>2015-06-12T15:56:50.8837891-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_RightWristArcRaise.png</Source>
@@ -612,7 +612,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightWristArcRaise.xnb</Output>
-      <Time>2015-06-04T11:07:52.5322265-04:00</Time>
+      <Time>2015-06-12T15:56:50.9404297-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Back_LeftKneeLift.png</Source>
@@ -621,7 +621,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Back_LeftKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.484375-04:00</Time>
+      <Time>2015-06-12T15:56:50.6806641-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Back_RightKneeLift.png</Source>
@@ -630,7 +630,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Back_RightKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.4853515-04:00</Time>
+      <Time>2015-06-12T15:56:50.765625-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Front_KneelAndClap.png</Source>
@@ -639,7 +639,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Front_KneelAndClap.xnb</Output>
-      <Time>2015-06-04T11:07:52.4863281-04:00</Time>
+      <Time>2015-06-12T15:56:50.7666016-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Front_LeftKneeAndFrontTorso.png</Source>
@@ -648,7 +648,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Front_LeftKneeAndFrontTorso.xnb</Output>
-      <Time>2015-06-04T11:07:52.4873046-04:00</Time>
+      <Time>2015-06-12T15:56:50.7675782-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Front_LeftKneeLift.png</Source>
@@ -657,7 +657,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Front_LeftKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.4873046-04:00</Time>
+      <Time>2015-06-12T15:56:50.7675782-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Front_RightKneeKick.png</Source>
@@ -666,7 +666,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Front_RightKneeKick.xnb</Output>
-      <Time>2015-06-04T11:07:52.4882812-04:00</Time>
+      <Time>2015-06-12T15:56:50.7675782-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Front_RightKneeLift.png</Source>
@@ -675,7 +675,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Front_RightKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.4882812-04:00</Time>
+      <Time>2015-06-12T15:56:50.7685547-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Front_SideLeftAnkle.png</Source>
@@ -684,7 +684,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Front_SideLeftAnkle.xnb</Output>
-      <Time>2015-06-04T11:07:52.4892578-04:00</Time>
+      <Time>2015-06-12T15:56:50.7685547-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Front_SideRightAnkle.png</Source>
@@ -693,7 +693,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Front_SideRightAnkle.xnb</Output>
-      <Time>2015-06-04T11:07:52.4892578-04:00</Time>
+      <Time>2015-06-12T15:56:50.7695313-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Left_LeftKneeLift.png</Source>
@@ -702,7 +702,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Left_LeftKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.5224609-04:00</Time>
+      <Time>2015-06-12T15:56:50.8837891-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Left_RightKneeLift.png</Source>
@@ -711,7 +711,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Left_RightKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.5302734-04:00</Time>
+      <Time>2015-06-12T15:56:50.9384766-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Right_LeftKneeBack.png</Source>
@@ -720,7 +720,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Right_LeftKneeBack.xnb</Output>
-      <Time>2015-06-04T11:07:52.5332031-04:00</Time>
+      <Time>2015-06-12T15:56:50.9404297-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Right_LeftKneeKick.png</Source>
@@ -729,7 +729,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Right_LeftKneeKick.xnb</Output>
-      <Time>2015-06-04T11:07:52.5332031-04:00</Time>
+      <Time>2015-06-12T15:56:50.9414063-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Right_LeftKneeLift.png</Source>
@@ -738,7 +738,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Right_LeftKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.5332031-04:00</Time>
+      <Time>2015-06-12T15:56:50.9414063-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Right_RightKneeKick.png</Source>
@@ -747,7 +747,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Right_RightKneeKick.xnb</Output>
-      <Time>2015-06-04T11:07:52.5341796-04:00</Time>
+      <Time>2015-06-12T15:56:50.9414063-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Right_RightKneeLift.png</Source>
@@ -756,7 +756,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Right_RightKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.5341796-04:00</Time>
+      <Time>2015-06-12T15:56:50.9423828-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_BackSide_RightKneeLift.png</Source>
@@ -765,7 +765,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_BackSide_RightKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.5537109-04:00</Time>
+      <Time>2015-06-12T15:56:51.0566407-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftSide_FemLeftKneeLift.png</Source>
@@ -774,7 +774,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftSide_FemLeftKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.5722656-04:00</Time>
+      <Time>2015-06-12T15:56:51.1748047-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftSide_FemRightKneeLift.png</Source>
@@ -783,7 +783,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftSide_FemRightKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.5722656-04:00</Time>
+      <Time>2015-06-12T15:56:51.1757813-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightSide_LeftKneeKick.png</Source>
@@ -792,7 +792,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightSide_LeftKneeKick.xnb</Output>
-      <Time>2015-06-04T11:07:52.5771484-04:00</Time>
+      <Time>2015-06-12T15:56:51.2285157-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightSide_LeftKneeLift.png</Source>
@@ -801,7 +801,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightSide_LeftKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.5771484-04:00</Time>
+      <Time>2015-06-12T15:56:51.2285157-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightSide_RightKneeBack.png</Source>
@@ -810,7 +810,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightSide_RightKneeBack.xnb</Output>
-      <Time>2015-06-04T11:07:52.578125-04:00</Time>
+      <Time>2015-06-12T15:56:51.2294922-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightSide_RightKneeKick.png</Source>
@@ -819,7 +819,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightSide_RightKneeKick.xnb</Output>
-      <Time>2015-06-04T11:07:52.578125-04:00</Time>
+      <Time>2015-06-12T15:56:51.2294922-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightSide_RightKneeLift.png</Source>
@@ -828,7 +828,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightSide_RightKneeLift.xnb</Output>
-      <Time>2015-06-04T11:07:52.5791015-04:00</Time>
+      <Time>2015-06-12T15:56:51.2294922-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_ScrollingHands.png</Source>
@@ -837,7 +837,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_ScrollingHands.xnb</Output>
-      <Time>2015-06-04T11:07:52.5791015-04:00</Time>
+      <Time>2015-06-12T15:56:51.2304688-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_SideLeftAnkle.png</Source>
@@ -846,7 +846,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_SideLeftAnkle.xnb</Output>
-      <Time>2015-06-04T11:07:52.5810546-04:00</Time>
+      <Time>2015-06-12T15:56:51.2314453-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_SideRightAnkle.png</Source>
@@ -855,7 +855,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_SideRightAnkle.xnb</Output>
-      <Time>2015-06-04T11:07:52.5810546-04:00</Time>
+      <Time>2015-06-12T15:56:51.2314453-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_ThrillerHandsRight.png</Source>
@@ -864,7 +864,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_ThrillerHandsRight.xnb</Output>
-      <Time>2015-06-04T11:07:52.5820312-04:00</Time>
+      <Time>2015-06-12T15:56:51.2314453-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_KneelAndClap.png</Source>
@@ -873,7 +873,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_KneelAndClap.xnb</Output>
-      <Time>2015-06-04T11:07:52.4970703-04:00</Time>
+      <Time>2015-06-12T15:56:50.8310547-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\continueBackground.png</Source>
@@ -882,7 +882,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\continueBackground.xnb</Output>
-      <Time>2015-06-04T11:07:53.5214843-04:00</Time>
+      <Time>2015-06-12T15:56:52.203125-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\scoreBackground3.png</Source>
@@ -891,7 +891,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\scoreBackground3.xnb</Output>
-      <Time>2015-06-08T13:37:55.3769531-04:00</Time>
+      <Time>2015-06-12T15:57:07.0097657-04:00</Time>
     </Item>
     <Item>
       <Source>Textures\scoreBackground2.png</Source>
@@ -900,7 +900,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Textures\scoreBackground2.xnb</Output>
-      <Time>2015-06-08T13:37:55.3642578-04:00</Time>
+      <Time>2015-06-12T15:57:06.9853516-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_BackSideLeftKneeLift.png</Source>
@@ -909,7 +909,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_BackSideLeftKneeLift.xnb</Output>
-      <Time>2015-06-09T13:35:40.0820312-04:00</Time>
+      <Time>2015-06-12T15:57:06.7167969-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_CrazyHands.png</Source>
@@ -918,7 +918,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_CrazyHands.xnb</Output>
-      <Time>2015-06-09T13:35:40.086914-04:00</Time>
+      <Time>2015-06-12T15:57:06.7177735-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_CrazyHandsCrouch.png</Source>
@@ -927,7 +927,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_CrazyHandsCrouch.xnb</Output>
-      <Time>2015-06-09T13:35:40.0908203-04:00</Time>
+      <Time>2015-06-12T15:57:06.7177735-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_crossover.png</Source>
@@ -936,7 +936,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_crossover.xnb</Output>
-      <Time>2015-06-09T13:35:40.1210937-04:00</Time>
+      <Time>2015-06-12T15:57:06.7607422-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_CrouchAndShake.png</Source>
@@ -945,7 +945,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_CrouchAndShake.xnb</Output>
-      <Time>2015-06-09T13:35:40.0917968-04:00</Time>
+      <Time>2015-06-12T15:57:06.7177735-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Crouch_HipShake.png</Source>
@@ -954,7 +954,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Crouch_HipShake.xnb</Output>
-      <Time>2015-06-09T13:35:40.0917968-04:00</Time>
+      <Time>2015-06-12T15:57:06.71875-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_Crouch_HipSwivel.png</Source>
@@ -963,7 +963,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_Crouch_HipSwivel.xnb</Output>
-      <Time>2015-06-09T13:35:40.0966796-04:00</Time>
+      <Time>2015-06-12T15:57:06.71875-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_FrontHop.png</Source>
@@ -972,7 +972,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_FrontHop.xnb</Output>
-      <Time>2015-06-09T13:35:40.1035156-04:00</Time>
+      <Time>2015-06-12T15:57:06.7197266-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftFootLiftCross.png</Source>
@@ -981,7 +981,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftFootLiftCross.xnb</Output>
-      <Time>2015-06-04T11:07:52.4980468-04:00</Time>
+      <Time>2015-06-12T15:56:50.8320313-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftKneeBendCrouch_Left.png</Source>
@@ -990,7 +990,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKneeBendCrouch_Left.xnb</Output>
-      <Time>2015-06-09T13:35:40.1044921-04:00</Time>
+      <Time>2015-06-12T15:57:06.7529297-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftKneeBendCrouch_Right.png</Source>
@@ -999,7 +999,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKneeBendCrouch_Right.xnb</Output>
-      <Time>2015-06-09T13:35:40.1044921-04:00</Time>
+      <Time>2015-06-12T15:57:06.7539063-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftKneeFrontAndFrontTorso.png</Source>
@@ -1008,7 +1008,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKneeFrontAndFrontTorso.xnb</Output>
-      <Time>2015-06-09T13:35:40.1054687-04:00</Time>
+      <Time>2015-06-12T15:57:06.7539063-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftKneeLiftAndCross.png</Source>
@@ -1017,7 +1017,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKneeLiftAndCross.xnb</Output>
-      <Time>2015-06-04T11:07:52.5-04:00</Time>
+      <Time>2015-06-12T15:56:50.8339844-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftKneeLift_FaceLeft.png</Source>
@@ -1026,7 +1026,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKneeLift_FaceLeft.xnb</Output>
-      <Time>2015-06-09T13:35:40.1054687-04:00</Time>
+      <Time>2015-06-12T15:57:06.7539063-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftKneeLift_FrontTorso.png</Source>
@@ -1035,7 +1035,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKneeLift_FrontTorso.xnb</Output>
-      <Time>2015-06-09T13:35:40.1054687-04:00</Time>
+      <Time>2015-06-12T15:57:06.7548828-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_RightHandHigh.png</Source>
@@ -1044,7 +1044,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightHandHigh.xnb</Output>
-      <Time>2015-06-09T13:35:40.1064453-04:00</Time>
+      <Time>2015-06-12T15:57:06.756836-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_RightKneeBack.png</Source>
@@ -1053,7 +1053,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightKneeBack.xnb</Output>
-      <Time>2015-06-09T13:35:40.109375-04:00</Time>
+      <Time>2015-06-12T15:57:06.756836-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_RightKneeCross.png</Source>
@@ -1062,7 +1062,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightKneeCross.xnb</Output>
-      <Time>2015-06-09T13:35:40.1132812-04:00</Time>
+      <Time>2015-06-12T15:57:06.756836-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_RightKneeFrontAndFrontTorso.png</Source>
@@ -1071,7 +1071,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightKneeFrontAndFrontTorso.xnb</Output>
-      <Time>2015-06-09T13:35:40.1132812-04:00</Time>
+      <Time>2015-06-12T15:57:06.7578125-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_RightKneeLiftAndFrontTorso.png</Source>
@@ -1080,7 +1080,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightKneeLiftAndFrontTorso.xnb</Output>
-      <Time>2015-06-09T13:35:40.1191406-04:00</Time>
+      <Time>2015-06-12T15:57:06.7578125-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_RightKneeLift_FaceLeft.png</Source>
@@ -1089,7 +1089,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightKneeLift_FaceLeft.xnb</Output>
-      <Time>2015-06-09T13:35:40.1191406-04:00</Time>
+      <Time>2015-06-12T15:57:06.7578125-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_ScrollingHandLeftWithHip.png</Source>
@@ -1098,7 +1098,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_ScrollingHandLeftWithHip.xnb</Output>
-      <Time>2015-06-09T13:35:40.1201171-04:00</Time>
+      <Time>2015-06-12T15:57:06.7587891-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_ScrollingHands_Left.png</Source>
@@ -1107,7 +1107,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_ScrollingHands_Left.xnb</Output>
-      <Time>2015-06-09T13:35:40.1201171-04:00</Time>
+      <Time>2015-06-12T15:57:06.7587891-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_ScrollingHands_Right.png</Source>
@@ -1116,7 +1116,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_ScrollingHands_Right.xnb</Output>
-      <Time>2015-06-09T13:35:40.1201171-04:00</Time>
+      <Time>2015-06-12T15:57:06.7597657-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_WristArcRaise_Left.png</Source>
@@ -1125,7 +1125,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_WristArcRaise_Left.xnb</Output>
-      <Time>2015-06-09T13:35:40.1210937-04:00</Time>
+      <Time>2015-06-12T15:57:06.7597657-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_WristArcRaise_Right.png</Source>
@@ -1134,7 +1134,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_WristArcRaise_Right.xnb</Output>
-      <Time>2015-06-09T13:35:40.1210937-04:00</Time>
+      <Time>2015-06-12T15:57:06.7607422-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_crossover.png</Source>
@@ -1143,7 +1143,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_crossover.xnb</Output>
-      <Time>2015-06-09T13:35:40.1689453-04:00</Time>
+      <Time>2015-06-12T15:57:06.8378907-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_FrontHop.png</Source>
@@ -1152,7 +1152,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_FrontHop.xnb</Output>
-      <Time>2015-06-09T13:35:40.1220703-04:00</Time>
+      <Time>2015-06-12T15:57:06.828125-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftFootLiftCross.png</Source>
@@ -1161,7 +1161,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftFootLiftCross.xnb</Output>
-      <Time>2015-06-04T11:08:09.3574218-04:00</Time>
+      <Time>2015-06-12T15:57:06.8291016-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftHandToFace_Spin.png</Source>
@@ -1170,7 +1170,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftHandToFace_Spin.xnb</Output>
-      <Time>2015-06-09T13:35:40.1318359-04:00</Time>
+      <Time>2015-06-12T15:57:06.8291016-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeBendCrouch_Left.png</Source>
@@ -1179,7 +1179,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeBendCrouch_Left.xnb</Output>
-      <Time>2015-06-09T13:35:40.1318359-04:00</Time>
+      <Time>2015-06-12T15:57:06.8300782-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeBendCrouch_Right.png</Source>
@@ -1188,7 +1188,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeBendCrouch_Right.xnb</Output>
-      <Time>2015-06-09T13:35:40.1328125-04:00</Time>
+      <Time>2015-06-12T15:57:06.8300782-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeCross.png</Source>
@@ -1197,7 +1197,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeCross.xnb</Output>
-      <Time>2015-06-09T13:35:40.133789-04:00</Time>
+      <Time>2015-06-12T15:57:06.8300782-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeFrontAndFrontTorso.png</Source>
@@ -1206,7 +1206,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeFrontAndFrontTorso.xnb</Output>
-      <Time>2015-06-09T13:35:40.133789-04:00</Time>
+      <Time>2015-06-12T15:57:06.8310547-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeLift_FaceBack.png</Source>
@@ -1215,7 +1215,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeLift_FaceBack.xnb</Output>
-      <Time>2015-06-09T13:35:40.140625-04:00</Time>
+      <Time>2015-06-12T15:57:06.8310547-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeLift_FaceLeft.png</Source>
@@ -1224,7 +1224,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeLift_FaceLeft.xnb</Output>
-      <Time>2015-06-09T13:35:40.1416015-04:00</Time>
+      <Time>2015-06-12T15:57:06.8310547-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeLift_FaceRight.png</Source>
@@ -1233,7 +1233,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeLift_FaceRight.xnb</Output>
-      <Time>2015-06-09T13:35:40.1445312-04:00</Time>
+      <Time>2015-06-12T15:57:06.8320313-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeLift_FrontTorso_LeftHand.png</Source>
@@ -1242,7 +1242,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeLift_FrontTorso_LeftHand.xnb</Output>
-      <Time>2015-06-09T13:35:40.1445312-04:00</Time>
+      <Time>2015-06-12T15:57:06.8320313-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeLift_LeftHand.png</Source>
@@ -1251,7 +1251,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeLift_LeftHand.xnb</Output>
-      <Time>2015-06-09T13:35:40.1445312-04:00</Time>
+      <Time>2015-06-12T15:57:06.8320313-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_LeftKneeLift_UnderArm.png</Source>
@@ -1260,7 +1260,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKneeLift_UnderArm.xnb</Output>
-      <Time>2015-06-09T13:35:40.1455078-04:00</Time>
+      <Time>2015-06-12T15:57:06.8330078-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeBack.png</Source>
@@ -1269,7 +1269,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeBack.xnb</Output>
-      <Time>2015-06-09T13:35:40.1503906-04:00</Time>
+      <Time>2015-06-12T15:57:06.8339844-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeCross.png</Source>
@@ -1278,7 +1278,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeCross.xnb</Output>
-      <Time>2015-06-09T13:35:40.15625-04:00</Time>
+      <Time>2015-06-12T15:57:06.834961-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeFrontAndFrontTorso.png</Source>
@@ -1287,7 +1287,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeFrontAndFrontTorso.xnb</Output>
-      <Time>2015-06-09T13:35:40.15625-04:00</Time>
+      <Time>2015-06-12T15:57:06.834961-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeKick_UnderArm.png</Source>
@@ -1296,7 +1296,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeKick_UnderArm.xnb</Output>
-      <Time>2015-06-09T13:35:40.1572265-04:00</Time>
+      <Time>2015-06-12T15:57:06.834961-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeKneel_UnderArm.png</Source>
@@ -1305,7 +1305,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeKneel_UnderArm.xnb</Output>
-      <Time>2015-06-09T13:35:40.1572265-04:00</Time>
+      <Time>2015-06-12T15:57:06.8359375-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeKneel_UnderArm_HandBehind.png</Source>
@@ -1314,7 +1314,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeKneel_UnderArm_HandBehind.xnb</Output>
-      <Time>2015-06-09T13:35:40.1572265-04:00</Time>
+      <Time>2015-06-12T15:57:06.8359375-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeLiftAndFrontTorso.png</Source>
@@ -1323,7 +1323,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeLiftAndFrontTorso.xnb</Output>
-      <Time>2015-06-09T13:35:40.1679687-04:00</Time>
+      <Time>2015-06-12T15:57:06.8359375-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeLift_FaceBack.png</Source>
@@ -1332,7 +1332,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeLift_FaceBack.xnb</Output>
-      <Time>2015-06-09T13:35:40.1679687-04:00</Time>
+      <Time>2015-06-12T15:57:06.8369141-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeLift_FaceRight.png</Source>
@@ -1341,7 +1341,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeLift_FaceRight.xnb</Output>
-      <Time>2015-06-09T13:35:40.1689453-04:00</Time>
+      <Time>2015-06-12T15:57:06.8378907-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeLift_LeftHand.png</Source>
@@ -1350,7 +1350,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeLift_LeftHand.xnb</Output>
-      <Time>2015-06-09T13:35:40.1689453-04:00</Time>
+      <Time>2015-06-12T15:57:06.8378907-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_shrug.png</Source>
@@ -1359,7 +1359,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_shrug.xnb</Output>
-      <Time>2015-06-09T13:35:40.1699218-04:00</Time>
+      <Time>2015-06-12T15:57:06.8388672-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftKneeLift_FaceRight.png</Source>
@@ -1368,7 +1368,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKneeLift_FaceRight.xnb</Output>
-      <Time>2015-06-12T14:24:24.4101563-04:00</Time>
+      <Time>2015-06-12T15:57:06.7548828-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_BackSideLeftKneeLift.png</Source>
@@ -1377,7 +1377,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_BackSideLeftKneeLift.xnb</Output>
-      <Time>2015-06-09T14:28:30.6767578-04:00</Time>
+      <Time>2015-06-12T15:57:06.7617188-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightAnkleFaceRight.png</Source>
@@ -1386,7 +1386,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightAnkleFaceRight.xnb</Output>
-      <Time>2015-06-10T16:55:44.227539-04:00</Time>
+      <Time>2015-06-12T15:57:06.8330078-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightAnkleFaceLeft.png</Source>
@@ -1395,7 +1395,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightAnkleFaceLeft.xnb</Output>
-      <Time>2015-06-10T16:55:50.1533203-04:00</Time>
+      <Time>2015-06-12T15:57:06.8330078-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_RightAnkleFaceLeft.png</Source>
@@ -1404,7 +1404,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightAnkleFaceLeft.xnb</Output>
-      <Time>2015-06-10T16:56:34.1953125-04:00</Time>
+      <Time>2015-06-12T15:57:06.7548828-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_RightAnkleFaceRight.png</Source>
@@ -1413,7 +1413,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightAnkleFaceRight.xnb</Output>
-      <Time>2015-06-10T16:56:34.1943359-04:00</Time>
+      <Time>2015-06-12T15:57:06.7558594-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftAnkleFaceRight.png</Source>
@@ -1422,7 +1422,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftAnkleFaceRight.xnb</Output>
-      <Time>2015-06-10T16:58:44.9443359-04:00</Time>
+      <Time>2015-06-12T15:57:06.7207032-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\female_LeftAnkleFaceLeft.png</Source>
@@ -1431,7 +1431,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftAnkleFaceLeft.xnb</Output>
-      <Time>2015-06-10T16:58:58.4521484-04:00</Time>
+      <Time>2015-06-12T15:57:06.7207032-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_RightKneeLift_FaceLeft.png</Source>
@@ -1440,7 +1440,133 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKneeLift_FaceLeft.xnb</Output>
-      <Time>2015-06-11T11:40:09.1298828-04:00</Time>
+      <Time>2015-06-12T15:57:06.8369141-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\male_LeftKickFaceLeft.png</Source>
+      <Name>MoveIcons\male_LeftKickFaceLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKickFaceLeft.xnb</Output>
+      <Time>2015-06-12T15:57:06.8291016-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\male_RightKickFaceLeft.png</Source>
+      <Name>MoveIcons\male_RightKickFaceLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKickFaceLeft.xnb</Output>
+      <Time>2015-06-12T15:57:06.8339844-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\female_LeftKickFaceRight.png</Source>
+      <Name>MoveIcons\female_LeftKickFaceRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKickFaceRight.xnb</Output>
+      <Time>2015-06-12T15:57:06.7529297-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\female_RightKickFaceRight.png</Source>
+      <Name>MoveIcons\female_RightKickFaceRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightKickFaceRight.xnb</Output>
+      <Time>2015-06-12T15:57:06.756836-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\male_KneelandClap2.png</Source>
+      <Name>MoveIcons\male_KneelandClap2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_KneelandClap2.xnb</Output>
+      <Time>2015-06-12T15:57:06.828125-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\male_FaceLeft.png</Source>
+      <Name>MoveIcons\male_FaceLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_FaceLeft.xnb</Output>
+      <Time>2015-06-12T15:57:06.7617188-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\male_FaceRight.png</Source>
+      <Name>MoveIcons\male_FaceRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_FaceRight.xnb</Output>
+      <Time>2015-06-12T15:57:06.7617188-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\female_FaceRight.png</Source>
+      <Name>MoveIcons\female_FaceRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_FaceRight.xnb</Output>
+      <Time>2015-06-12T15:57:06.7197266-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\female_ThrillerHandsRight.png</Source>
+      <Name>MoveIcons\female_ThrillerHandsRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_ThrillerHandsRight.xnb</Output>
+      <Time>2015-06-12T15:57:06.7597657-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\female_FaceLeft.png</Source>
+      <Name>MoveIcons\female_FaceLeft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_FaceLeft.xnb</Output>
+      <Time>2015-06-12T15:57:06.71875-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\n_MoveTargetNew.png</Source>
+      <Name>Sprites\n_MoveTargetNew</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\n_MoveTargetNew.xnb</Output>
+      <Time>2015-06-12T15:57:06.9462891-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\male_RightFootLiftCross.png</Source>
+      <Name>MoveIcons\male_RightFootLiftCross</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightFootLiftCross.xnb</Output>
+      <Time>2015-06-12T15:57:06.8339844-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\female_RightFootLiftCross.png</Source>
+      <Name>MoveIcons\female_RightFootLiftCross</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightFootLiftCross.xnb</Output>
+      <Time>2015-06-12T15:57:06.7558594-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\female_RightKneeLift_FaceRight.png</Source>
+      <Name>MoveIcons\female_RightKneeLift_FaceRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightKneeLift_FaceRight.xnb</Output>
+      <Time>2015-06-12T15:57:06.7587891-04:00</Time>
     </Item>
     <Item>
       <Source>Music\dabke.mp3</Source>
@@ -1450,7 +1576,7 @@
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.xnb</Output>
       <Extra>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Music\dabke.wma</Extra>
-      <Time>2015-06-04T11:07:52.6347656-04:00</Time>
+      <Time>2015-06-12T15:56:51.2851563-04:00</Time>
     </Item>
     <Item>
       <Source>myFont.spritefont</Source>
@@ -1459,7 +1585,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\myFont.xnb</Output>
-      <Time>2015-06-04T11:07:57.6865234-04:00</Time>
+      <Time>2015-06-12T15:56:56.4667969-04:00</Time>
     </Item>
     <Item>
       <Source>resultFont.spritefont</Source>
@@ -1468,7 +1594,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\resultFont.xnb</Output>
-      <Time>2015-06-04T11:07:57.7109375-04:00</Time>
+      <Time>2015-06-12T15:56:56.6220703-04:00</Time>
     </Item>
     <Item>
       <Source>KinectDepthVisualizer.fx</Source>
@@ -1477,7 +1603,7 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\KinectDepthVisualizer.xnb</Output>
-      <Time>2015-06-04T11:07:52.4384765-04:00</Time>
+      <Time>2015-06-12T15:56:50.5585938-04:00</Time>
     </Item>
     <Item>
       <Source>Video\Lebanon.wmv</Source>
@@ -1487,7 +1613,7 @@
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.xnb</Output>
       <Extra>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon.wmv</Extra>
-      <Time>2015-06-04T11:07:54.3037109-04:00</Time>
+      <Time>2015-06-12T15:56:52.9833985-04:00</Time>
     </Item>
     <Item>
       <Source>Video\Lebanon2.wmv</Source>
@@ -1497,7 +1623,7 @@
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon2.xnb</Output>
       <Extra>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon2.wmv</Extra>
-      <Time>2015-06-04T11:07:55.3496093-04:00</Time>
+      <Time>2015-06-12T15:56:54.0927735-04:00</Time>
     </Item>
     <Item>
       <Source>Video\Lebanon3Actual.wmv</Source>
@@ -1507,14 +1633,14 @@
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon3Actual.xnb</Output>
       <Extra>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Video\Lebanon3Actual.wmv</Extra>
-      <Time>2015-06-04T11:10:50.9375-04:00</Time>
+      <Time>2015-06-12T15:57:08.5605469-04:00</Time>
     </Item>
     <Item>
       <Source>Models\man.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\man_0.xml</Output>
-      <Time>2015-06-04T11:07:52.461914-04:00</Time>
+      <Time>2015-06-12T15:56:50.6171875-04:00</Time>
     </Item>
     <Item>
       <Source>Models\dabkeTexture.png</Source>
@@ -1530,140 +1656,14 @@
       </Parameters>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Models\dabkeTexture_0.xnb</Output>
-      <Time>2015-06-04T11:07:52.4541015-04:00</Time>
+      <Time>2015-06-12T15:56:50.609375-04:00</Time>
     </Item>
     <Item>
       <Source>Models\woman.X</Source>
       <Importer>XImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\Models\woman_0.xml</Output>
-      <Time>2015-06-04T11:07:52.4833984-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MoveIcons\male_LeftKickFaceLeft.png</Source>
-      <Name>MoveIcons\male_LeftKickFaceLeft</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_LeftKickFaceLeft.xnb</Output>
-      <Time>2015-06-11T13:25:42.0957031-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MoveIcons\male_RightKickFaceLeft.png</Source>
-      <Name>MoveIcons\male_RightKickFaceLeft</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightKickFaceLeft.xnb</Output>
-      <Time>2015-06-11T13:25:42.0957031-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MoveIcons\female_LeftKickFaceRight.png</Source>
-      <Name>MoveIcons\female_LeftKickFaceRight</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKickFaceRight.xnb</Output>
-      <Time>2015-06-11T13:25:42.0947265-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MoveIcons\female_RightKickFaceRight.png</Source>
-      <Name>MoveIcons\female_RightKickFaceRight</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightKickFaceRight.xnb</Output>
-      <Time>2015-06-11T13:25:42.0947265-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MoveIcons\male_KneelandClap2.png</Source>
-      <Name>MoveIcons\male_KneelandClap2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_KneelandClap2.xnb</Output>
-      <Time>2015-06-11T11:36:48.1298828-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MoveIcons\male_FaceLeft.png</Source>
-      <Name>MoveIcons\male_FaceLeft</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_FaceLeft.xnb</Output>
-      <Time>2015-06-11T11:36:48.1289062-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MoveIcons\male_FaceRight.png</Source>
-      <Name>MoveIcons\male_FaceRight</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_FaceRight.xnb</Output>
-      <Time>2015-06-11T11:36:48.1289062-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MoveIcons\female_FaceRight.png</Source>
-      <Name>MoveIcons\female_FaceRight</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_FaceRight.xnb</Output>
-      <Time>2015-06-11T11:36:48.1279297-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MoveIcons\female_ThrillerHandsRight.png</Source>
-      <Name>MoveIcons\female_ThrillerHandsRight</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_ThrillerHandsRight.xnb</Output>
-      <Time>2015-06-11T11:36:48.1279297-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MoveIcons\female_FaceLeft.png</Source>
-      <Name>MoveIcons\female_FaceLeft</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_FaceLeft.xnb</Output>
-      <Time>2015-06-11T11:36:48.1269531-04:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\n_MoveTargetNew.png</Source>
-      <Name>Sprites\n_MoveTargetNew</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\n_MoveTargetNew.xnb</Output>
-      <Time>2015-06-11T15:58:17.5419922-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MoveIcons\male_RightFootLiftCross.png</Source>
-      <Name>MoveIcons\male_RightFootLiftCross</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightFootLiftCross.xnb</Output>
-      <Time>2015-06-12T13:48:44.0419922-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MoveIcons\female_RightFootLiftCross.png</Source>
-      <Name>MoveIcons\female_RightFootLiftCross</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightFootLiftCross.xnb</Output>
-      <Time>2015-06-12T13:49:02.9521485-04:00</Time>
-    </Item>
-    <Item>
-      <Source>MoveIcons\female_RightKneeLift_FaceRight.png</Source>
-      <Name>MoveIcons\female_RightKneeLift_FaceRight</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightKneeLift_FaceRight.xnb</Output>
-      <Time>2015-06-12T14:24:24.4091797-04:00</Time>
+      <Time>2015-06-12T15:56:50.678711-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -1679,7 +1679,7 @@
     <Assemblies>
       <Assembly>
         <Key>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\SkinnedModelPipeline\bin\x86\Debug\SkinnedModelPipeline.dll</Key>
-        <Value>2015-06-11T13:30:03.4042968-04:00</Value>
+        <Value>2015-06-12T15:57:08.5976563-04:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>

@@ -37,7 +37,7 @@ namespace LebaneseKinect
         Dance dance2 = new Dance("Lebanon2");
         Dance dance3 = new Dance("Lebanon3Actual");
         Dance selectedDance;
-        int selectedDanceNum = 2;
+        int selectedDanceNum = 1;
 
         // Declaring variables...
         bool bWantsToQuit = false;
@@ -100,6 +100,7 @@ namespace LebaneseKinect
         Texture2D male_RightKneeKneel_UnderArm, male_RightKneeKneel_UnderArm_HandBehind, male_rightKneeLift;
         Texture2D male_RightKneeLift_FaceRight, male_RightKneeLift_LeftHand, male_shrug, male_WaiterHand;
 
+        Texture2D n_MoveTargetNew;
         Texture2D n_MoveTarget;
         Texture2D n_P1icon;
         Texture2D n_P2icon;
@@ -787,6 +788,7 @@ namespace LebaneseKinect
             FemRightHandHigh = new TimeSpan(0, 0, 0, 131, 988);
             Score13 = new TimeSpan(0, 0, 0, 132, 800);
 
+            //Set to length of video 
             gameEnd = new TimeSpan(0, 0, 0, 136, 500);//136, 500?
             restartGameLoop = new TimeSpan(0, 0, 0, 10, 000);
 
@@ -981,6 +983,7 @@ namespace LebaneseKinect
             male_WaiterHand = Content.Load<Texture2D>("Sprites\\male_WaiterHand");
             */
 
+            n_MoveTargetNew = Content.Load<Texture2D>("Sprites\\n_MoveTargetNew");
             n_MoveTarget = Content.Load<Texture2D>("Sprites\\n_MoveTarget");
             n_P1icon = Content.Load<Texture2D>("Textures\\lefthandraise");
             n_P2icon = Content.Load<Texture2D>("Textures\\righthandraise");
@@ -1001,13 +1004,13 @@ namespace LebaneseKinect
 
             switch (selectedDanceNum % 3)
             {
-                case 1:
+                case 0:
                     selectedDance = dance1;
                     break;
-                case 2:
+                case 1:
                     selectedDance = dance2;
                     break;
-                case 0:
+                case 2:
                     selectedDance = dance3;
                     break;
                 default:
@@ -4981,7 +4984,24 @@ namespace LebaneseKinect
                 if (scoreBackground != null)
                 {
                     // Draw score screen over top
-                    spriteBatch.Draw(scoreBackground, new Rectangle(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT), Color.White);
+                    //spriteBatch.Draw(scoreBackground, new Rectangle(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT), Color.White);
+
+                    switch (selectedDanceNum)
+                    {
+                        case 1:
+                            spriteBatch.Draw(scoreBackground, new Rectangle(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT), Color.White);
+                            break;
+                        case 2:
+                            spriteBatch.Draw(scoreBackground2, new Rectangle(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT), Color.White);
+                            break;
+                        case 0:
+                            spriteBatch.Draw(scoreBackground3, new Rectangle(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT), Color.White);
+                            break;
+                        default:
+                            spriteBatch.Draw(scoreBackground, new Rectangle(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT), Color.White);
+                            break;
+                    }
+
                 }
                 //write the score to screen using DisplayScore
                 displayScoreTextF = String.Format("{0,5}", displayScoreF);
@@ -5081,9 +5101,12 @@ namespace LebaneseKinect
                     selectedDance.Draw(currentTime, spriteBatch); //I can draw moves from a move batch
                     if (GLOBALS.PLAYER_ONE_ACTIVE)
                         //spriteBatch.Draw(n_MoveTarget, new Rectangle(0 + maleRectDiff, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
-                        spriteBatch.Draw(n_MoveTarget, new Rectangle(maleRectDiff + 30, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
+                        //spriteBatch.Draw(n_MoveTargetNew, new Rectangle(maleRectDiff + 30, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
+                        spriteBatch.Draw(n_MoveTargetNew, new Rectangle(maleRectDiff - 40, WINDOW_HEIGHT - 125, 120, WINDOW_HEIGHT - 350), Color.White);
+
                     if (GLOBALS.PLAYER_TWO_ACTIVE)
-                        spriteBatch.Draw(n_MoveTarget, new Rectangle(500 - maleRectDiff, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
+                        spriteBatch.Draw(n_MoveTargetNew, new Rectangle(550 - maleRectDiff, WINDOW_HEIGHT - 125, 120, WINDOW_HEIGHT - 350), Color.White);
+                        //spriteBatch.Draw(n_MoveTargetNew, new Rectangle(500 - maleRectDiff, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                         //spriteBatch.Draw(n_MoveTarget, new Rectangle(400 - maleRectDiff, WINDOW_HEIGHT - 150, 120, WINDOW_HEIGHT - 350), Color.White);
                     if (false)
                     {

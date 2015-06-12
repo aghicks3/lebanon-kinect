@@ -53,6 +53,7 @@ namespace LebaneseKinect
             if (completed)
             {
                 stretch = (int)(currentTime.Subtract(compSpan).TotalMilliseconds / 5); //magic numbers: 500 milliseconds to grow 50 pixels
+
                 fadeOutAmt = Math.Max((50.0f - stretch) / 50.0f , 0.0f);
                 //scoreColor.A = (byte)Math.Max((125 * fadeOutAmt), 0);
                 //scoreColor = scoreColor * Math.Max(fadeOutAmt, 0);
@@ -67,7 +68,11 @@ namespace LebaneseKinect
                 fadeOutAmt = (float)(800.0f + fadeIn) / 800.0f; //magic numbers!
             
             if (GetMoveIcon() != null)
-                sb.Draw(GetMoveIcon(), new Rectangle(xlocation - stretch, GLOBALS.WINDOW_HEIGHT - (160 + stretch), 120 + (2 * stretch), GLOBALS.WINDOW_HEIGHT - (350 - (2 * stretch))), scoreColor * fadeOutAmt);
+                sb.Draw(GetMoveIcon(), new Rectangle(xlocation - stretch, GLOBALS.WINDOW_HEIGHT - (101 + stretch), 100 + (2 * stretch), GLOBALS.WINDOW_HEIGHT - (380 - (2 * stretch))), scoreColor * fadeOutAmt);
+
+                //sb.Draw(GetMoveIcon(), new Rectangle(xlocation - stretch, GLOBALS.WINDOW_HEIGHT - (131 + stretch), 120 + (2 * stretch), GLOBALS.WINDOW_HEIGHT - (350 - (2 * stretch))), scoreColor * fadeOutAmt);
+
+                //sb.Draw(GetMoveIcon(), new Rectangle(xlocation - stretch, GLOBALS.WINDOW_HEIGHT - (160 + stretch), 120 + (2 * stretch), GLOBALS.WINDOW_HEIGHT - (350 - (2 * stretch))), scoreColor * fadeOutAmt);
         }
 
         public void ScoreMove(TimeSpan currentTime)

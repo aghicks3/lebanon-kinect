@@ -99,10 +99,14 @@ namespace LebaneseKinect
         public void Draw(TimeSpan currentTime, SpriteBatch sb)
         {
             Console.WriteLine("I am running this!");
-            int maleRectDiff = GLOBALS.WINDOW_WIDTH / 2 - 100; //(probably don't do this here... need some globals)
+            //int maleRectDiff = GLOBALS.WINDOW_WIDTH / 2 - 100; //(probably don't do this here... need some globals)
+            
+            /** This line affects the sprite speed **/
+           int maleRectDiff = GLOBALS.WINDOW_WIDTH / 2 - 130;
 
             //go through dance moves (added in order) until we are past the scoring threshhold
             //draw them
+            /** PLAYER ON THE LEFT **/
             if (GLOBALS.PLAYER_ONE_ACTIVE)
             {
                 foreach (DanceMove move in m_scoreBlock)
@@ -114,6 +118,7 @@ namespace LebaneseKinect
 
                     if (Math.Abs(diff) < 2000)
                     {
+
                         int xlocation = Convert.ToInt32(0 + maleRectDiff * (2000 - Math.Abs(diff)) / 2000);
                         if (diff > 0)
                         {
@@ -147,6 +152,7 @@ namespace LebaneseKinect
                 }
             }
 
+            /** PLAYER ON THE RIGHT **/
             if (GLOBALS.PLAYER_TWO_ACTIVE)
             {
                 foreach (DanceMove move in f_scoreBlock)
@@ -169,6 +175,9 @@ namespace LebaneseKinect
 
                 foreach (DanceMove move in f_danceMoves)
                 {
+                    /** This line affects the sprite speed **/
+                    maleRectDiff = GLOBALS.WINDOW_WIDTH / 2 - 149;
+
                     double diff = (currentTime.Subtract(move.moveSpan).TotalMilliseconds);
                     if (diff < -2000) //moves MUST BE in chronological order to do this
                         break;

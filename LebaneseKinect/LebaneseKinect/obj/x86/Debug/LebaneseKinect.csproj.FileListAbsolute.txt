@@ -527,3 +527,7 @@ C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect
 C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_FaceRight.xnb
 C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_ThrillerHandsRight.xnb
 C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_FaceLeft.xnb
+C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\n_MoveTargetNew.xnb
+C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightFootLiftCross.xnb
+C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightFootLiftCross.xnb
+C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightKneeLift_FaceRight.xnb

@@ -1368,7 +1368,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_LeftKneeLift_FaceRight.xnb</Output>
-      <Time>2015-06-09T13:56:10.8759765-04:00</Time>
+      <Time>2015-06-12T14:24:24.4101563-04:00</Time>
     </Item>
     <Item>
       <Source>MoveIcons\male_BackSideLeftKneeLift.png</Source>
@@ -1628,6 +1628,42 @@
       <Options>None</Options>
       <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_FaceLeft.xnb</Output>
       <Time>2015-06-11T11:36:48.1269531-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\n_MoveTargetNew.png</Source>
+      <Name>Sprites\n_MoveTargetNew</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\Sprites\n_MoveTargetNew.xnb</Output>
+      <Time>2015-06-11T15:58:17.5419922-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\male_RightFootLiftCross.png</Source>
+      <Name>MoveIcons\male_RightFootLiftCross</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\male_RightFootLiftCross.xnb</Output>
+      <Time>2015-06-12T13:48:44.0419922-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\female_RightFootLiftCross.png</Source>
+      <Name>MoveIcons\female_RightFootLiftCross</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightFootLiftCross.xnb</Output>
+      <Time>2015-06-12T13:49:02.9521485-04:00</Time>
+    </Item>
+    <Item>
+      <Source>MoveIcons\female_RightKneeLift_FaceRight.png</Source>
+      <Name>MoveIcons\female_RightKneeLift_FaceRight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\adminuser\Documents\GitHub\lebanon-kinect\LebaneseKinect\LebaneseKinect\bin\x86\Debug\Content\MoveIcons\female_RightKneeLift_FaceRight.xnb</Output>
+      <Time>2015-06-12T14:24:24.4091797-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
